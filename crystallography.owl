@@ -13,10 +13,10 @@
         <owl:versionIRI rdf:resource="http://emmo.info/crystallography/0.0.1/crystallography"/>
         <owl:imports rdf:resource="http://emmo.info/emmo/1.0.0-alpha2"/>
         <dcterms:license>Creative Commons BY 4.0</dcterms:license>
-        <rdfs:comment>A toplevel crystallography ontology based on EMMO and the CIF core dictionary.
+        <dcterms:abstract>A toplevel crystallography ontology based on EMMO and the CIF core dictionary.
 
 
-It is implemented as a formal language.</rdfs:comment>
+It is implemented as a formal language.</dcterms:abstract>
     </owl:Ontology>
     
 
@@ -49,11 +49,6 @@ It is implemented as a formal language.</rdfs:comment>
     </owl:AnnotationProperty>
     
 
-
-    <!-- http://purl.org/dc/terms/license -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
-    
 
 
     <!-- 
