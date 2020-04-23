@@ -1,0 +1,29 @@
+stages:
+  - check
+
+check:
+  stage: check
+  script:
+    - apt-get update -qy
+    - apt-get install -y python python-pip
+    - pip install EMMO
+    - pip
+
+jobs:
+  image: python
+
+
+
+image: "python:3.7"
+
+before_script:
+  - python --version
+  - pip install EMMO
+
+stages:
+  - Check against EMMO conventions
+
+emmocheck:
+  stage: Check against EMMO conventions
+  script:
+  - emmocheck crystallography.owl --verbose  --check-imported --local --catalog-file=catalog-v001.xml
