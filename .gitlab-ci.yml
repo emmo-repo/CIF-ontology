@@ -13,4 +13,4 @@ stages:
 emmocheck:
   stage: Check against EMMO conventions
   script:
-  - emmocheck crystallography.owl --verbose  --check-imported --local --catalog-file=catalog-v001.xml
+  - emmocheck crystallography.owl --verbose
