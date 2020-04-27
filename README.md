@@ -7,14 +7,14 @@ A toplevel crystallography domain ontology based on [EMMO][1] and the
 [CIF core][2] dictionary. It is implemented as a formal language.
 
 
-Dependencies
-------------
+Imported ontologies
+-------------------
 This ontology builds on top of EMMO. See the following table for version
 compatibilies:
 
-| Dependency | Version           |
-| ---------- | ----------------- |
-| EMMO       | marketplace-1.0.1 |
+| Imported ontologies | Version           |
+| ------------------- | ----------------- |
+| EMMO                | marketplace-1.0.1 |
 
 
 Obtaining crystallography
