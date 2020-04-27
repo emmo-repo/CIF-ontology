@@ -2,7 +2,7 @@
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=false, version=2" prefer="public" xml:base="">
         <uri name="http://emmo.info/crystallography/0.0.1/crystallography"    uri="./crystallography.owl"/>
-        <uri name="http://emmo.info/emmo/marketplace-1.0"                     uri="http://emmo.info/emmo/marketplace-1.0"/>
+        <uri name="http://emmo.info/emmo/marketplace-1.0.1"                   uri="http://emmo.info/emmo/marketplace-1.0.1"/>
         <uri name="http://emmo.info/emmo/1.0.0-alpha2/top"                    uri="./EMMO/top/top.owl"/>
         <uri name="http://emmo.info/emmo/1.0.0-alpha2/top/annotations"        uri="./EMMO/top/annotations.owl"/>
         <uri name="http://emmo.info/emmo/1.0.0-alpha2/top/mereotopology"      uri="./EMMO/top/mereotopology.owl"/>
