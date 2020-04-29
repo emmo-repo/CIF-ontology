@@ -3,16 +3,16 @@
 
 Crystallography
 ===============
-A toplevel crystallography domain ontology based on [EMMO][1] and the
+A basic crystallography domain ontology based on [EMMO][1] and the
 [CIF core][2] dictionary. It is implemented as a formal language.
 
 
-Imported ontologies
+Imported Ontologies
 -------------------
 This ontology builds on top of EMMO. See the following table for version
 compatibilies:
 
-| Imported ontologies | Version           |
+| Imported Ontologies | Version           |
 | ------------------- | ----------------- |
 | EMMO                | marketplace-1.0.1 |
 
