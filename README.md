@@ -35,6 +35,7 @@ Attributions and credits
 - Casper Welzel Andersen, EPFL
 
 ### Projects
+- Demystify ontologies - Internal project at [SINTEF](www.sintef.no)
 - [MarketPlace](https://www.the-marketplace-project.eu/);
   Grant Agreement No: 760173
   <img src="https://www.the-marketplace-project.eu/content/dam/iwm/the-marketplace-project/images/MARKETPLACE_LOGO_300dpi.png" width="120">
