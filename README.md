@@ -2,10 +2,10 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 
-Crystallography
-===============
-A basic crystallography domain ontology based on [EMMO][1] and the
-[CIF core][2] dictionary. It is implemented as a formal language.
+domain-crystallography
+======================
+A crystallography domain ontology based on [EMMO][1] and the [CIF
+core][2] dictionary. It is implemented as a formal language.
 
 
 Status
@@ -31,8 +31,8 @@ compatibilies:
 | EMMO                | marketplace-1.0.1 |
 
 
-Obtaining crystallography
--------------------------
+Obtaining domain-crystallography
+--------------------------------
 For faster access, this repository now include the correct version of
 EMMO as a git submodule.  Hence, use the following command when
 cloning this repository:
