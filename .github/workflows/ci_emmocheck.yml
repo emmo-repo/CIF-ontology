@@ -26,4 +26,4 @@ jobs:
 
     - name: Check EMMO
       run: |
-        emmocheck --local --verbose --check-imported emmo.owl
+        emmocheck --local --verbose --check-imported crystallography.owl
