@@ -93,30 +93,6 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core</rdfs:comment>
         </owl:equivalentClass>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204"/>
-                <owl:someValuesFrom rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_1a179ce4_3724_47f8_bee5_6292e3ac9942"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204"/>
-                <owl:someValuesFrom rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_81e767f1_59b1_4d7a_bf69_17f322241831"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204"/>
-                <owl:someValuesFrom rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_9d8f708a_f291_4d72_80ec_362c6e6bbca6"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204"/>
-                <owl:someValuesFrom rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_ed4af7ae_63a2_497e_bb88_2309619ea405"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://emmo.info/emmo/top/mereotopology#EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f"/>
                 <owl:someValuesFrom rdf:resource="http://emmo.info/emmo/middle/materials#EMMO_eb77076b_a104_42ac_a065_798b2d2809ad"/>
             </owl:Restriction>
@@ -132,6 +108,12 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core</rdfs:comment>
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_216efd86_d095_49db_bc74_c9f808577940">
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_faab3f84_e475_4a46_af9c_7d249f0b9aef"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/metrology#EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0"/>
+                <owl:someValuesFrom rdf:resource="http://emmo.info/emmo/middle/math#EMMO_18d180e4_5e3e_42f7_820c_e08951223486"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>_atom_site_fract_y</EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>
         <EMMO_ece80b49_c611_4626_965f_5beb93159c7e>https://www.iucr.org/__data/iucr/cifdic_html/1/cif_core.dic/Iatom_site_fract_.html</EMMO_ece80b49_c611_4626_965f_5beb93159c7e>
         <isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>T0 L0 M0 I0 Θ0 N0 J0</isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>
@@ -145,6 +127,12 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core</rdfs:comment>
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_290e4378_2cab_4d78_bc40_a08a84af4f76">
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_f3dd74c0_f480_49e8_9764_33b78638c235"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/metrology#EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0"/>
+                <owl:someValuesFrom rdf:resource="http://emmo.info/emmo/middle/math#EMMO_18d180e4_5e3e_42f7_820c_e08951223486"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>_cell_angle_beta</EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>
         <isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>T0 L0 M0 I0 Θ0 N0 J0</isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>
         <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>The angle between lattice vectors `a` and `c`, where lattice vectors `a`, `b` and `c` defines the unit cell,</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
@@ -157,10 +145,16 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core</rdfs:comment>
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_35e0d181_d10b_45b8_9f8b_c12a56ae45e6">
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_cd2cd0de_e0cc_4ef1_b27e_2e88db027bac"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/metrology#EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0"/>
+                <owl:someValuesFrom rdf:resource="http://emmo.info/emmo/middle/math#EMMO_18d180e4_5e3e_42f7_820c_e08951223486"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>_cell_length_a</EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>
         <EMMO_ece80b49_c611_4626_965f_5beb93159c7e>https://www.iucr.org/__data/iucr/cifdic_html/1/cif_core.dic/Icell_length_.html</EMMO_ece80b49_c611_4626_965f_5beb93159c7e>
         <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>The length of lattice vectors `a`, where lattice vectors `a`, `b` and `c` defines the unit cell,</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
-        <skos:prefLabel xml:lang="en">LatticeConstantA</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">LatticeParameterA</skos:prefLabel>
     </owl:Class>
     
 
@@ -169,6 +163,12 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core</rdfs:comment>
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_49cbd126_1722_436e_a4bd_3363d141bb37">
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_faab3f84_e475_4a46_af9c_7d249f0b9aef"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/metrology#EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0"/>
+                <owl:someValuesFrom rdf:resource="http://emmo.info/emmo/middle/math#EMMO_18d180e4_5e3e_42f7_820c_e08951223486"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>_atom_site_occupancy</EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>
         <isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>T0 L0 M0 I0 Θ0 N0 J0</isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>
         <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>The occupancy of a site. Must be a number between zero and one.</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
@@ -181,6 +181,12 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core</rdfs:comment>
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_4f586c18_897b_4568_94b8_3960592c1438">
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_f3dd74c0_f480_49e8_9764_33b78638c235"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/metrology#EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0"/>
+                <owl:someValuesFrom rdf:resource="http://emmo.info/emmo/middle/math#EMMO_18d180e4_5e3e_42f7_820c_e08951223486"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>_cell_angle_alpha</EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>
         <isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>T0 L0 M0 I0 Θ0 N0 J0</isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>
         <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>The angle between lattice vectors `b` and `c`, where lattice vectors `a`, `b` and `c` defines the unit cell,</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
@@ -193,6 +199,12 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core</rdfs:comment>
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_5ab885af_eff7_4cc7_954c_cf107c54735b">
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_ba882f34_0d71_4e4f_9d92_0c076c633a2c"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/metrology#EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0"/>
+                <owl:someValuesFrom rdf:resource="http://emmo.info/emmo/middle/math#EMMO_f8bd64d5_5d3e_4ad4_a46e_c30714fecb7f"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>_atom_site_site_symmetry_multiplicity</EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>
         <isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>T0 L0 M0 I0 Θ0 N0 J0</isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>
         <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>The number of different sites that are generated by the application of the space-group symmetry to the coordinates given for this site.</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
@@ -234,12 +246,6 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/materials#EMMO_a2b006f2_bbfd_4dba_bcaa_3fca20cd6be1"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204"/>
-                <owl:someValuesFrom rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_6a340d67_c6cb_4348_8537_d9aa0e768721"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe"/>
                 <owl:someValuesFrom rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_203692d9_4bf0_45ae_b4eb_9dc02adae605"/>
             </owl:Restriction>
@@ -258,6 +264,16 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core</rdfs:comment>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe"/>
                 <owl:someValuesFrom rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_ea30edf8_be85_4b92_a649_1cedb3bab550"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_69dab453_6596_464d_a21d_d64643f4ed9b"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -294,8 +310,23 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core</rdfs:comment>
     <!-- http://emmo.info/crystallography/crystallography#EMMO_6c4a12db_98bd_4dd8_bb90_8801096b5fd0 -->
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_6c4a12db_98bd_4dd8_bb90_8801096b5fd0">
-        <rdfs:subClassOf rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_6028825a_008a_4163_96fb_0af1bdc15695"/>
-        <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/math#EMMO_f8bd64d5_5d3e_4ad4_a46e_c30714fecb7f"/>
+        <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_ba882f34_0d71_4e4f_9d92_0c076c633a2c"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/metrology#EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0"/>
+                <owl:someValuesFrom rdf:resource="http://emmo.info/emmo/middle/math#EMMO_f8bd64d5_5d3e_4ad4_a46e_c30714fecb7f"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_f03acd96_b5ba_4921_9ae7_80e76d27e853"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>_space_group_IT_number</EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>
         <EMMO_ece80b49_c611_4626_965f_5beb93159c7e>https://www.iucr.org/__data/iucr/cifdic_html/1/cif_core.dic/Ispace_group_IT_number.html</EMMO_ece80b49_c611_4626_965f_5beb93159c7e>
         <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>A number between 1 and 230 that uniquely identifies the space group.</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
@@ -352,10 +383,16 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core</rdfs:comment>
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_7d6d49ac_18d2_4c98_b16d_621877272989">
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_cd2cd0de_e0cc_4ef1_b27e_2e88db027bac"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/metrology#EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0"/>
+                <owl:someValuesFrom rdf:resource="http://emmo.info/emmo/middle/math#EMMO_18d180e4_5e3e_42f7_820c_e08951223486"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>_cell_length_b</EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>
         <EMMO_ece80b49_c611_4626_965f_5beb93159c7e>https://www.iucr.org/__data/iucr/cifdic_html/1/cif_core.dic/Icell_length_.html</EMMO_ece80b49_c611_4626_965f_5beb93159c7e>
         <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>The length of lattice vectors `b`, where lattice vectors `a`, `b` and `c` defines the unit cell,</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
-        <skos:prefLabel xml:lang="en">LatticeConstantB</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">LatticeParameterB</skos:prefLabel>
     </owl:Class>
     
 
@@ -365,6 +402,22 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core</rdfs:comment>
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_7f5aafba_4707_4d92_878b_c760c41bd479">
         <rdfs:subClassOf rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_6b5e88c8_0d54_4a02_a9ff_6958f6013e0e"/>
         <skos:prefLabel xml:lang="en">LatticeVectorC</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://emmo.info/crystallography/crystallography#EMMO_8411829d_faba_479a_8d37_d961dc41c9ce -->
+
+    <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_8411829d_faba_479a_8d37_d961dc41c9ce">
+        <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/math#EMMO_1cba0b27_15d0_4326_933f_379d0b3565b6"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://emmo.info/emmo/to_emmo#EMMO_39311fe5_78eb_4e4c_90c5_6eadfd17c6b2"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <skos:prefLabel xml:lang="en">Shape3x3Matrix</skos:prefLabel>
     </owl:Class>
     
 
@@ -382,10 +435,16 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core</rdfs:comment>
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_987e01f4_da01_4e15_9620_e3c814a48e64">
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_cd2cd0de_e0cc_4ef1_b27e_2e88db027bac"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/metrology#EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0"/>
+                <owl:someValuesFrom rdf:resource="http://emmo.info/emmo/middle/math#EMMO_18d180e4_5e3e_42f7_820c_e08951223486"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>_cell_length_c</EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>
         <EMMO_ece80b49_c611_4626_965f_5beb93159c7e>https://www.iucr.org/__data/iucr/cifdic_html/1/cif_core.dic/Icell_length_.html</EMMO_ece80b49_c611_4626_965f_5beb93159c7e>
         <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>The length of lattice vectors `c`, where lattice vectors `a`, `b` and `c` defines the unit cell,</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
-        <skos:prefLabel xml:lang="en">LatticeConstantC</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">LatticeParameterC</skos:prefLabel>
     </owl:Class>
     
 
@@ -393,12 +452,28 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core</rdfs:comment>
     <!-- http://emmo.info/crystallography/crystallography#EMMO_9bb4432f_b2b5_4de5_9a54_27c427062f76 -->
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_9bb4432f_b2b5_4de5_9a54_27c427062f76">
-        <rdfs:subClassOf rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_6028825a_008a_4163_96fb_0af1bdc15695"/>
-        <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>A symbol that stands for the space group setting, i.e. the choice of origin (and basis).</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
-        <rdfs:comment>Typically the space group setting is represented as &quot;1&quot; for the standard setting and &quot;2&quot; for the alternative setting.
+        <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_ba882f34_0d71_4e4f_9d92_0c076c633a2c"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/metrology#EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0"/>
+                <owl:someValuesFrom rdf:resource="http://emmo.info/emmo/middle/math#EMMO_f8bd64d5_5d3e_4ad4_a46e_c30714fecb7f"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_f03acd96_b5ba_4921_9ae7_80e76d27e853"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 xml:lang="en">A number that stands for the space group setting, i.e. the choice of origin (and basis).</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
+        <rdfs:comment xml:lang="en">Typically the space group setting is represented as &quot;1&quot; for the standard setting and &quot;2&quot; for the alternative setting.
 
-The setting seems not to appear in the CIF core dictionary, but is included in International Tables.</rdfs:comment>
-        <skos:prefLabel xml:lang="en">SpacegroupSetting</skos:prefLabel>
+The setting number does not appear in the CIF core dictionary, but is included in International Tables. The CIF core dictionary recommends usint the &apos;_space_group_crystal_system&apos; instead.</rdfs:comment>
+        <skos:prefLabel xml:lang="en">SpacegroupSettingNumber</skos:prefLabel>
     </owl:Class>
     
 
@@ -432,11 +507,28 @@ The setting seems not to appear in the CIF core dictionary, but is included in I
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_b2b8e17f_c6d0_4bdf_94f8_ebf7870df669">
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_faab3f84_e475_4a46_af9c_7d249f0b9aef"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/metrology#EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0"/>
+                <owl:someValuesFrom rdf:resource="http://emmo.info/emmo/middle/math#EMMO_18d180e4_5e3e_42f7_820c_e08951223486"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>_atom_site_fract_x</EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>
         <EMMO_ece80b49_c611_4626_965f_5beb93159c7e>https://www.iucr.org/__data/iucr/cifdic_html/1/cif_core.dic/Iatom_site_fract_.html</EMMO_ece80b49_c611_4626_965f_5beb93159c7e>
         <isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>T0 L0 M0 I0 Θ0 N0 J0</isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>
         <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>Fractional position of a site along the a direction.</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
         <skos:prefLabel xml:lang="en">FractionalPositionA</skos:prefLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://emmo.info/crystallography/crystallography#EMMO_b5a8a6b3_ffd7_4783_a097_098d47a225c5 -->
+
+    <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_b5a8a6b3_ffd7_4783_a097_098d47a225c5">
+        <rdfs:subClassOf rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_8411829d_faba_479a_8d37_d961dc41c9ce"/>
+        <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 xml:lang="en">A rotation matrix.</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
+        <rdfs:comment xml:lang="en">The determinant of a rotation matrix is one.</rdfs:comment>
+        <skos:prefLabel xml:lang="en">RotationMatrix</skos:prefLabel>
     </owl:Class>
     
 
@@ -450,12 +542,38 @@ The setting seems not to appear in the CIF core dictionary, but is included in I
     
 
 
+    <!-- http://emmo.info/crystallography/crystallography#EMMO_bf4315d5_0a42_44c1_917e_9057789ea798 -->
+
+    <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_bf4315d5_0a42_44c1_917e_9057789ea798">
+        <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/to_emmo#EMMO_39311fe5_78eb_4e4c_90c5_6eadfd17c6b2"/>
+        <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 xml:lang="en">A translation vector.</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
+        <skos:prefLabel xml:lang="en">TranslationVector</skos:prefLabel>
+    </owl:Class>
+    
+
+
     <!-- http://emmo.info/crystallography/crystallography#EMMO_c70c483e_8e3c_4fd4_97eb_bf9ae3981a01 -->
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_c70c483e_8e3c_4fd4_97eb_bf9ae3981a01">
         <rdfs:subClassOf rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06"/>
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/math#EMMO_54ee6b5e_5261_44a8_86eb_5717e7fdb9d0"/>
-        <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>A symmetry operation is an action that leaves an object looking the same after it has been carried out.</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_b5a8a6b3_ffd7_4783_a097_098d47a225c5"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_bf4315d5_0a42_44c1_917e_9057789ea798"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 xml:lang="en">A symmetry operation is an action that leaves an object looking the same after it has been carried out.
+
+Mathematically it is described by a rotation followed by a translation.</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
         <annotations:EMMO_b432d2d5_25f4_4165_99c5_5935a7763c1a>For example, if we take a molecule of water and rotate it by 180° about an axis passing through the central O atom (between the two H atoms) it will look the same as before.</annotations:EMMO_b432d2d5_25f4_4165_99c5_5935a7763c1a>
         <skos:prefLabel xml:lang="en">SymmetryOperation</skos:prefLabel>
     </owl:Class>
@@ -466,11 +584,33 @@ The setting seems not to appear in the CIF core dictionary, but is included in I
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_cd9c28a0_9453_494c_b45e_27eaf3d785e7">
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_faab3f84_e475_4a46_af9c_7d249f0b9aef"/>
-        <owl:disjointUnionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://emmo.info/crystallography/crystallography#EMMO_216efd86_d095_49db_bc74_c9f808577940"/>
-            <rdf:Description rdf:about="http://emmo.info/crystallography/crystallography#EMMO_b2b8e17f_c6d0_4bdf_94f8_ebf7870df669"/>
-            <rdf:Description rdf:about="http://emmo.info/crystallography/crystallography#EMMO_e2a89e11_0cab_40c6_9e0b_a391585255c6"/>
-        </owl:disjointUnionOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/metrology#EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0"/>
+                <owl:someValuesFrom rdf:resource="http://emmo.info/emmo/to_emmo#EMMO_39311fe5_78eb_4e4c_90c5_6eadfd17c6b2"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_216efd86_d095_49db_bc74_c9f808577940"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_b2b8e17f_c6d0_4bdf_94f8_ebf7870df669"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_e2a89e11_0cab_40c6_9e0b_a391585255c6"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>T0 L0 M0 I0 Θ0 N0 J0</isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>
         <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>A position expressed in fractional coordinates with respect to an origin and three spatial vectors.</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
         <skos:prefLabel xml:lang="en">FractionalPosition</skos:prefLabel>
@@ -482,6 +622,12 @@ The setting seems not to appear in the CIF core dictionary, but is included in I
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_d6ea1aa1_fe6e_4fbb_bfad_e848fb02a969">
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_f3dd74c0_f480_49e8_9764_33b78638c235"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/metrology#EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0"/>
+                <owl:someValuesFrom rdf:resource="http://emmo.info/emmo/middle/math#EMMO_18d180e4_5e3e_42f7_820c_e08951223486"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>_cell_angle_gamma</EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>
         <isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>T0 L0 M0 I0 Θ0 N0 J0</isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>
         <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>The angle between lattice vectors `a` and `b`, where lattice vectors `a`, `b` and `c` defines the unit cell,</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
@@ -494,6 +640,12 @@ The setting seems not to appear in the CIF core dictionary, but is included in I
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_e2a89e11_0cab_40c6_9e0b_a391585255c6">
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_faab3f84_e475_4a46_af9c_7d249f0b9aef"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/metrology#EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0"/>
+                <owl:someValuesFrom rdf:resource="http://emmo.info/emmo/middle/math#EMMO_18d180e4_5e3e_42f7_820c_e08951223486"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>_atom_site_fract_z</EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>
         <EMMO_ece80b49_c611_4626_965f_5beb93159c7e>https://www.iucr.org/__data/iucr/cifdic_html/1/cif_core.dic/Iatom_site_fract_.html</EMMO_ece80b49_c611_4626_965f_5beb93159c7e>
         <isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>T0 L0 M0 I0 Θ0 N0 J0</isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>
@@ -523,14 +675,48 @@ References:
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_e7aa6a92_c28d_457c_be2c_0ac16c8306c0">
         <rdfs:subClassOf rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06"/>
-        <owl:disjointUnionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://emmo.info/crystallography/crystallography#EMMO_290e4378_2cab_4d78_bc40_a08a84af4f76"/>
-            <rdf:Description rdf:about="http://emmo.info/crystallography/crystallography#EMMO_35e0d181_d10b_45b8_9f8b_c12a56ae45e6"/>
-            <rdf:Description rdf:about="http://emmo.info/crystallography/crystallography#EMMO_4f586c18_897b_4568_94b8_3960592c1438"/>
-            <rdf:Description rdf:about="http://emmo.info/crystallography/crystallography#EMMO_7d6d49ac_18d2_4c98_b16d_621877272989"/>
-            <rdf:Description rdf:about="http://emmo.info/crystallography/crystallography#EMMO_987e01f4_da01_4e15_9620_e3c814a48e64"/>
-            <rdf:Description rdf:about="http://emmo.info/crystallography/crystallography#EMMO_d6ea1aa1_fe6e_4fbb_bfad_e848fb02a969"/>
-        </owl:disjointUnionOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_290e4378_2cab_4d78_bc40_a08a84af4f76"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_35e0d181_d10b_45b8_9f8b_c12a56ae45e6"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_4f586c18_897b_4568_94b8_3960592c1438"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_7d6d49ac_18d2_4c98_b16d_621877272989"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_987e01f4_da01_4e15_9620_e3c814a48e64"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_d6ea1aa1_fe6e_4fbb_bfad_e848fb02a969"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>6 parameters defining the unit cell; a, b, c, alpha, beta, gamma, where a, b, c are the lengths of the 3 lattice vectors spanning the unit cell and alpha, beta, gamma are the angles between them.</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
         <skos:prefLabel xml:lang="en">LatticeParameter</skos:prefLabel>
     </owl:Class>
@@ -590,20 +776,6 @@ References:
         <rdfs:subClassOf>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe"/>
-                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                                <owl:onClass rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_6c4a12db_98bd_4dd8_bb90_8801096b5fd0"/>
-                            </owl:Restriction>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe"/>
-                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                                <owl:onClass rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_9bb4432f_b2b5_4de5_9a54_27c427062f76"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe"/>
                         <owl:someValuesFrom rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_c70c483e_8e3c_4fd4_97eb_bf9ae3981a01"/>
@@ -612,6 +784,11 @@ References:
                         <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe"/>
                         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                         <owl:onClass rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_e3b30772_419b_49f4_a401_7f536bd4c9e6"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://emmo.info/emmo/middle/reductionistic#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_f3295691_a01e_4454_a40e_35903ad93485"/>
                     </owl:Restriction>
                 </owl:unionOf>
             </owl:Class>
