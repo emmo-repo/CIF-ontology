@@ -6,7 +6,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <http://emmo.info/emmo/to_emmo> a owl:Ontology ;
-	owl:versionIRI <http://emmo.info/emmo/0.0.1/to_emmo> .
+	owl:versionIRI <http://emmo.info/emmo/0.0.1/to_emmo> ;
+	owl:imports <http://emmo.info/emmo/1.0.0-beta/emmo-inferred> .
 # 
 # 
 # #################################################################
@@ -40,24 +41,22 @@ owl:qualifiedCardinality a owl:AnnotationProperty .
 # http://emmo.info/emmo/to_emmo#EMMO_67ae9b18_d54b_4478_a74b_221ec2c98acf
 
 :EMMO_67ae9b18_d54b_4478_a74b_221ec2c98acf a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://emmo.info/emmo/top/mereotopology#EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f> .
-
-<http://emmo.info/emmo/top/mereotopology#EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f> a owl:ObjectProperty .
-
-:EMMO_67ae9b18_d54b_4478_a74b_221ec2c98acf <http://www.w3.org/2004/02/skos/core#prefLabel> "hasFirstElement"@en .
+	rdfs:subPropertyOf <http://emmo.info/emmo/top/mereotopology#EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "hasFirstElement"@en .
 # 
 # http://emmo.info/emmo/to_emmo#EMMO_9cd7c078_cdfe_4eb1_aba3_59df99ef9c11
 
 :EMMO_9cd7c078_cdfe_4eb1_aba3_59df99ef9c11 a owl:ObjectProperty ;
-	rdfs:subPropertyOf <http://emmo.info/emmo/top/mereotopology#EMMO_4d6504f1_c470_4ce9_b941_bbbebc9ab05d> .
-
-<http://emmo.info/emmo/top/mereotopology#EMMO_4d6504f1_c470_4ce9_b941_bbbebc9ab05d> a owl:ObjectProperty .
-
-:EMMO_9cd7c078_cdfe_4eb1_aba3_59df99ef9c11 <http://www.w3.org/2004/02/skos/core#prefLabel> "hasNext"@en .
+	rdfs:subPropertyOf <http://emmo.info/emmo/top/mereotopology#EMMO_4d6504f1_c470_4ce9_b941_bbbebc9ab05d> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "hasNext"@en .
 # 
 # http://emmo.info/emmo/top/mereotopology#EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f
+
+<http://emmo.info/emmo/top/mereotopology#EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f> a owl:ObjectProperty .
 # 
 # http://emmo.info/emmo/top/mereotopology#EMMO_4d6504f1_c470_4ce9_b941_bbbebc9ab05d
+
+<http://emmo.info/emmo/top/mereotopology#EMMO_4d6504f1_c470_4ce9_b941_bbbebc9ab05d> a owl:ObjectProperty .
 # 
 # 
 # 
