@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-    <uri id="Imports Wizard Entry" name="http://emmo.info/emmo/0.0.1/to_emmo" uri="to_emmo.owl"/>
-    <uri id="Imports Wizard Entry" name="http://emmo.info/emmo/0.0.1/to_emmo" uri="to_emmo.ttl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=false, version=2" prefer="public" xml:base="">
         <uri name="http://emmo.info/crystallography/0.0.1/crystallography" uri="./crystallography.owl"/>
-        <uri name="http://emmo.info/emmo/0.0.1/to_emmo" uri="./to_emmo.owl"/>
-        <uri name="http://emmo.info/emmo/1.0.0-beta/emmo-inferred" uri="https://emmo-repo.github.io/versions/1.0.0-beta/emmo-inferred.owl"/>
+        <uri name="http://emmo.info/emmo/1.0.0-beta/emmo-inferred"         uri="https://emmo-repo.github.io/versions/1.0.0-beta/emmo-inferred.ttl"/>
+        <uri name="http://emmo.info/emmo/from-chemistry"                   uri="from-chemistry.ttl"/>
+        <uri name="file:///home/friisj/Private/prosjekter/EMMC/EMMO/.github/pages/versions/1.0.0-beta/_result_ontology.owl" uri="https://emmo-repo.github.io/versions/1.0.0-beta/emmo-inferred.ttl"/>
     </group>
 </catalog>
