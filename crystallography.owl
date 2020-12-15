@@ -800,6 +800,16 @@ Mathematically it is described by a rotation followed by a translation.</annotat
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_e3b30772_419b_49f4_a401_7f536bd4c9e6">
         <rdfs:subClassOf rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_6028825a_008a_4163_96fb_0af1bdc15695"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_f03acd96_b5ba_4921_9ae7_80e76d27e853"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>_space_group_name_Hall</EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>
         <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>A symbol that uniquely defines the space group and its reference to a particular coordinate system.
 
@@ -946,6 +956,16 @@ The commonly used Hermann-Mauguin symbol determines the space-group type uniquel
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_f12310ea_4957_49cb_8ff0_1d13849de166">
         <rdfs:subClassOf rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_6028825a_008a_4163_96fb_0af1bdc15695"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_ea30edf8_be85_4b92_a649_1cedb3bab550"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>_atom_site_Wyckoff_symbol</EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>
         <EMMO_ece80b49_c611_4626_965f_5beb93159c7e>https://www.iucr.org/__data/iucr/cifdic_html/1/cif_core.dic/Iatom_site_Wyckoff_symbol.html</EMMO_ece80b49_c611_4626_965f_5beb93159c7e>
         <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>The Wyckoff symbol (letter) as listed in the space-group tables of International Tables for Crystallography Vol. A (2002).</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
@@ -958,6 +978,16 @@ The commonly used Hermann-Mauguin symbol determines the space-group type uniquel
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_f3295691_a01e_4454_a40e_35903ad93485">
         <rdfs:subClassOf rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_6028825a_008a_4163_96fb_0af1bdc15695"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://emmo.info/emmo/middle/properties#EMMO_e1097637_70d2_4895_973f_2396f04fa204"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_f03acd96_b5ba_4921_9ae7_80e76d27e853"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>_space_group_name_H-M_alt</EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>
         <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>A symbol that uniquely determines the space group.</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
         <rdfs:comment>Note that a given spacegroup may be described by more than one Hermann Mauguin symbol. Spacegroups are therefore best described by spacegroup number.</rdfs:comment>
