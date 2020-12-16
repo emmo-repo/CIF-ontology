@@ -12,7 +12,7 @@
      xmlns:annotations="http://emmo.info/emmo/top/annotations#">
     <owl:Ontology rdf:about="http://emmo.info/crystallography/crystallography">
         <owl:versionIRI rdf:resource="http://emmo.info/crystallography/0.0.1/crystallography"/>
-	<owl:imports rdf:resource="http://emmo.info/emmo/1.0.0-alpha2/emmo-inferred.owl"/>
+        <owl:imports rdf:resource="http://emmo.info/emmo/1.0.0-alpha2/emmo-inferred.owl"/>
         <dcterms:abstract>A toplevel crystallography ontology based on EMMO and the CIF core dictionary.
 
 It is implemented as a formal language.</dcterms:abstract>
@@ -158,8 +158,9 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_cd2cd0de_e0cc_4ef1_b27e_2e88db027bac"/>
         <EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>_cell_length_a</EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>
         <EMMO_ece80b49_c611_4626_965f_5beb93159c7e>https://www.iucr.org/__data/iucr/cifdic_html/1/cif_core.dic/Icell_length_.html</EMMO_ece80b49_c611_4626_965f_5beb93159c7e>
+        <isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>T0 L+1 M0 I0 Θ0 N0 J0</isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>
         <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>The length of lattice vectors `a`, where lattice vectors `a`, `b` and `c` defines the unit cell,</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
-        <skos:prefLabel xml:lang="en">LatticeConstantA</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">LatticeParameterA</skos:prefLabel>
     </owl:Class>
     
 
@@ -284,6 +285,7 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core</rdfs:comment>
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_6b5e88c8_0d54_4a02_a9ff_6958f6013e0e">
         <rdfs:subClassOf rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06"/>
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_44da6d75_54a4_4aa8_bd3a_156f6e9abb8e"/>
+        <isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>T0 L+1 M0 I0 Θ0 N0 J0</isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>
         <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>A vector connecting two lattice sites, where the lattice sites defines the periodic structure of a crystal.</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
         <skos:prefLabel xml:lang="en">LatticeVector</skos:prefLabel>
     </owl:Class>
@@ -353,8 +355,9 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_cd2cd0de_e0cc_4ef1_b27e_2e88db027bac"/>
         <EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>_cell_length_b</EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>
         <EMMO_ece80b49_c611_4626_965f_5beb93159c7e>https://www.iucr.org/__data/iucr/cifdic_html/1/cif_core.dic/Icell_length_.html</EMMO_ece80b49_c611_4626_965f_5beb93159c7e>
+        <isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>T0 L+1 M0 I0 Θ0 N0 J0</isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>
         <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>The length of lattice vectors `b`, where lattice vectors `a`, `b` and `c` defines the unit cell,</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
-        <skos:prefLabel xml:lang="en">LatticeConstantB</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">LatticeParameterB</skos:prefLabel>
     </owl:Class>
     
 
@@ -363,6 +366,7 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core</rdfs:comment>
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_7f5aafba_4707_4d92_878b_c760c41bd479">
         <rdfs:subClassOf rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_6b5e88c8_0d54_4a02_a9ff_6958f6013e0e"/>
+        <isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>T0 L+1 M0 I0 Θ0 N0 J0</isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>
         <skos:prefLabel xml:lang="en">LatticeVectorC</skos:prefLabel>
     </owl:Class>
     
@@ -372,6 +376,7 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core</rdfs:comment>
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_84ad9106_a72c_430c_992f_79078f5f4961">
         <rdfs:subClassOf rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_6b5e88c8_0d54_4a02_a9ff_6958f6013e0e"/>
+        <isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>T0 L+1 M0 I0 Θ0 N0 J0</isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>
         <skos:prefLabel xml:lang="en">LatticeVectorB</skos:prefLabel>
     </owl:Class>
     
@@ -383,8 +388,9 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://emmo.info/emmo/middle/isq#EMMO_cd2cd0de_e0cc_4ef1_b27e_2e88db027bac"/>
         <EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>_cell_length_c</EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>
         <EMMO_ece80b49_c611_4626_965f_5beb93159c7e>https://www.iucr.org/__data/iucr/cifdic_html/1/cif_core.dic/Icell_length_.html</EMMO_ece80b49_c611_4626_965f_5beb93159c7e>
+        <isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>T0 L+1 M0 I0 Θ0 N0 J0</isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>
         <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>The length of lattice vectors `c`, where lattice vectors `a`, `b` and `c` defines the unit cell,</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
-        <skos:prefLabel xml:lang="en">LatticeConstantC</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">LatticeParameterC</skos:prefLabel>
     </owl:Class>
     
 
@@ -418,10 +424,10 @@ The setting seems not to appear in the CIF core dictionary, but is included in I
         </rdfs:subClassOf>
         <EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>_atom_site_label</EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702>
         <EMMO_ece80b49_c611_4626_965f_5beb93159c7e>https://www.iucr.org/__data/iucr/cifdic_html/1/cif_core.dic/Iatom_site_label.html</EMMO_ece80b49_c611_4626_965f_5beb93159c7e>
-        <annotations:EMMO_21ae69b4_235e_479d_8dd8_4f756f694c1b xml:lang="en">ChemicalSpecies</annotations:EMMO_21ae69b4_235e_479d_8dd8_4f756f694c1b>
         <annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>A symbol that stands for a constituent.</annotations:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9>
         <annotations:EMMO_fe015383_afb3_44a6_ae86_043628697aa2>http://goldbook.iupac.org/terms/view/CT01038</annotations:EMMO_fe015383_afb3_44a6_ae86_043628697aa2>
         <rdfs:comment>A chemical species is a well defined set of one or more atoms/ions. The chemical species can be atom, molecule, ion, radical, and it has a chemical name and chemical formula. The chemical species are associated to the crystalline site in a structure. Note that two otherwise identical molecules with differing orientation in the unit cell will be considered two different species.</rdfs:comment>
+        <skos:altLabel xml:lang="en">ChemicalSpecies</skos:altLabel>
         <skos:prefLabel xml:lang="en">Species</skos:prefLabel>
     </owl:Class>
     
@@ -444,6 +450,7 @@ The setting seems not to appear in the CIF core dictionary, but is included in I
 
     <owl:Class rdf:about="http://emmo.info/crystallography/crystallography#EMMO_beda11ee_60dd_49a7_be39_8e951da0d67c">
         <rdfs:subClassOf rdf:resource="http://emmo.info/crystallography/crystallography#EMMO_6b5e88c8_0d54_4a02_a9ff_6958f6013e0e"/>
+        <isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>T0 L+1 M0 I0 Θ0 N0 J0</isq:EMMO_de178b12_5d35_4bca_8efa_a4193162571d>
         <skos:prefLabel xml:lang="en">LatticeVectorA</skos:prefLabel>
     </owl:Class>
     
@@ -668,5 +675,5 @@ References:
 
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.7.2018-12-02T02:23:35Z) https://github.com/owlcs/owlapi -->
 
