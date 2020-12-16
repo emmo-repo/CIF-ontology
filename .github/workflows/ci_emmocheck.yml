@@ -26,4 +26,4 @@ jobs:
 
     - name: Check EMMO
       run: |
-        #emmocheck --url-from-catalog --verbose crystallography.owl
+        emmocheck --url-from-catalog --skip test_quantity_dimension --verbose crystallography.owl
