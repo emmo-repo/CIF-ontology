@@ -12,7 +12,7 @@
 
 <http://emmo.info/crystallography/crystallography> rdf:type owl:Ontology ;
                                                     owl:versionIRI <http://emmo.info/crystallography/0.0.1/crystallography> ;
-                                                    owl:imports <file:///home/friisj/Private/prosjekter/EMMC/EMMO/.github/pages/versions/1.0.0-beta/_result_ontology.owl> ,
+                                                    owl:imports <http://emmo.info/emmo/1.0.0-beta/emmo-inferred> ,
                                                                 <http://emmo.info/emmo/from-chemistry> ;
                                                     dcterms:abstract """A toplevel crystallography ontology based on EMMO and the CIF core dictionary.
 
