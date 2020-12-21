@@ -41,34 +41,6 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core""" ;
                                            rdfs:subPropertyOf rdfs:seeAlso .
 
 
-###  http://emmo.info/emmo#EMMO_21ae69b4_235e_479d_8dd8_4f756f694c1b
-emmo:EMMO_21ae69b4_235e_479d_8dd8_4f756f694c1b rdf:type owl:AnnotationProperty .
-
-
-###  http://emmo.info/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9
-emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 rdf:type owl:AnnotationProperty .
-
-
-###  http://emmo.info/emmo#EMMO_b432d2d5_25f4_4165_99c5_5935a7763c1a
-emmo:EMMO_b432d2d5_25f4_4165_99c5_5935a7763c1a rdf:type owl:AnnotationProperty .
-
-
-###  http://emmo.info/emmo#EMMO_de178b12_5d35_4bca_8efa_a4193162571d
-emmo:EMMO_de178b12_5d35_4bca_8efa_a4193162571d rdf:type owl:AnnotationProperty .
-
-
-###  http://emmo.info/emmo#EMMO_fe015383_afb3_44a6_ae86_043628697aa2
-emmo:EMMO_fe015383_afb3_44a6_ae86_043628697aa2 rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/abstract
-dcterms:abstract rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/license
-dcterms:license rdf:type owl:AnnotationProperty .
-
-
 #################################################################
 #    Classes
 #################################################################
