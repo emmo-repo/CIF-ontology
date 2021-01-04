@@ -66,7 +66,6 @@ Attributions and credits
 - Jesper Friis, SINTEF
 - Francesca Lønstad Bleken, SINTEF
 - Casper Welzel Andersen, EPFL
-- Joana Francisco Morgado, Fraunhofer IWM
 
 ### Projects
 - Demystify ontologies - Internal project at [SINTEF](www.sintef.no)
@@ -75,7 +74,7 @@ Attributions and credits
   <img src="https://www.the-marketplace-project.eu/content/dam/iwm/the-marketplace-project/images/MARKETPLACE_LOGO_300dpi.png" width="120">
 - [BIG-MAP](https://www.big-map.eu/);
   Grant Agreement No: 957189
-  <img src="https://avatars1.githubusercontent.com/u/72801303?s=200&v=4" width="120">
+  <img src="https://avatars1.githubusercontent.com/u/72801303?s=200&v=4" height="50">
 
 
 License
