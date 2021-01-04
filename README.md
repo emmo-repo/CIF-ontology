@@ -27,28 +27,36 @@ compatibilies:
 
 | Imported Ontologies | Version           |
 | ------------------- | ----------------- |
-| EMMO                | 1.0.0-alpha2      |
+| emmo-inferred       | 1.0.0-beta        |
+
 
 
 Obtaining domain-crystallography
 --------------------------------
 
-This ontology build on EMMO-1.0.0-alpha2. The correct path to 
+This ontology build on EMMO-1.0.0-beta. The correct path to
 the inferred verion 'emmo-inferred' is specified in the catalog file, catalog-v001.xml.
 
 The domain ontology is obtained with:
 
     git clone git@github.com:emmo-repo/domain-crystallography.git
 
-When opening batteryInterface.owl in Protege, the correct version of emmo-inferred will
-be downloaded and imported.
+When opening
+[crystallography.owl](https://raw.githubusercontent.com/emmo-repo/domain-crystallography/master/crystallography.ttl)
+in Protege, the correct version of emmo-inferred will be downloaded
+and imported.
 
-In EMMO-python correct import is obatined with 
+In EMMO-python correct import is obatined with
 
-   get_ontology('crystallography.owl).load(url_from_catalog=True)
+```python
+from emmo import get_ontology
 
+# Loading crystallography from local repository
+cryst = get_ontology('/path/to/crystallography.ttl').load(url_from_catalog=True)
 
-
+# Loading crystallography from web
+cryst = get_ontology('https://raw.githubusercontent.com/emmo-repo/domain-crystallography/master/crystallography.ttl').load()
+```
 
 
 Attributions and credits
@@ -57,14 +65,17 @@ Attributions and credits
 ### Contributors
 - Jesper Friis, SINTEF
 - Francesca Lønstad Bleken, SINTEF
-- Joana Francisco Morgado, Fraunhofer IWM
 - Casper Welzel Andersen, EPFL
+- Joana Francisco Morgado, Fraunhofer IWM
 
 ### Projects
 - Demystify ontologies - Internal project at [SINTEF](www.sintef.no)
 - [MarketPlace](https://www.the-marketplace-project.eu/);
   Grant Agreement No: 760173
   <img src="https://www.the-marketplace-project.eu/content/dam/iwm/the-marketplace-project/images/MARKETPLACE_LOGO_300dpi.png" width="120">
+- [BIG-MAP](https://www.big-map.eu/);
+  Grant Agreement No: 957189
+  <img src="https://avatars1.githubusercontent.com/u/72801303?s=200&v=4" width="120">
 
 
 License
