@@ -2,7 +2,7 @@
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=false, version=2" prefer="public" xml:base="">
         <uri name="http://emmo.info/crystallography/0.0.1/crystallography" uri="./crystallography.ttl"/>
-        <uri name="http://emmo.info/emmo/1.0.0-beta/emmo-inferred" uri="https://emmo-repo.github.io/versions/1.0.0-beta/emmo-inferred.ttl"/>
-        <uri name="http://emmo.info/emmo/from-chemistry" uri="from-chemistry.ttl"/>
+        <uri name="http://emmo.info/emmo-inferred/1.0.0-beta" uri="https://emmo-repo.github.io/versions/1.0.0-beta/emmo-inferred.ttl"/>
+        <uri name="https://raw.githubusercontent.com/emmo-repo/domain-crystallography/master/from-chemistry.ttl" uri="from-chemistry.ttl"/>
     </group>
 </catalog>
