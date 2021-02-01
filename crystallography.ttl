@@ -45,6 +45,14 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core""" ;
 #    Classes
 #################################################################
 
+###  http://emmo.info/crystallography/crystallography#EMMO_0d184939_88c1_44a8_b8cb_d427d82132c6
+:EMMO_0d184939_88c1_44a8_b8cb_d427d82132c6 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_9ea27ed3_b22d_4350_8170_3040df81d2a7 ;
+                                           :EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702 "_space_group_symop_[]" ;
+                                           emmo:EMMO_70fe84ff_99b6_4206_a9fc_9a8931836d84 "Contains information about the symmetry operations of the space group."@en ;
+                                           skos:prefLabel "SpaceGroupSymopCategory"@en .
+
+
 ###  http://emmo.info/crystallography/crystallography#EMMO_203692d9_4bf0_45ae_b4eb_9dc02adae605
 :EMMO_203692d9_4bf0_45ae_b4eb_9dc02adae605 rdf:type owl:Class ;
                                            rdfs:subClassOf <http://emmo.info/emmo/from-chemistry#EMMO_9fa966c7_5231_409e_841f_b4c5fd33732a> ;
@@ -55,7 +63,7 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core""" ;
 
 ###  http://emmo.info/crystallography/crystallography#EMMO_216efd86_d095_49db_bc74_c9f808577940
 :EMMO_216efd86_d095_49db_bc74_c9f808577940 rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ,
+                                           rdfs:subClassOf :EMMO_348e8805_7161_4d47_a142_e7f62ee65a81 ,
                                                            emmo:EMMO_faab3f84_e475_4a46_af9c_7d249f0b9aef ,
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty emmo:EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0 ;
@@ -70,7 +78,7 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core""" ;
 
 ###  http://emmo.info/crystallography/crystallography#EMMO_290e4378_2cab_4d78_bc40_a08a84af4f76
 :EMMO_290e4378_2cab_4d78_bc40_a08a84af4f76 rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ,
+                                           rdfs:subClassOf :EMMO_91abd58e_3f92_4cdc_b165_565385e90b81 ,
                                                            emmo:EMMO_f3dd74c0_f480_49e8_9764_33b78638c235 ,
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty emmo:EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0 ;
@@ -82,9 +90,17 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core""" ;
                                            skos:prefLabel "LatticeParameterBeta"@en .
 
 
+###  http://emmo.info/crystallography/crystallography#EMMO_348e8805_7161_4d47_a142_e7f62ee65a81
+:EMMO_348e8805_7161_4d47_a142_e7f62ee65a81 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ;
+                                           :EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702 "_atom_site_[]" ;
+                                           emmo:EMMO_70fe84ff_99b6_4206_a9fc_9a8931836d84 "Data items in the ATOM_SITE category record details about the atom sites in a crystal structure, such as the positional coordinates, atomic displacement parameters, and magnetic moments and directions."@en ;
+                                           skos:prefLabel "AtomSiteCategory"@en .
+
+
 ###  http://emmo.info/crystallography/crystallography#EMMO_35e0d181_d10b_45b8_9f8b_c12a56ae45e6
 :EMMO_35e0d181_d10b_45b8_9f8b_c12a56ae45e6 rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ,
+                                           rdfs:subClassOf :EMMO_91abd58e_3f92_4cdc_b165_565385e90b81 ,
                                                            emmo:EMMO_cd2cd0de_e0cc_4ef1_b27e_2e88db027bac ,
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty emmo:EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0 ;
@@ -122,7 +138,7 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core""" ;
 
 ###  http://emmo.info/crystallography/crystallography#EMMO_4f586c18_897b_4568_94b8_3960592c1438
 :EMMO_4f586c18_897b_4568_94b8_3960592c1438 rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ,
+                                           rdfs:subClassOf :EMMO_91abd58e_3f92_4cdc_b165_565385e90b81 ,
                                                            emmo:EMMO_f3dd74c0_f480_49e8_9764_33b78638c235 ,
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty emmo:EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0 ;
@@ -248,7 +264,7 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core""" ;
 
 ###  http://emmo.info/crystallography/crystallography#EMMO_79c5bbf6_7429_44c6_a70d_0d3c461b6375
 :EMMO_79c5bbf6_7429_44c6_a70d_0d3c461b6375 rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ,
+                                           rdfs:subClassOf :EMMO_91abd58e_3f92_4cdc_b165_565385e90b81 ,
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
                                                              owl:someValuesFrom :EMMO_971a2a1d_d923_47ac_9315_2187e7594542
@@ -263,7 +279,6 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core""" ;
                                                              owl:qualifiedCardinality "6"^^xsd:nonNegativeInteger ;
                                                              owl:onClass :EMMO_e7aa6a92_c28d_457c_be2c_0ac16c8306c0
                                                            ] ;
-                                           :EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702 "_cell_[]" ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A periodic unit in a crystal structure. It is spanned by three lattice vectors." ;
                                            rdfs:comment "A unit cell is ca be described by either specifying the three lattice vectors that it is spanned by, or by 6 the lattice parameters (the length of and angles between the 3 lattice vectors)."@en ;
                                            skos:prefLabel "UnitCell"@en .
@@ -271,7 +286,7 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core""" ;
 
 ###  http://emmo.info/crystallography/crystallography#EMMO_7d6d49ac_18d2_4c98_b16d_621877272989
 :EMMO_7d6d49ac_18d2_4c98_b16d_621877272989 rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ,
+                                           rdfs:subClassOf :EMMO_91abd58e_3f92_4cdc_b165_565385e90b81 ,
                                                            emmo:EMMO_cd2cd0de_e0cc_4ef1_b27e_2e88db027bac ,
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty emmo:EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0 ;
@@ -282,6 +297,14 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core""" ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The length of lattice vectors `b`, where lattice vectors `a`, `b` and `c` defines the unit cell," ;
                                            emmo:EMMO_de178b12_5d35_4bca_8efa_a4193162571d "T0 L+1 M0 I0 Θ0 N0 J0" ;
                                            skos:prefLabel "LatticeParameterB"@en .
+
+
+###  http://emmo.info/crystallography/crystallography#EMMO_80cd7548_2838_4b01_8e3b_36060cf06463
+:EMMO_80cd7548_2838_4b01_8e3b_36060cf06463 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ;
+                                           :EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702 "_atom_type_[]" ;
+                                           emmo:EMMO_70fe84ff_99b6_4206_a9fc_9a8931836d84 "Data items in the ATOM_TYPE category record details about properties of the atoms that occupy the atom sites, such as the atomic scattering factors."@en ;
+                                           skos:prefLabel "AtomTypeCategory"@en .
 
 
 ###  http://emmo.info/crystallography/crystallography#EMMO_8411829d_faba_479a_8d37_d961dc41c9ce
@@ -295,9 +318,17 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core""" ;
                                            skos:prefLabel "Shape3x3Matrix"@en .
 
 
+###  http://emmo.info/crystallography/crystallography#EMMO_91abd58e_3f92_4cdc_b165_565385e90b81
+:EMMO_91abd58e_3f92_4cdc_b165_565385e90b81 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ;
+                                           :EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702 "_cell_[]" ;
+                                           emmo:EMMO_70fe84ff_99b6_4206_a9fc_9a8931836d84 "Data items in the CELL category record details about the crystallographic cell parameters and their measurement."@en ;
+                                           skos:prefLabel "CellCategory"@en .
+
+
 ###  http://emmo.info/crystallography/crystallography#EMMO_931eb95d_d8ee_41c4_93ae_3d22df839bce
 :EMMO_931eb95d_d8ee_41c4_93ae_3d22df839bce rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ,
+                                           rdfs:subClassOf :EMMO_0d184939_88c1_44a8_b8cb_d427d82132c6 ,
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty [ owl:inverseOf emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204
                                                                             ] ;
@@ -317,7 +348,7 @@ That is to say, it is necessary to list explicitly all the symmetry operations r
 
 ###  http://emmo.info/crystallography/crystallography#EMMO_971a2a1d_d923_47ac_9315_2187e7594542
 :EMMO_971a2a1d_d923_47ac_9315_2187e7594542 rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ,
+                                           rdfs:subClassOf :EMMO_91abd58e_3f92_4cdc_b165_565385e90b81 ,
                                                            emmo:EMMO_f1a51559_aa3d_43a0_9327_918039f0dfed ;
                                            :EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702 "_cell_volume" ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Volume of the unit cell."@en ;
@@ -337,7 +368,7 @@ That is to say, it is necessary to list explicitly all the symmetry operations r
 
 ###  http://emmo.info/crystallography/crystallography#EMMO_987e01f4_da01_4e15_9620_e3c814a48e64
 :EMMO_987e01f4_da01_4e15_9620_e3c814a48e64 rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ,
+                                           rdfs:subClassOf :EMMO_91abd58e_3f92_4cdc_b165_565385e90b81 ,
                                                            emmo:EMMO_cd2cd0de_e0cc_4ef1_b27e_2e88db027bac ,
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty emmo:EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0 ;
@@ -370,15 +401,28 @@ The setting number does not appear in the CIF core dictionary, but is included i
                                            skos:prefLabel "SpacegroupSettingNumber"@en .
 
 
+###  http://emmo.info/crystallography/crystallography#EMMO_9ea27ed3_b22d_4350_8170_3040df81d2a7
+:EMMO_9ea27ed3_b22d_4350_8170_3040df81d2a7 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ;
+                                           :EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702 "_space_group_[]" ;
+                                           emmo:EMMO_70fe84ff_99b6_4206_a9fc_9a8931836d84 """Contains all the data items that refer to the space group as a whole, such as its name or crystal system. They may be looped, for example, in a list of space groups and their properties.
+
+Only a subset of the SPACE_GROUP category items appear in the core dictionary.  The remainder are found in the symmetry CIF dictionary.
+
+Space-group types are identified by their number as given in International Tables for Crystallography Vol. A. Specific settings of the space groups can be identified either by their Hall symbol or by specifying their symmetry operations.
+
+The commonly used Hermann-Mauguin symbol determines the space-group type uniquely but several different Hermann-Mauguin symbols may refer to the same space-group type. A Hermann-Mauguin symbol contains information on the choice of the basis, but not on the choice of origin.  Different formats for the Hermann-Mauguin symbol are found in the symmetry CIF dictionary."""@en ;
+                                           skos:prefLabel "SpaceGroupCategory"@en .
+
+
 ###  http://emmo.info/crystallography/crystallography#EMMO_a83504f1_b203_40f9_9379_23f0c0b61be0
 :EMMO_a83504f1_b203_40f9_9379_23f0c0b61be0 rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_6028825a_008a_4163_96fb_0af1bdc15695 ,
+                                           rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ,
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty [ owl:inverseOf emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204
                                                                             ] ;
                                                              owl:someValuesFrom :EMMO_203692d9_4bf0_45ae_b4eb_9dc02adae605
                                                            ] ;
-                                           :EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702 "_atom_site_label" ;
                                            :EMMO_ece80b49_c611_4626_965f_5beb93159c7e "https://www.iucr.org/__data/iucr/cifdic_html/1/cif_core.dic/Iatom_site_label.html" ;
                                            emmo:EMMO_21ae69b4_235e_479d_8dd8_4f756f694c1b "ChemicalSpecies"@en ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A symbol that stands for a constituent." ;
@@ -389,7 +433,7 @@ The setting number does not appear in the CIF core dictionary, but is included i
 
 ###  http://emmo.info/crystallography/crystallography#EMMO_afd5401b_0b6d_4c4d_8559_e84473cc08ec
 :EMMO_afd5401b_0b6d_4c4d_8559_e84473cc08ec rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_6028825a_008a_4163_96fb_0af1bdc15695 ;
+                                           rdfs:subClassOf :EMMO_348e8805_7161_4d47_a142_e7f62ee65a81 ;
                                            :EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702 "_atom_site_label" ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A unique identifier for a particular site in the crystal."@en ;
                                            skos:prefLabel "SiteLabel"@en .
@@ -397,7 +441,7 @@ The setting number does not appear in the CIF core dictionary, but is included i
 
 ###  http://emmo.info/crystallography/crystallography#EMMO_b2b8e17f_c6d0_4bdf_94f8_ebf7870df669
 :EMMO_b2b8e17f_c6d0_4bdf_94f8_ebf7870df669 rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ,
+                                           rdfs:subClassOf :EMMO_348e8805_7161_4d47_a142_e7f62ee65a81 ,
                                                            emmo:EMMO_faab3f84_e475_4a46_af9c_7d249f0b9aef ,
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty emmo:EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0 ;
@@ -436,6 +480,14 @@ The setting number does not appear in the CIF core dictionary, but is included i
                                                            ] ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A crystal system with 1 fourfold axes of rotation."@en ;
                                            skos:prefLabel "Tetragonal"@en .
+
+
+###  http://emmo.info/crystallography/crystallography#EMMO_bbe75171_ca10_4b03_9b55_e18771231313
+:EMMO_bbe75171_ca10_4b03_9b55_e18771231313 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ;
+                                           :EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702 "_atom_sites_[]" ;
+                                           emmo:EMMO_70fe84ff_99b6_4206_a9fc_9a8931836d84 "Data items in the ATOM_SITES category record details about the crystallographic cell and cell transformations, which are common to all atom sites."@en ;
+                                           skos:prefLabel "AtomSitesCategory"@en .
 
 
 ###  http://emmo.info/crystallography/crystallography#EMMO_bf4315d5_0a42_44c1_917e_9057789ea798
@@ -505,7 +557,7 @@ Mathematically it is described by a rotation followed by a translation."""@en ;
 
 ###  http://emmo.info/crystallography/crystallography#EMMO_d6ea1aa1_fe6e_4fbb_bfad_e848fb02a969
 :EMMO_d6ea1aa1_fe6e_4fbb_bfad_e848fb02a969 rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ,
+                                           rdfs:subClassOf :EMMO_91abd58e_3f92_4cdc_b165_565385e90b81 ,
                                                            emmo:EMMO_f3dd74c0_f480_49e8_9764_33b78638c235 ,
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty emmo:EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0 ;
@@ -519,7 +571,7 @@ Mathematically it is described by a rotation followed by a translation."""@en ;
 
 ###  http://emmo.info/crystallography/crystallography#EMMO_e2a89e11_0cab_40c6_9e0b_a391585255c6
 :EMMO_e2a89e11_0cab_40c6_9e0b_a391585255c6 rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ,
+                                           rdfs:subClassOf :EMMO_348e8805_7161_4d47_a142_e7f62ee65a81 ,
                                                            emmo:EMMO_faab3f84_e475_4a46_af9c_7d249f0b9aef ,
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty emmo:EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0 ;
@@ -546,6 +598,7 @@ Mathematically it is described by a rotation followed by a translation."""@en ;
 ###  http://emmo.info/crystallography/crystallography#EMMO_e3b30772_419b_49f4_a401_7f536bd4c9e6
 :EMMO_e3b30772_419b_49f4_a401_7f536bd4c9e6 rdf:type owl:Class ;
                                            rdfs:subClassOf :EMMO_6028825a_008a_4163_96fb_0af1bdc15695 ,
+                                                           :EMMO_9ea27ed3_b22d_4350_8170_3040df81d2a7 ,
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty [ owl:inverseOf emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204
                                                                             ] ;
@@ -608,7 +661,6 @@ References:
                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                              owl:onClass :EMMO_f12310ea_4957_49cb_8ff0_1d13849de166
                                                            ] ;
-                                           :EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702 "_atom_site_[]" ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "A site within a unit cell related to the position of a species." ;
                                            skos:prefLabel "Site"@en .
 
@@ -640,7 +692,6 @@ References:
                                                              owl:onProperty emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204 ;
                                                              owl:someValuesFrom :EMMO_fd642120_d36d_4e3b_bdf2_2cd9acb4995c
                                                            ] ;
-                                           :EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702 "_space_group_[]" ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "The symmetry group that represents the symmetry of a crystal, in terms of the set of all its symmetry operations."@en ;
                                            rdfs:comment """A spacegroup is commonly identified by its number as given in International Tables for Crystallography Vol. A. Specific settings of the space groups can be identified either by their Hall symbol or by specifying their symmetry operations.
 
@@ -667,6 +718,7 @@ The commonly used Hermann-Mauguin symbol determines the space-group type uniquel
 ###  http://emmo.info/crystallography/crystallography#EMMO_f3295691_a01e_4454_a40e_35903ad93485
 :EMMO_f3295691_a01e_4454_a40e_35903ad93485 rdf:type owl:Class ;
                                            rdfs:subClassOf :EMMO_6028825a_008a_4163_96fb_0af1bdc15695 ,
+                                                           :EMMO_9ea27ed3_b22d_4350_8170_3040df81d2a7 ,
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty [ owl:inverseOf emmo:EMMO_e1097637_70d2_4895_973f_2396f04fa204
                                                                             ] ;
@@ -689,7 +741,7 @@ The commonly used Hermann-Mauguin symbol determines the space-group type uniquel
 
 ###  http://emmo.info/crystallography/crystallography#EMMO_fd642120_d36d_4e3b_bdf2_2cd9acb4995c
 :EMMO_fd642120_d36d_4e3b_bdf2_2cd9acb4995c rdf:type owl:Class ;
-                                           rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ;
+                                           rdfs:subClassOf :EMMO_9ea27ed3_b22d_4350_8170_3040df81d2a7 ;
                                            owl:disjointUnionOf ( :EMMO_43b8c657_3fbf_4613_9fb3_0f3a377711a7
                                                                  :EMMO_6d9fe189_71fb_4af7_a991_a028bb90f18b
                                                                  :EMMO_97fae38b_87db_4cc2_9b06_87df1ec09c84
@@ -718,7 +770,7 @@ The commonly used Hermann-Mauguin symbol determines the space-group type uniquel
 [ owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger
  ] .
 
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+[ owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
@@ -748,7 +800,7 @@ The commonly used Hermann-Mauguin symbol determines the space-group type uniquel
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
-[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+[ owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
