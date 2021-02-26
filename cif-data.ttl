@@ -29,32 +29,32 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
 ###  http://emmo.info/crystallography/cif-data#EMMO_171dc3c0_b34f_49eb_a47d_9672cd208739
 :EMMO_171dc3c0_b34f_49eb_a47d_9672cd208739 rdf:type owl:Class ;
                                            rdfs:subClassOf :EMMO_33f1a30c_e4ab_4b48_85f7_e19cc94bd048 ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "null"@da .
+                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "null"@en .
 
 
 ###  http://emmo.info/crystallography/cif-data#EMMO_338c4590_9400_4dc0_a0e1_1f0ca30b312d
 :EMMO_338c4590_9400_4dc0_a0e1_1f0ca30b312d rdf:type owl:Class ;
                                            rdfs:subClassOf :EMMO_e2b9c4b5_2bd5_4908_938c_93439408e301 ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "Category"@da .
+                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "Category"@en .
 
 
 ###  http://emmo.info/crystallography/cif-data#EMMO_33f1a30c_e4ab_4b48_85f7_e19cc94bd048
 :EMMO_33f1a30c_e4ab_4b48_85f7_e19cc94bd048 rdf:type owl:Class ;
                                            rdfs:subClassOf :EMMO_e2b9c4b5_2bd5_4908_938c_93439408e301 ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "_type"@da .
+                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "_type"@en .
 
 
 ###  http://emmo.info/crystallography/cif-data#EMMO_507d4604_be6e_4257_bea1_d463c5d95f04
 :EMMO_507d4604_be6e_4257_bea1_d463c5d95f04 rdf:type owl:Class ;
                                            rdfs:subClassOf :EMMO_33f1a30c_e4ab_4b48_85f7_e19cc94bd048 ,
                                                            <http://emmo.info/emmo#EMMO_21f56795_ee72_4858_b571_11cfaa59c1a8> ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "numb"@da .
+                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "numb"@en .
 
 
 ###  http://emmo.info/crystallography/cif-data#EMMO_64315d26_6acf_4fd4_a18f_863ae62b4be8
 :EMMO_64315d26_6acf_4fd4_a18f_863ae62b4be8 rdf:type owl:Class ;
                                            rdfs:subClassOf :EMMO_338c4590_9400_4dc0_a0e1_1f0ca30b312d ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "SPACE_GROUP_SYMOP"@da .
+                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "SPACE_GROUP_SYMOP"@en .
 
 
 ###  http://emmo.info/crystallography/cif-data#EMMO_685319a1_41a6_48fb_b95e_e0a2fff5f950
@@ -64,21 +64,21 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
                                                              owl:onProperty <http://emmo.info/emmo#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
                                                              owl:someValuesFrom :EMMO_8a7292de_4dab_46e2_9164_fb94f27e7090
                                                            ] ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "loop_"@da .
+                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "loop_"@en .
 
 
 ###  http://emmo.info/crystallography/cif-data#EMMO_69e2bc25_4d82_4944_96b4_8d367deb2f88
 :EMMO_69e2bc25_4d82_4944_96b4_8d367deb2f88 rdf:type owl:Class ;
                                            rdfs:subClassOf :EMMO_507d4604_be6e_4257_bea1_d463c5d95f04 ,
                                                            :EMMO_64315d26_6acf_4fd4_a18f_863ae62b4be8 ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "_space_group_symop_sg_id"@da .
+                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "_space_group_symop_sg_id"@en .
 
 
 ###  http://emmo.info/crystallography/cif-data#EMMO_6b78aa79_73dc_4962_a718_0b2a769f4fe0
 :EMMO_6b78aa79_73dc_4962_a718_0b2a769f4fe0 rdf:type owl:Class ;
                                            rdfs:subClassOf :EMMO_64315d26_6acf_4fd4_a18f_863ae62b4be8 ,
                                                            :EMMO_9c1ff44b_2a27_4d8c_b80a_213b6c120fb3 ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "_space_group_symop_operation_xyz"@da .
+                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "_space_group_symop_operation_xyz"@en .
 
 
 ###  http://emmo.info/crystallography/cif-data#EMMO_8008aa1b_c21a_4822_aa23_aa939c5379ad
@@ -99,20 +99,20 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
                                                              owl:someValuesFrom :EMMO_f4688aae_db82_4f7c_97e2_d38aaaccb783
                                                            ] ;
                                            <http://emmo.info/crystallography/crystallography#EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702> "_space_group_symop_[]" ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "_space_group_symop_[]"@da .
+                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "_space_group_symop_[]"@en .
 
 
 ###  http://emmo.info/crystallography/cif-data#EMMO_8a7292de_4dab_46e2_9164_fb94f27e7090
 :EMMO_8a7292de_4dab_46e2_9164_fb94f27e7090 rdf:type owl:Class ;
                                            rdfs:subClassOf :EMMO_e2b9c4b5_2bd5_4908_938c_93439408e301 ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "ROW"@da .
+                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "ROW"@en .
 
 
 ###  http://emmo.info/crystallography/cif-data#EMMO_9c1ff44b_2a27_4d8c_b80a_213b6c120fb3
 :EMMO_9c1ff44b_2a27_4d8c_b80a_213b6c120fb3 rdf:type owl:Class ;
                                            rdfs:subClassOf :EMMO_33f1a30c_e4ab_4b48_85f7_e19cc94bd048 ,
                                                            <http://emmo.info/emmo#EMMO_50ea1ec5_f157_41b0_b46b_a9032f17ca10> ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "char"@da .
+                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "char"@en .
 
 
 ###  http://emmo.info/crystallography/cif-data#EMMO_9cf072d2_cd36_4815_ae62_f48408809230
@@ -122,20 +122,20 @@ owl:maxQualifiedCardinality rdf:type owl:AnnotationProperty .
                                                              owl:onProperty <http://emmo.info/emmo#EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe> ;
                                                              owl:someValuesFrom :EMMO_685319a1_41a6_48fb_b95e_e0a2fff5f950
                                                            ] ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "CIFData"@da .
+                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "CIFData"@en .
 
 
 ###  http://emmo.info/crystallography/cif-data#EMMO_e2b9c4b5_2bd5_4908_938c_93439408e301
 :EMMO_e2b9c4b5_2bd5_4908_938c_93439408e301 rdf:type owl:Class ;
                                            rdfs:subClassOf <http://emmo.info/crystallography/crystallography#EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06> ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "CIF"@da .
+                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "CIF"@en .
 
 
 ###  http://emmo.info/crystallography/cif-data#EMMO_f4688aae_db82_4f7c_97e2_d38aaaccb783
 :EMMO_f4688aae_db82_4f7c_97e2_d38aaaccb783 rdf:type owl:Class ;
                                            rdfs:subClassOf :EMMO_64315d26_6acf_4fd4_a18f_863ae62b4be8 ,
                                                            :EMMO_9c1ff44b_2a27_4d8c_b80a_213b6c120fb3 ;
-                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "_space_group_symop_id"@da .
+                                           <http://www.w3.org/2004/02/skos/core#prefLabel> "_space_group_symop_id"@en .
 
 
 [ owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger
