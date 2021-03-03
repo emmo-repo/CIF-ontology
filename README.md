@@ -1,10 +1,10 @@
 [![CI tests](https://github.com/emmo-repo/domain-crystallography/workflows/CI%20tests/badge.svg)](https://github.com/emmo-repo/domain-crystallography/actions/)
 
 
-domain-crystallography
-======================
-A crystallography domain ontology based on [EMMO][1] and the [CIF
-core][2] dictionary. It is implemented as a formal language.
+Crystallography domain ontology
+===============================
+A crystallography domain ontology based on [EMMO][1] and the [CIF core][2] dictionary. 
+It is implemented as a formal language.
 
 
 Status
@@ -13,8 +13,7 @@ Status
 - [X] accepted, under development
 - [ ] official
 
-This domain ontology is work-in-progress (WIP), it is in the process
-of being accepted as a task group by the EMMC.
+This domain ontology is work-in-progress (WIP), it is in the process of being accepted as a task group by the EMMC.
 
 * Application submitted: 15 June 2020
 * Application accepted on: TBD
