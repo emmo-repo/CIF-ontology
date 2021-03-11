@@ -56,10 +56,10 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core""" ;
 ###  http://emmo.info/crystallography/crystallography#EMMO_216efd86_d095_49db_bc74_c9f808577940
 :EMMO_216efd86_d095_49db_bc74_c9f808577940 rdf:type owl:Class ;
                                            rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ,
-                                                           emmo:EMMO_faab3f84_e475_4a46_af9c_7d249f0b9aef ,
+                                                           emmo:EMMO_18d180e4_5e3e_42f7_820c_e08951223486 ,
                                                            [ rdf:type owl:Restriction ;
-                                                             owl:onProperty emmo:EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0 ;
-                                                             owl:someValuesFrom emmo:EMMO_18d180e4_5e3e_42f7_820c_e08951223486
+                                                             owl:onProperty emmo:EMMO_52d08d7d_e9e4_43e5_8508_d353e7e3a23a ;
+                                                             owl:someValuesFrom :EMMO_e2a89e11_0cab_40c6_9e0b_a391585255c6
                                                            ] ;
                                            :EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702 "_atom_site_fract_y" ;
                                            :EMMO_ece80b49_c611_4626_965f_5beb93159c7e "https://www.iucr.org/__data/iucr/cifdic_html/1/cif_core.dic/Iatom_site_fract_.html" ;
@@ -295,6 +295,29 @@ See https://www.iucr.org/resources/cif/dictionaries/cif_core""" ;
                                            skos:prefLabel "Shape3x3Matrix"@en .
 
 
+###  http://emmo.info/crystallography/crystallography#EMMO_8e25efeb_90cb_4392_aff2_0987687724b4
+:EMMO_8e25efeb_90cb_4392_aff2_0987687724b4 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ,
+                                                           emmo:EMMO_2ff07b07_c447_490f_903a_f6a72a12d7bf ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty emmo:EMMO_2a9fcd79_bc67_4b1a_8e64_9dfe505a0007 ;
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass :EMMO_b2b8e17f_c6d0_4bdf_94f8_ebf7870df669
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty emmo:EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe ;
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass :EMMO_216efd86_d095_49db_bc74_c9f808577940
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty emmo:EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe ;
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass :EMMO_e2a89e11_0cab_40c6_9e0b_a391585255c6
+                                                           ] ;
+                                           emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Three real numbers corresponding to fractional positions along the lattice vectors."@en ;
+                                           skos:prefLabel "FractionalPositionVector"@en .
+
+
 ###  http://emmo.info/crystallography/crystallography#EMMO_931eb95d_d8ee_41c4_93ae_3d22df839bce
 :EMMO_931eb95d_d8ee_41c4_93ae_3d22df839bce rdf:type owl:Class ;
                                            rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ,
@@ -398,10 +421,10 @@ The setting number does not appear in the CIF core dictionary, but is included i
 ###  http://emmo.info/crystallography/crystallography#EMMO_b2b8e17f_c6d0_4bdf_94f8_ebf7870df669
 :EMMO_b2b8e17f_c6d0_4bdf_94f8_ebf7870df669 rdf:type owl:Class ;
                                            rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ,
-                                                           emmo:EMMO_faab3f84_e475_4a46_af9c_7d249f0b9aef ,
+                                                           emmo:EMMO_18d180e4_5e3e_42f7_820c_e08951223486 ,
                                                            [ rdf:type owl:Restriction ;
-                                                             owl:onProperty emmo:EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0 ;
-                                                             owl:someValuesFrom emmo:EMMO_18d180e4_5e3e_42f7_820c_e08951223486
+                                                             owl:onProperty emmo:EMMO_52d08d7d_e9e4_43e5_8508_d353e7e3a23a ;
+                                                             owl:someValuesFrom :EMMO_216efd86_d095_49db_bc74_c9f808577940
                                                            ] ;
                                            :EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702 "_atom_site_fract_x" ;
                                            :EMMO_ece80b49_c611_4626_965f_5beb93159c7e "https://www.iucr.org/__data/iucr/cifdic_html/1/cif_core.dic/Iatom_site_fract_.html" ;
@@ -470,17 +493,17 @@ Mathematically it is described by a rotation followed by a translation."""@en ;
                                            rdfs:subClassOf emmo:EMMO_faab3f84_e475_4a46_af9c_7d249f0b9aef ,
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty emmo:EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0 ;
-                                                             owl:someValuesFrom emmo:EMMO_2ff07b07_c447_490f_903a_f6a72a12d7bf
+                                                             owl:someValuesFrom :EMMO_8e25efeb_90cb_4392_aff2_0987687724b4
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty emmo:EMMO_2a9fcd79_bc67_4b1a_8e64_9dfe505a0007 ;
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass :EMMO_b2b8e17f_c6d0_4bdf_94f8_ebf7870df669
                                                            ] ,
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty emmo:EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe ;
                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                              owl:onClass :EMMO_216efd86_d095_49db_bc74_c9f808577940
-                                                           ] ,
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty emmo:EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe ;
-                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                             owl:onClass :EMMO_b2b8e17f_c6d0_4bdf_94f8_ebf7870df669
                                                            ] ,
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty emmo:EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe ;
@@ -520,11 +543,7 @@ Mathematically it is described by a rotation followed by a translation."""@en ;
 ###  http://emmo.info/crystallography/crystallography#EMMO_e2a89e11_0cab_40c6_9e0b_a391585255c6
 :EMMO_e2a89e11_0cab_40c6_9e0b_a391585255c6 rdf:type owl:Class ;
                                            rdfs:subClassOf :EMMO_78a3d6f9_0bbd_4b44_a9a9_baf3df276a06 ,
-                                                           emmo:EMMO_faab3f84_e475_4a46_af9c_7d249f0b9aef ,
-                                                           [ rdf:type owl:Restriction ;
-                                                             owl:onProperty emmo:EMMO_8ef3cd6d_ae58_4a8d_9fc0_ad8f49015cd0 ;
-                                                             owl:someValuesFrom emmo:EMMO_18d180e4_5e3e_42f7_820c_e08951223486
-                                                           ] ;
+                                                           emmo:EMMO_18d180e4_5e3e_42f7_820c_e08951223486 ;
                                            :EMMO_eb6c14cd_f958_489a_8f1a_e9de7c056702 "_atom_site_fract_z" ;
                                            :EMMO_ece80b49_c611_4626_965f_5beb93159c7e "https://www.iucr.org/__data/iucr/cifdic_html/1/cif_core.dic/Iatom_site_fract_.html" ;
                                            emmo:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 "Fractional position of a site along the c direction." ;
@@ -715,9 +734,6 @@ The commonly used Hermann-Mauguin symbol determines the space-group type uniquel
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
 ] .
 
-[ owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger
- ] .
-
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
  ] .
 
@@ -752,6 +768,9 @@ The commonly used Hermann-Mauguin symbol determines the space-group type uniquel
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
