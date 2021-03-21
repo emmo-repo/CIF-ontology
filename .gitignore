@@ -1,5 +1,9 @@
 *~
 old
 
+ddl.dic
 cif_core.dic
+templ_attr.cif
+templ_enum.cif
+
 cif_core.ttl

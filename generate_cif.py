@@ -86,6 +86,8 @@ class Generator:
         """Add data item."""
         name = item['_definition.id']
         descr = item.get('_description.text')
+        units = item.get('_units.code')
+        aliases = item.get('_alias.definition_id')
         category_name = item['_name.category_id'].upper()
         row_name = '_%s_ROW' % item['_name.category_id']
         if category_name in self.onto:
@@ -98,12 +100,15 @@ class Generator:
                 else:
                     category.disjoint_unions.append([e])
                 e.prefLabel.append(name.lstrip('_'))
+                if aliases:
+                    e.altLabel.extend(aliases)
                 if descr:
                     e.comment.append(textwrap.dedent(descr))
+                if units:
+                    e._unit.append(units)
                 if row_name in self.onto:
                     row = self.onto[row_name]
                     row.is_a.append(self.top.hasSpatialDirectPart.max(1, e))
-
                 else:
                     print('** no row:', name)
         else:
@@ -111,11 +116,12 @@ class Generator:
 
 
 def main():
-    # Download the CIF core dictionary to current directory
-    if not os.path.exists('cif_core.dic'):
-        urllib.request.urlretrieve(
-            'https://raw.githubusercontent.com/COMCIFS/cif_core/master/'
-            'cif_core.dic', 'cif_core.dic')
+    # Download the CIF dictionaries to current directory
+    baseurl = 'https://raw.githubusercontent.com/COMCIFS/cif_core/master/'
+    for dic in 'ddl.dic', 'cif_core.dic', 'templ_attr.cif', 'templ_enum.cif':
+        if not os.path.exists(dic):
+            print('downloading', dic)
+            urllib.request.urlretrieve(baseurl + dic, dic)
 
     gen = Generator(dicfile='cif_core.dic',
                     base_iri='http://emmo.info/crystallography/cif_core#')
@@ -131,6 +137,16 @@ def main():
 
     onto.save('cif_core.ttl', overwrite=True)
 
+    return gen  # XXX - just for debugging
+
 
 if __name__ == '__main__':
-    main()
+    #main()
+
+    # for debugging and testing...
+    self = gen = main()
+    top = self.top
+    onto = self.onto
+    items = self.cf.get_children('core_dic')
+    sid = items['space_group_symop.id']
+    s = items['SPACE_GROUP_SYMOP']
