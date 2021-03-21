@@ -11,16 +11,19 @@ from CifFile import ReadCif
 
 
 class Generator:
-    """Class for generating CIF ontology from a CIF dictionary."""
-    def __init__(self, dicfile, output, cif_top='cif_top.ttl',
-                 iri='http://emmo.info/crystallography/cif_core#',
-                 version=None, version_iri=None):
-        self.cf = ReadCif(dicfile)
-        self.output = output
-        self.cif_top = cif_top
-        self.version = version
-        self.version_iri = version_iri
+    """Class for generating CIF ontology from a CIF dictionary.
 
+    Parameters:
+    dicfile : string
+        File name of CIF dictionary to generate an ontology for.
+    base_iri : string
+        Base IRI of the generated ontology.
+    cif_top : string
+        URI or file name of the cif_top ontology that will be imported.
+    """
+    def __init__(self, dicfile, base_iri, cif_top='cif_top.ttl'):
+        self.cf = ReadCif(dicfile)
+        self.cif_top = cif_top
         self.categories = set()
 
         # Load cif_top ontology
@@ -29,20 +32,23 @@ class Generator:
         self.top.sync_python_names()
 
         # Create new ontology
-        self.onto = self.world.get_ontology(iri)
+        self.onto = self.world.get_ontology(base_iri)
         self.onto.imported_ontologies.append(self.top)
 
-    def generate(self, dicts=None):
-        """Generate ontology."""
-        if dicts is None:
-            dicts = self.cf.keys()
-        for dicname in dicts:
+    def generate(self, dics=None):
+        """Generate ontology for the given sequence of CIF dictionary names.
+        By default the dictionaries are inferred from the `dicfile`."""
+        if dics is None:
+            dics = self.cf.keys()
+        for dicname in dics:
             self._generate_dic(dicname)
         return self.onto
 
     def _generate_dic(self, dicname):
         """Generate ontology for dictionary `name`."""
-        # Add categories
+        # Add categories first so they are available when we add data items.
+        # A category seems to be characterised by having a _definition.scope
+        # attribute.
         for item in self.cf.get_children(dicname):
             if '_definition.scope' in item:
                 self._add_category(item)
@@ -111,7 +117,8 @@ def main():
             'https://raw.githubusercontent.com/COMCIFS/cif_core/master/'
             'cif_core.dic', 'cif_core.dic')
 
-    gen = Generator(dicfile='cif_core.dic', output='cif_core.ttl')
+    gen = Generator(dicfile='cif_core.dic',
+                    base_iri='http://emmo.info/crystallography/cif_core#')
     onto = gen.generate()
 
     # Annotate ontology
