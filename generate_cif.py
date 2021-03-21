@@ -7,7 +7,15 @@ import textwrap
 import urllib.request
 
 from emmo import World
+import owlready2
+from owlready2 import locstr
+
 from CifFile import ReadCif
+
+
+def en(s):
+    """Returns `s` converted to a localised string in english."""
+    return locstr(s, lang='en')
 
 
 class Generator:
@@ -70,13 +78,13 @@ class Generator:
         with self.onto:
             if item.get('_definition.class') in ('Loop', 'Set'):
                 table = types.new_class(lname + '_TABLE', (self.top.TABLE, ))
-                table.prefLabel.append(table.name.lstrip('_'))
+                table.prefLabel.append(en(table.name.lstrip('_')))
                 row = types.new_class(lname + '_ROW', (self.top.ROW, ))
-                row.prefLabel.append(row.name.lstrip('_'))
+                row.prefLabel.append(en(row.name.lstrip('_')))
                 cat = types.new_class(name, (self.top.CATEGORY, ))
-                cat.prefLabel.append(cat.name.lstrip('_'))
+                cat.prefLabel.append(en(cat.name.lstrip('_')))
                 if descr:
-                    cat.comment.append(textwrap.dedent(descr))
+                    cat.comment.append(en(textwrap.dedent(descr)))
                 table.is_a.append(self.top.hasSpatialDirectPart.some(row))
                 table.is_a.append(self.top.hasSpatialPart.only(cat))
             else:
@@ -99,13 +107,23 @@ class Generator:
                     category.disjoint_unions[0].append(e)
                 else:
                     category.disjoint_unions.append([e])
-                e.prefLabel.append(name.lstrip('_'))
+                e.prefLabel.append(en(name.lstrip('_')))
+
+                # Hmm, _name is already used internally by owlready2.Ontology
+                # so `e._name.append(name)` won't work.
+                # We have to add the tripple the hard way...
+                o, d = owlready2.to_literal(name)  # not localised
+                self.onto._set_data_triple_spod(
+                    s=e.storid,
+                    p=self.onto.world._props['_name'].storid,
+                    o=o, d=d)
+
                 if aliases:
-                    e.altLabel.extend(aliases)
+                    e.altLabel.extend(en(a) for a in aliases)
                 if descr:
-                    e.comment.append(textwrap.dedent(descr))
+                    e.comment.append(en(textwrap.dedent(descr)))
                 if units:
-                    e._unit.append(units)
+                    e._unit.append(units)  # not localised
                 if row_name in self.onto:
                     row = self.onto[row_name]
                     row.is_a.append(self.top.hasSpatialDirectPart.max(1, e))
