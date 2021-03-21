@@ -142,7 +142,7 @@ def main():
             urllib.request.urlretrieve(baseurl + dic, dic)
 
     gen = Generator(dicfile='cif_core.dic',
-                    base_iri='http://emmo.info/crystallography/cif_core#')
+                    base_iri='http://emmo.info/domain-crystallography/cif_core#')
     onto = gen.generate()
 
     # Annotate ontology
