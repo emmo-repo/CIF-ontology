@@ -1,0 +1,125 @@
+@prefix : <http://emmo.info/domain-crystallography/cif-example#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://emmo.info/domain-crystallography/cif-example> .
+
+<http://emmo.info/domain-crystallography/cif-example> rdf:type owl:Ontology ;
+                                                       owl:versionIRI <http://emmo.info/domain-crystallography/0.0.1/cif-example> ;
+                                                       owl:imports <http://emmo.info/domain-crystallography/0.0.1/cif-top> ;
+                                                       <http://purl.org/dc/terms/abstract> "Example of how a cif dictionary would look like when ontologised. This simple example ontologises the data items belonging to the SPACE_GROUP_SYMOP category."@en ;
+                                                       <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/4.0/legalcode" .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://emmo.info/domain-crystallography/cif-example#SPACE_GROUP_SYMOP
+:SPACE_GROUP_SYMOP rdf:type owl:Class ;
+                   rdfs:subClassOf <http://emmo.info/domain-crystallography/cif-top#CATEGORY> ;
+                   owl:disjointUnionOf ( :_space_group_symop_id
+                                         :_space_group_symop_operation_xyz
+                                         :_space_group_symop_sg_id
+                                       ) ;
+                   rdfs:comment "The class of data items belonging to the SPACE_GROUP_SYMOP category."@en ;
+                   <http://www.w3.org/2004/02/skos/core#prefLabel> "SPACE_GROUP_SYMOP"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif-example#_space_group_symop_ROW
+:_space_group_symop_ROW rdf:type owl:Class ;
+                        rdfs:subClassOf <http://emmo.info/domain-crystallography/cif-top#ROW> ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://emmo.info/domain-crystallography/cif-top#hasSpatialDirectPart> ;
+                                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass :_space_group_symop_id
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://emmo.info/domain-crystallography/cif-top#hasSpatialDirectPart> ;
+                                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass :_space_group_symop_operation_xyz
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://emmo.info/domain-crystallography/cif-top#hasSpatialDirectPart> ;
+                                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass :_space_group_symop_sg_id
+                                        ] ;
+                        <http://emmo.info/domain-crystallography/cif-top#example> "1   x,y,z"@en ;
+                        rdfs:comment "Stands for a row in a _space_group_symop_TABLE."@en ;
+                        <http://www.w3.org/2004/02/skos/core#prefLabel> "space_group_symop_ROW"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif-example#_space_group_symop_TABLE
+:_space_group_symop_TABLE rdf:type owl:Class ;
+                          rdfs:subClassOf <http://emmo.info/domain-crystallography/cif-top#TABLE> ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://emmo.info/domain-crystallography/cif-top#hasSpatialDirectPart> ;
+                                            owl:someValuesFrom :_space_group_symop_ROW
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://emmo.info/domain-crystallography/cif-top#hasSpatialPart> ;
+                                            owl:allValuesFrom :SPACE_GROUP_SYMOP
+                                          ] ;
+                          <http://emmo.info/domain-crystallography/cif-top#example> """1 x,y,z
+2 -x,-y,-z
+3 -x,1/2+y,1/2-z
+4 x,1/2-y,1/2+z"""@en ;
+                          rdfs:comment "Contains information about the symmetry operations of the space group."@en ;
+                          <http://www.w3.org/2004/02/skos/core#prefLabel> "space_group_symop_TABLE"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif-example#_space_group_symop_id
+:_space_group_symop_id rdf:type owl:Class ;
+                       rdfs:subClassOf <http://emmo.info/domain-crystallography/cif-top#_char> ,
+                                       <http://emmo.info/domain-crystallography/cif-top#_type> ;
+                       <http://emmo.info/domain-crystallography/cif-top#_name> "_space_group_symop_id" ;
+                       <http://emmo.info/domain-crystallography/cif-top#example> "1"@en ;
+                       rdfs:comment """An arbitrary identifier that uniquely labels each symmetry operation in the list.
+
+In order for the defaults to work correctly, the identity operation should have _space_group_symop_id or _symmetry_equiv_pos_site_id set to 1, and _space_group_symop_operation_xyz or _symmetry_equiv_pos_as_xyz set to x,y,z; i.e. the operation labelled 1 should be the identity operation."""@en ;
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "space_group_symop_id"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif-example#_space_group_symop_operation_xyz
+:_space_group_symop_operation_xyz rdf:type owl:Class ;
+                                  rdfs:subClassOf <http://emmo.info/domain-crystallography/cif-top#_char> ,
+                                                  <http://emmo.info/domain-crystallography/cif-top#_type> ;
+                                  <http://emmo.info/domain-crystallography/cif-top#_name> "_space_group_symop_operation_xyz" ;
+                                  <http://emmo.info/domain-crystallography/cif-top#example> "x,y,z"@en ;
+                                  rdfs:comment """A parsable string giving one of the symmetry operations of the space group in algebraic form.  If W is a matrix representation of the rotational part of the symmetry operation defined by the positions and signs of x, y and z, and w is a column of translations defined by fractions, an equivalent position X' is generated from a given position X by the equation
+
+             X' = WX + w
+
+(Note: X is used to represent bold_italics_x in International Tables for Crystallography Vol. A, Part 5)
+
+When a list of symmetry operations is given, it must contain a complete set of coordinate representatives which generates all the operations of the space group by the addition of all primitive translations of the space group. Such representatives are to be found as the coordinates of the general-equivalent position in International Tables for Crystallography Vol. A (2002), to which it is necessary to  add any centring translations shown above the general-equivalent position.
+
+That is to say, it is necessary to list explicitly all the symmetry operations required to generate all the atoms in the unit cell defined by the setting used.
+
+In order for the defaults to work correctly, the identity operation should have _space_group_symop_id or _symmetry_equiv_pos_site_id set to 1, and _space_group_symop_operation_xyz or _symmetry_equiv_pos_as_xyz set to x,y,z; i.e. the operation labelled 1 should be the identity operation."""@en ;
+                                  <http://www.w3.org/2004/02/skos/core#prefLabel> "space_group_symop_operation_xyz"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif-example#_space_group_symop_sg_id
+:_space_group_symop_sg_id rdf:type owl:Class ;
+                          rdfs:subClassOf <http://emmo.info/domain-crystallography/cif-top#_numb> ,
+                                          <http://emmo.info/domain-crystallography/cif-top#_type> ;
+                          <http://emmo.info/domain-crystallography/cif-top#_name> "_space_group_symop_sg_id" ;
+                          rdfs:comment "This must match a particular value of _space_group_id, allowing the symmetry operation to be identified with a particular space group."@en ;
+                          <http://www.w3.org/2004/02/skos/core#prefLabel> "space_group_symop_sg_id"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :_space_group_symop_id
+                :_space_group_symop_operation_xyz
+                :_space_group_symop_sg_id
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
