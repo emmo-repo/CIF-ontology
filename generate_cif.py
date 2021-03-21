@@ -39,7 +39,6 @@ class Generator:
         for dicname in dicts:
             self._generate_dic(dicname)
         return self.onto
-        #self._write()
 
     def _generate_dic(self, dicname):
         """Generate ontology for dictionary `name`."""
@@ -77,7 +76,6 @@ class Generator:
             else:
                 print('** ignoring category:', name)
 
-
     def _add_data_item(self, item):
         """Add data item."""
         name = item['_definition.id']
@@ -87,7 +85,12 @@ class Generator:
         if category_name in self.onto:
             category = self.onto[category_name]
             with self.onto:
+                # FIXME - inherit from type instead of category
                 e = types.new_class(name, (category, ))
+                if category.disjoint_unions:
+                    category.disjoint_unions[0].append(e)
+                else:
+                    category.disjoint_unions.append([e])
                 e.prefLabel.append(name.lstrip('_'))
                 if descr:
                     e.comment.append(textwrap.dedent(descr))
