@@ -28,6 +28,7 @@ It tries to ahead to the CIF methods dictionary definition language (DDLm) avail
 ###  http://emmo.info/domain-crystallography/cif-top#_name
 :_name rdf:type owl:AnnotationProperty ;
        rdfs:comment "Name associated with a data item."@en ;
+       skos:prefLabel "_name"@en ;
        rdfs:range xsd:string ;
        rdfs:domain <http://emmo.info/emmo/_type> .
 
@@ -35,6 +36,7 @@ It tries to ahead to the CIF methods dictionary definition language (DDLm) avail
 ###  http://emmo.info/domain-crystallography/cif-top#_unit
 :_unit rdf:type owl:AnnotationProperty ;
        rdfs:comment "Unit accociated to a data item."@en ;
+       skos:prefLabel "_unit"@en ;
        rdfs:range xsd:string ;
        rdfs:domain <http://emmo.info/emmo/_type> .
 
@@ -42,6 +44,7 @@ It tries to ahead to the CIF methods dictionary definition language (DDLm) avail
 ###  http://emmo.info/domain-crystallography/cif-top#example
 :example rdf:type owl:AnnotationProperty ;
          rdfs:comment "Illustrative example of how the entity is used."@en ;
+         skos:prefLabel "example"@en ;
          rdfs:subPropertyOf rdfs:comment .
 
 
@@ -102,20 +105,23 @@ skos:prefLabel rdf:type owl:AnnotationProperty ;
 :hasFloatData rdf:type owl:DatatypeProperty ;
               rdfs:subPropertyOf owl:topDataProperty ;
               rdfs:domain :_numb ;
-              rdfs:range xsd:double .
+              rdfs:range xsd:double ;
+              skos:prefLabel "hasFloatData"@en .
 
 
 ###  http://emmo.info/domain-crystallography/cif-top#hasSymbolData
 :hasSymbolData rdf:type owl:DatatypeProperty ;
                rdfs:subPropertyOf owl:topDataProperty ;
                rdfs:domain :_char ;
-               rdfs:range xsd:string .
+               rdfs:range xsd:string ;
+               skos:prefLabel "hasSymbolData"@en .
 
 
 ###  http://emmo.info/domain-crystallography/cif-top#hasUncertaintyData
 :hasUncertaintyData rdf:type owl:DatatypeProperty ;
                     rdfs:subPropertyOf :hasFloatData ;
-                    rdfs:comment "Optional uncertainty associated to a CIF numb data type."@en .
+                    rdfs:comment "Optional uncertainty associated to a CIF numb data type."@en ;
+                    skos:prefLabel "hasUncertaintyData"@en .
 
 
 #################################################################
