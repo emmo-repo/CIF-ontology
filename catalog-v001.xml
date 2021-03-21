@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=false, version=2" prefer="public" xml:base="">
-        <uri name="http://emmo.info/domain-crystallography/cif-top"             uri="cif-top.ttl"/>
-        <uri name="http://emmo.info/domain-crystallography/0.0.1/cif-top"       uri="cif-top.ttl"/>
-        <uri name="http://emmo.info/domain-crystallography/0.0.1/cif-example"   uri="cif-example.ttl"/>
+        <uri name="http://emmo.info/domain-crystallography/cif_top"             uri="cif_top.ttl"/>
+        <uri name="http://emmo.info/domain-crystallography/0.0.1/cif_top"       uri="cif_top.ttl"/>
+        <uri name="http://emmo.info/domain-crystallography/0.0.1/cif_example"   uri="cif_example.ttl"/>
         <uri name="http://emmo.info/crystallography/0.0.1/crystallography"      uri="crystallography.ttl"/>
         <uri name="http://emmo.info/emmo-inferred/1.0.0-beta"                   uri="https://emmo-repo.github.io/versions/1.0.0-beta/emmo-inferred.ttl"/>
     </group>

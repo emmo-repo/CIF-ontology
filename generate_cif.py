@@ -12,8 +12,8 @@ from CifFile import ReadCif
 
 class Generator:
     """Class for generating CIF ontology from a CIF dictionary."""
-    def __init__(self, dicfile, output, cif_top='cif-top.ttl',
-                 iri='http://emmo.info/crystallography/cif-core#',
+    def __init__(self, dicfile, output, cif_top='cif_top.ttl',
+                 iri='http://emmo.info/crystallography/cif_core#',
                  version=None, version_iri=None):
         self.cf = ReadCif(dicfile)
         self.output = output
@@ -23,7 +23,7 @@ class Generator:
 
         self.categories = set()
 
-        # Load cif-top ontology
+        # Load cif_top ontology
         self.world = World()
         self.top = self.world.get_ontology(cif_top).load()
         self.top.sync_python_names()
