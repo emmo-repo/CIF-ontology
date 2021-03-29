@@ -10,7 +10,7 @@ from emmo import World
 import owlready2
 from owlready2 import locstr
 
-from CifFile import ReadCif
+from CifFile import CifDic
 
 
 def en(s):
@@ -30,7 +30,7 @@ class Generator:
         URI or file name of the cif_top ontology that will be imported.
     """
     def __init__(self, dicfile, base_iri, cif_top='cif_top.ttl'):
-        self.cf = ReadCif(dicfile)
+        self.cd = CifDic(dicfile, do_dREL=False)
         self.cif_top = cif_top
         self.categories = set()
 
@@ -43,28 +43,21 @@ class Generator:
         self.onto = self.world.get_ontology(base_iri)
         self.onto.imported_ontologies.append(self.top)
 
-    def generate(self, dics=None):
-        """Generate ontology for the given sequence of CIF dictionary names.
-        By default the dictionaries are inferred from the `dicfile`."""
-        if dics is None:
-            dics = self.cf.keys()
-        for dicname in dics:
-            self._generate_dic(dicname)
-        return self.onto
-
-    def _generate_dic(self, dicname):
-        """Generate ontology for dictionary `name`."""
+    def generate(self):
+        """Generate ontology for the CIF dictionary."""
         # Add categories first so they are available when we add data items.
         # A category seems to be characterised by having a _definition.scope
         # attribute.
-        for item in self.cf.get_children(dicname):
+        for item in self.cd:
             if '_definition.scope' in item:
                 self._add_category(item)
 
         # Add data items
-        for item in self.cf.get_children(dicname):
+        for item in self.cd:
             if '_definition.scope' not in item:
-                self._add_data_item(item)
+                self._add_data_value(item)
+
+        return self.onto
 
     def _add_category(self, item):
         """Add category."""
@@ -76,7 +69,7 @@ class Generator:
         descr = item.get('_description.text')
         lname = '_' + name.lstrip('_').lower()
         with self.onto:
-            if item.get('_definition.class') in ('Loop', 'Set'):
+            if item.get('_definition.class'):
                 table = types.new_class(lname + '_TABLE', (self.top.TABLE, ))
                 table.prefLabel.append(en(table.name.lstrip('_')))
                 row = types.new_class(lname + '_ROW', (self.top.ROW, ))
@@ -90,50 +83,71 @@ class Generator:
             else:
                 print('** ignoring category:', name)
 
-    def _add_data_item(self, item):
+    def _add_data_value(self, item):
         """Add data item."""
         name = item['_definition.id']
         descr = item.get('_description.text')
         units = item.get('_units.code')
         aliases = item.get('_alias.definition_id')
+        examples = item.get('_description_example.detail', [])
+        examples.extend(item.get('_description_example.case', []))
+        dimension = item.get('_type.dimension')
+
+        container_name = item.get('_type.container', 'Single')
+        type_name = item.get('_type.contents', 'Text')
         category_name = item['_name.category_id'].upper()
         row_name = '_%s_ROW' % item['_name.category_id']
-        if category_name in self.onto:
-            category = self.onto[category_name]
-            with self.onto:
-                # FIXME - inherit from type instead of category
-                e = types.new_class(name, (category, ))
-                if category.disjoint_unions:
-                    category.disjoint_unions[0].append(e)
-                else:
-                    category.disjoint_unions.append([e])
-                e.prefLabel.append(en(name.lstrip('_')))
 
-                # Hmm, _name is already used internally by owlready2.Ontology
-                # so `e._name.append(name)` won't work.
-                # We have to add the tripple the hard way...
-                o, d = owlready2.to_literal(name)  # not localised
-                self.onto._set_data_triple_spod(
-                    s=e.storid,
-                    p=self.onto.world._props['_name'].storid,
-                    o=o, d=d)
+        container = self.onto[container_name]
+        _type = self.onto[type_name]
+        category = self.onto[category_name]
 
-                if aliases:
-                    e.altLabel.extend(en(a) for a in aliases)
-                if descr:
-                    e.comment.append(en(textwrap.dedent(descr)))
-                if units:
-                    e._unit.append(units)  # not localised
-                if row_name in self.onto:
-                    row = self.onto[row_name]
-                    row.is_a.append(self.top.hasSpatialDirectPart.max(1, e))
+        with self.onto:
+
+            if container_name == 'Single':
+                e = types.new_class(name, (_type, ))
+            else:
+                e = types.new_class(name, (container, ))
+                if container_name == 'List':
+                    e.is_a.append(self.top.hasSpatialDirectPart.some(_type))
                 else:
-                    print('** no row:', name)
-        else:
-            print('** no category:', name)
+                    e.is_a.append(self.top.hasSpatialPart.some(_type))
+
+            if category.disjoint_unions:
+                category.disjoint_unions[0].append(e)
+            else:
+                category.disjoint_unions.append([e])
+            e.prefLabel.append(en(name.lstrip('_')))
+
+            # Hmm, _name is already used internally by owlready2.Ontology
+            # so `e._name.append(name)` won't work.
+            # We have to add the tripple the hard way...
+            o, d = owlready2.to_literal(name)  # not localised
+            self.onto._set_data_triple_spod(
+                s=e.storid,
+                p=self.onto.world._props['_name'].storid,
+                o=o, d=d)
+
+            if aliases:
+                e.altLabel.extend(en(a) for a in aliases)
+            if descr:
+                e.comment.append(en(textwrap.dedent(descr)))
+            if examples:
+                e.example.extend(en(textwrap.dedent(ex)) for ex in examples)
+            if units:
+                e._unit.append(units)  # not localised
+            if dimension:
+                e._dimension.append(dimension)  # not localised
+            if row_name in self.onto:
+                row = self.onto[row_name]
+                row.is_a.append(self.top.hasSpatialDirectPart.max(1, e))
+            else:
+                print('** no row:', name)
 
 
 def main():
+    base_iri = 'http://emmo.info/domain-crystallography/cif_core#'
+
     # Download the CIF dictionaries to current directory
     baseurl = 'https://raw.githubusercontent.com/COMCIFS/cif_core/master/'
     for dic in 'ddl.dic', 'cif_core.dic', 'templ_attr.cif', 'templ_enum.cif':
@@ -141,8 +155,7 @@ def main():
             print('downloading', dic)
             urllib.request.urlretrieve(baseurl + dic, dic)
 
-    gen = Generator(dicfile='cif_core.dic',
-                    base_iri='http://emmo.info/domain-crystallography/cif_core#')
+    gen = Generator(dicfile='cif_core.dic', base_iri=base_iri)
     onto = gen.generate()
 
     # Annotate ontology
@@ -165,6 +178,6 @@ if __name__ == '__main__':
     self = gen = main()
     top = self.top
     onto = self.onto
-    items = self.cf.get_children('core_dic')
-    sid = items['space_group_symop.id']
-    s = items['SPACE_GROUP_SYMOP']
+    cd = self.cd
+    sid = cd['space_group_symop.id']
+    s = cd['SPACE_GROUP_SYMOP']

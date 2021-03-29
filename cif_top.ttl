@@ -25,6 +25,12 @@ It tries to ahead to the CIF methods dictionary definition language (DDLm) avail
 #    Annotation properties
 #################################################################
 
+###  http://emmo.info/domain-crystallography/cif_top#_dimension
+:_dimension rdf:type owl:AnnotationProperty ;
+            rdfs:comment "Size of an Array/Matrix/List expressed as a text string. The text string itself consists of zero or more non-negative integers separated by commas placed within bounding square brackets. Empty square brackets represent a list of unknown size."@en ;
+            skos:prefLabel "_dimension"@en .
+
+
 ###  http://emmo.info/domain-crystallography/cif_top#_name
 :_name rdf:type owl:AnnotationProperty ;
        rdfs:comment "Name associated with a data item."@en ;
@@ -101,37 +107,75 @@ skos:prefLabel rdf:type owl:AnnotationProperty ;
 #    Data properties
 #################################################################
 
+###  http://emmo.info/domain-crystallography/cif_top#hasDateTimeData
+:hasDateTimeData rdf:type owl:DatatypeProperty ;
+                 rdfs:range xsd:dateTime ;
+                 rdfs:comment "hasDateTimeData"@en .
+
+
 ###  http://emmo.info/domain-crystallography/cif_top#hasFloatData
 :hasFloatData rdf:type owl:DatatypeProperty ;
-              rdfs:subPropertyOf owl:topDataProperty ;
-              rdfs:domain :_numb ;
+              rdfs:subPropertyOf :hasNumericalData ;
               rdfs:range xsd:double ;
               skos:prefLabel "hasFloatData"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif_top#hasIntegerData
+:hasIntegerData rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :hasNumericalData ;
+                rdfs:range xsd:integer ;
+                skos:prefLabel "hasIntegerData"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif_top#hasNumericalData
+:hasNumericalData rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  skos:prefLabel "hasNumericalData"@en .
 
 
 ###  http://emmo.info/domain-crystallography/cif_top#hasSymbolData
 :hasSymbolData rdf:type owl:DatatypeProperty ;
                rdfs:subPropertyOf owl:topDataProperty ;
-               rdfs:domain :_char ;
                rdfs:range xsd:string ;
                skos:prefLabel "hasSymbolData"@en .
 
 
-###  http://emmo.info/domain-crystallography/cif_top#hasUncertaintyData
-:hasUncertaintyData rdf:type owl:DatatypeProperty ;
-                    rdfs:subPropertyOf :hasFloatData ;
-                    rdfs:comment "Optional uncertainty associated to a CIF numb data type."@en ;
-                    skos:prefLabel "hasUncertaintyData"@en .
+###  http://emmo.info/domain-crystallography/cif_top#hasUriData
+:hasUriData rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:range xsd:anyURI ;
+            skos:prefLabel "hasUriData"@en .
 
 
 #################################################################
 #    Classes
 #################################################################
 
+###  http://emmo.info/domain-crystallography/cif_top#Array
+:Array rdf:type owl:Class ;
+       rdfs:subClassOf :DATA_VALUE ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasSpatialPart ;
+                         owl:someValuesFrom :Single
+                       ] ;
+       rdfs:comment "Ordered set of values of the same type. Operations across arrays are equivalent to operations across elements of the Array."@en ;
+       skos:prefLabel "Array"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif_top#ByReference
+:ByReference rdf:type owl:Class ;
+             rdfs:subClassOf :Text ;
+             rdfs:comment "The contents have the same form as those of the attribute referenced by '_type.contents_referenced_id'."@en ;
+             skos:prefLabel "ByReference"@en .
+
+
 ###  http://emmo.info/domain-crystallography/cif_top#CATEGORY
 :CATEGORY rdf:type owl:Class ;
           rdfs:subClassOf :DDL_CONCEPT ;
-          rdfs:comment "A classification of tables and its parts."@en ;
+          rdfs:comment """A superclass of CIF categories used to categorize data items.
+
+Only data items belonging to the same category can be placed in the same table."""@en ;
+          skos:altLabel "CIF_CATEGORIZED"@en ;
           skos:prefLabel "CATEGORY"@en .
 
 
@@ -168,9 +212,38 @@ skos:prefLabel rdf:type owl:AnnotationProperty ;
         rdfs:subClassOf :DATA_ITEMS ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :hasSpatialDirectPart ;
-                          owl:someValuesFrom :_type
+                          owl:someValuesFrom :DATA_VALUE
                         ] ;
         skos:prefLabel "COLUMN"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif_top#Code
+:Code rdf:type owl:Class ;
+      rdfs:subClassOf :Single ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasSymbolData ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:string
+                      ] ;
+      rdfs:comment "Case-insensitive sequence of CIF2 characters containing no ASCII whitespace."@en ;
+      skos:prefLabel "Code"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif_top#Complex
+:Complex rdf:type owl:Class ;
+         rdfs:subClassOf :Single ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasSpatialDirectPart ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Imag
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasSpatialDirectPart ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Real
+                         ] ;
+         rdfs:comment "A complex number."@en ;
+         skos:prefLabel "Complex"@en .
 
 
 ###  http://emmo.info/domain-crystallography/cif_top#DATA_ITEMS
@@ -180,6 +253,14 @@ skos:prefLabel rdf:type owl:AnnotationProperty ;
             skos:prefLabel "DATA_ITEMS"@en .
 
 
+###  http://emmo.info/domain-crystallography/cif_top#DATA_VALUE
+:DATA_VALUE rdf:type owl:Class ;
+            rdfs:subClassOf :DDL_CONCEPT ;
+            rdfs:comment "Data items correspond to a type. Its individuals are the actual data strings or numbers."@en ;
+            skos:altLabel "_type"@en ;
+            skos:prefLabel "DATA_VALUE"@en .
+
+
 ###  http://emmo.info/domain-crystallography/cif_top#DDL_CONCEPT
 :DDL_CONCEPT rdf:type owl:Class ;
              rdfs:subClassOf :CIF ;
@@ -187,10 +268,88 @@ skos:prefLabel rdf:type owl:AnnotationProperty ;
              skos:prefLabel "DDL_CONCEPT"@en .
 
 
-###  http://emmo.info/domain-crystallography/cif_top#FUNCTION
-:FUNCTION rdf:type owl:Class ;
-          rdfs:subClassOf :DATA_ITEMS ;
-          skos:prefLabel "FUNCTION"@en .
+###  http://emmo.info/domain-crystallography/cif_top#Date
+:Date rdf:type owl:Class ;
+      rdfs:subClassOf :Datetime ;
+      rdfs:comment "ISO standard date format <yyyy>-<mm>-<dd>."@en ;
+      owl:deprecated "Use DateTime for all new dictionaries."@en ;
+      skos:prefLabel "Date"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif_top#Datetime
+:Datetime rdf:type owl:Class ;
+          rdfs:subClassOf :Single ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDateTimeData ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:dateTime
+                          ] ;
+          rdfs:comment "A timestamp. Text formats must use date-time or full-date productions of RFC 3339 ABNF."@en ;
+          skos:prefLabel "Datetime"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif_top#Dimension
+:Dimension rdf:type owl:Class ;
+           rdfs:subClassOf :Text ;
+           rdfs:comment """Size of an Array/Matrix/List expressed as a text string. 
+
+The text string itself consists of zero or more non-negative integers separated by commas placed within bounding square brackets. Empty square brackets represent a list of unknown size."""@en ;
+           skos:prefLabel "Dimension"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif_top#Imag
+:Imag rdf:type owl:Class ;
+      rdfs:subClassOf :Real ;
+      rdfs:comment "Floating-point imaginary number."@en ;
+      skos:prefLabel "Imag"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif_top#Implied
+:Implied rdf:type owl:Class ;
+         rdfs:subClassOf :Single ;
+         rdfs:comment "Implied by the context of the attribute."@en ;
+         skos:prefLabel "Implied"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif_top#Integer
+:Integer rdf:type owl:Class ;
+         rdfs:subClassOf :Single ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasIntegerData ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:integer
+                         ] ;
+         rdfs:comment "Positive or negative integer number."@en ;
+         skos:prefLabel "Integer"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif_top#List
+:List rdf:type owl:Class ;
+      rdfs:subClassOf :DATA_VALUE ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasSpatialDirectPart ;
+                        owl:someValuesFrom :Single
+                      ] ;
+      rdfs:comment "Ordered set of values. Elements need not be of same contents type."@en ;
+      skos:prefLabel "List"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif_top#Matrix
+:Matrix rdf:type owl:Class ;
+        rdfs:subClassOf :DATA_VALUE ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasSpatialPart ;
+                          owl:someValuesFrom :Single
+                        ] ;
+        rdfs:comment "Ordered set of numerical values for a tensor. Tensor operations such as dot and cross products, are valid cross matrix objects. A matrix with a single dimension is interpreted as a row or column vector as required."@en ;
+        skos:prefLabel "Matrix"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif_top#Name
+:Name rdf:type owl:Class ;
+      rdfs:subClassOf :Code ;
+      rdfs:comment "Case-insensitive sequence of ASCII alpha-numeric characters or underscore."@en ;
+      skos:prefLabel "Name"@en .
 
 
 ###  http://emmo.info/domain-crystallography/cif_top#ROW
@@ -198,10 +357,48 @@ skos:prefLabel rdf:type owl:AnnotationProperty ;
      rdfs:subClassOf :DATA_ITEMS ,
                      [ rdf:type owl:Restriction ;
                        owl:onProperty :hasSpatialDirectPart ;
-                       owl:someValuesFrom :_type
+                       owl:someValuesFrom :DATA_VALUE
                      ] ;
      rdfs:comment "Represents a single row in a table with data items as direct parts."@en ;
      skos:prefLabel "ROW"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif_top#Range
+:Range rdf:type owl:Class ;
+       rdfs:subClassOf :Single ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasSpatialDirectPart ;
+                         owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Real
+                       ] ;
+       rdfs:comment "Inclusive range of numerical values min:max."@en ;
+       skos:prefLabel "Range"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif_top#Real
+:Real rdf:type owl:Class ;
+      rdfs:subClassOf :Single ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasFloatData ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:double
+                      ] ;
+      rdfs:comment "Floating-point real number."@en ;
+      skos:prefLabel "Real"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif_top#Single
+:Single rdf:type owl:Class ;
+        rdfs:subClassOf :DATA_VALUE ;
+        rdfs:comment "Single value."@en ;
+        skos:prefLabel "Single"@en .
+
+
+###  http://emmo.info/domain-crystallography/cif_top#Symop
+:Symop rdf:type owl:Class ;
+       rdfs:subClassOf :Text ;
+       rdfs:comment "A string composed of an integer optionally followed by an underscore or space and three or more digits."@en ;
+       skos:prefLabel "Symop"@en .
 
 
 ###  http://emmo.info/domain-crystallography/cif_top#TABLE
@@ -232,38 +429,67 @@ but the actual TABLE individual is just the data rows:
        skos:prefLabel "TABLE"@en .
 
 
-###  http://emmo.info/domain-crystallography/cif_top#_char
-:_char rdf:type owl:Class ;
-       rdfs:subClassOf :_type ;
-       rdfs:comment "A symbolic data type whos individuals are strings."@en ;
-       skos:prefLabel "char"@en .
+###  http://emmo.info/domain-crystallography/cif_top#Table
+:Table rdf:type owl:Class ;
+       rdfs:subClassOf :DATA_VALUE ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasSpatialPart ;
+                         owl:someValuesFrom :Single
+                       ] ;
+       rdfs:comment "An unordered set of id:value elements."@en ;
+       skos:prefLabel "Table"@en .
 
 
-###  http://emmo.info/domain-crystallography/cif_top#_null
-:_null rdf:type owl:Class ;
-       rdfs:subClassOf :_type ;
-       skos:prefLabel "null"@en .
+###  http://emmo.info/domain-crystallography/cif_top#Tag
+:Tag rdf:type owl:Class ;
+     rdfs:subClassOf :Code ;
+     rdfs:comment "Case-insensitive CIF2 character sequence with leading underscore and no ASCII whitespace."@en ;
+     skos:prefLabel "Tag"@en .
 
 
-###  http://emmo.info/domain-crystallography/cif_top#_numb
-:_numb rdf:type owl:Class ;
-       rdfs:subClassOf :_type ;
-       rdfs:comment "A floating point data type with an optional associated uncertainty."@en ;
-       skos:prefLabel "numb"@en .
+###  http://emmo.info/domain-crystallography/cif_top#Text
+:Text rdf:type owl:Class ;
+      rdfs:subClassOf :Single ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasSymbolData ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:string
+                      ] ;
+      rdfs:comment "Case-sensitive sequence of CIF2 characters."@en ;
+      skos:prefLabel "Text"@en .
 
 
-###  http://emmo.info/domain-crystallography/cif_top#_type
-:_type rdf:type owl:Class ;
-       rdfs:subClassOf :DDL_CONCEPT ;
-       rdfs:comment "Data items correspond to a type. Its individuals are the actual data strings or numbers."@en ;
-       skos:prefLabel "DATA_ITEM"@en .
+###  http://emmo.info/domain-crystallography/cif_top#Uri
+:Uri rdf:type owl:Class ;
+     rdfs:subClassOf :Single ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasUriData ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onDataRange xsd:anyURI
+                     ] ;
+     rdfs:comment "Uniform Resource Identifier reference as defined in RFC 3986 Section 4.1."@en ;
+     skos:prefLabel "Uri"@en .
 
 
-###  http://emmo.info/domain-crystallography/cif_top#enumeration
-:enumeration rdf:type owl:Class ;
-             rdfs:subClassOf :_char ;
-             rdfs:comment "A subclass of `char` whos individuals is one of a limited set of pre-defined strings."@en ;
-             skos:prefLabel "enumeration"@en .
+###  http://emmo.info/domain-crystallography/cif_top#Version
+:Version rdf:type owl:Class ;
+         rdfs:subClassOf :Text ;
+         rdfs:comment "Version digit string of the form \"<major>.<version>.<update>\"."@en ;
+         skos:prefLabel "Version"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Array
+                :List
+                :Matrix
+                :Single
+                :Table
+              )
+] .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
