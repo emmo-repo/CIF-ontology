@@ -85,7 +85,8 @@ class Generator:
 
     def _add_data_value(self, item):
         """Add data item."""
-        name = item['_definition.id']
+        realname = item['_definition.id']
+        name = realname.replace('.', '_')
         descr = item.get('_description.text')
         units = item.get('_units.code')
         aliases = item.get('_alias.definition_id')
@@ -106,6 +107,14 @@ class Generator:
 
             if container_name == 'Single':
                 e = types.new_class(name, (_type, ))
+            elif container_name in ('Matrix', 'Array'):
+                dims = dimension.strip('[]')
+                if dims:
+                    subarr = self.subarray(dims.split(','), _type,
+                                           container_name)
+                    e = types.new_class(name, (subarr, ))
+                else:
+                    e = types.new_class(name, (_type, ))
             else:
                 e = types.new_class(name, (container, ))
                 if container_name == 'List':
@@ -117,12 +126,14 @@ class Generator:
                 category.disjoint_unions[0].append(e)
             else:
                 category.disjoint_unions.append([e])
-            e.prefLabel.append(en(name.lstrip('_')))
+            e.prefLabel.append(en(realname.lstrip('_')))
+            if name != realname:
+                e.altLabel.append(en(name.lstrip('_')))
 
             # Hmm, _name is already used internally by owlready2.Ontology
             # so `e._name.append(name)` won't work.
             # We have to add the tripple the hard way...
-            o, d = owlready2.to_literal(name)  # not localised
+            o, d = owlready2.to_literal(realname)  # not localised
             self.onto._set_data_triple_spod(
                 s=e.storid,
                 p=self.onto.world._props['_name'].storid,
@@ -138,11 +149,31 @@ class Generator:
                 e._unit.append(units)  # not localised
             if dimension:
                 e._dimension.append(dimension)  # not localised
+            if _type:
+                e._type.append(_type)  # not localised
             if row_name in self.onto:
                 row = self.onto[row_name]
                 row.is_a.append(self.top.hasSpatialDirectPart.max(1, e))
             else:
                 print('** no row:', name)
+
+    def subarray(self, dimensions, _type, container_name):
+        """Returns a reference to an array or matrix corresponding to:
+        - dimensions: list of dimension values
+        - typename: type of elements
+        - container_name: "Array" or "Matrix"
+        If it does not already exists, the subarray is created.  All
+        its spatial direct parts are also generated recursively.
+        """
+        if not dimensions or not dimensions[0]:
+            return _type
+        name = 'Shape' + 'x'.join(dimensions) + _type.name + container_name
+        if name not in self.onto:
+            e = types.new_class(name, (self.onto[container_name], ))
+            d = int(dimensions.pop(0))
+            e.is_a.append(self.top.hasSpatialDirectPart.exactly(
+                d, self.subarray(dimensions, _type, container_name)))
+        return self.onto[name]
 
 
 def main():

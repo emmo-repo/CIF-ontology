@@ -27,7 +27,9 @@ It tries to ahead to the CIF methods dictionary definition language (DDLm) avail
 
 ###  http://emmo.info/domain-crystallography/cif_top#_dimension
 :_dimension rdf:type owl:AnnotationProperty ;
-            rdfs:comment "Size of an Array/Matrix/List expressed as a text string. The text string itself consists of zero or more non-negative integers separated by commas placed within bounding square brackets. Empty square brackets represent a list of unknown size."@en ;
+            :example "[3,4]"@en ;
+            rdfs:comment "Correspond to the '_type.dimension' data item."@en ,
+                         "Size of an Array/Matrix/List expressed as a text string. The text string itself consists of zero or more non-negative integers separated by commas placed within bounding square brackets. Empty square brackets represent a list of unknown size."@en ;
             skos:prefLabel "_dimension"@en .
 
 
@@ -37,6 +39,13 @@ It tries to ahead to the CIF methods dictionary definition language (DDLm) avail
        skos:prefLabel "_name"@en ;
        rdfs:range xsd:string ;
        rdfs:domain <http://emmo.info/emmo/_type> .
+
+
+###  http://emmo.info/domain-crystallography/cif_top#_type
+:_type rdf:type owl:AnnotationProperty ;
+       rdfs:comment "Correspond to the '_type.contents' data item."@en ,
+                    "Type of CIF data value."@en ;
+       skos:prefLabel "_datatype"@en .
 
 
 ###  http://emmo.info/domain-crystallography/cif_top#_unit
