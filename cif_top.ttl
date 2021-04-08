@@ -119,7 +119,7 @@ skos:prefLabel rdf:type owl:AnnotationProperty ;
 ###  http://emmo.info/domain-crystallography/cif_top#hasDateTimeData
 :hasDateTimeData rdf:type owl:DatatypeProperty ;
                  rdfs:range xsd:dateTime ;
-                 rdfs:comment "hasDateTimeData"@en .
+                 skos:prefLabel "hasDateTimeData"@en .
 
 
 ###  http://emmo.info/domain-crystallography/cif_top#hasFloatData
