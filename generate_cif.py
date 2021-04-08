@@ -95,32 +95,32 @@ class Generator:
         dimension = item.get('_type.dimension')
 
         container_name = item.get('_type.container', 'Single')
-        type_name = item.get('_type.contents', 'Text')
+        datatype_name = item.get('_type.contents', 'Text')
         category_name = item['_name.category_id'].upper()
         row_name = '_%s_ROW' % item['_name.category_id']
 
         container = self.onto[container_name]
-        _type = self.onto[type_name]
+        datatype = self.onto[datatype_name]
         category = self.onto[category_name]
 
         with self.onto:
 
             if container_name == 'Single':
-                e = types.new_class(name, (_type, ))
+                e = types.new_class(name, (datatype, ))
             elif container_name in ('Matrix', 'Array'):
                 dims = dimension.strip('[]')
                 if dims:
-                    subarr = self.subarray(dims.split(','), _type,
+                    subarr = self.subarray(dims.split(','), datatype,
                                            container_name)
                     e = types.new_class(name, (subarr, ))
                 else:
-                    e = types.new_class(name, (_type, ))
+                    e = types.new_class(name, (datatype, ))
             else:
                 e = types.new_class(name, (container, ))
                 if container_name == 'List':
-                    e.is_a.append(self.top.hasSpatialDirectPart.some(_type))
+                    e.is_a.append(self.top.hasSpatialDirectPart.some(datatype))
                 else:
-                    e.is_a.append(self.top.hasSpatialPart.some(_type))
+                    e.is_a.append(self.top.hasSpatialPart.some(datatype))
 
             if category.disjoint_unions:
                 category.disjoint_unions[0].append(e)
@@ -149,15 +149,15 @@ class Generator:
                 e._unit.append(units)  # not localised
             if dimension:
                 e._dimension.append(dimension)  # not localised
-            if _type:
-                e._type.append(_type)  # not localised
+            if datatype:
+                e._datatype.append(datatype)  # not localised
             if row_name in self.onto:
                 row = self.onto[row_name]
                 row.is_a.append(self.top.hasSpatialDirectPart.max(1, e))
             else:
-                print('** no row:', name)
+                print('** no row:', realname)
 
-    def subarray(self, dimensions, _type, container_name):
+    def subarray(self, dimensions, datatype, container_name):
         """Returns a reference to an array or matrix corresponding to:
         - dimensions: list of dimension values
         - typename: type of elements
@@ -166,13 +166,13 @@ class Generator:
         its spatial direct parts are also generated recursively.
         """
         if not dimensions or not dimensions[0]:
-            return _type
-        name = 'Shape' + 'x'.join(dimensions) + _type.name + container_name
+            return datatype
+        name = 'Shape' + 'x'.join(dimensions) + datatype.name + container_name
         if name not in self.onto:
             e = types.new_class(name, (self.onto[container_name], ))
             d = int(dimensions.pop(0))
             e.is_a.append(self.top.hasSpatialDirectPart.exactly(
-                d, self.subarray(dimensions, _type, container_name)))
+                d, self.subarray(dimensions, datatype, container_name)))
         return self.onto[name]
 
 
