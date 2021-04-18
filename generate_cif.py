@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Python script for generating an ontology corresponding to a CIF dictionary.
 """
-import os
+from pathlib import Path
 import types
 import textwrap
 import urllib.request
@@ -182,7 +182,7 @@ def main():
     # Download the CIF dictionaries to current directory
     baseurl = 'https://raw.githubusercontent.com/COMCIFS/cif_core/master/'
     for dic in 'ddl.dic', 'cif_core.dic', 'templ_attr.cif', 'templ_enum.cif':
-        if not os.path.exists(dic):
+        if not Path(dic).resolve().exists():
             print('downloading', dic)
             urllib.request.urlretrieve(baseurl + dic, dic)
 
