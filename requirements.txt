@@ -1,3 +1,0 @@
-emmo~=1.0
-owlready2~=0.29
-pycifrw~=4.4
