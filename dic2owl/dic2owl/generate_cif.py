@@ -15,12 +15,12 @@ from CifFile import CifDic
 
 def en(s):
     """Returns `s` converted to a localised string in english."""
-    return locstr(s, lang='en')
+    return locstr(s, lang="en")
 
 
 def ontology_dir() -> Path:
     """Return the absolute, normalized path to the `ontology` directory in this repository"""
-    return Path(__file__).parent.parent.joinpath("ontology").resolve()
+    return Path(__file__).parent.parent.parent.joinpath("ontology").resolve()
 
 
 class Generator:
@@ -34,7 +34,8 @@ class Generator:
     cif_top : string
         URI or file name of the cif_top ontology that will be imported.
     """
-    def __init__(self, dicfile, base_iri, cif_top='cif_top.ttl'):
+
+    def __init__(self, dicfile, base_iri, cif_top="cif_top.ttl"):
         self.cd = CifDic(dicfile, do_dREL=False)
         self.cif_top = ontology_dir() / cif_top
         self.categories = set()
@@ -54,12 +55,12 @@ class Generator:
         # A category seems to be characterised by having a _definition.scope
         # attribute.
         for item in self.cd:
-            if '_definition.scope' in item:
+            if "_definition.scope" in item:
                 self._add_category(item)
 
         # Add data items
         for item in self.cd:
-            if '_definition.scope' not in item:
+            if "_definition.scope" not in item:
                 self._add_data_value(item)
 
         return self.onto
@@ -70,39 +71,39 @@ class Generator:
             return
         self.categories.add(item)
 
-        name = item['_definition.id']
-        descr = item.get('_description.text')
-        lname = '_' + name.lstrip('_').lower()
+        name = item["_definition.id"]
+        descr = item.get("_description.text")
+        lname = "_" + name.lstrip("_").lower()
         with self.onto:
-            if item.get('_definition.class'):
-                table = types.new_class(lname + '_TABLE', (self.top.TABLE, ))
-                table.prefLabel.append(en(table.name.lstrip('_')))
-                row = types.new_class(lname + '_ROW', (self.top.ROW, ))
-                row.prefLabel.append(en(row.name.lstrip('_')))
-                cat = types.new_class(name, (self.top.CATEGORY, ))
-                cat.prefLabel.append(en(cat.name.lstrip('_')))
+            if item.get("_definition.class"):
+                table = types.new_class(lname + "_TABLE", (self.top.TABLE,))
+                table.prefLabel.append(en(table.name.lstrip("_")))
+                row = types.new_class(lname + "_ROW", (self.top.ROW,))
+                row.prefLabel.append(en(row.name.lstrip("_")))
+                cat = types.new_class(name, (self.top.CATEGORY,))
+                cat.prefLabel.append(en(cat.name.lstrip("_")))
                 if descr:
                     cat.comment.append(en(textwrap.dedent(descr)))
                 table.is_a.append(self.top.hasSpatialDirectPart.some(row))
                 table.is_a.append(self.top.hasSpatialPart.only(cat))
             else:
-                print('** ignoring category:', name)
+                print("** ignoring category:", name)
 
     def _add_data_value(self, item):
         """Add data item."""
-        realname = item['_definition.id']
-        name = realname.replace('.', '_')
-        descr = item.get('_description.text')
-        units = item.get('_units.code')
-        aliases = item.get('_alias.definition_id')
-        examples = item.get('_description_example.detail', [])
-        examples.extend(item.get('_description_example.case', []))
-        dimension = item.get('_type.dimension')
+        realname = item["_definition.id"]
+        name = realname.replace(".", "_")
+        descr = item.get("_description.text")
+        units = item.get("_units.code")
+        aliases = item.get("_alias.definition_id")
+        examples = item.get("_description_example.detail", [])
+        examples.extend(item.get("_description_example.case", []))
+        dimension = item.get("_type.dimension")
 
-        container_name = item.get('_type.container', 'Single')
-        datatype_name = item.get('_type.contents', 'Text')
-        category_name = item['_name.category_id'].upper()
-        row_name = '_%s_ROW' % item['_name.category_id']
+        container_name = item.get("_type.container", "Single")
+        datatype_name = item.get("_type.contents", "Text")
+        category_name = item["_name.category_id"].upper()
+        row_name = "_%s_ROW" % item["_name.category_id"]
 
         container = self.onto[container_name]
         datatype = self.onto[datatype_name]
@@ -110,19 +111,18 @@ class Generator:
 
         with self.onto:
 
-            if container_name == 'Single':
-                e = types.new_class(name, (datatype, ))
-            elif container_name in ('Matrix', 'Array'):
-                dims = dimension.strip('[]')
+            if container_name == "Single":
+                e = types.new_class(name, (datatype,))
+            elif container_name in ("Matrix", "Array"):
+                dims = dimension.strip("[]")
                 if dims:
-                    subarr = self.subarray(dims.split(','), datatype,
-                                           container_name)
-                    e = types.new_class(name, (subarr, ))
+                    subarr = self.subarray(dims.split(","), datatype, container_name)
+                    e = types.new_class(name, (subarr,))
                 else:
-                    e = types.new_class(name, (datatype, ))
+                    e = types.new_class(name, (datatype,))
             else:
-                e = types.new_class(name, (container, ))
-                if container_name == 'List':
+                e = types.new_class(name, (container,))
+                if container_name == "List":
                     e.is_a.append(self.top.hasSpatialDirectPart.some(datatype))
                 else:
                     e.is_a.append(self.top.hasSpatialPart.some(datatype))
@@ -131,18 +131,17 @@ class Generator:
                 category.disjoint_unions[0].append(e)
             else:
                 category.disjoint_unions.append([e])
-            e.prefLabel.append(en(realname.lstrip('_')))
+            e.prefLabel.append(en(realname.lstrip("_")))
             if name != realname:
-                e.altLabel.append(en(name.lstrip('_')))
+                e.altLabel.append(en(name.lstrip("_")))
 
             # Hmm, _name is already used internally by owlready2.Ontology
             # so `e._name.append(name)` won't work.
             # We have to add the tripple the hard way...
             o, d = owlready2.to_literal(realname)  # not localised
             self.onto._set_data_triple_spod(
-                s=e.storid,
-                p=self.onto.world._props['_name'].storid,
-                o=o, d=d)
+                s=e.storid, p=self.onto.world._props["_name"].storid, o=o, d=d
+            )
 
             if aliases:
                 e.altLabel.extend(en(a) for a in aliases)
@@ -160,7 +159,7 @@ class Generator:
                 row = self.onto[row_name]
                 row.is_a.append(self.top.hasSpatialDirectPart.max(1, e))
             else:
-                print('** no row:', realname)
+                print("** no row:", realname)
 
     def subarray(self, dimensions, datatype, container_name):
         """Returns a reference to an array or matrix corresponding to:
@@ -172,48 +171,51 @@ class Generator:
         """
         if not dimensions or not dimensions[0]:
             return datatype
-        name = 'Shape' + 'x'.join(dimensions) + datatype.name + container_name
+        name = "Shape" + "x".join(dimensions) + datatype.name + container_name
         if name not in self.onto:
-            e = types.new_class(name, (self.onto[container_name], ))
+            e = types.new_class(name, (self.onto[container_name],))
             d = int(dimensions.pop(0))
-            e.is_a.append(self.top.hasSpatialDirectPart.exactly(
-                d, self.subarray(dimensions, datatype, container_name)))
+            e.is_a.append(
+                self.top.hasSpatialDirectPart.exactly(
+                    d, self.subarray(dimensions, datatype, container_name)
+                )
+            )
         return self.onto[name]
 
 
 def main():
-    base_iri = 'http://emmo.info/domain-crystallography/cif_core#'
+    base_iri = "http://emmo.info/domain-crystallography/cif_core#"
 
     # Download the CIF dictionaries to current directory
-    baseurl = 'https://raw.githubusercontent.com/COMCIFS/cif_core/master/'
-    for dic in 'ddl.dic', 'cif_core.dic', 'templ_attr.cif', 'templ_enum.cif':
+    baseurl = "https://raw.githubusercontent.com/COMCIFS/cif_core/master/"
+    for dic in "ddl.dic", "cif_core.dic", "templ_attr.cif", "templ_enum.cif":
         if not Path(dic).resolve().exists():
-            print('downloading', dic)
+            print("downloading", dic)
             urllib.request.urlretrieve(baseurl + dic, dic)
 
-    gen = Generator(dicfile='cif_core.dic', base_iri=base_iri)
+    gen = Generator(dicfile="cif_core.dic", base_iri=base_iri)
     onto = gen.generate()
 
     # Annotate ontology
     onto.sync_attributes()
-    onto.set_version(version='0.0.1')
+    onto.set_version(version="0.0.1")
     onto.metadata.abstract = (
-        'CIF core ontology generated from the CIF core definitions at '
-        'https://raw.githubusercontent.com/COMCIFS/cif_core/master/'
+        "CIF core ontology generated from the CIF core definitions at "
+        "https://raw.githubusercontent.com/COMCIFS/cif_core/master/"
     )
 
-    onto.save('cif_core.ttl', overwrite=True)
+    onto.save("cif_core.ttl", overwrite=True)
 
     return gen  # XXX - just for debugging
 
 
-if __name__ == '__main__':
-    #main()
+if __name__ == "__main__":
+    # main()
 
     # for debugging and testing...
     self = gen = main()
     top = self.top
     onto = self.onto
     cd = self.cd
-    sid = cd['space_group_symop.id']
-    s = cd['SPACE_GROUP_SYMOP']
+    sid = cd["space_group_symop.id"]
+    s = cd["SPACE_GROUP_SYMOP"]
