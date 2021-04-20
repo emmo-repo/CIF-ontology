@@ -20,4 +20,7 @@ repos:
     - --count
     - --show-source
     - --statistics
+    # E501: Line to long. Handled by black.
+    # W503: Line break before binary operator. This is preferred formatting for black.
+    # E203: Whitespace before ':'.
     - --ignore=E501,W503,E203
