@@ -18,6 +18,11 @@ def en(s):
     return locstr(s, lang='en')
 
 
+def ontology_dir() -> Path:
+    """Return the absolute, normalized path to the `ontology` directory in this repository"""
+    return Path(__file__).parent.parent.joinpath("ontology").resolve()
+
+
 class Generator:
     """Class for generating CIF ontology from a CIF dictionary.
 
@@ -31,12 +36,12 @@ class Generator:
     """
     def __init__(self, dicfile, base_iri, cif_top='cif_top.ttl'):
         self.cd = CifDic(dicfile, do_dREL=False)
-        self.cif_top = cif_top
+        self.cif_top = ontology_dir() / cif_top
         self.categories = set()
 
         # Load cif_top ontology
         self.world = World()
-        self.top = self.world.get_ontology(cif_top).load()
+        self.top = self.world.get_ontology(str(self.cif_top)).load()
         self.top.sync_python_names()
 
         # Create new ontology
