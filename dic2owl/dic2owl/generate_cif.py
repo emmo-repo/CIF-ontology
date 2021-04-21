@@ -2,8 +2,9 @@
 """Python script for generating an ontology corresponding to a CIF dictionary.
 """
 from pathlib import Path
-import types
 import textwrap
+import types
+from typing import Union
 import urllib.request
 
 from emmo import World
@@ -183,17 +184,19 @@ class Generator:
         return self.onto[name]
 
 
-def main():
+def main(dicfile: Union[str, Path], ttlfile: Union[str, Path]) -> Generator:
     base_iri = "http://emmo.info/domain-crystallography/cif_core#"
+
+    dicfile = dicfile if isinstance(dicfile, str) else str(dicfile.resolve())
 
     # Download the CIF dictionaries to current directory
     baseurl = "https://raw.githubusercontent.com/COMCIFS/cif_core/master/"
-    for dic in "ddl.dic", "cif_core.dic", "templ_attr.cif", "templ_enum.cif":
+    for dic in ("ddl.dic", "templ_attr.cif", "templ_enum.cif") + (dicfile,):
         if not Path(dic).resolve().exists():
             print("downloading", dic)
             urllib.request.urlretrieve(baseurl + dic, dic)
 
-    gen = Generator(dicfile="cif_core.dic", base_iri=base_iri)
+    gen = Generator(dicfile=dicfile, base_iri=base_iri)
     onto = gen.generate()
 
     # Annotate ontology
@@ -204,7 +207,13 @@ def main():
         "https://raw.githubusercontent.com/COMCIFS/cif_core/master/"
     )
 
-    onto.save("cif_core.ttl", overwrite=True)
+    if ttlfile is None:
+        ttlfile = Path(dicfile).name[: -len(Path(dicfile).suffix)] + ".ttl"
+
+    onto.save(
+        ttlfile if isinstance(ttlfile, str) else str(ttlfile.resolve()),
+        overwrite=True,
+    )
 
     return gen  # XXX - just for debugging
 
@@ -213,7 +222,7 @@ if __name__ == "__main__":
     # main()
 
     # for debugging and testing...
-    self = gen = main()
+    self = gen = main("cif_core.dic", "cif_core.ttl")
     top = self.top
     onto = self.onto
     cd = self.cd

@@ -1,6 +1,8 @@
 *~
 old
 *.egg*
+__pycache__
+*.pyc
 
 ddl.dic
 cif_core.dic
