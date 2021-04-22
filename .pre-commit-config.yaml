@@ -1,0 +1,26 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v3.4.0
+  hooks:
+  - id: check-yaml
+  - id: trailing-whitespace
+    exclude: .*(\.md|\.ttl)$
+
+- repo: https://github.com/ambv/black
+  rev: 20.8b1
+  hooks:
+  - id: black
+    name: Blacken
+
+- repo: https://gitlab.com/pycqa/flake8
+  rev: '3.9.0'
+  hooks:
+  - id: flake8
+    args:
+    - --count
+    - --show-source
+    - --statistics
+    # E501: Line to long. Handled by black.
+    # W503: Line break before binary operator. This is preferred formatting for black.
+    # E203: Whitespace before ':'.
+    - --ignore=E501,W503,E203
