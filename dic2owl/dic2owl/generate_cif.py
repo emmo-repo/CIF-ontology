@@ -13,6 +13,8 @@ from owlready2 import locstr
 
 from CifFile import CifDic
 
+from __init__ import __version__, release_site
+
 
 def en(s):
     """Returns `s` converted to a localised string in english."""
@@ -36,9 +38,14 @@ class Generator:
         URI or file name of the cif_top ontology that will be imported.
     """
 
-    def __init__(self, dicfile, base_iri, cif_top="cif_top.ttl"):
+    def __init__(self, dicfile, base_iri, cif_top=None):
         self.cd = CifDic(dicfile, do_dREL=False)
-        self.cif_top = ontology_dir() / cif_top
+        if not cif_top:
+            self.cif_top = f'{release_site}/{__version__}/cif_top.ttl'
+        elif cif_top.startswith('http'):
+            self.cif_top = cif_top
+        else:
+            self.cif_top = ontology_dir() / cif_top
         self.categories = set()
 
         # Load cif_top ontology
