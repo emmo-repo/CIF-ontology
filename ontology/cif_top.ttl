@@ -183,7 +183,7 @@ skos:prefLabel rdf:type owl:AnnotationProperty ;
           rdfs:subClassOf :DDL_CONCEPT ;
           rdfs:comment """A superclass of CIF categories used to categorize data items.
 
-Only data items belonging to the same category can be placed in the same table."""@en ;
+Only data items belonging to the same category can be placed in the same loop."""@en ;
           skos:altLabel "CIF_CATEGORIZED"@en ;
           skos:prefLabel "CATEGORY"@en .
 
