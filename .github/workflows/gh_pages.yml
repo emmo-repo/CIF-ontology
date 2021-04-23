@@ -1,0 +1,42 @@
+name: GH Pages deployment
+
+on:
+  release:
+    types: [published]
+
+jobs:
+
+  gh-pages_build:
+    name: Build GH Pages
+    runs-on: ubuntu-latest
+
+    env:
+      COMMIT_AUTHOR: CIF-ontology Team
+      COMMIT_AUTHOR_EMAIL: cif-ontology@emmo-repo.org
+      BUILD_FOLDER: "ontology/build"
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install Python dependencies
+      run: 
+        python -m pip install -U pip setuptools
+        pip install -r ontology/gh_pages/requirements.txt
+
+    - name: Make GH Pages
+      run: # Command here to generate GH pages files
+
+    - name: Commit to branch `gh-pages`
+      run: ./ontology/gh_pages/commit.sh
+
+    - name: Push changes to GitHub remote
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+        branch: gh-pages
+        force: true
+        github_token: ${{ secrets.GITHUB_TOKEN }}
