@@ -1,3 +1,3 @@
 EMMO~=1.0
-Owlready2~=0.29
+Owlready2~=0.30
 PyCifRW~=4.4
