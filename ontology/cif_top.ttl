@@ -183,7 +183,7 @@ skos:prefLabel rdf:type owl:AnnotationProperty ;
           rdfs:subClassOf :DDL_CONCEPT ;
           rdfs:comment """A superclass of CIF categories used to categorize data items.
 
-Only data items belonging to the same category can be placed in the same table."""@en ;
+Only data items belonging to the same category can be placed in the same loop."""@en ;
           skos:altLabel "CIF_CATEGORIZED"@en ;
           skos:prefLabel "CATEGORY"@en .
 
@@ -210,20 +210,10 @@ Only data items belonging to the same category can be placed in the same table."
                 rdfs:subClassOf :CIF ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty :hasSpatialDirectPart ;
-                                  owl:someValuesFrom :TABLE
+                                  owl:someValuesFrom :LOOP
                                 ] ;
                 rdfs:comment "A class representing a data block in a CIF file."@en ;
                 skos:prefLabel "CIF_DATA_BLOCK"@en .
-
-
-###  http://emmo.info/domain-crystallography/cif_top#COLUMN
-:COLUMN rdf:type owl:Class ;
-        rdfs:subClassOf :DATA_ITEMS ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty :hasSpatialDirectPart ;
-                          owl:someValuesFrom :DATA_VALUE
-                        ] ;
-        skos:prefLabel "COLUMN"@en .
 
 
 ###  http://emmo.info/domain-crystallography/cif_top#Code
@@ -253,13 +243,6 @@ Only data items belonging to the same category can be placed in the same table."
                          ] ;
          rdfs:comment "A complex number."@en ;
          skos:prefLabel "Complex"@en .
-
-
-###  http://emmo.info/domain-crystallography/cif_top#DATA_ITEMS
-:DATA_ITEMS rdf:type owl:Class ;
-            rdfs:subClassOf :DDL_CONCEPT ;
-            rdfs:comment "A row, column or function in a table."@en ;
-            skos:prefLabel "DATA_ITEMS"@en .
 
 
 ###  http://emmo.info/domain-crystallography/cif_top#DATA_VALUE
@@ -332,6 +315,36 @@ The text string itself consists of zero or more non-negative integers separated 
          skos:prefLabel "Integer"@en .
 
 
+###  http://emmo.info/domain-crystallography/cif_top#LOOP
+:LOOP rdf:type owl:Class ;
+      rdfs:subClassOf :DDL_CONCEPT ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasSpatialDirectPart ;
+                        owl:someValuesFrom :PACKET
+                      ] ;
+      :example """Syntactically a table instance in a CIF file may be written as
+
+loop_
+    _space_group_symop_id
+    _space_group_symop_operation_xyz
+      1    x,y,z
+      2   -x,-y,-z
+      3   -x,1/2+y,1/2-z
+      4    x,1/2-y,1/2+z
+
+but the actual TABLE individual is just the data rows:
+
+      1    x,y,z
+      2   -x,-y,-z
+      3   -x,1/2+y,1/2-z
+      4    x,1/2-y,1/2+z"""@en ;
+      rdfs:comment """A loop can be understood as a table in a relational database.
+
+Loops has packets as spatial direct parts."""@en ,
+                   "The syntax of individual tables starts with the 'loop_' keyword followed by the name of the data items and then the actual data."@en ;
+      skos:prefLabel "LOOP"@en .
+
+
 ###  http://emmo.info/domain-crystallography/cif_top#List
 :List rdf:type owl:Class ;
       rdfs:subClassOf :DATA_VALUE ,
@@ -361,15 +374,15 @@ The text string itself consists of zero or more non-negative integers separated 
       skos:prefLabel "Name"@en .
 
 
-###  http://emmo.info/domain-crystallography/cif_top#ROW
-:ROW rdf:type owl:Class ;
-     rdfs:subClassOf :DATA_ITEMS ,
-                     [ rdf:type owl:Restriction ;
-                       owl:onProperty :hasSpatialDirectPart ;
-                       owl:someValuesFrom :DATA_VALUE
-                     ] ;
-     rdfs:comment "Represents a single row in a table with data items as direct parts."@en ;
-     skos:prefLabel "ROW"@en .
+###  http://emmo.info/domain-crystallography/cif_top#PACKET
+:PACKET rdf:type owl:Class ;
+        rdfs:subClassOf :DDL_CONCEPT ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasSpatialDirectPart ;
+                          owl:someValuesFrom :DATA_VALUE
+                        ] ;
+        rdfs:comment "A packet can be understood as a row in a relational database. A packet has data items as direct parts."@en ;
+        skos:prefLabel "PACKET"@en .
 
 
 ###  http://emmo.info/domain-crystallography/cif_top#Range
@@ -408,34 +421,6 @@ The text string itself consists of zero or more non-negative integers separated 
        rdfs:subClassOf :Text ;
        rdfs:comment "A string composed of an integer optionally followed by an underscore or space and three or more digits."@en ;
        skos:prefLabel "Symop"@en .
-
-
-###  http://emmo.info/domain-crystallography/cif_top#TABLE
-:TABLE rdf:type owl:Class ;
-       rdfs:subClassOf :DDL_CONCEPT ,
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasSpatialDirectPart ;
-                         owl:someValuesFrom :ROW
-                       ] ;
-       :example """Syntactically a table instance in a CIF file may be written as
-
-loop_
-    _space_group_symop_id
-    _space_group_symop_operation_xyz
-      1    x,y,z
-      2   -x,-y,-z
-      3   -x,1/2+y,1/2-z
-      4    x,1/2-y,1/2+z
-
-but the actual TABLE individual is just the data rows:
-
-      1    x,y,z
-      2   -x,-y,-z
-      3   -x,1/2+y,1/2-z
-      4    x,1/2-y,1/2+z"""@en ;
-       rdfs:comment "Represent a table with rows as spatial direct parts."@en ,
-                    "The syntax of individual tables starts with the 'loop_' keyword followed by the name of the data items and then the actual data."@en ;
-       skos:prefLabel "TABLE"@en .
 
 
 ###  http://emmo.info/domain-crystallography/cif_top#Table
