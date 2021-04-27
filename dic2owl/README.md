@@ -24,7 +24,6 @@ This package relies on the [PyCIFRW](https://bitbucket.org/jamesrhester/pycifrw)
 
 ## Author
 
-Jesper Friis, SINTEF
-
-Casper Welzel Andersen, EPFL
-James Hester
+- Jesper Friis, SINTEF
+- Casper Welzel Andersen, EPFL
+- James Hester
