@@ -7,13 +7,13 @@ repos:
     exclude: .*(\.md|\.ttl)$
 
 - repo: https://github.com/ambv/black
-  rev: 20.8b1
+  rev: 21.4b0
   hooks:
   - id: black
     name: Blacken
 
 - repo: https://gitlab.com/pycqa/flake8
-  rev: '3.9.0'
+  rev: '3.9.1'
   hooks:
   - id: flake8
     args:
