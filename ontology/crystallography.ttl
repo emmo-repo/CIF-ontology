@@ -13,7 +13,7 @@
 <http://emmo.info/domain-crystallography/crystallography> rdf:type owl:Ontology ;
                                                            owl:versionIRI <http://emmo.info/domain-crystallography/0.0.1/crystallography> ;
                                                            owl:imports <http://emmo.info/domain-crystallography/0.0.1/cif_core> ,
-                                                                       <https://raw.githubusercontent.com/emmo-repo/emmo-repo.github.io/master/versions/1.0.0-beta/emmo-inferred-chemistry/1.0.0-beta> ;
+                                                                       <https://raw.githubusercontent.com/emmo-repo/emmo-repo.github.io/master/versions/1.0.0-beta/emmo-inferred-chemistry2.ttl> ;
                                                            dcterms:abstract """A toplevel crystallography ontology based on EMMO and the CIF core dictionary.
 
 It is implemented as a formal language.""" ;
