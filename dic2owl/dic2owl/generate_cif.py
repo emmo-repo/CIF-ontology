@@ -77,16 +77,16 @@ class Generator:
         lname = "_" + name.lstrip("_").lower()
         with self.onto:
             if item.get("_definition.class"):
-                table = types.new_class(lname + "_TABLE", (self.top.TABLE,))
-                table.prefLabel.append(en(table.name.lstrip("_")))
-                row = types.new_class(lname + "_ROW", (self.top.ROW,))
-                row.prefLabel.append(en(row.name.lstrip("_")))
+                loop = types.new_class(lname + "_LOOP", (self.top.LOOP,))
+                loop.prefLabel.append(en(loop.name.lstrip("_")))
+                packet = types.new_class(lname + "_PACKET", (self.top.PACKET,))
+                packet.prefLabel.append(en(packet.name.lstrip("_")))
                 cat = types.new_class(name, (self.top.CATEGORY,))
                 cat.prefLabel.append(en(cat.name.lstrip("_")))
                 if descr:
                     cat.comment.append(en(textwrap.dedent(descr)))
-                table.is_a.append(self.top.hasSpatialDirectPart.some(row))
-                table.is_a.append(self.top.hasSpatialPart.only(cat))
+                loop.is_a.append(self.top.hasSpatialDirectPart.some(packet))
+                loop.is_a.append(self.top.hasSpatialPart.only(cat))
             else:
                 print("** ignoring category:", name)
 
@@ -104,7 +104,7 @@ class Generator:
         container_name = item.get("_type.container", "Single")
         datatype_name = item.get("_type.contents", "Text")
         category_name = item["_name.category_id"].upper()
-        row_name = "_%s_ROW" % item["_name.category_id"]
+        packet_name = "_%s_PACKET" % item["_name.category_id"]
 
         container = self.onto[container_name]
         datatype = self.onto[datatype_name]
@@ -156,11 +156,11 @@ class Generator:
                 e._dimension.append(dimension)  # not localised
             if datatype:
                 e._datatype.append(datatype)  # not localised
-            if row_name in self.onto:
-                row = self.onto[row_name]
-                row.is_a.append(self.top.hasSpatialDirectPart.max(1, e))
+            if packet_name in self.onto:
+                packet = self.onto[packet_name]
+                packet.is_a.append(self.top.hasSpatialDirectPart.max(1, e))
             else:
-                print("** no row:", realname)
+                print("** no packet:", realname)
 
     def subarray(self, dimensions, datatype, container_name):
         """Returns a reference to an array or matrix corresponding to:
