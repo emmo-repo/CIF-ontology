@@ -59,4 +59,8 @@ def main(args: list = None):
     if args.ttlfile is None:
         args.ttlfile = args.dicfile.resolve().name[: -len(args.dicfile.suffix)] + ".ttl"
 
+    if not args.dicfile.resolve().exists():
+        # The dic-file does not exist, use it as a string instead so it can be downloaded.
+        args.dicfile = str(args.dicfile)
+
     dic2owl_run(dicfile=args.dicfile, ttlfile=args.ttlfile)
