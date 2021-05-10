@@ -26,8 +26,8 @@ See the following table for version compatibilies:
 | ------------------- | ----------------- |
 | emmo-inferred       | 1.0.0-beta        |
 
-Obtaining domain-crystallography
---------------------------------
+Obtaining CIF-ontology
+----------------------
 
 This ontology build on EMMO-1.0.0-beta.
 The correct path to the inferred verion 'emmo-inferred' is specified in the catalog file, [`catalog-v001.xml`](ontology/catalog-v001.xml).

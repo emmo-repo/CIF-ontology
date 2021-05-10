@@ -2,5 +2,5 @@
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <uri id="Imports Wizard Entry" name="http://emmo.info/emmo/cif-ddl" uri="cif-ddl.ttl"/>
     <uri id="Imports Wizard Entry" name="http://emmo.info/emmo/cif-core" uri="cif-core.ttl"/>
-    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+    <uri id="Imports Wizard Entry" name="http://emmo.info/CIF-ontology/0.0.1/cif" uri="cif.ttl"/>
 </catalog>

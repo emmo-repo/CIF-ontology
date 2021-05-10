@@ -185,7 +185,7 @@ class Generator:
 
 
 def main(dicfile: Union[str, Path], ttlfile: Union[str, Path]) -> Generator:
-    base_iri = "http://emmo.info/domain-crystallography/cif_core#"
+    base_iri = "http://emmo.info/CIF-ontology/cif_core#"
 
     dicfile = dicfile if isinstance(dicfile, str) else str(dicfile.resolve())
 
