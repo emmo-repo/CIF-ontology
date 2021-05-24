@@ -1,2 +1,2 @@
-pre-commit~=2.12
+pre-commit~=2.13
 pylint~=2.8
