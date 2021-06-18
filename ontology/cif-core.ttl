@@ -1,0 +1,560 @@
+@prefix : <http://emmo.info/emmo/cif-core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://emmo.info/emmo/cif-core> .
+
+<http://emmo.info/emmo/cif-core> rdf:type owl:Ontology ;
+                                  owl:imports <http://emmo.info/emmo/cif-ddl> ;
+                                  rdfs:comment """Created by:
+
+Emanuele Ghedini
+emanuele.ghedini@unibo.it
+
+Jesper Friis
+jesper.friis@sintef.no""" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://emmo.info/emmo/cif-ddl#_alias.definition_id
+<http://emmo.info/emmo/cif-ddl#_alias.definition_id> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_definition.class
+<http://emmo.info/emmo/cif-ddl#_definition.class> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_definition.id
+<http://emmo.info/emmo/cif-ddl#_definition.id> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_definition.scope
+<http://emmo.info/emmo/cif-ddl#_definition.scope> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_definition.update
+<http://emmo.info/emmo/cif-ddl#_definition.update> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_description.text
+<http://emmo.info/emmo/cif-ddl#_description.text> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_description_example.case
+<http://emmo.info/emmo/cif-ddl#_description_example.case> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_dictionary.class
+<http://emmo.info/emmo/cif-ddl#_dictionary.class> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_dictionary.date
+<http://emmo.info/emmo/cif-ddl#_dictionary.date> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_dictionary.ddl_conformance
+<http://emmo.info/emmo/cif-ddl#_dictionary.ddl_conformance> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_dictionary.namespace
+<http://emmo.info/emmo/cif-ddl#_dictionary.namespace> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_dictionary.title
+<http://emmo.info/emmo/cif-ddl#_dictionary.title> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_dictionary.uri
+<http://emmo.info/emmo/cif-ddl#_dictionary.uri> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_dictionary.version
+<http://emmo.info/emmo/cif-ddl#_dictionary.version> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_enumeration.range
+<http://emmo.info/emmo/cif-ddl#_enumeration.range> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_import.get
+<http://emmo.info/emmo/cif-ddl#_import.get> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_name.category_id
+<http://emmo.info/emmo/cif-ddl#_name.category_id> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_name.object_id
+<http://emmo.info/emmo/cif-ddl#_name.object_id> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_type.contents
+<http://emmo.info/emmo/cif-ddl#_type.contents> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_type.source
+<http://emmo.info/emmo/cif-ddl#_type.source> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_units.code
+<http://emmo.info/emmo/cif-ddl#_units.code> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_type:container
+<http://emmo.info/emmo/cif-ddl#_type:container> rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo/cif-ddl#_type:purpose
+<http://emmo.info/emmo/cif-ddl#_type:purpose> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://emmo.info/emmo/cif-core#CELL
+:CELL rdf:type owl:Class ;
+      rdfs:subClassOf :EXPTL ;
+      <http://emmo.info/emmo/cif-ddl#_definition.id> "CELL" ;
+      <http://emmo.info/emmo/cif-ddl#_definition.scope> "Category" ,
+                                                        "Set" ;
+      <http://emmo.info/emmo/cif-ddl#_definition.update> "2012-11-22" ;
+      <http://emmo.info/emmo/cif-ddl#_description.text> "The CATEGORY of data items used to describe the parameters of the crystal unit cell and their measurement." ;
+      <http://emmo.info/emmo/cif-ddl#_name.category_id> "EXPTL" ;
+      <http://emmo.info/emmo/cif-ddl#_name.object_id> "CELL" .
+
+
+###  http://emmo.info/emmo/cif-core#CIF_CORE
+:CIF_CORE rdf:type owl:Class ;
+          rdfs:subClassOf :CORE_DIC ;
+          <http://emmo.info/emmo/cif-ddl#_definition.class> "Head" ;
+          <http://emmo.info/emmo/cif-ddl#_definition.id> "CIF_CORE" ;
+          <http://emmo.info/emmo/cif-ddl#_definition.scope> "Category" ;
+          <http://emmo.info/emmo/cif-ddl#_definition.update> "2014-06-18" ;
+          <http://emmo.info/emmo/cif-ddl#_description.text> "The CIF_CORE group contains the definitions of data items that are common to all domains of crystallographic studies." ;
+          <http://emmo.info/emmo/cif-ddl#_name.category_id> "CORE_DIC" ;
+          <http://emmo.info/emmo/cif-ddl#_name.object_id> "CIF_CORE" .
+
+
+###  http://emmo.info/emmo/cif-core#CORE_DIC
+:CORE_DIC rdf:type owl:Class ;
+          rdfs:subClassOf <http://emmo.info/emmo/cif-ddl#DictionaryDefinedItem> ;
+          <http://emmo.info/emmo/cif-ddl#_description.text> "The CIF_CORE dictionary records all the CORE data items defined and used with in the Crystallographic Information Framework (CIF)." ;
+          <http://emmo.info/emmo/cif-ddl#_dictionary.class> "Instance" ;
+          <http://emmo.info/emmo/cif-ddl#_dictionary.date> "2021-03-03" ;
+          <http://emmo.info/emmo/cif-ddl#_dictionary.ddl_conformance> "3.14.0" ;
+          <http://emmo.info/emmo/cif-ddl#_dictionary.namespace> "CifCore" ;
+          <http://emmo.info/emmo/cif-ddl#_dictionary.title> "CORE_DIC" ;
+          <http://emmo.info/emmo/cif-ddl#_dictionary.uri> "https://raw.githubusercontent.com/COMCIFS/cif_core/cif2-conversion/cif_core.dic" ;
+          <http://emmo.info/emmo/cif-ddl#_dictionary.version> "3.0.14" .
+
+
+###  http://emmo.info/emmo/cif-core#DIFFRACTION
+:DIFFRACTION rdf:type owl:Class ;
+             rdfs:subClassOf :CIF_CORE ;
+             <http://emmo.info/emmo/cif-ddl#_definition.class> "Set" ;
+             <http://emmo.info/emmo/cif-ddl#_definition.id> "DIFFRACTION" ;
+             <http://emmo.info/emmo/cif-ddl#_definition.scope> "Category" ;
+             <http://emmo.info/emmo/cif-ddl#_definition.update> "2012-11-26" ;
+             <http://emmo.info/emmo/cif-ddl#_description.text> "The DICTIONARY group encompassing the CORE DIFFRACTION data items defined and used with in the Crystallographic Information Framework (CIF)." ;
+             <http://emmo.info/emmo/cif-ddl#_name.category_id> "CIF_CORE" ;
+             <http://emmo.info/emmo/cif-ddl#_name.object_id> "DIFFRACTION" .
+
+
+###  http://emmo.info/emmo/cif-core#DIFFRN
+:DIFFRN rdf:type owl:Class ;
+        rdfs:subClassOf :DIFFRACTION ;
+        <http://emmo.info/emmo/cif-ddl#_definition.class> "Set" ;
+        <http://emmo.info/emmo/cif-ddl#_definition.id> "DIFFRN" ;
+        <http://emmo.info/emmo/cif-ddl#_definition.scope> "Category" ;
+        <http://emmo.info/emmo/cif-ddl#_definition.update> "2012-12-13" ;
+        <http://emmo.info/emmo/cif-ddl#_description.text> "The CATEGORY of data items used to describe the diffraction experiment." ;
+        <http://emmo.info/emmo/cif-ddl#_name.category_id> "DIFFRACTION" ;
+        <http://emmo.info/emmo/cif-ddl#_name.object_id> "DIFFRN" .
+
+
+###  http://emmo.info/emmo/cif-core#EXPTL
+:EXPTL rdf:type owl:Class ;
+       rdfs:subClassOf :CIF_CORE ;
+       <http://emmo.info/emmo/cif-ddl#_definition.class> "Set" ;
+       <http://emmo.info/emmo/cif-ddl#_definition.id> "EXPTL" ;
+       <http://emmo.info/emmo/cif-ddl#_definition.scope> "Category" ;
+       <http://emmo.info/emmo/cif-ddl#_definition.update> "2012-11-22" ;
+       <http://emmo.info/emmo/cif-ddl#_description.text> "The CATEGORY of data items used to specify the experimental work prior to diffraction measurements. These include crystallization crystal measurements and absorption-correction techniques used." ;
+       <http://emmo.info/emmo/cif-ddl#_name.category_id> "CIF_CORE" ;
+       <http://emmo.info/emmo/cif-ddl#_name.object_id> "EXPTL" .
+
+
+###  http://emmo.info/emmo/cif-core#SPACE_GROUP
+:SPACE_GROUP rdf:type owl:Class ;
+             rdfs:subClassOf :CIF_CORE .
+
+
+###  http://emmo.info/emmo/cif-core#SPACE_GROUP_SYMOP
+:SPACE_GROUP_SYMOP rdf:type owl:Class ;
+                   rdfs:subClassOf :SPACE_GROUP ;
+                   <http://emmo.info/emmo/cif-ddl#_category.key_id> "_space_group_symop.id" ;
+                   <http://emmo.info/emmo/cif-ddl#_definition.class> "Loop" ;
+                   <http://emmo.info/emmo/cif-ddl#_definition.id> "SPACE_GROUP_SYMOP" ;
+                   <http://emmo.info/emmo/cif-ddl#_definition.scope> "Category" ;
+                   <http://emmo.info/emmo/cif-ddl#_definition.update> "2016-05-10" ;
+                   <http://emmo.info/emmo/cif-ddl#_description.text> "The CATEGORY of data items used to describe symmetry equivalent sites in the crystal unit cell." ;
+                   <http://emmo.info/emmo/cif-ddl#_name.category_id> "SPACE_GROUP" ;
+                   <http://emmo.info/emmo/cif-ddl#_name.object_id> "SPACE_GROUP_SYMOP" ;
+                   <http://emmo.info/emmo/cif-ddl#loop_> [ <http://emmo.info/emmo/cif-ddl#_category_key.name> "_space_group_symop.id"
+                                                         ] .
+
+
+###  http://emmo.info/emmo/cif-core#_CELL_MEASUREMENT
+:_CELL_MEASUREMENT rdf:type owl:Class ;
+                   rdfs:subClassOf :CELL ;
+                   <http://emmo.info/emmo/cif-ddl#_definition.class> "Set" ;
+                   <http://emmo.info/emmo/cif-ddl#_definition.id> "CELL_MEASUREMENT" ;
+                   <http://emmo.info/emmo/cif-ddl#_definition.scope> "Category" ;
+                   <http://emmo.info/emmo/cif-ddl#_definition.update> "2012-11-22" ;
+                   <http://emmo.info/emmo/cif-ddl#_description.text> "The CATEGORY of data items used to describe the angles between the axes in the crystal unit cell." ;
+                   <http://emmo.info/emmo/cif-ddl#_name.category_id> "CELL" ;
+                   <http://emmo.info/emmo/cif-ddl#_name.object_id> "CELL_MEASUREMENT" .
+
+
+###  http://emmo.info/emmo/cif-core#_cell.length_a
+:_cell.length_a rdf:type owl:Class ;
+                rdfs:subClassOf :CELL ,
+                                <http://emmo.info/emmo/cif-ddl#Measurand> ,
+                                <http://emmo.info/emmo/cif-ddl#Real> ,
+                                <http://emmo.info/emmo/cif-ddl#Recorded> ,
+                                <http://emmo.info/emmo/cif-ddl#Single> ;
+                <http://emmo.info/emmo/cif-ddl#_definition.id> "_cell.length_a" ;
+                <http://emmo.info/emmo/cif-ddl#_definition.update> "2014-06-08" ;
+                <http://emmo.info/emmo/cif-ddl#_description.text> "The length of each cell axis." ;
+                <http://emmo.info/emmo/cif-ddl#_enumeration.range> "1.:" ;
+                <http://emmo.info/emmo/cif-ddl#_import.get> "[{'save':cell_length  'file':templ_attr.cif}]" ;
+                <http://emmo.info/emmo/cif-ddl#_name.category_id> "cell" ;
+                <http://emmo.info/emmo/cif-ddl#_name.object_id> "length_a" ;
+                <http://emmo.info/emmo/cif-ddl#_type.contents> "Real" ;
+                <http://emmo.info/emmo/cif-ddl#_type.source> "Recorded" ;
+                <http://emmo.info/emmo/cif-ddl#_units.code> "angstroms" ;
+                <http://emmo.info/emmo/cif-ddl#loop_> [ <http://emmo.info/emmo/cif-ddl#_alias.definition_id> "_cell_length_a"
+                                                      ] ;
+                <http://emmo.info/emmo/cif-ddl#_type:container> "Single" ;
+                <http://emmo.info/emmo/cif-ddl#_type:purpose> "Measurand" .
+
+
+###  http://emmo.info/emmo/cif-core#_cell.length_b
+:_cell.length_b rdf:type owl:Class ;
+                rdfs:subClassOf :CELL ,
+                                <http://emmo.info/emmo/cif-ddl#Measurand> ,
+                                <http://emmo.info/emmo/cif-ddl#Real> ,
+                                <http://emmo.info/emmo/cif-ddl#Recorded> ,
+                                <http://emmo.info/emmo/cif-ddl#Single> ;
+                <http://emmo.info/emmo/cif-ddl#_definition.id> "_cell.length_b" ;
+                <http://emmo.info/emmo/cif-ddl#_definition.update> "2014-06-08" ;
+                <http://emmo.info/emmo/cif-ddl#_description.text> "The length of each cell axis." ;
+                <http://emmo.info/emmo/cif-ddl#_enumeration.range> "1.:" ;
+                <http://emmo.info/emmo/cif-ddl#_import.get> "[{'save':cell_length  'file':templ_attr.cif}]" ;
+                <http://emmo.info/emmo/cif-ddl#_name.category_id> "cell" ;
+                <http://emmo.info/emmo/cif-ddl#_name.object_id> "length_b" ;
+                <http://emmo.info/emmo/cif-ddl#_type.contents> "Real" ;
+                <http://emmo.info/emmo/cif-ddl#_type.source> "Recorded" ;
+                <http://emmo.info/emmo/cif-ddl#_units.code> "angstroms" ;
+                <http://emmo.info/emmo/cif-ddl#loop_> [ <http://emmo.info/emmo/cif-ddl#_alias.definition_id> "_cell_length_b"
+                                                      ] ;
+                <http://emmo.info/emmo/cif-ddl#_type:container> "Single" ;
+                <http://emmo.info/emmo/cif-ddl#_type:purpose> "Measurand" .
+
+
+###  http://emmo.info/emmo/cif-core#_cell.length_c
+:_cell.length_c rdf:type owl:Class ;
+                rdfs:subClassOf :CELL ;
+                <http://emmo.info/emmo/cif-ddl#_definition.id> "_cell.length_c" ;
+                <http://emmo.info/emmo/cif-ddl#_definition.update> "2014-06-08" ;
+                <http://emmo.info/emmo/cif-ddl#_description.text> "The length of each cell axis." ;
+                <http://emmo.info/emmo/cif-ddl#_enumeration.range> "1.:" ;
+                <http://emmo.info/emmo/cif-ddl#_import.get> "[{'save':cell_length  'file':templ_attr.cif}]" ;
+                <http://emmo.info/emmo/cif-ddl#_name.category_id> "cell" ;
+                <http://emmo.info/emmo/cif-ddl#_name.object_id> "length_c" ;
+                <http://emmo.info/emmo/cif-ddl#_type.contents> "Real" ;
+                <http://emmo.info/emmo/cif-ddl#_type.source> "Recorded" ;
+                <http://emmo.info/emmo/cif-ddl#_units.code> "angstroms" ;
+                <http://emmo.info/emmo/cif-ddl#loop_> [ <http://emmo.info/emmo/cif-ddl#_alias.definition_id> "_cell_length_c"
+                                                      ] ;
+                <http://emmo.info/emmo/cif-ddl#_type:container> "Single" ;
+                <http://emmo.info/emmo/cif-ddl#_type:purpose> "Measurand" .
+
+
+###  http://emmo.info/emmo/cif-core#_diffrn.ambient_environment
+:_diffrn.ambient_environment rdf:type owl:Class ;
+                             rdfs:subClassOf :DIFFRN ,
+                                             <http://emmo.info/emmo/cif-ddl#Describe> ,
+                                             <http://emmo.info/emmo/cif-ddl#Recorded> ,
+                                             <http://emmo.info/emmo/cif-ddl#Single> ,
+                                             <http://emmo.info/emmo/cif-ddl#Text> ;
+                             <http://emmo.info/emmo/cif-ddl#_alias.definition_id> "_diffrn_ambient_environment" ;
+                             <http://emmo.info/emmo/cif-ddl#_definition.id> "_diffrn.ambient_environment" ;
+                             <http://emmo.info/emmo/cif-ddl#_definition.update> "2012-11-26" ;
+                             <http://emmo.info/emmo/cif-ddl#_description.text> "The gas or liquid environment of the crystal sample, if not air." ;
+                             <http://emmo.info/emmo/cif-ddl#_name.category_id> "diffrn" ;
+                             <http://emmo.info/emmo/cif-ddl#_name.object_id> "ambient_environment" ;
+                             <http://emmo.info/emmo/cif-ddl#_type.contents> "Text" ;
+                             <http://emmo.info/emmo/cif-ddl#_type.source> "Recorded" ;
+                             <http://emmo.info/emmo/cif-ddl#loop_> [ <http://emmo.info/emmo/cif-ddl#_description_example.case> "He" ,
+                                                                                                                               "mother liquor" ,
+                                                                                                                               "vacuum"
+                                                                   ] ;
+                             <http://emmo.info/emmo/cif-ddl#_type:container> "Single" ;
+                             <http://emmo.info/emmo/cif-ddl#_type:purpose> "Describe" .
+
+
+###  http://emmo.info/emmo/cif-core#_diffrn.ambient_pressure
+:_diffrn.ambient_pressure rdf:type owl:Class ;
+                          rdfs:subClassOf :DIFFRN ,
+                                          <http://emmo.info/emmo/cif-ddl#Measurand> ,
+                                          <http://emmo.info/emmo/cif-ddl#Real> ,
+                                          <http://emmo.info/emmo/cif-ddl#Recorded> ,
+                                          <http://emmo.info/emmo/cif-ddl#Single> ;
+                          <http://emmo.info/emmo/cif-ddl#_alias.definition_id> "_diffrn_ambient_pressure" ;
+                          <http://emmo.info/emmo/cif-ddl#_definition.id> "_diffrn.ambient_pressure" ;
+                          <http://emmo.info/emmo/cif-ddl#_definition.update> "2012-11-26" ;
+                          <http://emmo.info/emmo/cif-ddl#_description.text> "Mean hydrostatic  pressure at which intensities were measured." ;
+                          <http://emmo.info/emmo/cif-ddl#_enumeration.range> "0.0:" ;
+                          <http://emmo.info/emmo/cif-ddl#_name.category_id> "diffrn" ;
+                          <http://emmo.info/emmo/cif-ddl#_name.object_id> "ambient_pressure" ;
+                          <http://emmo.info/emmo/cif-ddl#_type.contents> "Real" ;
+                          <http://emmo.info/emmo/cif-ddl#_type.source> "Recorded" ;
+                          <http://emmo.info/emmo/cif-ddl#_units.code> "kilopascals" ;
+                          <http://emmo.info/emmo/cif-ddl#_type:container> "Single" ;
+                          <http://emmo.info/emmo/cif-ddl#_type:purpose> "Measurand" .
+
+
+###  http://emmo.info/emmo/cif-core#_diffrn.ambient_pressure_gt
+:_diffrn.ambient_pressure_gt rdf:type owl:Class ;
+                             rdfs:subClassOf :DIFFRN ,
+                                             <http://emmo.info/emmo/cif-ddl#Number> ,
+                                             <http://emmo.info/emmo/cif-ddl#Real> ,
+                                             <http://emmo.info/emmo/cif-ddl#Recorded> ,
+                                             <http://emmo.info/emmo/cif-ddl#Single> ;
+                             <http://emmo.info/emmo/cif-ddl#_alias.definition_id> "_diffrn_ambient_pressure_gt" ;
+                             <http://emmo.info/emmo/cif-ddl#_definition.id> "_diffrn.ambient_pressure_gt" ;
+                             <http://emmo.info/emmo/cif-ddl#_definition.update> "2012-12-13" ;
+                             <http://emmo.info/emmo/cif-ddl#_description.text> """Mean hydrostatic pressure above which intensities were measured. These items allow for a pressure range to be given.
+_diffrn.ambient_pressure should be used in preference to this item when possible.""" ;
+                             <http://emmo.info/emmo/cif-ddl#_enumeration.range> "0.0:" ;
+                             <http://emmo.info/emmo/cif-ddl#_name.category_id> "diffrn" ;
+                             <http://emmo.info/emmo/cif-ddl#_name.object_id> "ambient_pressure_gt" ;
+                             <http://emmo.info/emmo/cif-ddl#_type.contents> "Real" ;
+                             <http://emmo.info/emmo/cif-ddl#_type.source> "Recorded" ;
+                             <http://emmo.info/emmo/cif-ddl#_units.code> "kilopascals" ;
+                             <http://emmo.info/emmo/cif-ddl#_type:container> "Single" ;
+                             <http://emmo.info/emmo/cif-ddl#_type:purpose> "Number" .
+
+
+###  http://emmo.info/emmo/cif-core#_space_group_symop.id
+:_space_group_symop.id rdf:type owl:Class ;
+                       rdfs:subClassOf :SPACE_GROUP_SYMOP ,
+                                       <http://emmo.info/emmo/cif-ddl#Assigned> ,
+                                       <http://emmo.info/emmo/cif-ddl#Integer> ,
+                                       <http://emmo.info/emmo/cif-ddl#Number> ,
+                                       <http://emmo.info/emmo/cif-ddl#Single> ;
+                       <http://emmo.info/emmo/cif-ddl#_definition.id> "_space_group_symop.id" ;
+                       <http://emmo.info/emmo/cif-ddl#_definition.update> "2021-03-01" ;
+                       <http://emmo.info/emmo/cif-ddl#_description.text> "Index identifying each entry in the _space_group_symop.operation_xyz list. It is normally the sequence number of the entry in that list, and should be identified with the code 'n' in the geometry symmetry codes of the form 'n_pqr'. The identity operation (i.e. _space_group_symop.operation_xyz set to 'x,y,z') should be set to 1." ;
+                       <http://emmo.info/emmo/cif-ddl#_enumeration.range> "1:" ;
+                       <http://emmo.info/emmo/cif-ddl#_name.category_id> "space_group_symop" ;
+                       <http://emmo.info/emmo/cif-ddl#_name.object_id> "id" ;
+                       <http://emmo.info/emmo/cif-ddl#_type.contents> "Integer" ;
+                       <http://emmo.info/emmo/cif-ddl#_type.source> "Assigned" ;
+                       <http://emmo.info/emmo/cif-ddl#_units.code> "none" ;
+                       <http://emmo.info/emmo/cif-ddl#loop_> [ <http://emmo.info/emmo/cif-ddl#_alias.definition_id> "_space_group_symop_id" ,
+                                                                                                                    "_symmetry_equiv.pos_site_id" ,
+                                                                                                                    "_symmetry_equiv_pos_site_id"
+                                                             ] ,
+                                                             [ <http://emmo.info/emmo/cif-ddl#_method.expression> "_space_group_symop.id = Current_Row(space_group_symop) + 1" ;
+                                                               <http://emmo.info/emmo/cif-ddl#_method.purpose> "Evaluation"
+                                                             ] ;
+                       <http://emmo.info/emmo/cif-ddl#_type:container> "Single" ;
+                       <http://emmo.info/emmo/cif-ddl#_type:purpose> "Number" .
+
+
+###  http://emmo.info/emmo/cif-core#_space_group_symop.operation_xyz
+:_space_group_symop.operation_xyz rdf:type owl:Class ;
+                                  rdfs:subClassOf :SPACE_GROUP_SYMOP ,
+                                                  <http://emmo.info/emmo/cif-ddl#Encode> ,
+                                                  <http://emmo.info/emmo/cif-ddl#Recorded> ,
+                                                  <http://emmo.info/emmo/cif-ddl#Single> ,
+                                                  <http://emmo.info/emmo/cif-ddl#Text> ;
+                                  <http://emmo.info/emmo/cif-ddl#_definition.id> "_space_group_symop.operation_xyz" ;
+                                  <http://emmo.info/emmo/cif-ddl#_definition.update> "2016-05-13" ;
+                                  <http://emmo.info/emmo/cif-ddl#_description.text> """A parsable string giving one of the symmetry operations of the
+space group in algebraic form.  If W is a matrix representation
+of the rotational part of the symmetry operation defined by the
+positions and signs of x, y and z, and w is a column of
+translations defined by fractions, an equivalent position
+X' is generated from a given position X by the equation
+
+X' = WX + w
+ 
+(Note: X is used to represent bold_italics_x in International
+Tables for Crystallography Vol. A, Part 5)
+ 
+When a list of symmetry operations is given, it must contain
+a complete set of coordinate representatives which generates
+all the operations of the space group by the addition of
+all primitive translations of the space group. Such
+representatives are to be found as the coordinates of
+the general-equivalent position in International Tables for
+Crystallography Vol. A (2002), to which it is necessary to
+add any centring translations shown above the
+general-equivalent position.
+ 
+That is to say, it is necessary to list explicitly all the
+symmetry operations required to generate all the atoms in
+the unit cell defined by the setting used.""" ;
+                                  <http://emmo.info/emmo/cif-ddl#_name.category_id> "space_group_symop" ;
+                                  <http://emmo.info/emmo/cif-ddl#_name.object_id> "operation_xyz" ;
+                                  <http://emmo.info/emmo/cif-ddl#_type.contents> "Text" ;
+                                  <http://emmo.info/emmo/cif-ddl#_type.source> "Recorded" ;
+                                  <http://emmo.info/emmo/cif-ddl#loop_> [ <http://emmo.info/emmo/cif-ddl#_description_example.case> "x,1/2-y,1/2+z" ;
+                                                                          <http://emmo.info/emmo/cif-ddl#_description_example.detail> "glide reflection through the plane (x,1/4,z) with glide vector (1/2)c"
+                                                                        ] ,
+                                                                        [ <http://emmo.info/emmo/cif-ddl#_alias.definition_id> "_space_group_symop_operation_xyz" ,
+                                                                                                                               "_symmetry_equiv.pos_as_xyz" ,
+                                                                                                                               "_symmetry_equiv_pos_as_xyz"
+                                                                        ] ;
+                                  <http://emmo.info/emmo/cif-ddl#_type:container> "Single" ;
+                                  <http://emmo.info/emmo/cif-ddl#_type:purpose> "Encode" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://emmo.info/emmo/cif-core#i0
+:i0 rdf:type owl:NamedIndividual ,
+             <http://emmo.info/emmo/cif-ddl#DataBlock> ;
+    <http://emmo.info/emmo/cif-ddl#hasCIFDirectPart> :i1 ,
+                                                     :i2 ,
+                                                     :i3 ,
+                                                     :i4 ;
+    rdfs:comment """data_my_awesome_crystal
+      _cell_length_a 1.00(1)
+      _cell_length_b 2.00(2)
+      _cell_length_c 3.00(3)""" .
+
+
+###  http://emmo.info/emmo/cif-core#i1
+:i1 rdf:type owl:NamedIndividual ,
+             <http://emmo.info/emmo/cif-ddl#DataBlockName> ;
+    <http://emmo.info/emmo/cif-ddl#hasUniqueValue> "_my_awesome_crystal" .
+
+
+###  http://emmo.info/emmo/cif-core#i2
+:i2 rdf:type owl:NamedIndividual ,
+             :_cell.length_a ;
+    <http://emmo.info/emmo/cif-ddl#hasUniqueValue> 1.0 .
+
+
+###  http://emmo.info/emmo/cif-core#i3
+:i3 rdf:type owl:NamedIndividual ,
+             :_cell.length_b ;
+    <http://emmo.info/emmo/cif-ddl#hasUniqueValue> 2.00 .
+
+
+###  http://emmo.info/emmo/cif-core#i4
+:i4 rdf:type owl:NamedIndividual ,
+             :_cell.length_c ;
+    <http://emmo.info/emmo/cif-ddl#hasUniqueValue> 3.0 .
+
+
+###  http://emmo.info/emmo/cif-core#o00
+:o00 rdf:type owl:NamedIndividual ,
+              <http://emmo.info/emmo/cif-ddl#Loop> ;
+     <http://emmo.info/emmo/cif-ddl#hasCIFDirectPart> :o01 ,
+                                                      :o02 ,
+                                                      :o03 ,
+                                                      :o04 ;
+     rdfs:comment """loop_
+    _space_group_symop_id
+    _space_group_symop_operation_xyz
+      1    x,y,z
+      2   -x,-y,-z
+      3   -x,1/2+y,1/2-z
+      4    x,1/2-y,1/2+z""" .
+
+
+###  http://emmo.info/emmo/cif-core#o01
+:o01 rdf:type owl:NamedIndividual ;
+     <http://emmo.info/emmo/cif-ddl#hasCIFDirectPart> :o05 ,
+                                                      :o06 .
+
+
+###  http://emmo.info/emmo/cif-core#o02
+:o02 rdf:type owl:NamedIndividual ;
+     <http://emmo.info/emmo/cif-ddl#hasCIFDirectPart> :o07 ,
+                                                      :o08 .
+
+
+###  http://emmo.info/emmo/cif-core#o03
+:o03 rdf:type owl:NamedIndividual ;
+     <http://emmo.info/emmo/cif-ddl#hasCIFDirectPart> :o09 ,
+                                                      :o10 .
+
+
+###  http://emmo.info/emmo/cif-core#o04
+:o04 rdf:type owl:NamedIndividual ;
+     <http://emmo.info/emmo/cif-ddl#hasCIFDirectPart> :o11 ,
+                                                      :o12 .
+
+
+###  http://emmo.info/emmo/cif-core#o05
+:o05 rdf:type owl:NamedIndividual ,
+              :_space_group_symop.id ;
+     <http://emmo.info/emmo/cif-ddl#hasUniqueValue> 1 .
+
+
+###  http://emmo.info/emmo/cif-core#o06
+:o06 rdf:type owl:NamedIndividual ,
+              :_space_group_symop.operation_xyz ;
+     <http://emmo.info/emmo/cif-ddl#hasUniqueValue> "x,y,z" .
+
+
+###  http://emmo.info/emmo/cif-core#o07
+:o07 rdf:type owl:NamedIndividual ,
+              :_space_group_symop.id ;
+     <http://emmo.info/emmo/cif-ddl#hasUniqueValue> 2 .
+
+
+###  http://emmo.info/emmo/cif-core#o08
+:o08 rdf:type owl:NamedIndividual ,
+              :_space_group_symop.operation_xyz ;
+     <http://emmo.info/emmo/cif-ddl#hasUniqueValue> "-x,-y,-z" .
+
+
+###  http://emmo.info/emmo/cif-core#o09
+:o09 rdf:type owl:NamedIndividual ,
+              :_space_group_symop.id ;
+     <http://emmo.info/emmo/cif-ddl#hasUniqueValue> 3 .
+
+
+###  http://emmo.info/emmo/cif-core#o10
+:o10 rdf:type owl:NamedIndividual ,
+              :_space_group_symop.operation_xyz ;
+     <http://emmo.info/emmo/cif-ddl#hasUniqueValue> "-x,1/2+y,1/2-z" .
+
+
+###  http://emmo.info/emmo/cif-core#o11
+:o11 rdf:type owl:NamedIndividual ,
+              :_space_group_symop.id ;
+     <http://emmo.info/emmo/cif-ddl#hasUniqueValue> 4 .
+
+
+###  http://emmo.info/emmo/cif-core#o12
+:o12 rdf:type owl:NamedIndividual ,
+              :_space_group_symop.operation_xyz ;
+     <http://emmo.info/emmo/cif-ddl#hasUniqueValue> "x,1/2-y,1/2+z" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
