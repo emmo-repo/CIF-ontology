@@ -1,2 +1,2 @@
 pre-commit~=2.12
-pylint~=2.8
+pylint~=2.9
