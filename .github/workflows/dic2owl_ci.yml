@@ -1,0 +1,42 @@
+name: CI - dic2owl
+
+on: [push, pull_request]
+
+jobs:
+
+  dic2owl-lint-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version:  ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          pip install -U -r dic2owl/requirements.txt
+          pip install bandit pylint safety mypy pytest pytest-cov
+
+      - name: Run bandit
+        run: bandit -r dic2owl/dic2owl
+
+      - name: Run PyLint
+        run: pylint dic2owl/dic2owl
+
+      - name: Run safety
+        run: |
+          safety check -r dic2owl/requirements.txt --bare
+          safety check -r dic2owl/requirements_dev.txt --bare
+
+      - name: Lint with MyPy
+        run: mypy --ignore-missing-imports --scripts-are-modules dic2owl/dic2owl
+
+      # - name: Run unittests
+      #   run: pytest --cov dic2owl/dic2owl tests/
