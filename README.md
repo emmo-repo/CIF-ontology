@@ -1,13 +1,11 @@
 [![CI tests](https://github.com/emmo-repo/CIF-ontology/workflows/CI/badge.svg)](https://github.com/emmo-repo/CIF-ontology/actions/)
 
-CIF ontology
-============
+# CIF ontology
 
 A crystallography domain ontology based on [EMMO][1] and the [CIF core][2] dictionary.
 It is implemented as a formal language.
 
-Status
-------
+## Status
 
 - [ ] Proposal
 - [X] Accepted, under development
@@ -16,8 +14,7 @@ Status
 This ontology is work-in-progress (WIP).
 It is part of the overall process of developing a domain ontology for crystallography.
 
-Imported Ontologies
--------------------
+## Imported Ontologies
 
 This ontology builds on top of EMMO.
 See the following table for version compatibilies:
@@ -26,8 +23,13 @@ See the following table for version compatibilies:
 | ------------------- | ----------------- |
 | emmo-inferred       | 1.0.0-beta        |
 
-Obtaining CIF-ontology
-----------------------
+## Generator tool (`dic2owl`)
+
+This repository contains both ontologies (under [`/ontology`](ontology)) and the `dic2owl` generator tool (under [`/dic2owl`](dic2owl)), written in Python.
+
+Go to the [README](dic2owl/README.md) of `dic2owl` to read more about the generator tool.
+
+## Obtaining CIF-ontology
 
 This ontology build on EMMO-1.0.0-beta.
 The correct path to the inferred verion 'emmo-inferred' is specified in the catalog file, [`catalog-v001.xml`](ontology/catalog-v001.xml).
@@ -52,8 +54,7 @@ cif_onto = get_ontology('/path/to/cif.ttl').load(url_from_catalog=True)
 cif_onto = get_ontology('https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main/ontology/cif.ttl').load()
 ```
 
-Attributions and credits
-------------------------
+## Attributions and credits
 
 ### Contributors
 

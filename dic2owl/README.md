@@ -22,6 +22,20 @@ It has been developed by the EMMO-Crystallography EMMC Task Group, which consist
 
 This package relies on the [PyCIFRW](https://bitbucket.org/jamesrhester/pycifrw) package developed by James Hester to parse CIF (`.cif`) and CIF dictionary (`.dic`) files.
 
+## For developers
+
+### Pre-commit (Python formatting)
+
+To ensure similar formatting, this repository uses `pre-commit`, which runs prior to every `git commit`.
+Specifically, [`black`](https://github.com/psf/black) is used as the default Python formatter.
+
+To install in your local clone, `cd` to the root of the repository and run
+
+```console
+/path/to/CIF-ontology$ pre-commit install
+pre-commit installed at .git/hooks/pre-commit
+```
+
 ## Author
 
 - Jesper Friis, SINTEF
