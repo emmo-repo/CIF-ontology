@@ -43,8 +43,8 @@ class Generator:
     def __init__(self, dicfile, base_iri, cif_top=None):
         self.cd = CifDic(dicfile, do_dREL=False)
         if not cif_top:
-            self.cif_top = f'{release_site}/{__ontology_version__}/cif_top.ttl'
-        elif isinstance(cif_top, str) and cif_top.startswith('http'):
+            self.cif_top = f"{release_site}/{__ontology_version__}/cif_top.ttl"
+        elif isinstance(cif_top, str) and cif_top.startswith("http"):
             self.cif_top = cif_top
         elif isinstance(cif_top, (Path, str)):
             self.cif_top = ONTOLOGY_DIR / cif_top
