@@ -1,5 +1,8 @@
 #!/usr/bin/env python
-"""Python script for generating an ontology corresponding to a CIF dictionary.
+"""
+# Generate ontology
+
+Python script for generating an ontology corresponding to a CIF dictionary.
 """
 from pathlib import Path
 import textwrap
@@ -13,17 +16,16 @@ from owlready2 import locstr
 
 from CifFile import CifDic
 
-from __init__ import __version__, release_site
+from dic2owl import __ontology_version__, release_site
+
+
+"""Return the absolute, normalized path to the `ontology` directory in this repository"""
+ONTOLOGY_DIR = Path(__file__).parent.parent.parent.joinpath("ontology").resolve()
 
 
 def en(s):
     """Returns `s` converted to a localised string in english."""
     return locstr(s, lang="en")
-
-
-def ontology_dir() -> Path:
-    """Return the absolute, normalized path to the `ontology` directory in this repository"""
-    return Path(__file__).parent.parent.parent.joinpath("ontology").resolve()
 
 
 class Generator:
@@ -41,11 +43,15 @@ class Generator:
     def __init__(self, dicfile, base_iri, cif_top=None):
         self.cd = CifDic(dicfile, do_dREL=False)
         if not cif_top:
-            self.cif_top = f'{release_site}/{__version__}/cif_top.ttl'
-        elif cif_top.startswith('http'):
+            self.cif_top = f'{release_site}/{__ontology_version__}/cif_top.ttl'
+        elif isinstance(cif_top, str) and cif_top.startswith('http'):
             self.cif_top = cif_top
+        elif isinstance(cif_top, (Path, str)):
+            self.cif_top = ONTOLOGY_DIR / cif_top
         else:
-            self.cif_top = ontology_dir() / cif_top
+            raise TypeError(
+                f"`cif_top` must be either a string or a PathType. Got type {type(cif_top)!r}"
+            )
         self.categories = set()
 
         # Load cif_top ontology
