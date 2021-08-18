@@ -6,7 +6,7 @@ from pathlib import Path
 LOGGING_LEVELS = [logging.getLevelName(level).lower() for level in range(0, 51, 10)]
 
 
-def main(args: list = None):
+def main(argv: list = None) -> None:
     """Ontologize CIF dictionaries (`.dic`) using OWL.
 
     Produce an OWL Turtle (`.ttl`) file from a CIF dictionary (`.dic`) file.
@@ -54,7 +54,7 @@ def main(args: list = None):
         help="The CIF dictionary file from which to generate an OWL ontologized Turtle file.",
     )
 
-    args = parser.parse_args(args)
+    args = parser.parse_args(argv)
 
     if args.ttlfile is None:
         args.ttlfile = args.dicfile.resolve().name[: -len(args.dicfile.suffix)] + ".ttl"

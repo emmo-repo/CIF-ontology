@@ -1,16 +1,27 @@
 #!/usr/bin/env python
-"""Python script for generating an ontology corresponding to a CIF dictionary.
 """
+# Generate ontology
+
+Python script for generating an ontology corresponding to a CIF dictionary.
+"""
+from contextlib import redirect_stderr
+from os import devnull as DEVNULL
 from pathlib import Path
-import textwrap
-import types
+
+# import textwrap
+# import types
 from typing import Union
 import urllib.request
 
-from emmo import World
+# Remove the print statement concerning 'owlready2_optimized'
+# when importing owlready2 (which is imported also in emmo).
+with open(DEVNULL, "w") as handle:
+    with redirect_stderr(handle):
+        from emmo import World
+        from emmo.ontology import Ontology
 
-import owlready2
-from owlready2 import locstr
+        # import owlready2
+        from owlready2 import locstr
 
 from CifFile import CifDic
 
@@ -18,39 +29,47 @@ from CifFile import CifDic
 # Workaround for EMMO-Python
 # Make sure that we can load cif-ddl.ttl which doesn't import SKOS
 import emmo.ontology
+
 emmo.ontology.DEFAULT_LABEL_ANNOTATIONS = [
-    'http://www.w3.org/2000/01/rdf-schema#label',
+    "http://www.w3.org/2000/01/rdf-schema#label",
 ]
 
-
-def en(s):
-    """Returns `s` converted to a localised string in english."""
-    return locstr(s, lang="en")
+"""Return the absolute, normalized path to the `ontology` directory in this repository"""
+ONTOLOGY_DIR = Path(__file__).resolve().parent.parent.parent.joinpath("ontology")
 
 
-def ontology_dir() -> Path:
-    """Return the absolute, normalized path to the `ontology` directory in this repository"""
-    return Path(__file__).resolve().parent.parent.parent.joinpath("ontology")
+def en(string: str) -> locstr:
+    """Converted to an English-localized string.
+
+    Parameters:
+        string: The string to be converted.
+
+    Returns:
+        An English-localized string. `locstr` is a `str`-based type.
+
+    """
+    return locstr(string, lang="en")
 
 
 class Generator:
     """Class for generating CIF ontology from a CIF dictionary.
 
     Parameters:
-        dicfile : string
-            File name of CIF dictionary to generate an ontology for.
-        base_iri : string
-            Base IRI of the generated ontology.
+        dicfile (str): File name of CIF dictionary to generate an ontology for.
+        base_iri (str): Base IRI of the generated ontology.
+
     """
 
-    def __init__(self,
-                 dicfile: str,
-                 base_iri: str):
+    def __init__(
+        self,
+        dicfile: str,
+        base_iri: str,
+    ) -> None:
         self.dic = CifDic(dicfile, do_dREL=False)
 
         # Load cif-ddl ontology
         self.world = World()
-        cif_ddl = ontology_dir() / 'cif-ddl.ttl'
+        cif_ddl = ONTOLOGY_DIR / "cif-ddl.ttl"
         self.ddl = self.world.get_ontology(str(cif_ddl)).load()
         self.ddl.sync_python_names()
 
@@ -60,62 +79,76 @@ class Generator:
 
         self.categories = set()
 
-    def generate(self):
-        """Generate ontology for the CIF dictionary."""
+    def generate(self) -> Ontology:
+        """Generate ontology for the CIF dictionary.
+
+        Returns:
+            The generated ontology.
+
+        """
         self._add_dic_top()
 
         for item in self.dic:
-            if "_definition.scope" in item and '_definition.id' in item:
+            if "_definition.scope" in item and "_definition.id" in item:
                 self._add_category(item)
             else:
                 self._add_data_value(item)
         return self.onto
 
-    def _add_dic_top(self):
+    def _add_dic_top(self) -> None:
         """Add the top class of the generated ontology."""
         pass
 
-    def _add_category(self, item):
-        """Add category."""
+    def _add_category(self, item: dict) -> None:
+        """Add category.
+
+        Parameters:
+            item: Item to be added to the list of categories.
+
+        """
         if item in self.categories:
             return
         self.categories.add(item)
 
-        print('*** category', item)
-        name = item['_definition.id']
-        parent_name = item['_name.category_id']
+        print("*** category", item)
+        name = item["_definition.id"]
+        parent_name = item["_name.category_id"]
         parent_item = self.dic[parent_name]
-        #if parent_item not in self.categories:
+        # if parent_item not in self.categories:
         #    self._add_category(parent_item)
         #
-        #with self.onto:
+        # with self.onto:
         #
         #    cat = types.new_class(name, (self.onto[parent_name], ))
 
+    #        name = item["_definition.id"]
+    #        descr = item.get("_description.text")
+    #        lname = "_" + name.lstrip("_").lower()
+    #        with self.onto:
+    #            if item.get("_definition.class"):
+    #                loop = types.new_class(lname + "_LOOP", (self.top.LOOP,))
+    #                loop.prefLabel.append(en(loop.name.lstrip("_")))
+    #                packet = types.new_class(lname + "_PACKET", (self.top.PACKET,))
+    #                packet.prefLabel.append(en(packet.name.lstrip("_")))
+    #                cat = types.new_class(name, (self.top.CATEGORY,))
+    #                cat.prefLabel.append(en(cat.name.lstrip("_")))
+    #                if descr:
+    #                    cat.comment.append(en(textwrap.dedent(descr)))
+    #                loop.is_a.append(self.top.hasSpatialDirectPart.some(packet))
+    #                loop.is_a.append(self.top.hasSpatialPart.only(cat))
+    #            else:
+    #                print("** ignoring category:", name)
 
+    def _add_data_value(self, item: dict) -> None:
+        """Add data item.
 
+        Parameters:
+            item: Item to be added as a datum.
 
-#        name = item["_definition.id"]
-#        descr = item.get("_description.text")
-#        lname = "_" + name.lstrip("_").lower()
-#        with self.onto:
-#            if item.get("_definition.class"):
-#                loop = types.new_class(lname + "_LOOP", (self.top.LOOP,))
-#                loop.prefLabel.append(en(loop.name.lstrip("_")))
-#                packet = types.new_class(lname + "_PACKET", (self.top.PACKET,))
-#                packet.prefLabel.append(en(packet.name.lstrip("_")))
-#                cat = types.new_class(name, (self.top.CATEGORY,))
-#                cat.prefLabel.append(en(cat.name.lstrip("_")))
-#                if descr:
-#                    cat.comment.append(en(textwrap.dedent(descr)))
-#                loop.is_a.append(self.top.hasSpatialDirectPart.some(packet))
-#                loop.is_a.append(self.top.hasSpatialPart.only(cat))
-#            else:
-#                print("** ignoring category:", name)
-
-    def _add_data_value(self, item):
-        """Add data item."""
+        """
         realname = item["_definition.id"]
+
+
 #        name = realname.replace(".", "_")
 #        descr = item.get("_description.text")
 #        units = item.get("_units.code")
@@ -208,6 +241,22 @@ class Generator:
 
 
 def main(dicfile: Union[str, Path], ttlfile: Union[str, Path]) -> Generator:
+    """Main function for ontology generation.
+
+    Parameters:
+        dicfile: Absolute or relative path to the `.dic`-file to be converted to an ontology.
+            This can be either a local path or a URL path.
+        ttlfile: Absolute or relative path to the Turtle (`.ttl`) file to be created from the
+            `dicfile`. The Turtle file contains the generated ontology in OWL. This **must** be a
+            local path.
+
+            !!! important
+                The file will be overwritten if it already exists.
+
+    Returns:
+        The setup ontology generator class. This is mainly returned for debugging reasons.
+
+    """
     base_iri = "http://emmo.info/CIF-ontology/ontology/cif_core#"
 
     dicfile = dicfile if isinstance(dicfile, str) else str(dicfile.resolve())
@@ -222,16 +271,16 @@ def main(dicfile: Union[str, Path], ttlfile: Union[str, Path]) -> Generator:
     gen = Generator(dicfile=dicfile, base_iri=base_iri)
     onto = gen.generate()
 
-#    # Annotate ontology
-#    onto.sync_attributes()
-#    onto.set_version(version="0.0.1")
-#    onto.metadata.abstract = (
-#        "CIF core ontology generated from the CIF core definitions at "
-#        "https://raw.githubusercontent.com/COMCIFS/cif_core/master/"
-#    )
-#
-#    if ttlfile is None:
-#        ttlfile = Path(dicfile).name[: -len(Path(dicfile).suffix)] + ".ttl"
+    #    # Annotate ontology
+    #    onto.sync_attributes()
+    #    onto.set_version(version="0.0.1")
+    #    onto.metadata.abstract = (
+    #        "CIF core ontology generated from the CIF core definitions at "
+    #        "https://raw.githubusercontent.com/COMCIFS/cif_core/master/"
+    #    )
+    #
+    #    if ttlfile is None:
+    #        ttlfile = Path(dicfile).name[: -len(Path(dicfile).suffix)] + ".ttl"
 
     onto.save(
         ttlfile if isinstance(ttlfile, str) else str(ttlfile.resolve()),
@@ -249,5 +298,5 @@ if __name__ == "__main__":
     dic = self.dic
     ddl = self.ddl
     onto = self.onto
-    #sid = cd["space_group_symop.id"]
-    #s = cd["SPACE_GROUP_SYMOP"]
+    # sid = cd["space_group_symop.id"]
+    # s = cd["SPACE_GROUP_SYMOP"]

@@ -1,15 +1,24 @@
 #!/usr/bin/env python
-"""Python script for generating an ontology corresponding to a CIF dictionary.
 """
+# Generate ontology
+
+Python script for generating an ontology corresponding to a CIF dictionary.
+"""
+from contextlib import redirect_stderr
+from os import devnull as DEVNULL
 from pathlib import Path
 import textwrap
 import types
 from typing import Union
 import urllib.request
 
-from emmo import World
-import owlready2
-from owlready2 import locstr
+# Remove the print statement concerning 'owlready2_optimized'
+# when importing owlready2 (which is imported also in emmo).
+with open(DEVNULL, "w") as handle:
+    with redirect_stderr(handle):
+        from emmo import World
+        import owlready2
+        from owlready2 import locstr
 
 from CifFile import CifDic
 
