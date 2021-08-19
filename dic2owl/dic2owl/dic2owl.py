@@ -50,6 +50,10 @@ def en(string: str) -> locstr:
     """
     return locstr(string, lang="en")
 
+class MissingAnnotationError(Exception):
+    """Raised when using a cif-dictionary annotation not defined in ddl
+    """
+
 
 class Generator:
     """Class for generating CIF ontology from a CIF dictionary.
@@ -77,7 +81,7 @@ class Generator:
         self.onto = self.world.get_ontology(base_iri)
         self.onto.imported_ontologies.append(self.ddl)
 
-        self.categories = set()
+        self.items = set()
 
     def generate(self) -> Ontology:
         """Generate ontology for the CIF dictionary.
@@ -93,34 +97,6 @@ class Generator:
                 self._add_data_value(item)
         return self.onto
 
-    def _create_annotation(self, annotation_name):
-        """Create annotation with given name."""
-        if annotation_name in self.onto:
-            return self.onto[annotation_name]
-
-        if annotation_name == "DDL_DIC":
-            parent = owlready2.AnnotationProperty
-        elif annotation_name == "ATTRIBUTE":
-            parent_name = "DDL_DIC"
-            parent = self._create_annotation(parent_name)
-        elif "." in annotation_name:
-            parent_name = annotation_name.split(".")[0].lstrip("_").upper()
-            parent = self._create_annotation(parent_name)
-        elif "_" in annotation_name:
-            assert annotation_name.isupper()
-            parent_name = annotation_name.rsplit("_", 1)[0]
-            parent = self._create_annotation(parent_name)
-        else:
-            parent_name = "ATTRIBUTE"
-            parent = self._create_annotation(parent_name)
-
-        # How to refer to annotation in ddl instead of creating one in
-        # onto?
-        with self.onto:
-            return types.new_class(annotation_name, (parent,))
-            # return types.new_class(f'{self.ddl.base_iri}:{annotation_name}',
-            #                        (parent, ))
-
     def _add_annotations(self, cls, item) -> None:
         """Add annotations for dic item `item` to generated on ontology
         class `cls`.
@@ -133,13 +109,13 @@ class Generator:
         """
         for annotation_name, value in item.items():
 
-            # Add new annotation to generated ontology
-            if annotation_name not in self.onto:
-                self._create_annotation(annotation_name)
+             # Add new annotation to generated ontology
+             if annotation_name not in self.ddl:
+                 raise MissingAnnotationError(annotation_name) 
 
-            # Assign annotation
-            annot = getattr(cls, annotation_name)
-            annot.append(en(value))
+             # Assign annotation
+             annot = getattr(cls, annotation_name)
+             annot.append(en(value))    
 
     def _add_top(self, item) -> None:
         """Add the top class of the generated ontology.
@@ -161,9 +137,9 @@ class Generator:
             item: Item to be added to the list of categories.
 
         """
-        if item in self.categories:
+        if item in self.items:
             return
-        self.categories.add(item)
+        self.items.add(item)
 
         if "_definition.id" not in item:
             self._add_top(item)
@@ -174,7 +150,7 @@ class Generator:
             print(f"*** {name} -> {parent_name}")
 
             parent_item = self.dic[parent_name]
-            if parent_item not in self.categories:
+            if parent_item not in self.items:
                 self._add_category(parent_item)
 
             with self.onto:
@@ -188,6 +164,25 @@ class Generator:
             item: Item to be added as a datum.
 
         """
+        if item in self.items:
+            return
+        self.items.add(item)
+
+        name = item["_definition.id"]
+        parents = []
+        
+        
+        parent_name = item["_name.category_id"]
+        print(f"*** {name} -> {parent_name}")
+        parent = self.dic[parent_name]
+        if "_definition.scope" and "_definition.id" in parent:
+            self._add_category(parent)
+        else:
+            self._add_data_value(parent)
+        parents.append(self.onto[parent_name])
+        with self.onto:
+            cls = types.new_class(name, parents)
+
         # realname = item["_definition.id"]
 
 
