@@ -9,7 +9,7 @@ from os import devnull as DEVNULL
 from pathlib import Path
 
 # import textwrap
-# import types
+import types
 from typing import Union
 import urllib.request
 
@@ -20,7 +20,7 @@ with open(DEVNULL, "w") as handle:
         from emmo import World
         from emmo.ontology import Ontology
 
-        # import owlready2
+        import owlready2
         from owlready2 import locstr
 
 from CifFile import CifDic
@@ -34,7 +34,7 @@ emmo.ontology.DEFAULT_LABEL_ANNOTATIONS = [
     "http://www.w3.org/2000/01/rdf-schema#label",
 ]
 
-"""Return the absolute, normalized path to the `ontology` directory in this repository"""
+"""The absolute, normalized path to the `ontology` directory in this repository"""
 ONTOLOGY_DIR = Path(__file__).resolve().parent.parent.parent.joinpath("ontology")
 
 
@@ -86,8 +86,6 @@ class Generator:
             The generated ontology.
 
         """
-        self._add_dic_top()
-
         for item in self.dic:
             if "_definition.scope" in item and "_definition.id" in item:
                 self._add_category(item)
@@ -95,11 +93,68 @@ class Generator:
                 self._add_data_value(item)
         return self.onto
 
-    def _add_dic_top(self) -> None:
-        """Add the top class of the generated ontology."""
-        pass
+    def _create_annotation(self, annotation_name):
+        """Create annotation with given name."""
+        if annotation_name in self.onto:
+            return self.onto[annotation_name]
 
-    def _add_category(self, item: dict) -> None:
+        if annotation_name == "DDL_DIC":
+            parent = owlready2.AnnotationProperty
+        elif annotation_name == "ATTRIBUTE":
+            parent_name = "DDL_DIC"
+            parent = self._create_annotation(parent_name)
+        elif "." in annotation_name:
+            parent_name = annotation_name.split(".")[0].lstrip("_").upper()
+            parent = self._create_annotation(parent_name)
+        elif "_" in annotation_name:
+            assert annotation_name.isupper()
+            parent_name = annotation_name.rsplit("_", 1)[0]
+            parent = self._create_annotation(parent_name)
+        else:
+            parent_name = "ATTRIBUTE"
+            parent = self._create_annotation(parent_name)
+
+        # How to refer to annotation in ddl instead of creating one in
+        # onto?
+        with self.onto:
+            return types.new_class(annotation_name, (parent,))
+            # return types.new_class(f'{self.ddl.base_iri}:{annotation_name}',
+            #                        (parent, ))
+
+    def _add_annotations(self, cls, item) -> None:
+        """Add annotations for dic item `item` to generated on ontology
+        class `cls`.
+
+        Parameters:
+            cls: Generated ontology class to wich the annotations should
+                 be added.
+            item: Dic item with annotation info.
+
+        """
+        for annotation_name, value in item.items():
+
+            # Add new annotation to generated ontology
+            if annotation_name not in self.onto:
+                self._create_annotation(annotation_name)
+
+            # Assign annotation
+            annot = getattr(cls, annotation_name)
+            annot.append(en(value))
+
+    def _add_top(self, item) -> None:
+        """Add the top class of the generated ontology.
+
+        Parameters:
+            item: Item to be added to the list of categories.
+
+        """
+        with self.onto:
+            top = types.new_class(
+                item["_dictionary.title"], (self.ddl.DictionaryDefinedItem,)
+            )
+        self._add_annotations(top, item)
+
+    def _add_category(self, item) -> None:
         """Add category.
 
         Parameters:
@@ -110,34 +165,21 @@ class Generator:
             return
         self.categories.add(item)
 
-        print("*** category", item)
-        name = item["_definition.id"]
-        parent_name = item["_name.category_id"]
-        parent_item = self.dic[parent_name]
-        # if parent_item not in self.categories:
-        #    self._add_category(parent_item)
-        #
-        # with self.onto:
-        #
-        #    cat = types.new_class(name, (self.onto[parent_name], ))
+        if "_definition.id" not in item:
+            self._add_top(item)
+        else:
+            name = item["_definition.id"]
+            parent_name = item["_name.category_id"]
 
-    #        name = item["_definition.id"]
-    #        descr = item.get("_description.text")
-    #        lname = "_" + name.lstrip("_").lower()
-    #        with self.onto:
-    #            if item.get("_definition.class"):
-    #                loop = types.new_class(lname + "_LOOP", (self.top.LOOP,))
-    #                loop.prefLabel.append(en(loop.name.lstrip("_")))
-    #                packet = types.new_class(lname + "_PACKET", (self.top.PACKET,))
-    #                packet.prefLabel.append(en(packet.name.lstrip("_")))
-    #                cat = types.new_class(name, (self.top.CATEGORY,))
-    #                cat.prefLabel.append(en(cat.name.lstrip("_")))
-    #                if descr:
-    #                    cat.comment.append(en(textwrap.dedent(descr)))
-    #                loop.is_a.append(self.top.hasSpatialDirectPart.some(packet))
-    #                loop.is_a.append(self.top.hasSpatialPart.only(cat))
-    #            else:
-    #                print("** ignoring category:", name)
+            print(f"*** {name} -> {parent_name}")
+
+            parent_item = self.dic[parent_name]
+            if parent_item not in self.categories:
+                self._add_category(parent_item)
+
+            with self.onto:
+                cls = types.new_class(name, (self.onto[parent_name],))
+            self._add_annotations(cls, item)
 
     def _add_data_value(self, item: dict) -> None:
         """Add data item.
@@ -146,7 +188,7 @@ class Generator:
             item: Item to be added as a datum.
 
         """
-        realname = item["_definition.id"]
+        # realname = item["_definition.id"]
 
 
 #        name = realname.replace(".", "_")
@@ -271,16 +313,16 @@ def main(dicfile: Union[str, Path], ttlfile: Union[str, Path]) -> Generator:
     gen = Generator(dicfile=dicfile, base_iri=base_iri)
     onto = gen.generate()
 
-    #    # Annotate ontology
-    #    onto.sync_attributes()
-    #    onto.set_version(version="0.0.1")
-    #    onto.metadata.abstract = (
-    #        "CIF core ontology generated from the CIF core definitions at "
-    #        "https://raw.githubusercontent.com/COMCIFS/cif_core/master/"
-    #    )
-    #
-    #    if ttlfile is None:
-    #        ttlfile = Path(dicfile).name[: -len(Path(dicfile).suffix)] + ".ttl"
+    # # Annotate ontology
+    # onto.sync_attributes()
+    # onto.set_version(version="0.0.1")
+    # onto.metadata.abstract = (
+    #     "CIF core ontology generated from the CIF core definitions at "
+    #     "https://raw.githubusercontent.com/COMCIFS/cif_core/master/"
+    # )
+
+    # if ttlfile is None:
+    #     ttlfile = Path(dicfile).name[: -len(Path(dicfile).suffix)] + ".ttl"
 
     onto.save(
         ttlfile if isinstance(ttlfile, str) else str(ttlfile.resolve()),
