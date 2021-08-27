@@ -9,11 +9,8 @@ installed when `pip install`-ing this package.
 For more information on how to run the CLI, run `dic2owl --help` in your
 terminal.
 """
+# pylint: disable=line-too-long
 
 __version__ = "0.1.0"
-__author__ = (
-    "Jesper Friis <jesper.friis@sintef.no>, "
-    "Casper Welzel Andersen <casper.w.andersen@sintef.no>, "
-    "Francesca Lønstad Bleken <francesca.l.bleken@sintef.no>"
-)
+__author__ = "Jesper Friis <jesper.friis@sintef.no>, Casper Welzel Andersen <casper.w.andersen@sintef.no>, Francesca Lønstad Bleken <francesca.l.bleken@sintef.no>"
 __author_email__ = "cif@emmo-repo.eu"
