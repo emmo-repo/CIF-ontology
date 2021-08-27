@@ -16,8 +16,8 @@ _publ_section.title
  The uppercase Greek letter alpha can be written as \A, while
  the lowercase Greek letter omega can be written as \W.
 
- Some accented letter and other characters can also be expressed, i.e.
- Ervin Schr\"odinger, Anders Jonas \%Angstr\"om,  
+ Some accented letter and other characters can also be expressed,
+ i.e. Ervin Schr\"odinger, Anders Jonas \%Angstr\"om.
 
  CIF also provides special codes for some symbols that might
  not have obvious equivalent Unicode symbols, for example,

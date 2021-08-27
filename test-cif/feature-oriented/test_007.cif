@@ -1,7 +1,7 @@
 ##
 # A CIF 1.1 file with several data blocks. In this case each data block
 # should be treated as a self-contained dataset without external references
-# to data items in other data blocks. 
+# to data items in other data blocks.
 ##
 
 ##

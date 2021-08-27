@@ -11,7 +11,7 @@
 # Data block 'test_014_2' expresses the same matrix/vector
 # information using the _atom_sites_Cartn_tran_matrix_* and
 # _atom_sites_Cartn_tran_vector_* data items.
-## 
+##
 
 ##
 # Original COD entry: 2108404

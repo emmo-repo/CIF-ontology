@@ -5,6 +5,11 @@
 # CIF-producing software to use data items with special registered
 # prefixes (i.e. _shelxl, _olex, _jana), but not explicitly describe
 # these items in CIF dictionaries.
+#
+# It should also be noted that crystal structure refinement software
+# often embeds internally structured data files into CIF data items
+# (i.e. see the '_shelx_res_file' data item). Such items are usually
+# much larger than the rest of the data file.
 ##
 
 ##

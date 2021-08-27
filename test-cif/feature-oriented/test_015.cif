@@ -9,12 +9,12 @@
 # - 4: CIF special value that means that the value is inapplicable.
 #
 # Value delimiters in entries '1' and '2' could be easily replaced with
-# any of the allowed delimiters without changing the interpretation. 
+# any of the allowed delimiters without changing the interpretation.
 #
 # Note, that this specific example was constructed to be as simple as
 # possible, therefore it might not make a lot of sense. However, in some
 # situations the distinction between special value and a literal character
-# does matter. 
+# does matter.
 ##
 data_
 loop_
