@@ -6,3 +6,5 @@ __pycache__
 
 *.dic
 *.cif
+
+!test-cif/**/*.cif

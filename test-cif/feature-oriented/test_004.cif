@@ -1,0 +1,70 @@
+##
+# A CIF 1.1 file with several data loops some of which are relationally linked.
+# Namely, data item '_atom_site_type_symbol' from the ATOM_SITE loop references
+# data item '_atom_type_symbol' from the ATOM_TYPE loop.
+##
+
+##
+# Original COD entry: 1000033
+# COD entry URL: https://www.crystallography.net/cod/1000033.cif
+##
+data_test_004
+_publ_section_title
+;
+ Crystal structures of aragonite, strontianite, and witherite
+;
+_journal_coden_ASTM              AMMIAY
+_journal_name_full               'American Mineralogist'
+_journal_page_first              758
+_journal_page_last               767
+_journal_volume                  56
+_journal_year                    1971
+_chemical_compound_source        'from Anglesarke, Lancashire, England'
+_chemical_formula_structural     'Ba C O3'
+_chemical_formula_sum            'C Ba O3'
+_chemical_name_mineral           Witherite
+_chemical_name_systematic        'Barium carbonate'
+_space_group_crystal_system      orthorhombic
+_space_group_IT_number           62
+_space_group_name_Hall           '-P 2n 2a'
+_space_group_name_H-M_alt        'P m c n'
+_cell_angle_alpha                90
+_cell_angle_beta                 90
+_cell_angle_gamma                90
+_cell_formula_units_Z            4
+_cell_length_a                   5.3126(5)
+_cell_length_b                   8.8958(5)
+_cell_length_c                   6.4284(5)
+_cell_volume                     303.8
+_refine_ls_R_factor_all          0.033
+loop_
+_space_group_symop_id
+_space_group_symop_operation_xyz
+1 x,y,z
+2 -x+1/2,-y+1/2,z+1/2
+3 x+1/2,-y,-z
+4 -x,y+1/2,-z+1/2
+5 -x,-y,-z
+6 x+1/2,y+1/2,-z+1/2
+7 -x+1/2,y,z
+8 x,-y+1/2,z+1/2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_occupancy
+_atom_site_calc_flag
+Ba Ba2+ 4 c 0.25 0.41631(5) 0.7549(2) 1 d
+C C4+ 4 c 0.25 0.7570(12) -0.0810(26) 1 d
+O1 O2- 4 c 0.25 0.9011(8) -0.0878(19) 1 d
+O2 O2- 8 d 0.4595(10) 0.6839(6) -0.0790(14) 1 d
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Ba2+ 2
+C4+ 4
+O2- -2

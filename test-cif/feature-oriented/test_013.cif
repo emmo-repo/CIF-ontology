@@ -1,0 +1,218 @@
+##
+# A CIF 1.1 file with several data blocks that contain identical information
+# and only differ in the data names that are used to represent certain items.
+# Namely, main data item names
+#
+# [
+#  '_space_group.IT_number',
+#  '_space_group.name_Hall',
+# ]
+#
+# from data block 'test_013_01' are replaced by their aliases
+#
+# [
+#  '_symmetry_Int_Tables_number'
+#  '_symmetry_space_group_name_Hall'
+# ]
+#
+# in data block 'test_013_02'.
+#
+# Data block 'test_013_03' simultaneously contains both the main data names
+# as well as the aliases, however, there is no contradiction since the main
+# data names and their aliases are assigned identical values.
+#
+# Note, that all three scenarios are quite common in CIF files.
+##
+
+##
+# Q: How should scenarios when the main data name and its alias are assigned
+#    different values?
+##
+
+##
+# Original COD entry: 4001576
+# COD entry URL: https://www.crystallography.net/cod/4001576.cif
+# Paper DOI: 10.1021/cm0609348
+##
+data_test_013_01
+_journal_paper_doi               10.1021/cm0609348
+_chemical_formula_sum            'C14 H8 S4'
+_space_group.IT_number           4
+_space_group.name_Hall           'P 2yb'
+_cell_angle_alpha                90.00
+_cell_angle_beta                 102.336(2)
+_cell_angle_gamma                90.00
+_cell_formula_units_Z            2
+_cell_length_a                   7.4265(11)
+_cell_length_b                   5.7172(8)
+_cell_length_c                   14.840(2)
+loop_
+_space_group_symop.id
+_space_group_symop.operation_xyz
+1 'x, y, z'
+2 '-x, y+1/2, -z'
+loop_
+_atom_site_label
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_U_iso_or_equiv
+_atom_site_adp_type
+_atom_site_occupancy
+_atom_site_symmetry_multiplicity
+_atom_site_calc_flag
+_atom_site_refinement_flags
+_atom_site_disorder_assembly
+_atom_site_disorder_group
+S1 0.9533(4) 0.1296(5) 0.3419(2) 0.0266(14) Uani 0.890(15) 1 d P A 1
+S2 0.7056(5) 0.3589(6) 0.0613(2) 0.0371(11) Uani 1 1 d . A .
+S3 0.7751(5) -0.0015(7) -0.1887(2) 0.0314(12) Uani 0.845(10) 1 d P A 1
+S4 0.5369(4) 0.5511(5) -0.3492(2) 0.0189(11) Uani 0.845(10) 1 d P A 1
+C1 0.9023(15) 0.330(2) 0.4165(7) 0.025(3) Uani 1 1 d . . .
+H1A 0.9402 0.3188 0.4817 0.029 Uiso 1 1 calc R A 1
+C2 0.7987(13) 0.511(2) 0.3709(7) 0.016(3) Uani 1 1 d . A .
+H2A 0.7640 0.6426 0.4025 0.019 Uiso 1 1 calc R B 1
+C3 0.7483(13) 0.4890(19) 0.2752(7) 0.038(4) Uani 0.890(15) 1 d P A 1
+H3A 0.6730 0.5947 0.2343 0.045 Uiso 0.890(15) 1 calc PR A 1
+C4 0.8299(17) 0.279(2) 0.2494(8) 0.028(3) Uani 1 1 d . . .
+C5 0.8133(16) 0.192(2) 0.1545(8) 0.029(3) Uani 1 1 d . A .
+C6 0.8766(16) -0.016(2) 0.1274(8) 0.032(3) Uani 1 1 d . . .
+H6A 0.9364 -0.1322 0.1688 0.039 Uiso 1 1 calc R A .
+C7 0.8409(15) -0.036(2) 0.0275(8) 0.028(3) Uani 1 1 d . A .
+H7A 0.8770 -0.1673 -0.0038 0.033 Uiso 1 1 calc R . .
+C8 0.7496(15) 0.154(2) -0.0170(8) 0.026(3) Uani 1 1 d . . .
+C9 0.7059(16) 0.197(2) -0.1151(9) 0.030(3) Uani 1 1 d . A .
+C10 0.6219(15) 0.406(2) -0.1573(7) 0.061(4) Uani 0.845(10) 1 d P A 1
+H10A 0.5748 0.5335 -0.1281 0.073 Uiso 0.845(10) 1 calc PR A 1
+C11 0.6245(15) 0.381(2) -0.2563(7) 0.025(3) Uani 1 1 d . . .
+C12 0.7012(15) 0.178(2) -0.2811(7) 0.020(3) Uani 1 1 d . A .
+C13 0.6967(11) 0.1561(18) -0.3760(6) 0.039(3) Uani 0.845(10) 1 d P A 1
+H13A 0.7463 0.0308 -0.4050 0.047 Uiso 0.845(10) 1 calc PR A 1
+C14 0.6043(14) 0.356(2) -0.4201(7) 0.019(3) Uani 1 1 d . . .
+H14A 0.5822 0.3781 -0.4850 0.023 Uiso 1 1 calc R A 1
+
+##
+# COD entry: 4001576
+# COD URL:   https://www.crystallography.net/cod/4001576.cif
+# Paper DOI: 10.1021/cm0609348
+##
+data_test_013_2
+_journal_paper_doi               10.1021/cm0609348
+_chemical_formula_sum            'C14 H8 S4'
+_symmetry_Int_Tables_number      4
+_symmetry_space_group_name_Hall  'P 2yb'
+_cell_angle_alpha                90.00
+_cell_angle_beta                 102.336(2)
+_cell_angle_gamma                90.00
+_cell_formula_units_Z            2
+_cell_length_a                   7.4265(11)
+_cell_length_b                   5.7172(8)
+_cell_length_c                   14.840(2)
+loop_
+_space_group_symop.id
+_space_group_symop.operation_xyz
+1 'x, y, z'
+2 '-x, y+1/2, -z'
+loop_
+_atom_site_label
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_U_iso_or_equiv
+_atom_site_adp_type
+_atom_site_occupancy
+_atom_site_symmetry_multiplicity
+_atom_site_calc_flag
+_atom_site_refinement_flags
+_atom_site_disorder_assembly
+_atom_site_disorder_group
+S1 0.9533(4) 0.1296(5) 0.3419(2) 0.0266(14) Uani 0.890(15) 1 d P A 1
+S2 0.7056(5) 0.3589(6) 0.0613(2) 0.0371(11) Uani 1 1 d . A .
+S3 0.7751(5) -0.0015(7) -0.1887(2) 0.0314(12) Uani 0.845(10) 1 d P A 1
+S4 0.5369(4) 0.5511(5) -0.3492(2) 0.0189(11) Uani 0.845(10) 1 d P A 1
+C1 0.9023(15) 0.330(2) 0.4165(7) 0.025(3) Uani 1 1 d . . .
+H1A 0.9402 0.3188 0.4817 0.029 Uiso 1 1 calc R A 1
+C2 0.7987(13) 0.511(2) 0.3709(7) 0.016(3) Uani 1 1 d . A .
+H2A 0.7640 0.6426 0.4025 0.019 Uiso 1 1 calc R B 1
+C3 0.7483(13) 0.4890(19) 0.2752(7) 0.038(4) Uani 0.890(15) 1 d P A 1
+H3A 0.6730 0.5947 0.2343 0.045 Uiso 0.890(15) 1 calc PR A 1
+C4 0.8299(17) 0.279(2) 0.2494(8) 0.028(3) Uani 1 1 d . . .
+C5 0.8133(16) 0.192(2) 0.1545(8) 0.029(3) Uani 1 1 d . A .
+C6 0.8766(16) -0.016(2) 0.1274(8) 0.032(3) Uani 1 1 d . . .
+H6A 0.9364 -0.1322 0.1688 0.039 Uiso 1 1 calc R A .
+C7 0.8409(15) -0.036(2) 0.0275(8) 0.028(3) Uani 1 1 d . A .
+H7A 0.8770 -0.1673 -0.0038 0.033 Uiso 1 1 calc R . .
+C8 0.7496(15) 0.154(2) -0.0170(8) 0.026(3) Uani 1 1 d . . .
+C9 0.7059(16) 0.197(2) -0.1151(9) 0.030(3) Uani 1 1 d . A .
+C10 0.6219(15) 0.406(2) -0.1573(7) 0.061(4) Uani 0.845(10) 1 d P A 1
+H10A 0.5748 0.5335 -0.1281 0.073 Uiso 0.845(10) 1 calc PR A 1
+C11 0.6245(15) 0.381(2) -0.2563(7) 0.025(3) Uani 1 1 d . . .
+C12 0.7012(15) 0.178(2) -0.2811(7) 0.020(3) Uani 1 1 d . A .
+C13 0.6967(11) 0.1561(18) -0.3760(6) 0.039(3) Uani 0.845(10) 1 d P A 1
+H13A 0.7463 0.0308 -0.4050 0.047 Uiso 0.845(10) 1 calc PR A 1
+C14 0.6043(14) 0.356(2) -0.4201(7) 0.019(3) Uani 1 1 d . . .
+H14A 0.5822 0.3781 -0.4850 0.023 Uiso 1 1 calc R A 1
+
+##
+# COD entry: 4001576
+# COD URL:   https://www.crystallography.net/cod/4001576.cif
+# Paper DOI: 10.1021/cm0609348
+##
+data_test_013_03
+_journal_paper_doi               10.1021/cm0609348
+_chemical_formula_sum            'C14 H8 S4'
+_space_group.IT_number           4
+_space_group.name_Hall           'P 2yb'
+_symmetry_Int_Tables_number      4
+_symmetry_space_group_name_Hall  'P 2yb'
+_cell_angle_alpha                90.00
+_cell_angle_beta                 102.336(2)
+_cell_angle_gamma                90.00
+_cell_formula_units_Z            2
+_cell_length_a                   7.4265(11)
+_cell_length_b                   5.7172(8)
+_cell_length_c                   14.840(2)
+loop_
+_space_group_symop.id
+_space_group_symop.operation_xyz
+1 'x, y, z'
+2 '-x, y+1/2, -z'
+loop_
+_atom_site_label
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_U_iso_or_equiv
+_atom_site_adp_type
+_atom_site_occupancy
+_atom_site_symmetry_multiplicity
+_atom_site_calc_flag
+_atom_site_refinement_flags
+_atom_site_disorder_assembly
+_atom_site_disorder_group
+S1 0.9533(4) 0.1296(5) 0.3419(2) 0.0266(14) Uani 0.890(15) 1 d P A 1
+S2 0.7056(5) 0.3589(6) 0.0613(2) 0.0371(11) Uani 1 1 d . A .
+S3 0.7751(5) -0.0015(7) -0.1887(2) 0.0314(12) Uani 0.845(10) 1 d P A 1
+S4 0.5369(4) 0.5511(5) -0.3492(2) 0.0189(11) Uani 0.845(10) 1 d P A 1
+C1 0.9023(15) 0.330(2) 0.4165(7) 0.025(3) Uani 1 1 d . . .
+H1A 0.9402 0.3188 0.4817 0.029 Uiso 1 1 calc R A 1
+C2 0.7987(13) 0.511(2) 0.3709(7) 0.016(3) Uani 1 1 d . A .
+H2A 0.7640 0.6426 0.4025 0.019 Uiso 1 1 calc R B 1
+C3 0.7483(13) 0.4890(19) 0.2752(7) 0.038(4) Uani 0.890(15) 1 d P A 1
+H3A 0.6730 0.5947 0.2343 0.045 Uiso 0.890(15) 1 calc PR A 1
+C4 0.8299(17) 0.279(2) 0.2494(8) 0.028(3) Uani 1 1 d . . .
+C5 0.8133(16) 0.192(2) 0.1545(8) 0.029(3) Uani 1 1 d . A .
+C6 0.8766(16) -0.016(2) 0.1274(8) 0.032(3) Uani 1 1 d . . .
+H6A 0.9364 -0.1322 0.1688 0.039 Uiso 1 1 calc R A .
+C7 0.8409(15) -0.036(2) 0.0275(8) 0.028(3) Uani 1 1 d . A .
+H7A 0.8770 -0.1673 -0.0038 0.033 Uiso 1 1 calc R . .
+C8 0.7496(15) 0.154(2) -0.0170(8) 0.026(3) Uani 1 1 d . . .
+C9 0.7059(16) 0.197(2) -0.1151(9) 0.030(3) Uani 1 1 d . A .
+C10 0.6219(15) 0.406(2) -0.1573(7) 0.061(4) Uani 0.845(10) 1 d P A 1
+H10A 0.5748 0.5335 -0.1281 0.073 Uiso 0.845(10) 1 calc PR A 1
+C11 0.6245(15) 0.381(2) -0.2563(7) 0.025(3) Uani 1 1 d . . .
+C12 0.7012(15) 0.178(2) -0.2811(7) 0.020(3) Uani 1 1 d . A .
+C13 0.6967(11) 0.1561(18) -0.3760(6) 0.039(3) Uani 0.845(10) 1 d P A 1
+H13A 0.7463 0.0308 -0.4050 0.047 Uiso 0.845(10) 1 calc PR A 1
+C14 0.6043(14) 0.356(2) -0.4201(7) 0.019(3) Uani 1 1 d . . .
+H14A 0.5822 0.3781 -0.4850 0.023 Uiso 1 1 calc R A 1

@@ -1,0 +1,103 @@
+##
+# A CIF 1.1 file with several data blocks that contain identical information
+# and only differ in the way standard uncertainties (SU) are represented.
+# Namely, SU values in the 'test_012_1' data block are represented as part
+# of the measurand item values (i.e. "105.92(3)") while SU values in the
+# 'test_012_2' data block are represented using separate SU data items.
+#
+# Note, that the separate SU data item approach is currently not very
+# common in small molecule crystal structures, however, it is preferred
+# by the Protein Data Bank (PDB) that stores three-dimensional structural
+# data of large biological molecules such as proteins and nucleic acids.
+##
+
+##
+# Original COD entry: 7006522
+# COD entry URL: https://www.crystallography.net/cod/7006522.cif
+# Paper DOI: 10.1039/b511746a
+##
+data_test_012_1
+_journal_paper_doi               10.1039/b511746a
+_chemical_name_common            1,3,6,7-Tetrathiapentalene-2,5-bisthione
+_space_group_IT_number           14
+_space_group_name_Hall           '-P 2ybc'
+_space_group_name_H-M_alt        'P 1 21/c 1'
+_cell_angle_alpha                90.00
+_cell_angle_beta                 105.92(3)
+_cell_angle_gamma                90.00
+_cell_formula_units_Z            4
+_cell_length_a                   7.6437(12)
+_cell_length_b                   10.4593(12)
+_cell_length_c                   9.9010(12)
+loop_
+_space_group_symop.id
+_space_group_symop.operation_xyz
+1 'x, y, z'
+2 '-x, y+1/2, -z+1/2'
+3 '-x, -y, -z'
+4 'x, -y-1/2, z-1/2'
+loop_
+_atom_site_label
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+S1 0.9014(2)  0.10008(15)  0.17899(16)
+S2 0.7626(2)  0.16195(15) -0.11950(16)
+S3 0.9531(3)  0.36141(16)  0.07409(19)
+S4 0.5285(3) -0.06085(16) -0.33298(17)
+S5 0.5858(2) -0.22090(15) -0.07641(17)
+S6 0.7329(2) -0.16846(15)  0.12453(16)
+C1 0.7811(8) -0.0181(6)    0.0709(6)
+C2 0.8771(8)  0.2157(6)    0.0465(6)
+C3 0.7179(8)  0.0107(6)   -0.0674(6)
+C4 0.6156(8) -0.0807(6)   -0.1628(6)
+
+##
+# COD entry: 7006522
+# COD URL:   https://www.crystallography.net/cod/7006522.cif
+# Paper DOI: 10.1039/b511746a
+##
+data_test_012_2
+_journal_paper_doi               10.1039/b511746a
+_chemical_name_common            1,3,6,7-Tetrathiapentalene-2,5-bisthione
+_space_group_IT_number           14
+_space_group_name_Hall           '-P 2ybc'
+_space_group_name_H-M_alt        'P 1 21/c 1'
+_cell_angle_alpha                90.00
+_cell_angle_alpha_su             ?
+_cell_angle_beta                 105.92
+_cell_angle_beta_su              0.03
+_cell_angle_gamma                90.00
+_cell_angle_gamma_su             ?
+_cell_formula_units_Z            4
+_cell_length_a                   7.6437
+_cell_length_a_su                0.0012
+_cell_length_b                   10.4593
+_cell_length_b_su                0.0012
+_cell_length_c                   9.9010
+_cell_length_c_su                0.0012
+loop_
+_space_group_symop.id
+_space_group_symop.operation_xyz
+1 'x, y, z'
+2 '-x, y+1/2, -z+1/2'
+3 '-x, -y, -z'
+4 'x, -y-1/2, z-1/2'
+loop_
+_atom_site_label
+_atom_site_fract_x
+_atom_site_fract_x_su
+_atom_site_fract_y
+_atom_site_fract_y_su
+_atom_site_fract_z
+_atom_site_fract_z_su
+S1 0.9014 0.0002  0.10008 0.00015  0.17899 0.00016
+S2 0.7626 0.0002  0.16195 0.00015 -0.11950 0.00016
+S3 0.9531 0.0003  0.36141 0.00016  0.07409 0.00019
+S4 0.5285 0.0003 -0.06085 0.00016 -0.33298 0.00017
+S5 0.5858 0.0002 -0.22090 0.00015 -0.07641 0.00017
+S6 0.7329 0.0002 -0.16846 0.00015  0.12453 0.00016
+C1 0.7811 0.0008 -0.0181  0.0006   0.0709  0.0006
+C2 0.8771 0.0008  0.2157  0.0006   0.0465  0.0006
+C3 0.7179 0.0008  0.0107  0.0006  -0.0674  0.0006
+C4 0.6156 0.0008 -0.0807  0.0006  -0.1628  0.0006

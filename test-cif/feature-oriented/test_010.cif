@@ -1,0 +1,209 @@
+##
+# A CIF 1.1 file that contains data items from the CIF_POW (Powder CIF)
+# dictionary. Such data items are quite common in CIF files.
+##
+
+##
+# Original COD entry: 2021718
+# COD entry URL: https://www.crystallography.net/cod/2021718.cif
+# Paper DOI: 10.1107/S2053229619008829
+##
+data_test_010
+_publ_section_title
+;
+ Multicomponent solid forms of the uric acid reabsorption inhibitor
+ lesinurad and cocrystal polymorphs with urea: DFT simulation and
+ solubility study
+;
+_journal_coeditor_code           CU3152
+_journal_issue                   8
+_journal_name_full               'Acta Crystallographica Section C'
+_journal_paper_doi               10.1107/S2053229619008829
+_journal_volume                  75
+_journal_year                    2019
+_chemical_formula_iupac          'C17 H14 Br N3 O2 S'
+_chemical_formula_moiety         'C17 H14 Br N3 O2 S'
+_chemical_formula_sum            'C17 H14 Br N3 O2 S'
+_chemical_formula_weight         404.28
+_chemical_name_common            Lesinurad
+_chemical_name_systematic
+;
+2-{[5-Bromo-4-(4-cyclopropylnaphthalen-1-yl)-4<i>H</i>-1,2,4-triazol-\
+3-yl]sulfanyl}acetic acid
+;
+_space_group_IT_number           61
+_space_group_name_Hall           '-P 2ac 2ab'
+_space_group_name_H-M_alt        'P b c a'
+_symmetry_cell_setting           orthorhombic
+_symmetry_space_group_name_Hall  '-P 2ac 2ab'
+_symmetry_space_group_name_H-M   'P b c a'
+_audit_creation_method           'MRIA, SHELXL-97'
+_cell_angle_alpha                90.00
+_cell_angle_beta                 90.00
+_cell_angle_gamma                90.00
+_cell_formula_units_Z            8
+_cell_length_a                   22.1247(17)
+_cell_length_b                   8.7081(8)
+_cell_length_c                   18.2738(15)
+_cell_measurement_reflns_used    1069
+_cell_measurement_temperature    298(2)
+_cell_measurement_theta_max      39.993
+_cell_measurement_theta_min      3.995
+_cell_volume                     3520.7(5)
+_computing_cell_refinement
+;
+MRIA (Zlokazov & Chernyshev, 1992)
+;
+_computing_data_collection
+;
+<i>DataCollector</i> (PANalytical, 2010)
+;
+_computing_data_reduction        <i>DataCollector</i>
+_computing_molecular_graphics
+;
+Mercury (Macrae <i>et al.</i>,  2008)
+;
+_computing_publication_material
+;
+MRIA and SHELXL97 (Sheldrick, 2008a)
+;
+_computing_structure_refinement  MRIA
+_computing_structure_solution
+;
+simulated annealing (Zhukov <i>et al.</i>,  2001)
+;
+_diffrn_ambient_temperature      298(2)
+_diffrn_measurement_device       'EMPYREAN (PANanalytical)'
+_diffrn_radiation_monochromator  'Curved Germanium (111)'
+_diffrn_radiation_source         'line-focus sealed tube'
+_diffrn_radiation_type           CuK\a
+_exptl_absorpt_coefficient_mu    4.416
+_exptl_crystal_density_diffrn    1.525
+_exptl_crystal_density_method    'not measured'
+_exptl_crystal_F_000             1632
+_pd_block_diffractogram_id       L_pattern
+_pd_char_colour                  colorless
+_pd_char_particle_morphology     needle
+_pd_instr_location
+;
+ A. N. Frumkin Institute of Physical Chemistry and Electrochemistry RAS,
+ Leninsky prospect, 31,
+ Moscow 119071,
+ Russian Federation
+;
+_pd_meas_2theta_range_inc        0.017
+_pd_meas_2theta_range_max        80.008
+_pd_meas_2theta_range_min        5.004
+_pd_meas_number_of_points        4413
+_pd_meas_scan_method             cont
+_pd_prep_pressure                101
+_pd_prep_temperature             298
+_pd_proc_2theta_range_inc        0.017
+_pd_proc_2theta_range_max        80.008
+_pd_proc_2theta_range_min        5.004
+_pd_proc_info_excluded_regions   none
+_pd_proc_ls_background_function  'Chebyshev polynomial up to the 5th order'
+_pd_proc_ls_pref_orient_corr
+;
+March-Dollase texture correction (Dollase,  1986).
+Direction of preferred orientation [010],
+texture parameter r = 1.09(1).
+;
+_pd_proc_ls_profile_function
+;
+split-type pseudo-Voigt (Toraya, 1986)
+;
+_pd_proc_ls_prof_R_factor        0.0319
+_pd_proc_ls_prof_wR_expected     0.0217
+_pd_proc_ls_prof_wR_factor       0.0418
+_pd_spec_mounting
+;
+thin layer on the non-diffracting silicon plate
+;
+_pd_spec_mount_mode              reflection
+_pd_spec_shape                   flat_sheet
+_pd_spec_size_axial              15
+_pd_spec_size_equat              1
+_pd_spec_size_thick              1
+_refine_diff_density_max         0.53
+_refine_diff_density_min         -0.55
+_refine_ls_extinction_method     none
+_refine_ls_goodness_of_fit_all   1.9246
+_refine_ls_hydrogen_treatment    noref
+_refine_ls_matrix_type           fullcycle
+_refine_ls_number_constraints    0
+_refine_ls_number_parameters     132
+_refine_ls_number_restraints     78
+_refine_ls_shift/su_max          .004
+_refine_ls_shift/su_mean         .001
+_refine_ls_structure_factor_coef Inet
+_refine_ls_weighting_scheme      sigma
+loop_
+_space_group_symop_id
+_space_group_symop_operation_xyz
+1 'x, y, z'
+2 'x+1/2, -y+1/2, -z'
+3 '-x, y+1/2, -z+1/2'
+4 '-x+1/2, -y, z+1/2'
+5 '-x, -y, -z'
+6 '-x-1/2, y-1/2, z'
+7 'x, -y-1/2, z-1/2'
+8 'x-1/2, y, -z-1/2'
+loop_
+_atom_site_type_symbol
+_atom_site_label
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_U_iso_or_equiv
+_atom_site_adp_type
+_atom_site_calc_flag
+_atom_site_occupancy
+_atom_site_symmetry_multiplicity
+Br Br1 0.25630(6) 0.62021(15) 0.80770(8) 0.0641(7) Uiso d 1 1
+S S1 0.47830(14) 0.4168(3) 0.91070(18) 0.0570(15) Uiso d 1 1
+O O1 0.4941(3) 0.6432(7) 0.7807(3) 0.061(3) Uiso d 1 1
+O O2 0.5854(3) 0.5645(8) 0.7597(4) 0.058(3) Uiso d 1 1
+H H2 0.5867 0.6424 0.7345 0.087 Uiso calc 1 1
+N N1 0.3724(3) 0.5451(8) 0.8737(5) 0.060(4) Uiso d 1 1
+N N2 0.3379(4) 0.3943(9) 0.7863(4) 0.062(4) Uiso d 1 1
+N N3 0.3915(4) 0.3324(9) 0.8117(4) 0.059(4) Uiso d 1 1
+C C1 0.3753(4) 0.6723(11) 0.9268(6) 0.062(5) Uiso d 1 1
+C C2 0.3495(5) 0.6511(10) 0.9973(6) 0.070(5) Uiso d 1 1
+C C3 0.3505(5) 0.7805(12) 1.0451(5) 0.066(5) Uiso d 1 1
+C C4 0.3738(4) 0.9229(11) 1.0206(6) 0.061(5) Uiso d 1 1
+C C5 0.4001(4) 0.9329(12) 0.9533(6) 0.064(5) Uiso d 1 1
+H H5 0.4191 1.0238 0.9398 0.077 Uiso calc 1 1
+C C6 0.3993(4) 0.8072(12) 0.9028(6) 0.060(5) Uiso d 1 1
+H H6 0.4145 0.8173 0.8556 0.072 Uiso calc 1 1
+C C7 0.3229(5) 0.5120(13) 1.0201(6) 0.063(5) Uiso d 1 1
+H H7 0.3232 0.4288 0.9881 0.076 Uiso calc 1 1
+C C8 0.2967(5) 0.4947(13) 1.0872(6) 0.068(5) Uiso d 1 1
+H H8 0.2790 0.4027 1.1016 0.082 Uiso calc 1 1
+C C9 0.2981(5) 0.6264(11) 1.1342(8) 0.072(5) Uiso d 1 1
+H H9 0.2814 0.6188 1.1808 0.086 Uiso calc 1 1
+C C10 0.3225(4) 0.7588(14) 1.1137(7) 0.070(5) Uiso d 1 1
+H H10 0.3211 0.8412 1.1461 0.084 Uiso calc 1 1
+C C11 0.3788(5) 1.0585(12) 1.0703(6) 0.060(5) Uiso d 1 1
+H H11 0.3413 1.1020 1.0899 0.072 Uiso calc 1 1
+C C12 0.4313(4) 1.1643(11) 1.0604(6) 0.070(5) Uiso d 1 1
+H H12A 0.4577 1.1462 1.0189 0.084 Uiso calc 1 1
+H H12B 0.4254 1.2716 1.0726 0.084 Uiso calc 1 1
+C C13 0.4336(4) 1.0553(10) 1.1202(6) 0.072(5) Uiso d 1 1
+H H13A 0.4289 1.0947 1.1695 0.086 Uiso calc 1 1
+H H13B 0.4611 0.9691 1.1157 0.086 Uiso calc 1 1
+C C14 0.3271(5) 0.5148(13) 0.8249(6) 0.064(5) Uiso d 1 1
+C C15 0.4120(4) 0.4269(11) 0.8627(7) 0.067(5) Uiso d 1 1
+C C16 0.5328(5) 0.4103(11) 0.8358(6) 0.074(5) Uiso d 1 1
+H H16A 0.5728 0.3935 0.8560 0.089 Uiso calc 1 1
+H H16B 0.5233 0.3237 0.8045 0.089 Uiso calc 1 1
+C C17 0.5338(5) 0.5543(12) 0.7900(6) 0.069(5) Uiso d 1 1
+loop_
+_atom_type_symbol
+_atom_type_description
+Br Br
+S S
+O O
+N N
+C C
+H H
