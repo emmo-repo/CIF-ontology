@@ -1,0 +1,1333 @@
+# Electronic Supplementary Material (ESI) for Chemical Science.
+# This journal is  The Royal Society of Chemistry 2020
+
+####################################################################### 
+# 
+# This file contains crystal structure data downloaded from the 
+# Cambridge Structural Database (CSD) hosted by the Cambridge 
+# Crystallographic Data Centre (CCDC).
+# 
+# Full information about CCDC data access policies and citation 
+# guidelines are available at http://www.ccdc.cam.ac.uk/access/V1 
+# 
+# Audit and citation data items may have been added by the CCDC. 
+# Please retain this information to preserve the provenance of 
+# this file and to allow appropriate attribution of the data. 
+# 
+#######################################################################
+
+data_mbcbad
+_database_code_depnum_ccdc_archive 'CCDC 1900619'
+loop_
+_audit_author_name
+_audit_author_address
+'Arpan Das'
+;Senior Research Fellow
+India
+;
+_audit_update_record             
+;
+2019-03-02 deposited with the CCDC.	2019-12-27 downloaded from the CCDC.
+;
+_audit_creation_date             2019-03-02
+_audit_creation_method           
+;
+Olex2 1.2
+(compiled 2018.05.29 svn.r3508 for OlexSys, GUI svn.r5506)
+;
+_shelx_SHELXL_version_number     2014/7
+_chemical_name_common            ?
+_chemical_name_systematic        ?
+_chemical_formula_moiety         'C45 H57 B N2 O2'
+_chemical_formula_sum            'C45 H57 B N2 O2'
+_chemical_formula_weight         668.73
+_chemical_melting_point          ?
+_chemical_oxdiff_formula         'C H N O B'
+loop_
+_atom_type_symbol
+_atom_type_description
+_atom_type_scat_dispersion_real
+_atom_type_scat_dispersion_imag
+_atom_type_scat_source
+C C 0.0181 0.0091 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+H H 0.0000 0.0000 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+B B 0.0090 0.0039 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+N N 0.0311 0.0180 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+O O 0.0492 0.0322 'International Tables Vol C Tables 4.2.6.8 and 6.1.1.4'
+
+_shelx_space_group_comment       
+;
+The symmetry employed for this shelxl refinement is uniquely defined
+by the following loop, which should always be used as a source of
+symmetry information in preference to the above space-group names.
+They are only intended as comments.
+;
+_space_group_crystal_system      triclinic
+_space_group_IT_number           2
+_space_group_name_H-M_alt        'P -1'
+_space_group_name_Hall           '-P 1'
+loop_
+_space_group_symop_operation_xyz
+'x, y, z'
+'-x, -y, -z'
+
+_cell_length_a                   9.6381(5)
+_cell_length_b                   11.4850(6)
+_cell_length_c                   19.0369(9)
+_cell_angle_alpha                85.238(4)
+_cell_angle_beta                 75.946(4)
+_cell_angle_gamma                75.838(5)
+_cell_volume                     1981.44(18)
+_cell_formula_units_Z            2
+_cell_measurement_reflns_used    6522
+_cell_measurement_temperature    100.00
+_cell_measurement_theta_max      65.6220
+_cell_measurement_theta_min      2.3800
+_shelx_estimated_absorpt_T_max   0.951
+_shelx_estimated_absorpt_T_min   0.904
+_exptl_absorpt_coefficient_mu    0.513
+_exptl_absorpt_correction_T_max  1.00000
+_exptl_absorpt_correction_T_min  0.52439
+_exptl_absorpt_correction_type   multi-scan
+_exptl_absorpt_process_details   
+;
+CrysAlisPro, Agilent Technologies,
+Version 1.171.37.34 (release 22-05-2014 CrysAlis171 .NET)
+(compiled May 22 2014,16:03:01)
+Empirical absorption correction using spherical harmonics,
+ implemented in SCALE3 ABSPACK scaling algorithm.
+;
+_exptl_absorpt_special_details   ?
+_exptl_crystal_colour            'clear light colourless'
+_exptl_crystal_colour_lustre     clear
+_exptl_crystal_colour_modifier   light
+_exptl_crystal_colour_primary    colourless
+_exptl_crystal_density_diffrn    1.121
+_exptl_crystal_density_meas      ?
+_exptl_crystal_density_method    ?
+_exptl_crystal_F_000             724
+_exptl_crystal_preparation       ?
+_exptl_crystal_size_max          0.2
+_exptl_crystal_size_mid          0.15
+_exptl_crystal_size_min          0.1
+_exptl_transmission_factor_max   ?
+_exptl_transmission_factor_min   ?
+_diffrn_reflns_av_R_equivalents  0.0436
+_diffrn_reflns_av_unetI/netI     0.0514
+_diffrn_reflns_Laue_measured_fraction_full 0.991
+_diffrn_reflns_Laue_measured_fraction_max 0.991
+_diffrn_reflns_limit_h_max       11
+_diffrn_reflns_limit_h_min       -10
+_diffrn_reflns_limit_k_max       13
+_diffrn_reflns_limit_k_min       -13
+_diffrn_reflns_limit_l_max       22
+_diffrn_reflns_limit_l_min       -22
+_diffrn_reflns_number            16871
+_diffrn_reflns_point_group_measured_fraction_full 0.991
+_diffrn_reflns_point_group_measured_fraction_max 0.991
+_diffrn_reflns_theta_full        65.913
+_diffrn_reflns_theta_max         65.913
+_diffrn_reflns_theta_min         2.393
+_diffrn_ambient_temperature      100.00
+_diffrn_detector                 'CCD plate'
+_diffrn_detector_area_resol_mean 7.9580
+_diffrn_detector_type            Eos
+_diffrn_measured_fraction_theta_full 0.991
+_diffrn_measured_fraction_theta_max 0.991
+_diffrn_measurement_details      
+;
+#__ type_ start__ end____ width___ exp.time_
+  1 omega  -51.00   64.00   1.0000    5.0000
+omega____ theta____ kappa____ phi______ frames
+    -       25.6472  -57.0000 -180.0000 115
+
+#__ type_ start__ end____ width___ exp.time_
+  2 omega  -13.00  102.00   1.0000    5.0000
+omega____ theta____ kappa____ phi______ frames
+    -       25.6472   57.0000  120.0000 115
+
+#__ type_ start__ end____ width___ exp.time_
+  3 omega  -13.00  102.00   1.0000    5.0000
+omega____ theta____ kappa____ phi______ frames
+    -       25.6472   57.0000 -180.0000 115
+
+#__ type_ start__ end____ width___ exp.time_
+  4 omega  -13.00  102.00   1.0000    5.0000
+omega____ theta____ kappa____ phi______ frames
+    -       25.6472   57.0000   60.0000 115
+
+#__ type_ start__ end____ width___ exp.time_
+  5 omega   57.00  123.00   1.0000    5.0000
+omega____ theta____ kappa____ phi______ frames
+    -       25.6472  178.0000  150.0000 66
+
+#__ type_ start__ end____ width___ exp.time_
+  6 omega  -13.00  102.00   1.0000    5.0000
+omega____ theta____ kappa____ phi______ frames
+    -       25.6472   57.0000    0.0000 115
+
+#__ type_ start__ end____ width___ exp.time_
+  7 omega  100.00  153.00   1.0000   10.0000
+omega____ theta____ kappa____ phi______ frames
+    -       66.8236  111.0000  -30.0000 53
+
+#__ type_ start__ end____ width___ exp.time_
+  8 omega   57.00  150.00   1.0000   10.0000
+omega____ theta____ kappa____ phi______ frames
+    -       66.8236  178.0000   60.0000 93
+
+#__ type_ start__ end____ width___ exp.time_
+  9 omega  100.00  153.00   1.0000   10.0000
+omega____ theta____ kappa____ phi______ frames
+    -       66.8236  111.0000   60.0000 53
+
+#__ type_ start__ end____ width___ exp.time_
+ 10 omega   57.00  150.00   1.0000   10.0000
+omega____ theta____ kappa____ phi______ frames
+    -       66.8236  178.0000  150.0000 93
+
+#__ type_ start__ end____ width___ exp.time_
+ 11 omega  -13.00  152.00   1.0000   10.0000
+omega____ theta____ kappa____ phi______ frames
+    -       66.8236   30.0000 -120.0000 165
+
+#__ type_ start__ end____ width___ exp.time_
+ 12 omega  100.00  153.00   1.0000   10.0000
+omega____ theta____ kappa____ phi______ frames
+    -       66.8236  111.0000  -60.0000 53
+
+#__ type_ start__ end____ width___ exp.time_
+ 13 omega   27.00  145.00   1.0000   10.0000
+omega____ theta____ kappa____ phi______ frames
+    -       66.8236   61.0000   30.0000 118
+
+#__ type_ start__ end____ width___ exp.time_
+ 14 omega   22.00  154.00   1.0000   10.0000
+omega____ theta____ kappa____ phi______ frames
+    -       66.8236   77.0000   90.0000 132
+
+#__ type_ start__ end____ width___ exp.time_
+ 15 omega  100.00  153.00   1.0000   10.0000
+omega____ theta____ kappa____ phi______ frames
+    -       66.8236  111.0000    0.0000 53
+
+#__ type_ start__ end____ width___ exp.time_
+ 16 omega   57.00  150.00   1.0000   10.0000
+omega____ theta____ kappa____ phi______ frames
+    -       66.8236  178.0000 -120.0000 93
+
+#__ type_ start__ end____ width___ exp.time_
+ 17 omega    0.00  138.00   1.0000   10.0000
+omega____ theta____ kappa____ phi______ frames
+    -       66.8236   30.0000    0.0000 138
+
+#__ type_ start__ end____ width___ exp.time_
+ 18 omega  123.00  149.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  -89.0000  120.0000 26
+
+#__ type_ start__ end____ width___ exp.time_
+ 19 omega   22.00   48.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  -89.0000  120.0000 26
+
+#__ type_ start__ end____ width___ exp.time_
+ 20 omega  122.00  148.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000   54.0000  -60.0000 26
+
+#__ type_ start__ end____ width___ exp.time_
+ 21 omega  134.00  165.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000   54.0000 -150.0000 31
+
+#__ type_ start__ end____ width___ exp.time_
+ 22 omega   84.00  111.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000   54.0000  -60.0000 27
+
+#__ type_ start__ end____ width___ exp.time_
+ 23 omega   85.00  111.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  -65.0000  -90.0000 26
+
+#__ type_ start__ end____ width___ exp.time_
+ 24 omega  135.00  177.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  138.0000   90.0000 42
+
+#__ type_ start__ end____ width___ exp.time_
+ 25 omega   77.00  108.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  -54.0000 -180.0000 31
+
+#__ type_ start__ end____ width___ exp.time_
+ 26 omega   58.00   84.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  -89.0000  120.0000 26
+
+#__ type_ start__ end____ width___ exp.time_
+ 27 omega   75.00  101.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  -54.0000    0.0000 26
+
+#__ type_ start__ end____ width___ exp.time_
+ 28 omega   34.00  101.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000 -104.0000   30.0000 67
+
+#__ type_ start__ end____ width___ exp.time_
+ 29 omega   35.00   65.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  -54.0000    0.0000 30
+
+#__ type_ start__ end____ width___ exp.time_
+ 30 omega  127.00  153.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  138.0000 -180.0000 26
+
+#__ type_ start__ end____ width___ exp.time_
+ 31 omega   81.00  178.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000   32.0000    0.0000 97
+
+#__ type_ start__ end____ width___ exp.time_
+ 32 omega  106.00  145.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  -54.0000  120.0000 39
+
+#__ type_ start__ end____ width___ exp.time_
+ 33 omega   87.00  112.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  138.0000 -180.0000 25
+
+#__ type_ start__ end____ width___ exp.time_
+ 34 omega   54.00   90.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  -54.0000  120.0000 36
+
+#__ type_ start__ end____ width___ exp.time_
+ 35 omega   66.00  105.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000   77.0000   90.0000 39
+
+#__ type_ start__ end____ width___ exp.time_
+ 36 omega  102.00  178.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  104.0000  -60.0000 76
+
+#__ type_ start__ end____ width___ exp.time_
+ 37 omega   66.00  113.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000 -104.0000 -150.0000 47
+
+#__ type_ start__ end____ width___ exp.time_
+ 38 omega  148.00  175.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000   43.0000 -180.0000 27
+
+#__ type_ start__ end____ width___ exp.time_
+ 39 omega  112.00  178.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000   77.0000   90.0000 66
+
+#__ type_ start__ end____ width___ exp.time_
+ 40 omega   22.00  112.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  -77.0000 -150.0000 90
+
+#__ type_ start__ end____ width___ exp.time_
+ 41 omega  116.00  147.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  -77.0000 -150.0000 31
+
+#__ type_ start__ end____ width___ exp.time_
+ 42 omega   35.00   61.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000   32.0000    0.0000 26
+
+#__ type_ start__ end____ width___ exp.time_
+ 43 omega  109.00  177.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  104.0000  -90.0000 68
+
+#__ type_ start__ end____ width___ exp.time_
+ 44 omega  129.00  156.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000   77.0000   42.1347 27
+
+#__ type_ start__ end____ width___ exp.time_
+ 45 omega   66.00  110.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000   77.0000   42.1347 44
+
+#__ type_ start__ end____ width___ exp.time_
+ 46 omega  140.00  167.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  138.0000   60.0000 27
+
+#__ type_ start__ end____ width___ exp.time_
+ 47 omega   23.00   58.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000 -104.0000  150.0000 35
+
+#__ type_ start__ end____ width___ exp.time_
+ 48 omega   75.00  177.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000   32.0000  -90.0000 102
+
+#__ type_ start__ end____ width___ exp.time_
+ 49 omega  117.00  164.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  104.0000   60.0000 47
+
+#__ type_ start__ end____ width___ exp.time_
+ 50 omega  152.00  178.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  138.0000  -60.0000 26
+
+#__ type_ start__ end____ width___ exp.time_
+ 51 omega   89.00  128.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000   43.0000 -180.0000 39
+
+#__ type_ start__ end____ width___ exp.time_
+ 52 omega   82.00  113.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000   77.0000 -180.0000 31
+
+#__ type_ start__ end____ width___ exp.time_
+ 53 omega   74.00  121.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000 -129.0000  139.8282 47
+
+#__ type_ start__ end____ width___ exp.time_
+ 54 omega  106.00  147.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  -54.0000 -120.0000 41
+
+#__ type_ start__ end____ width___ exp.time_
+ 55 omega   29.00  109.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000  -65.0000   60.0000 80
+
+#__ type_ start__ end____ width___ exp.time_
+ 56 omega   28.00   57.00   1.0000   20.0000
+omega____ theta____ kappa____ phi______ frames
+    -      108.0000 -129.0000  139.8282 29
+;
+_diffrn_measurement_device       'four-circle diffractometer'
+_diffrn_measurement_device_type  'SuperNova, Dual, Cu at zero, Eos'
+_diffrn_measurement_method       '\w scans'
+_diffrn_orient_matrix_UB_11      -0.0977046000
+_diffrn_orient_matrix_UB_12      -0.0215838000
+_diffrn_orient_matrix_UB_13      0.0746449000
+_diffrn_orient_matrix_UB_21      -0.0471273000
+_diffrn_orient_matrix_UB_22      -0.0992453000
+_diffrn_orient_matrix_UB_23      -0.0317958000
+_diffrn_orient_matrix_UB_31      0.1301178000
+_diffrn_orient_matrix_UB_32      -0.0939954000
+_diffrn_orient_matrix_UB_33      0.0195134000
+_diffrn_radiation_monochromator  mirror
+_diffrn_radiation_probe          x-ray
+_diffrn_radiation_type           CuK\a
+_diffrn_radiation_wavelength     1.54184
+_diffrn_source                   'sealed X-ray tube'
+_diffrn_source_type              'SuperNova (Cu) X-ray Source'
+_reflns_Friedel_coverage         0.000
+_reflns_Friedel_fraction_full    .
+_reflns_Friedel_fraction_max     .
+_reflns_number_gt                5448
+_reflns_number_total             6844
+_reflns_odcompleteness_completeness 96.56
+_reflns_odcompleteness_iscentric 1
+_reflns_odcompleteness_theta     66.97
+_reflns_special_details          
+;
+ Reflections were merged by SHELXL according to the crystal
+ class for the calculation of statistics and refinement.
+ 
+ _reflns_Friedel_fraction is defined as the number of unique
+ Friedel pairs measured divided by the number that would be
+ possible theoretically, ignoring centric projections and
+ systematic absences.
+;
+_reflns_threshold_expression     'I > 2\s(I)'
+_computing_cell_refinement       
+;
+CrysAlisPro, Agilent Technologies,
+Version 1.171.37.34 (release 22-05-2014 CrysAlis171 .NET)
+(compiled May 22 2014,16:03:01)
+;
+_computing_data_collection       
+;
+CrysAlisPro, Agilent Technologies,
+Version 1.171.37.34 (release 22-05-2014 CrysAlis171 .NET)
+(compiled May 22 2014,16:03:01)
+;
+_computing_data_reduction        
+;
+CrysAlisPro, Agilent Technologies,
+Version 1.171.37.34 (release 22-05-2014 CrysAlis171 .NET)
+(compiled May 22 2014,16:03:01)
+;
+_computing_molecular_graphics    'Olex2 (Dolomanov et al., 2009)'
+_computing_publication_material  'Olex2 (Dolomanov et al., 2009)'
+_computing_structure_refinement  'ShelXL (Sheldrick, 2015)'
+_computing_structure_solution    'ShelXT (Sheldrick, 2015)'
+_refine_diff_density_max         0.221
+_refine_diff_density_min         -0.296
+_refine_diff_density_rms         0.041
+_refine_ls_extinction_coef       .
+_refine_ls_extinction_method     none
+_refine_ls_goodness_of_fit_ref   1.019
+_refine_ls_hydrogen_treatment    constr
+_refine_ls_matrix_type           full
+_refine_ls_number_parameters     463
+_refine_ls_number_reflns         6844
+_refine_ls_number_restraints     0
+_refine_ls_R_factor_all          0.0626
+_refine_ls_R_factor_gt           0.0484
+_refine_ls_restrained_S_all      1.019
+_refine_ls_shift/su_max          0.000
+_refine_ls_shift/su_mean         0.000
+_refine_ls_structure_factor_coef Fsqd
+_refine_ls_weighting_details     
+'w=1/[\s^2^(Fo^2^)+(0.0641P)^2^+0.2445P] where P=(Fo^2^+2Fc^2^)/3'
+_refine_ls_weighting_scheme      calc
+_refine_ls_wR_factor_gt          0.1208
+_refine_ls_wR_factor_ref         0.1314
+_refine_special_details          ?
+_olex2_refinement_description    
+;
+1. Fixed Uiso
+ At 1.2 times of:
+  All B(H) groups, All C(H) groups
+ At 1.5 times of:
+  All C(H,H,H) groups
+2.a Ternary CH refined with riding coordinates:
+ C11(H11), C19(H19), C29(H29), C37(H37), B1(H1)
+2.b Aromatic/amide H refined with riding coordinates:
+ C5(H5), C6(H6), C7(H7), C8(H8), C9(H9), C16(H16), C17(H17), C18(H18),
+ C22(H22), C23(H23), C25(H25), C26(H26), C27(H27), C33(H33), C34(H34), C35(H35)
+2.c Idealised Me refined as rotating group:
+ C10(H10a,H10b,H10c), C12(H12a,H12b,H12c), C20(H20a,H20b,H20c), C21(H21a,H21b,
+ H21c), C28(H28a,H28b,H28c), C30(H30a,H30b,H30c), C38(H38b,H38a,H38c), C39(H39a,
+ H39b,H39c), C42(H42a,H42b,H42c), C43(H43a,H43b,H43c), C45(H45a,H45b,H45c),
+ C46(H46a,H46b,H46c)
+;
+_atom_sites_solution_hydrogens   geom
+_atom_sites_solution_primary     dual
+_atom_sites_solution_secondary   ?
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_U_iso_or_equiv
+_atom_site_adp_type
+_atom_site_occupancy
+_atom_site_site_symmetry_order
+_atom_site_calc_flag
+_atom_site_refinement_flags_posn
+_atom_site_refinement_flags_adp
+_atom_site_refinement_flags_occupancy
+_atom_site_disorder_assembly
+_atom_site_disorder_group
+O1 O 0.24828(12) 0.48041(10) 0.79474(6) 0.0304(3) Uani 1 1 d . . . . .
+O2 O 0.39271(12) 0.57801(10) 0.70295(6) 0.0297(3) Uani 1 1 d . . . . .
+N1 N 0.62519(14) 0.30885(12) 0.68753(7) 0.0250(3) Uani 1 1 d . . . . .
+N2 N 0.67922(14) 0.21692(12) 0.78425(7) 0.0246(3) Uani 1 1 d . . . . .
+C1 C 0.72527(17) 0.22078(15) 0.71160(8) 0.0259(3) Uani 1 1 d . . . . .
+C2 C 0.50975(17) 0.36062(14) 0.74429(8) 0.0252(3) Uani 1 1 d . . . . .
+C3 C 0.54625(16) 0.30294(14) 0.80556(9) 0.0251(3) Uani 1 1 d . . . . .
+C4 C 0.47195(18) 0.31871(14) 0.88308(9) 0.0262(3) Uani 1 1 d . . . . .
+C5 C 0.32545(18) 0.31302(15) 0.90742(9) 0.0315(4) Uani 1 1 d . . . . .
+H5 H 0.2733 0.2969 0.8743 0.038 Uiso 1 1 calc R . . . .
+C6 C 0.2553(2) 0.33070(17) 0.97953(10) 0.0372(4) Uani 1 1 d . . . . .
+H6 H 0.1549 0.3274 0.9955 0.045 Uiso 1 1 calc R . . . .
+C7 C 0.3294(2) 0.35312(16) 1.02839(10) 0.0392(4) Uani 1 1 d . . . . .
+H7 H 0.2806 0.3654 1.0779 0.047 Uiso 1 1 calc R . . . .
+C8 C 0.4754(2) 0.35768(17) 1.00498(10) 0.0397(4) Uani 1 1 d . . . . .
+H8 H 0.5274 0.3722 1.0385 0.048 Uiso 1 1 calc R . . . .
+C9 C 0.54608(19) 0.34108(16) 0.93264(9) 0.0332(4) Uani 1 1 d . . . . .
+H9 H 0.6462 0.3451 0.9169 0.040 Uiso 1 1 calc R . . . .
+C10 C 0.5727(3) -0.0818(3) 0.79091(18) 0.0852(10) Uani 1 1 d . . . . .
+H10A H 0.6367 -0.0634 0.7450 0.128 Uiso 1 1 calc GR . . . .
+H10B H 0.4798 -0.0906 0.7821 0.128 Uiso 1 1 calc GR . . . .
+H10C H 0.6212 -0.1568 0.8121 0.128 Uiso 1 1 calc GR . . . .
+C11 C 0.5420(2) 0.02008(17) 0.84312(11) 0.0407(4) Uani 1 1 d . . . . .
+H11 H 0.4979 0.0962 0.8191 0.049 Uiso 1 1 calc R . . . .
+C12 C 0.4294(2) -0.0017(2) 0.91134(13) 0.0569(6) Uani 1 1 d . . . . .
+H12A H 0.4655 -0.0802 0.9330 0.085 Uiso 1 1 calc GR . . . .
+H12B H 0.3361 0.0000 0.8988 0.085 Uiso 1 1 calc GR . . . .
+H12C H 0.4142 0.0613 0.9460 0.085 Uiso 1 1 calc GR . . . .
+C13 C 0.6824(2) 0.03558(15) 0.86065(9) 0.0325(4) Uani 1 1 d . . . . .
+C14 C 0.74833(18) 0.13075(14) 0.83299(8) 0.0270(3) Uani 1 1 d . . . . .
+C15 C 0.87740(18) 0.14546(16) 0.84878(9) 0.0320(4) Uani 1 1 d . . . . .
+C16 C 0.9426(2) 0.05752(18) 0.89344(10) 0.0408(4) Uani 1 1 d . . . . .
+H16 H 1.0307 0.0639 0.9053 0.049 Uiso 1 1 calc R . . . .
+C17 C 0.8821(2) -0.03825(18) 0.92074(10) 0.0438(5) Uani 1 1 d . . . . .
+H17 H 0.9289 -0.0971 0.9509 0.053 Uiso 1 1 calc R . . . .
+C18 C 0.7533(2) -0.04958(17) 0.90470(10) 0.0413(4) Uani 1 1 d . . . . .
+H18 H 0.7128 -0.1162 0.9240 0.050 Uiso 1 1 calc R . . . .
+C19 C 0.9474(2) 0.25006(18) 0.82042(11) 0.0404(4) Uani 1 1 d . . . . .
+H19 H 0.8817 0.3064 0.7928 0.049 Uiso 1 1 calc R . . . .
+C20 C 1.0982(2) 0.2075(2) 0.76855(11) 0.0504(5) Uani 1 1 d . . . . .
+H20A H 1.1644 0.1519 0.7945 0.076 Uiso 1 1 calc GR . . . .
+H20B H 1.1396 0.2769 0.7501 0.076 Uiso 1 1 calc GR . . . .
+H20C H 1.0866 0.1664 0.7279 0.076 Uiso 1 1 calc GR . . . .
+C21 C 0.9638(2) 0.3194(2) 0.88231(14) 0.0552(6) Uani 1 1 d . . . . .
+H21A H 0.8668 0.3494 0.9141 0.083 Uiso 1 1 calc GR . . . .
+H21B H 1.0072 0.3871 0.8622 0.083 Uiso 1 1 calc GR . . . .
+H21C H 1.0277 0.2658 0.9102 0.083 Uiso 1 1 calc GR . . . .
+C22 C 0.9969(2) -0.06426(17) 0.64280(10) 0.0396(4) Uani 1 1 d . . . . .
+H22 H 1.0170 -0.1470 0.6565 0.048 Uiso 1 1 calc R . . . .
+C23 C 0.88632(19) 0.01643(16) 0.68690(10) 0.0343(4) Uani 1 1 d . . . . .
+H23 H 0.8334 -0.0110 0.7314 0.041 Uiso 1 1 calc R . . . .
+C24 C 0.85159(17) 0.13776(15) 0.66669(9) 0.0281(4) Uani 1 1 d . . . . .
+C25 C 0.93422(18) 0.17604(16) 0.60181(9) 0.0312(4) Uani 1 1 d . . . . .
+H25 H 0.9127 0.2582 0.5869 0.037 Uiso 1 1 calc R . . . .
+C26 C 1.04737(19) 0.09450(18) 0.55908(10) 0.0370(4) Uani 1 1 d . . . . .
+H26 H 1.1041 0.1217 0.5156 0.044 Uiso 1 1 calc R . . . .
+C27 C 1.0785(2) -0.02577(18) 0.57902(10) 0.0402(4) Uani 1 1 d . . . . .
+H27 H 1.1551 -0.0814 0.5492 0.048 Uiso 1 1 calc R . . . .
+C28 C 0.6042(2) 0.04690(17) 0.57484(11) 0.0396(4) Uani 1 1 d . . . . .
+H28A H 0.6123 0.0437 0.5227 0.059 Uiso 1 1 calc GR . . . .
+H28B H 0.5557 -0.0153 0.6003 0.059 Uiso 1 1 calc GR . . . .
+H28C H 0.7027 0.0332 0.5841 0.059 Uiso 1 1 calc GR . . . .
+C29 C 0.51368(19) 0.17053(16) 0.60217(9) 0.0319(4) Uani 1 1 d . . . . .
+H29 H 0.5018 0.1695 0.6559 0.038 Uiso 1 1 calc R . . . .
+C30 C 0.3596(2) 0.19259(18) 0.58708(11) 0.0391(4) Uani 1 1 d . . . . .
+H30A H 0.3012 0.2711 0.6054 0.059 Uiso 1 1 calc GR . . . .
+H30B H 0.3112 0.1296 0.6115 0.059 Uiso 1 1 calc GR . . . .
+H30C H 0.3683 0.1911 0.5348 0.059 Uiso 1 1 calc GR . . . .
+C31 C 0.63455(16) 0.34226(15) 0.61145(8) 0.0260(3) Uani 1 1 d . . . . .
+C32 C 0.58863(17) 0.27105(15) 0.57000(9) 0.0280(3) Uani 1 1 d . . . . .
+C33 C 0.61038(17) 0.29870(16) 0.49575(9) 0.0314(4) Uani 1 1 d . . . . .
+H33 H 0.5819 0.2516 0.4654 0.038 Uiso 1 1 calc R . . . .
+C34 C 0.67234(18) 0.39293(17) 0.46566(9) 0.0337(4) Uani 1 1 d . . . . .
+H34 H 0.6875 0.4095 0.4150 0.040 Uiso 1 1 calc R . . . .
+C35 C 0.71249(18) 0.46341(16) 0.50954(9) 0.0326(4) Uani 1 1 d . . . . .
+H35 H 0.7531 0.5291 0.4884 0.039 Uiso 1 1 calc R . . . .
+C36 C 0.69481(17) 0.44030(16) 0.58384(9) 0.0292(4) Uani 1 1 d . . . . .
+C37 C 0.74102(19) 0.51800(16) 0.63125(10) 0.0333(4) Uani 1 1 d . . . . .
+H37 H 0.6863 0.5073 0.6823 0.040 Uiso 1 1 calc R . . . .
+C38 C 0.9055(2) 0.4801(2) 0.62990(14) 0.0532(6) Uani 1 1 d . . . . .
+H38B H 0.9315 0.5380 0.6565 0.080 Uiso 1 1 calc GR . . . .
+H38A H 0.9624 0.4781 0.5796 0.080 Uiso 1 1 calc GR . . . .
+H38C H 0.9277 0.4001 0.6527 0.080 Uiso 1 1 calc GR . . . .
+C39 C 0.6994(2) 0.65095(18) 0.61088(12) 0.0458(5) Uani 1 1 d . . . . .
+H39A H 0.7570 0.6656 0.5624 0.069 Uiso 1 1 calc GR . . . .
+H39B H 0.7199 0.6984 0.6460 0.069 Uiso 1 1 calc GR . . . .
+H39C H 0.5944 0.6744 0.6112 0.069 Uiso 1 1 calc GR . . . .
+C41 C 0.1945(2) 0.60665(16) 0.80266(10) 0.0343(4) Uani 1 1 d . . . . .
+C42 C 0.0645(2) 0.64766(19) 0.76638(12) 0.0458(5) Uani 1 1 d . . . . .
+H42A H 0.0988 0.6343 0.7142 0.069 Uiso 1 1 calc GR . . . .
+H42B H 0.0211 0.7334 0.7746 0.069 Uiso 1 1 calc GR . . . .
+H42C H -0.0097 0.6016 0.7871 0.069 Uiso 1 1 calc GR . . . .
+C43 C 0.1430(3) 0.63250(19) 0.88343(11) 0.0517(5) Uani 1 1 d . . . . .
+H43A H 0.0577 0.5984 0.9044 0.078 Uiso 1 1 calc GR . . . .
+H43B H 0.1155 0.7195 0.8901 0.078 Uiso 1 1 calc GR . . . .
+H43C H 0.2227 0.5961 0.9076 0.078 Uiso 1 1 calc GR . . . .
+C44 C 0.3293(2) 0.65648(15) 0.76237(10) 0.0331(4) Uani 1 1 d . . . . .
+C45 C 0.4411(2) 0.64591(17) 0.80925(11) 0.0403(4) Uani 1 1 d . . . . .
+H45A H 0.4583 0.5654 0.8318 0.060 Uiso 1 1 calc GR . . . .
+H45B H 0.4024 0.7061 0.8470 0.060 Uiso 1 1 calc GR . . . .
+H45C H 0.5338 0.6595 0.7788 0.060 Uiso 1 1 calc GR . . . .
+C46 C 0.2920(2) 0.78434(16) 0.73217(11) 0.0413(4) Uani 1 1 d . . . . .
+H46A H 0.3831 0.8101 0.7103 0.062 Uiso 1 1 calc GR . . . .
+H46B H 0.2333 0.8381 0.7715 0.062 Uiso 1 1 calc GR . . . .
+H46C H 0.2357 0.7871 0.6953 0.062 Uiso 1 1 calc GR . . . .
+B1 B 0.36290(19) 0.46001(17) 0.72729(10) 0.0264(4) Uani 1 1 d . . . . .
+H1 H 0.3255 0.4280 0.6901 0.032 Uiso 1 1 calc R . . . .
+
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_23
+_atom_site_aniso_U_13
+_atom_site_aniso_U_12
+O1 0.0276(6) 0.0282(6) 0.0305(6) 0.0014(5) -0.0028(5) -0.0017(5)
+O2 0.0312(6) 0.0307(6) 0.0271(6) 0.0028(5) -0.0091(5) -0.0056(5)
+N1 0.0223(6) 0.0300(7) 0.0223(7) 0.0031(5) -0.0059(5) -0.0058(5)
+N2 0.0221(6) 0.0278(7) 0.0229(7) 0.0051(5) -0.0060(5) -0.0054(5)
+C1 0.0241(8) 0.0305(8) 0.0232(8) 0.0027(6) -0.0069(6) -0.0063(6)
+C2 0.0223(8) 0.0289(8) 0.0239(8) 0.0014(6) -0.0047(6) -0.0062(6)
+C3 0.0203(7) 0.0278(8) 0.0265(8) 0.0020(6) -0.0049(6) -0.0059(6)
+C4 0.0276(8) 0.0236(7) 0.0246(8) 0.0048(6) -0.0049(6) -0.0038(6)
+C5 0.0271(8) 0.0344(9) 0.0294(9) 0.0047(7) -0.0040(7) -0.0045(7)
+C6 0.0319(9) 0.0392(10) 0.0323(9) 0.0068(8) 0.0015(7) -0.0043(7)
+C7 0.0488(11) 0.0351(9) 0.0230(8) 0.0027(7) 0.0024(8) -0.0013(8)
+C8 0.0492(11) 0.0408(10) 0.0292(9) -0.0009(8) -0.0133(8) -0.0066(8)
+C9 0.0301(9) 0.0385(9) 0.0303(9) -0.0006(7) -0.0074(7) -0.0061(7)
+C10 0.0744(18) 0.096(2) 0.099(2) -0.0414(18) -0.0037(16) -0.0499(17)
+C11 0.0441(11) 0.0366(10) 0.0453(11) 0.0066(8) -0.0108(9) -0.0183(8)
+C12 0.0413(11) 0.0594(14) 0.0635(15) 0.0214(11) -0.0053(10) -0.0138(10)
+C13 0.0369(9) 0.0286(8) 0.0286(9) 0.0034(7) -0.0049(7) -0.0051(7)
+C14 0.0277(8) 0.0286(8) 0.0211(8) 0.0034(6) -0.0059(6) -0.0009(6)
+C15 0.0255(8) 0.0394(9) 0.0279(9) 0.0016(7) -0.0069(7) -0.0015(7)
+C16 0.0294(9) 0.0521(11) 0.0353(10) 0.0036(8) -0.0118(8) 0.0039(8)
+C17 0.0409(10) 0.0450(11) 0.0322(10) 0.0111(8) -0.0074(8) 0.0099(9)
+C18 0.0485(11) 0.0321(9) 0.0333(10) 0.0093(8) -0.0012(8) -0.0022(8)
+C19 0.0282(9) 0.0495(11) 0.0473(11) 0.0083(9) -0.0159(8) -0.0119(8)
+C20 0.0383(11) 0.0790(16) 0.0381(11) 0.0063(10) -0.0069(9) -0.0257(11)
+C21 0.0306(10) 0.0657(14) 0.0737(16) -0.0145(12) -0.0111(10) -0.0162(10)
+C22 0.0380(10) 0.0387(10) 0.0378(10) -0.0017(8) -0.0140(8) 0.0048(8)
+C23 0.0319(9) 0.0383(9) 0.0294(9) 0.0010(7) -0.0093(7) -0.0005(7)
+C24 0.0222(8) 0.0362(9) 0.0260(8) -0.0005(7) -0.0087(6) -0.0040(7)
+C25 0.0227(8) 0.0395(9) 0.0296(9) 0.0001(7) -0.0073(7) -0.0030(7)
+C26 0.0253(8) 0.0515(11) 0.0310(9) -0.0021(8) -0.0040(7) -0.0053(8)
+C27 0.0270(9) 0.0504(11) 0.0359(10) -0.0074(8) -0.0071(7) 0.0064(8)
+C28 0.0417(10) 0.0376(10) 0.0402(10) -0.0028(8) -0.0112(8) -0.0078(8)
+C29 0.0314(9) 0.0372(9) 0.0274(8) -0.0009(7) -0.0063(7) -0.0092(7)
+C30 0.0315(9) 0.0452(10) 0.0417(10) -0.0063(8) -0.0054(8) -0.0121(8)
+C31 0.0195(7) 0.0342(8) 0.0213(8) 0.0031(6) -0.0044(6) -0.0018(6)
+C32 0.0191(7) 0.0345(9) 0.0271(8) 0.0001(7) -0.0047(6) -0.0009(6)
+C33 0.0243(8) 0.0429(9) 0.0249(8) -0.0019(7) -0.0076(7) -0.0016(7)
+C34 0.0247(8) 0.0474(10) 0.0228(8) 0.0042(7) -0.0047(6) 0.0005(7)
+C35 0.0256(8) 0.0401(9) 0.0287(9) 0.0092(7) -0.0046(7) -0.0063(7)
+C36 0.0208(8) 0.0367(9) 0.0273(8) 0.0054(7) -0.0057(6) -0.0034(7)
+C37 0.0319(9) 0.0381(10) 0.0322(9) 0.0067(7) -0.0091(7) -0.0137(7)
+C38 0.0397(11) 0.0574(13) 0.0703(15) -0.0073(11) -0.0252(11) -0.0115(10)
+C39 0.0553(12) 0.0411(11) 0.0472(12) 0.0076(9) -0.0191(10) -0.0183(9)
+C41 0.0344(9) 0.0292(9) 0.0336(9) 0.0000(7) -0.0068(7) 0.0017(7)
+C42 0.0322(10) 0.0420(11) 0.0577(13) 0.0080(9) -0.0106(9) -0.0014(8)
+C43 0.0599(13) 0.0405(11) 0.0395(11) -0.0045(9) 0.0026(10) 0.0039(10)
+C44 0.0386(9) 0.0295(9) 0.0320(9) 0.0014(7) -0.0134(8) -0.0052(7)
+C45 0.0513(11) 0.0335(9) 0.0413(10) 0.0009(8) -0.0236(9) -0.0076(8)
+C46 0.0480(11) 0.0306(9) 0.0485(11) 0.0043(8) -0.0214(9) -0.0064(8)
+B1 0.0243(9) 0.0299(9) 0.0257(9) -0.0001(7) -0.0091(7) -0.0044(7)
+
+_geom_special_details            
+;
+ All esds (except the esd in the dihedral angle between two l.s. planes)
+ are estimated using the full covariance matrix.  The cell esds are taken
+ into account individually in the estimation of esds in distances, angles
+ and torsion angles; correlations between esds in cell parameters are only
+ used when they are defined by crystal symmetry.  An approximate (isotropic)
+ treatment of cell esds is used for estimating esds involving l.s. planes.
+;
+loop_
+_geom_bond_atom_site_label_1
+_geom_bond_atom_site_label_2
+_geom_bond_distance
+_geom_bond_site_symmetry_2
+_geom_bond_publ_flag
+O1 C41 1.423(2) . ?
+O1 B1 1.469(2) . ?
+O2 C44 1.425(2) . ?
+O2 B1 1.468(2) . ?
+N1 C1 1.351(2) . ?
+N1 C2 1.399(2) . ?
+N1 C31 1.4541(19) . ?
+N2 C1 1.346(2) . ?
+N2 C3 1.406(2) . ?
+N2 C14 1.452(2) . ?
+C1 C24 1.478(2) . ?
+C2 C3 1.371(2) . ?
+C2 B1 1.668(2) . ?
+C3 C4 1.480(2) . ?
+C4 C5 1.391(2) . ?
+C4 C9 1.387(2) . ?
+C5 H5 0.9500 . ?
+C5 C6 1.382(2) . ?
+C6 H6 0.9500 . ?
+C6 C7 1.377(3) . ?
+C7 H7 0.9500 . ?
+C7 C8 1.381(3) . ?
+C8 H8 0.9500 . ?
+C8 C9 1.386(3) . ?
+C9 H9 0.9500 . ?
+C10 H10A 0.9800 . ?
+C10 H10B 0.9800 . ?
+C10 H10C 0.9800 . ?
+C10 C11 1.525(3) . ?
+C11 H11 1.0000 . ?
+C11 C12 1.523(3) . ?
+C11 C13 1.524(3) . ?
+C12 H12A 0.9800 . ?
+C12 H12B 0.9800 . ?
+C12 H12C 0.9800 . ?
+C13 C14 1.399(2) . ?
+C13 C18 1.394(3) . ?
+C14 C15 1.400(2) . ?
+C15 C16 1.394(2) . ?
+C15 C19 1.517(3) . ?
+C16 H16 0.9500 . ?
+C16 C17 1.376(3) . ?
+C17 H17 0.9500 . ?
+C17 C18 1.386(3) . ?
+C18 H18 0.9500 . ?
+C19 H19 1.0000 . ?
+C19 C20 1.537(3) . ?
+C19 C21 1.534(3) . ?
+C20 H20A 0.9800 . ?
+C20 H20B 0.9800 . ?
+C20 H20C 0.9800 . ?
+C21 H21A 0.9800 . ?
+C21 H21B 0.9800 . ?
+C21 H21C 0.9800 . ?
+C22 H22 0.9500 . ?
+C22 C23 1.382(3) . ?
+C22 C27 1.380(3) . ?
+C23 H23 0.9500 . ?
+C23 C24 1.395(2) . ?
+C24 C25 1.399(2) . ?
+C25 H25 0.9500 . ?
+C25 C26 1.387(2) . ?
+C26 H26 0.9500 . ?
+C26 C27 1.381(3) . ?
+C27 H27 0.9500 . ?
+C28 H28A 0.9800 . ?
+C28 H28B 0.9800 . ?
+C28 H28C 0.9800 . ?
+C28 C29 1.531(2) . ?
+C29 H29 1.0000 . ?
+C29 C30 1.537(2) . ?
+C29 C32 1.518(2) . ?
+C30 H30A 0.9800 . ?
+C30 H30B 0.9800 . ?
+C30 H30C 0.9800 . ?
+C31 C32 1.393(2) . ?
+C31 C36 1.398(2) . ?
+C32 C33 1.399(2) . ?
+C33 H33 0.9500 . ?
+C33 C34 1.379(3) . ?
+C34 H34 0.9500 . ?
+C34 C35 1.388(3) . ?
+C35 H35 0.9500 . ?
+C35 C36 1.394(2) . ?
+C36 C37 1.527(2) . ?
+C37 H37 1.0000 . ?
+C37 C38 1.532(3) . ?
+C37 C39 1.523(3) . ?
+C38 H38B 0.9800 . ?
+C38 H38A 0.9800 . ?
+C38 H38C 0.9800 . ?
+C39 H39A 0.9800 . ?
+C39 H39B 0.9800 . ?
+C39 H39C 0.9800 . ?
+C41 C42 1.532(3) . ?
+C41 C43 1.527(3) . ?
+C41 C44 1.553(3) . ?
+C42 H42A 0.9800 . ?
+C42 H42B 0.9800 . ?
+C42 H42C 0.9800 . ?
+C43 H43A 0.9800 . ?
+C43 H43B 0.9800 . ?
+C43 H43C 0.9800 . ?
+C44 C45 1.535(2) . ?
+C44 C46 1.522(2) . ?
+C45 H45A 0.9800 . ?
+C45 H45B 0.9800 . ?
+C45 H45C 0.9800 . ?
+C46 H46A 0.9800 . ?
+C46 H46B 0.9800 . ?
+C46 H46C 0.9800 . ?
+B1 H1 1.0000 . ?
+
+loop_
+_geom_angle_atom_site_label_1
+_geom_angle_atom_site_label_2
+_geom_angle_atom_site_label_3
+_geom_angle
+_geom_angle_site_symmetry_1
+_geom_angle_site_symmetry_3
+_geom_angle_publ_flag
+C41 O1 B1 107.83(13) . . ?
+C44 O2 B1 107.32(13) . . ?
+C1 N1 C2 111.83(13) . . ?
+C1 N1 C31 123.70(13) . . ?
+C2 N1 C31 124.44(13) . . ?
+C1 N2 C3 109.46(13) . . ?
+C1 N2 C14 125.60(13) . . ?
+C3 N2 C14 124.74(13) . . ?
+N1 C1 C24 126.65(14) . . ?
+N2 C1 N1 106.18(14) . . ?
+N2 C1 C24 126.93(14) . . ?
+N1 C2 B1 120.65(13) . . ?
+C3 C2 N1 104.55(13) . . ?
+C3 C2 B1 134.54(14) . . ?
+N2 C3 C4 120.71(14) . . ?
+C2 C3 N2 107.95(14) . . ?
+C2 C3 C4 131.34(14) . . ?
+C5 C4 C3 120.48(15) . . ?
+C9 C4 C3 120.80(15) . . ?
+C9 C4 C5 118.71(16) . . ?
+C4 C5 H5 119.8 . . ?
+C6 C5 C4 120.37(17) . . ?
+C6 C5 H5 119.8 . . ?
+C5 C6 H6 119.7 . . ?
+C7 C6 C5 120.60(17) . . ?
+C7 C6 H6 119.7 . . ?
+C6 C7 H7 120.2 . . ?
+C6 C7 C8 119.53(17) . . ?
+C8 C7 H7 120.2 . . ?
+C7 C8 H8 119.9 . . ?
+C7 C8 C9 120.17(17) . . ?
+C9 C8 H8 119.9 . . ?
+C4 C9 H9 119.7 . . ?
+C8 C9 C4 120.61(17) . . ?
+C8 C9 H9 119.7 . . ?
+H10A C10 H10B 109.5 . . ?
+H10A C10 H10C 109.5 . . ?
+H10B C10 H10C 109.5 . . ?
+C11 C10 H10A 109.5 . . ?
+C11 C10 H10B 109.5 . . ?
+C11 C10 H10C 109.5 . . ?
+C10 C11 H11 107.9 . . ?
+C12 C11 C10 109.6(2) . . ?
+C12 C11 H11 107.9 . . ?
+C12 C11 C13 111.70(17) . . ?
+C13 C11 C10 111.83(18) . . ?
+C13 C11 H11 107.9 . . ?
+C11 C12 H12A 109.5 . . ?
+C11 C12 H12B 109.5 . . ?
+C11 C12 H12C 109.5 . . ?
+H12A C12 H12B 109.5 . . ?
+H12A C12 H12C 109.5 . . ?
+H12B C12 H12C 109.5 . . ?
+C14 C13 C11 123.27(15) . . ?
+C18 C13 C11 119.71(17) . . ?
+C18 C13 C14 116.99(17) . . ?
+C13 C14 N2 117.47(15) . . ?
+C13 C14 C15 123.57(15) . . ?
+C15 C14 N2 118.95(15) . . ?
+C14 C15 C19 123.81(15) . . ?
+C16 C15 C14 116.63(17) . . ?
+C16 C15 C19 119.56(17) . . ?
+C15 C16 H16 119.3 . . ?
+C17 C16 C15 121.38(18) . . ?
+C17 C16 H16 119.3 . . ?
+C16 C17 H17 119.7 . . ?
+C16 C17 C18 120.60(17) . . ?
+C18 C17 H17 119.7 . . ?
+C13 C18 H18 119.6 . . ?
+C17 C18 C13 120.82(18) . . ?
+C17 C18 H18 119.6 . . ?
+C15 C19 H19 108.1 . . ?
+C15 C19 C20 111.20(17) . . ?
+C15 C19 C21 111.64(17) . . ?
+C20 C19 H19 108.1 . . ?
+C21 C19 H19 108.1 . . ?
+C21 C19 C20 109.68(16) . . ?
+C19 C20 H20A 109.5 . . ?
+C19 C20 H20B 109.5 . . ?
+C19 C20 H20C 109.5 . . ?
+H20A C20 H20B 109.5 . . ?
+H20A C20 H20C 109.5 . . ?
+H20B C20 H20C 109.5 . . ?
+C19 C21 H21A 109.5 . . ?
+C19 C21 H21B 109.5 . . ?
+C19 C21 H21C 109.5 . . ?
+H21A C21 H21B 109.5 . . ?
+H21A C21 H21C 109.5 . . ?
+H21B C21 H21C 109.5 . . ?
+C23 C22 H22 119.7 . . ?
+C27 C22 H22 119.7 . . ?
+C27 C22 C23 120.65(18) . . ?
+C22 C23 H23 119.7 . . ?
+C22 C23 C24 120.69(17) . . ?
+C24 C23 H23 119.7 . . ?
+C23 C24 C1 119.85(15) . . ?
+C23 C24 C25 118.32(16) . . ?
+C25 C24 C1 121.75(16) . . ?
+C24 C25 H25 119.9 . . ?
+C26 C25 C24 120.28(17) . . ?
+C26 C25 H25 119.9 . . ?
+C25 C26 H26 119.6 . . ?
+C27 C26 C25 120.75(18) . . ?
+C27 C26 H26 119.6 . . ?
+C22 C27 C26 119.26(17) . . ?
+C22 C27 H27 120.4 . . ?
+C26 C27 H27 120.4 . . ?
+H28A C28 H28B 109.5 . . ?
+H28A C28 H28C 109.5 . . ?
+H28B C28 H28C 109.5 . . ?
+C29 C28 H28A 109.5 . . ?
+C29 C28 H28B 109.5 . . ?
+C29 C28 H28C 109.5 . . ?
+C28 C29 H29 107.7 . . ?
+C28 C29 C30 109.53(15) . . ?
+C30 C29 H29 107.7 . . ?
+C32 C29 C28 112.60(14) . . ?
+C32 C29 H29 107.7 . . ?
+C32 C29 C30 111.33(15) . . ?
+C29 C30 H30A 109.5 . . ?
+C29 C30 H30B 109.5 . . ?
+C29 C30 H30C 109.5 . . ?
+H30A C30 H30B 109.5 . . ?
+H30A C30 H30C 109.5 . . ?
+H30B C30 H30C 109.5 . . ?
+C32 C31 N1 117.68(15) . . ?
+C32 C31 C36 124.18(15) . . ?
+C36 C31 N1 118.09(15) . . ?
+C31 C32 C29 123.15(15) . . ?
+C31 C32 C33 116.62(16) . . ?
+C33 C32 C29 120.20(16) . . ?
+C32 C33 H33 119.3 . . ?
+C34 C33 C32 121.36(17) . . ?
+C34 C33 H33 119.3 . . ?
+C33 C34 H34 120.1 . . ?
+C33 C34 C35 119.87(16) . . ?
+C35 C34 H34 120.1 . . ?
+C34 C35 H35 119.1 . . ?
+C34 C35 C36 121.72(17) . . ?
+C36 C35 H35 119.1 . . ?
+C31 C36 C37 122.73(15) . . ?
+C35 C36 C31 116.21(16) . . ?
+C35 C36 C37 121.06(16) . . ?
+C36 C37 H37 107.4 . . ?
+C36 C37 C38 112.71(16) . . ?
+C38 C37 H37 107.4 . . ?
+C39 C37 C36 111.91(14) . . ?
+C39 C37 H37 107.4 . . ?
+C39 C37 C38 109.82(16) . . ?
+C37 C38 H38B 109.5 . . ?
+C37 C38 H38A 109.5 . . ?
+C37 C38 H38C 109.5 . . ?
+H38B C38 H38A 109.5 . . ?
+H38B C38 H38C 109.5 . . ?
+H38A C38 H38C 109.5 . . ?
+C37 C39 H39A 109.5 . . ?
+C37 C39 H39B 109.5 . . ?
+C37 C39 H39C 109.5 . . ?
+H39A C39 H39B 109.5 . . ?
+H39A C39 H39C 109.5 . . ?
+H39B C39 H39C 109.5 . . ?
+O1 C41 C42 108.41(15) . . ?
+O1 C41 C43 108.32(14) . . ?
+O1 C41 C44 102.75(13) . . ?
+C42 C41 C44 112.28(15) . . ?
+C43 C41 C42 109.74(16) . . ?
+C43 C41 C44 114.89(17) . . ?
+C41 C42 H42A 109.5 . . ?
+C41 C42 H42B 109.5 . . ?
+C41 C42 H42C 109.5 . . ?
+H42A C42 H42B 109.5 . . ?
+H42A C42 H42C 109.5 . . ?
+H42B C42 H42C 109.5 . . ?
+C41 C43 H43A 109.5 . . ?
+C41 C43 H43B 109.5 . . ?
+C41 C43 H43C 109.5 . . ?
+H43A C43 H43B 109.5 . . ?
+H43A C43 H43C 109.5 . . ?
+H43B C43 H43C 109.5 . . ?
+O2 C44 C41 102.49(14) . . ?
+O2 C44 C45 109.11(14) . . ?
+O2 C44 C46 108.15(14) . . ?
+C45 C44 C41 111.90(15) . . ?
+C46 C44 C41 114.92(15) . . ?
+C46 C44 C45 109.86(15) . . ?
+C44 C45 H45A 109.5 . . ?
+C44 C45 H45B 109.5 . . ?
+C44 C45 H45C 109.5 . . ?
+H45A C45 H45B 109.5 . . ?
+H45A C45 H45C 109.5 . . ?
+H45B C45 H45C 109.5 . . ?
+C44 C46 H46A 109.5 . . ?
+C44 C46 H46B 109.5 . . ?
+C44 C46 H46C 109.5 . . ?
+H46A C46 H46B 109.5 . . ?
+H46A C46 H46C 109.5 . . ?
+H46B C46 H46C 109.5 . . ?
+O1 B1 C2 108.73(13) . . ?
+O1 B1 H1 109.7 . . ?
+O2 B1 O1 106.02(13) . . ?
+O2 B1 C2 113.02(13) . . ?
+O2 B1 H1 109.7 . . ?
+C2 B1 H1 109.7 . . ?
+
+_shelx_res_file                  
+;
+    mbcbad.res created by SHELXL-2014/7
+
+TITL mbcbad_a.res in P-1
+REM Old TITL MBCBAD in P-1
+REM SHELXT solution in P-1
+REM R1 0.170, Rweak 0.007, Alpha 0.037, Orientation as input
+REM Formula found by SHELXT: C46 N2 O2
+CELL 1.54184 9.6381 11.485 19.0369 85.238 75.946 75.838
+ZERR 2 0.0005 0.0006 0.0009 0.004 0.004 0.005
+LATT 1
+SFAC C H B N O
+UNIT 90 114 2 4 4
+
+L.S. 10 0 0
+PLAN  20
+SIZE 0.1 0.15 0.2
+TEMP -173.15
+BOND $H
+list 4
+fmap 2 53
+acta
+OMIT 3 9 0
+OMIT 2 0 11
+REM <olex2.extras>
+REM <HklSrc "%.\\MBCBAD.hkl">
+REM </olex2.extras>
+
+WGHT    0.064100    0.244500
+FVAR       0.60897
+O1    5    0.248278    0.480415    0.794738    11.00000    0.02760    0.02825 =
+         0.03049    0.00139   -0.00277   -0.00171
+O2    5    0.392709    0.578006    0.702951    11.00000    0.03118    0.03065 =
+         0.02713    0.00284   -0.00905   -0.00564
+N1    4    0.625188    0.308845    0.687528    11.00000    0.02231    0.03001 =
+         0.02231    0.00306   -0.00587   -0.00577
+N2    4    0.679221    0.216920    0.784246    11.00000    0.02212    0.02783 =
+         0.02288    0.00508   -0.00597   -0.00536
+C1    1    0.725274    0.220777    0.711603    11.00000    0.02408    0.03050 =
+         0.02323    0.00270   -0.00689   -0.00631
+C2    1    0.509747    0.360619    0.744288    11.00000    0.02226    0.02892 =
+         0.02387    0.00139   -0.00475   -0.00623
+C3    1    0.546252    0.302944    0.805563    11.00000    0.02027    0.02781 =
+         0.02651    0.00198   -0.00486   -0.00589
+C4    1    0.471948    0.318713    0.883084    11.00000    0.02764    0.02356 =
+         0.02459    0.00481   -0.00486   -0.00376
+C5    1    0.325448    0.313021    0.907424    11.00000    0.02710    0.03438 =
+         0.02936    0.00473   -0.00395   -0.00449
+AFIX  43
+H5    2    0.273342    0.296892    0.874313    11.00000   -1.20000
+AFIX   0
+C6    1    0.255257    0.330705    0.979531    11.00000    0.03190    0.03918 =
+         0.03226    0.00684    0.00147   -0.00427
+AFIX  43
+H6    2    0.154926    0.327357    0.995512    11.00000   -1.20000
+AFIX   0
+C7    1    0.329446    0.353124    1.028390    11.00000    0.04881    0.03510 =
+         0.02302    0.00266    0.00238   -0.00132
+AFIX  43
+H7    2    0.280598    0.365375    1.077857    11.00000   -1.20000
+AFIX   0
+C8    1    0.475381    0.357678    1.004980    11.00000    0.04915    0.04078 =
+         0.02923   -0.00094   -0.01328   -0.00656
+AFIX  43
+H8    2    0.527450    0.372223    1.038544    11.00000   -1.20000
+AFIX   0
+C9    1    0.546077    0.341081    0.932640    11.00000    0.03012    0.03849 =
+         0.03029   -0.00061   -0.00741   -0.00605
+AFIX  43
+H9    2    0.646224    0.345063    0.916858    11.00000   -1.20000
+AFIX   0
+C10   1    0.572663   -0.081769    0.790905    11.00000    0.07444    0.09606 =
+         0.09946   -0.04142   -0.00371   -0.04989
+AFIX 137
+H10A  2    0.636742   -0.063379    0.745015    11.00000   -1.50000
+H10B  2    0.479755   -0.090578    0.782087    11.00000   -1.50000
+H10C  2    0.621212   -0.156812    0.812053    11.00000   -1.50000
+AFIX   0
+C11   1    0.541980    0.020077    0.843118    11.00000    0.04409    0.03657 =
+         0.04526    0.00660   -0.01080   -0.01829
+AFIX  13
+H11   2    0.497933    0.096221    0.819114    11.00000   -1.20000
+AFIX   0
+C12   1    0.429425   -0.001659    0.911338    11.00000    0.04131    0.05938 =
+         0.06347    0.02138   -0.00529   -0.01382
+AFIX 137
+H12A  2    0.465522   -0.080242    0.933031    11.00000   -1.50000
+H12B  2    0.336120    0.000021    0.898837    11.00000   -1.50000
+H12C  2    0.414218    0.061260    0.946036    11.00000   -1.50000
+AFIX   0
+C13   1    0.682405    0.035584    0.860646    11.00000    0.03690    0.02856 =
+         0.02858    0.00339   -0.00490   -0.00507
+C14   1    0.748331    0.130751    0.832988    11.00000    0.02770    0.02856 =
+         0.02107    0.00336   -0.00590   -0.00087
+C15   1    0.877399    0.145460    0.848780    11.00000    0.02554    0.03943 =
+         0.02788    0.00160   -0.00687   -0.00154
+C16   1    0.942611    0.057520    0.893437    11.00000    0.02939    0.05206 =
+         0.03529    0.00363   -0.01180    0.00387
+AFIX  43
+H16   2    1.030698    0.063872    0.905254    11.00000   -1.20000
+AFIX   0
+C17   1    0.882056   -0.038247    0.920741    11.00000    0.04092    0.04497 =
+         0.03222    0.01107   -0.00737    0.00988
+AFIX  43
+H17   2    0.928940   -0.097144    0.950865    11.00000   -1.20000
+AFIX   0
+C18   1    0.753295   -0.049579    0.904700    11.00000    0.04848    0.03206 =
+         0.03330    0.00926   -0.00124   -0.00223
+AFIX  43
+H18   2    0.712843   -0.116228    0.923973    11.00000   -1.20000
+AFIX   0
+C19   1    0.947365    0.250062    0.820423    11.00000    0.02818    0.04950 =
+         0.04727    0.00832   -0.01586   -0.01194
+AFIX  13
+H19   2    0.881722    0.306375    0.792799    11.00000   -1.20000
+AFIX   0
+C20   1    1.098163    0.207466    0.768554    11.00000    0.03829    0.07904 =
+         0.03812    0.00627   -0.00690   -0.02575
+AFIX 137
+H20A  2    1.164394    0.151931    0.794524    11.00000   -1.50000
+H20B  2    1.139616    0.276916    0.750116    11.00000   -1.50000
+H20C  2    1.086635    0.166388    0.727947    11.00000   -1.50000
+AFIX   0
+C21   1    0.963766    0.319359    0.882313    11.00000    0.03059    0.06575 =
+         0.07365   -0.01449   -0.01114   -0.01617
+AFIX 137
+H21A  2    0.866837    0.349435    0.914094    11.00000   -1.50000
+H21B  2    1.007191    0.387149    0.862160    11.00000   -1.50000
+H21C  2    1.027744    0.265753    0.910213    11.00000   -1.50000
+AFIX   0
+C22   1    0.996905   -0.064255    0.642804    11.00000    0.03799    0.03866 =
+         0.03778   -0.00172   -0.01399    0.00481
+AFIX  43
+H22   2    1.016974   -0.147012    0.656539    11.00000   -1.20000
+AFIX   0
+C23   1    0.886317    0.016433    0.686903    11.00000    0.03191    0.03828 =
+         0.02936    0.00096   -0.00926   -0.00045
+AFIX  43
+H23   2    0.833402   -0.011003    0.731439    11.00000   -1.20000
+AFIX   0
+C24   1    0.851594    0.137757    0.666687    11.00000    0.02223    0.03616 =
+         0.02600   -0.00052   -0.00866   -0.00397
+C25   1    0.934218    0.176035    0.601808    11.00000    0.02274    0.03947 =
+         0.02962    0.00010   -0.00730   -0.00298
+AFIX  43
+H25   2    0.912748    0.258228    0.586945    11.00000   -1.20000
+AFIX   0
+C26   1    1.047365    0.094499    0.559079    11.00000    0.02532    0.05153 =
+         0.03104   -0.00205   -0.00395   -0.00533
+AFIX  43
+H26   2    1.104125    0.121688    0.515605    11.00000   -1.20000
+AFIX   0
+C27   1    1.078451   -0.025774    0.579017    11.00000    0.02705    0.05036 =
+         0.03590   -0.00742   -0.00710    0.00637
+AFIX  43
+H27   2    1.155112   -0.081398    0.549157    11.00000   -1.20000
+AFIX   0
+C28   1    0.604244    0.046900    0.574838    11.00000    0.04167    0.03757 =
+         0.04023   -0.00281   -0.01118   -0.00784
+AFIX 137
+H28A  2    0.612284    0.043686    0.522685    11.00000   -1.50000
+H28B  2    0.555678   -0.015337    0.600250    11.00000   -1.50000
+H28C  2    0.702736    0.033220    0.584086    11.00000   -1.50000
+AFIX   0
+C29   1    0.513680    0.170534    0.602167    11.00000    0.03137    0.03722 =
+         0.02745   -0.00085   -0.00633   -0.00915
+AFIX  13
+H29   2    0.501791    0.169479    0.655865    11.00000   -1.20000
+AFIX   0
+C30   1    0.359623    0.192590    0.587080    11.00000    0.03151    0.04517 =
+         0.04166   -0.00631   -0.00540   -0.01210
+AFIX 137
+H30A  2    0.301168    0.271129    0.605362    11.00000   -1.50000
+H30B  2    0.311212    0.129628    0.611477    11.00000   -1.50000
+H30C  2    0.368260    0.191076    0.534780    11.00000   -1.50000
+AFIX   0
+C31   1    0.634551    0.342263    0.611446    11.00000    0.01947    0.03421 =
+         0.02128    0.00312   -0.00443   -0.00184
+C32   1    0.588628    0.271053    0.569996    11.00000    0.01910    0.03452 =
+         0.02712    0.00010   -0.00468   -0.00089
+C33   1    0.610381    0.298703    0.495749    11.00000    0.02432    0.04295 =
+         0.02491   -0.00188   -0.00757   -0.00162
+AFIX  43
+H33   2    0.581897    0.251626    0.465421    11.00000   -1.20000
+AFIX   0
+C34   1    0.672345    0.392927    0.465664    11.00000    0.02474    0.04742 =
+         0.02281    0.00418   -0.00473    0.00046
+AFIX  43
+H34   2    0.687503    0.409524    0.415002    11.00000   -1.20000
+AFIX   0
+C35   1    0.712488    0.463412    0.509543    11.00000    0.02559    0.04012 =
+         0.02868    0.00919   -0.00465   -0.00632
+AFIX  43
+H35   2    0.753081    0.529135    0.488393    11.00000   -1.20000
+AFIX   0
+C36   1    0.694809    0.440305    0.583841    11.00000    0.02079    0.03673 =
+         0.02725    0.00537   -0.00571   -0.00342
+C37   1    0.741020    0.517999    0.631251    11.00000    0.03194    0.03813 =
+         0.03221    0.00671   -0.00909   -0.01368
+AFIX  13
+H37   2    0.686252    0.507344    0.682276    11.00000   -1.20000
+AFIX   0
+C38   1    0.905476    0.480133    0.629898    11.00000    0.03971    0.05737 =
+         0.07032   -0.00730   -0.02515   -0.01155
+AFIX 137
+H38B  2    0.931499    0.537961    0.656538    11.00000   -1.50000
+H38A  2    0.962448    0.478068    0.579618    11.00000   -1.50000
+H38C  2    0.927684    0.400148    0.652673    11.00000   -1.50000
+AFIX   0
+C39   1    0.699379    0.650954    0.610878    11.00000    0.05526    0.04106 =
+         0.04720    0.00760   -0.01911   -0.01828
+AFIX 137
+H39A  2    0.757035    0.665560    0.562368    11.00000   -1.50000
+H39B  2    0.719912    0.698419    0.645980    11.00000   -1.50000
+H39C  2    0.594400    0.674415    0.611178    11.00000   -1.50000
+AFIX   0
+C41   1    0.194465    0.606654    0.802660    11.00000    0.03444    0.02916 =
+         0.03360   -0.00003   -0.00680    0.00173
+C42   1    0.064469    0.647663    0.766382    11.00000    0.03216    0.04203 =
+         0.05772    0.00796   -0.01064   -0.00136
+AFIX 137
+H42A  2    0.098842    0.634291    0.714210    11.00000   -1.50000
+H42B  2    0.021122    0.733351    0.774650    11.00000   -1.50000
+H42C  2   -0.009731    0.601587    0.787075    11.00000   -1.50000
+AFIX   0
+C43   1    0.142975    0.632495    0.883425    11.00000    0.05991    0.04052 =
+         0.03948   -0.00451    0.00260    0.00386
+AFIX 137
+H43A  2    0.057668    0.598446    0.904411    11.00000   -1.50000
+H43B  2    0.115491    0.719523    0.890079    11.00000   -1.50000
+H43C  2    0.222719    0.596103    0.907623    11.00000   -1.50000
+AFIX   0
+C44   1    0.329270    0.656482    0.762371    11.00000    0.03858    0.02952 =
+         0.03203    0.00139   -0.01339   -0.00522
+C45   1    0.441051    0.645912    0.809254    11.00000    0.05133    0.03346 =
+         0.04134    0.00086   -0.02358   -0.00763
+AFIX 137
+H45A  2    0.458300    0.565410    0.831812    11.00000   -1.50000
+H45B  2    0.402409    0.706099    0.847038    11.00000   -1.50000
+H45C  2    0.533798    0.659478    0.778839    11.00000   -1.50000
+AFIX   0
+C46   1    0.292015    0.784336    0.732169    11.00000    0.04796    0.03060 =
+         0.04852    0.00434   -0.02138   -0.00644
+AFIX 137
+H46A  2    0.383065    0.810112    0.710281    11.00000   -1.50000
+H46B  2    0.233329    0.838067    0.771453    11.00000   -1.50000
+H46C  2    0.235670    0.787131    0.695332    11.00000   -1.50000
+AFIX   0
+B1    3    0.362901    0.460010    0.727290    11.00000    0.02428    0.02988 =
+         0.02573   -0.00007   -0.00908   -0.00439
+AFIX  13
+H1    2    0.325479    0.427969    0.690068    11.00000   -1.20000
+AFIX   0
+HKLF 4
+
+REM  mbcbad_a.res in P-1
+REM R1 =  0.0484 for    5448 Fo > 4sig(Fo)  and  0.0626 for all    6844 data
+REM    463 parameters refined using      0 restraints
+
+END
+
+WGHT      0.0640      0.2443
+
+REM Highest difference peak  0.221,  deepest hole -0.296,  1-sigma level  0.041
+Q1    1   0.5601  0.3773  0.7832  11.00000  0.05    0.22
+Q2    1   0.7210  0.4752  0.6073  11.00000  0.05    0.20
+Q3    1   0.3410  0.4017  0.6672  11.00000  0.05    0.20
+Q4    1   0.4900  0.5826  0.6588  11.00000  0.05    0.18
+Q5    1   0.1474  0.4553  0.8373  11.00000  0.05    0.17
+Q6    1   0.4404  0.4103  0.7386  11.00000  0.05    0.16
+Q7    1   0.8012 -0.0260  0.7257  11.00000  0.05    0.16
+Q8    1   0.5411  0.2320  0.5856  11.00000  0.05    0.15
+Q9    1   0.5967  0.3163  0.5932  11.00000  0.05    0.15
+Q10   1   0.9674  0.2670  0.8608  11.00000  0.05    0.15
+Q11   1   0.4210 -0.0856  0.9184  11.00000  0.05    0.15
+Q12   1   0.2624  0.6456  0.7969  11.00000  0.05    0.15
+Q13   1   0.6584  0.1704  0.7434  11.00000  0.05    0.15
+Q14   1   0.7405  0.0626  0.8182  11.00000  0.05    0.14
+Q15   1   0.2415  0.6613  0.8174  11.00000  0.05    0.14
+Q16   1   0.5591  0.3623  0.8409  11.00000  0.05    0.14
+Q17   1   0.1757  0.7138  0.8944  11.00000  0.05    0.14
+Q18   1   0.9315  0.1755  0.8200  11.00000  0.05    0.14
+Q19   1   0.7314  0.2757  0.7591  11.00000  0.05    0.14
+Q20   1   0.4219  0.2638  0.8950  11.00000  0.05    0.14
+;
+_shelx_res_checksum              58278
+_olex2_date_sample_data_collection 2019-02-07
+_olex2_submission_special_instructions 'No special instructions were received'

@@ -1,0 +1,194 @@
+#============================================================================= 
+data_global
+#=============================================================================  
+# 1. SUBMISSION DETAILS 
+ 
+
+_publ_contact_author_name         		'Daniel B. Leznoff' 
+_publ_contact_author_address 
+; 
+Leznoff, Daniel B.
+Department of Chemistry
+Simon Fraser University
+Burnaby, British Columbia
+Canada 		V5A 1S6
+; 
+ 
+_publ_contact_author_phone        		'+1-778-782-4887' 
+_publ_contact_author_fax          		'+1-778-782-3765' 
+_publ_contact_author_email        		'dleznoff@sfu.ca' 
+_publ_requested_journal           		'Inorganic Chemistry'  
+#============================================================================= 
+# 3. TITLE AND AUTHOR LIST 
+
+_publ_section_title 
+; 
+INSERT TITLE
+; 
+ 
+# The loop structure below should contain the names and addresses of all 
+# authors, in the required order of publication. Repeat as necessary. 
+loop_ 
+ _publ_author_name 
+ _publ_author_address 
+
+ 
+ 	'Ovens, Jeffrey S.'
+;	Department of Chemistry
+	Simon Fraser University
+	Burnaby, British Columbia
+	Canada 		V5A 1S6
+;
+	'Leznoff, Daniel B.'
+;	Department of Chemistry
+	Simon Fraser University
+	Burnaby, British Columbia
+	Canada 		V5A 1S6
+;
+
+data_Ag-Au3Cl
+#===============================================================================
+# 5. CHEMICAL DATA
+
+_chemical_name_mineral ??
+_cell_length_a  4.156537
+_cell_length_b  6.567527
+_cell_length_c  6.772986
+_cell_angle_alpha 102.417
+_cell_angle_beta  86.85739
+_cell_angle_gamma 79.42202
+_cell_volume 176.6385
+_symmetry_space_group_name_H-M P-1
+loop_
+_symmetry_equiv_pos_as_xyz
+	'x, y, z'
+	'-x, -y, -z'
+
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_occupancy
+_atom_site_B_iso_or_equiv
+Ag1 Ag   0 0.5 0 1.0 1 0
+Au1 Au   0 0.5 0.5 0.5 1 0
+Cl1 Cl   0 0.9342844 0.2791295 0.2932021 1 0
+N1 N   0 0.5319455 0.182313 0.7835816 1 0
+C1 C   0 0.5205373 0.295786 0.6822883 1 0
+
+#==End
+
+data_Ag-Au3Br
+#===============================================================================
+# 5. CHEMICAL DATA
+
+_chemical_name_mineral ??
+_cell_length_a  4.30146(50)
+_cell_length_b  6.60681(68)
+_cell_length_c  6.87311(69)
+_cell_angle_alpha 100.8557(53)
+_cell_angle_beta  87.3204(62)
+_cell_angle_gamma 78.6729(63)
+_cell_volume 187.382(35)
+_symmetry_space_group_name_H-M P-1
+loop_
+_symmetry_equiv_pos_as_xyz
+	'-x, -y, -z'
+	'x, y, z'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_occupancy
+_atom_site_B_iso_or_equiv
+Ag1 Ag   0 0.5 0 0 1 1
+Au1 Au   0 0.5 0.5 0.5 1 1
+Br1 Br   0 0.9153974 0.219232 0.3061238 1 1
+C1 C   0 0.491754 0.3339236 0.7145689 1 1
+N1 N   0 0.4872154 0.2425838 0.8325833 1 1
+
+#==End
+
+data_Cu-Au3Br
+#===============================================================================
+# 5. CHEMICAL DATA
+
+_chemical_name_mineral ??
+_cell_length_a  4.34524(64)
+_cell_length_b  9.9328(13)
+_cell_length_c  8.4000(14)
+_cell_angle_alpha 90
+_cell_angle_beta  101.7702(49)
+_cell_angle_gamma 90
+_cell_volume 354.924(91)
+_symmetry_space_group_name_H-M P2/m
+loop_
+_symmetry_equiv_pos_as_xyz
+	'-x, -y, -z'
+	'-x, y, -z'
+	'x, -y, z'
+	'x, y, z'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_occupancy
+_atom_site_B_iso_or_equiv
+Cu1 Cu   0 0 0 0 1 0
+Cu2 Cu   0 0 0.5 0.5 1 0
+Au1 Au   0 -1.583114e-031 0.5 0 1 0
+Br1 Br   0 0.4363106 0.5 0.2296116 1 0
+N1 N   0 1.668266e-015 0.1862909 8.793826e-016 1 1
+C1 C   0 6.578405e-016 0.2983442 3.471213e-016 1 1
+Au2 Au   0 -4.363914e-018 -1.978893e-032 0.5 1 0
+Br2 Br   0 0.4784748 -5.948414e-016 0.7047838 1 0
+N2 N   0 1.809981e-015 -0.3137091 0.5 1 1
+C2 C   0 7.148145e-016 -0.2016558 0.5 1 1
+
+#==End
+
+data_Cu-Au3CN
+#===============================================================================
+# 5. CHEMICAL DATA
+
+_chemical_name_mineral ??
+_cell_length_a  5.58326(52)
+_cell_length_b  5.31898(47)
+_cell_length_c  12.0839(11)
+_cell_angle_alpha 90
+_cell_angle_beta  98.7556(32)
+_cell_angle_gamma 90
+_cell_volume 354.676(56)
+_symmetry_space_group_name_H-M P2/n
+loop_
+_symmetry_equiv_pos_as_xyz
+	'-x, -y, -z'
+	'-x+1/2, y, -z+1/2'
+	'x, y, z'
+	'x+1/2, -y, z+1/2'
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_occupancy
+_atom_site_B_iso_or_equiv
+Cu1 Cu   0 -0.25 0.81116(48) -0.25 1 1
+Au1 Au   0 0.5 0.5 0 1 1
+N1 N   0 0.01374912 0.6035399 -0.1595359 1 1
+N2 N   0 0.4109576 0.9729421 0.1424058 1 1
+C1 C   0 0.1913525 0.5655382 -0.1013348 1 1
+C2 C   0 0.4432769 0.8002774 0.0903382 1 1
+
+#==End

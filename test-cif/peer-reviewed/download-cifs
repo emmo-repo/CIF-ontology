@@ -1,0 +1,32 @@
+#!/bin/bash
+##
+# Download CIF files that were provided as supplementary material of
+# peer-reviewed publications based on the TSV file with the following
+# fields:
+#
+# CODEN	Year	Filename	Paper DOI	File URL
+# ACSBDA	2020	dk5080sup1.cif	10.1107/S205252061901494X	https://doi.org/10.1107/S205252061901494X/dk5080sup1.cif
+# ...
+#
+# The first line of the file is treated as the header and silently skipped.
+##
+
+set -ue
+
+cif_dir=cif
+mkdir -p ${cif_dir}
+
+url_file=cif-download-url.tsv
+while read -r filename url;
+do
+  wget -q --show-progress "${url}" -O "${cif_dir}/${filename}";
+done < <(tail -n +2 "${url_file}" | awk -F'\t' '{print $1"-"$2"-"$3" "$5}')
+
+# Remove the copyright symbol that is routinely placed in CIF comments by
+# some journal publishers regardless of the fact that technically non-ASCII
+# symbols are not allowed in CIF 1.1 files and might cause stricter CIF
+# parsers to fail.
+while read -r filename;
+do
+    perl -pe 's/©//' -i "${filename}"
+done < <(find . -type f -name '*.cif')
