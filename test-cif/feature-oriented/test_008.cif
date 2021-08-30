@@ -1,0 +1,144 @@
+##
+# A CIF 1.1 file with several data blocks that contain identical information
+# and only differ in the way data is represented. Namely, data items from
+# the ATOM_SITE and ATOM_SITE_ANISO categories can either be output in
+# separate loops ('test_008_1') or in a single loop ('test_008_2') due
+# to their parent-child category relation. Note, that in the single loop
+# case the '_atom_site_aniso_label' data item was removed since it contained
+# the same information as the '_atom_site_label' data item.
+##
+
+##
+# Original COD entry: 1000033
+# COD entry URL: https://www.crystallography.net/cod/1000033.cif
+##
+data_test_008_1
+_publ_section_title
+;
+ Crystal structures of aragonite, strontianite, and witherite
+;
+_journal_coden_ASTM              AMMIAY
+_journal_name_full               'American Mineralogist'
+_journal_page_first              758
+_journal_page_last               767
+_journal_volume                  56
+_journal_year                    1971
+_chemical_compound_source        'from Anglesarke, Lancashire, England'
+_chemical_formula_structural     'Ba C O3'
+_chemical_formula_sum            'C Ba O3'
+_chemical_name_mineral           Witherite
+_chemical_name_systematic        'Barium carbonate'
+_space_group_crystal_system      orthorhombic
+_space_group_IT_number           62
+_space_group_name_Hall           '-P 2n 2a'
+_space_group_name_H-M_alt        'P m c n'
+_cell_angle_alpha                90
+_cell_angle_beta                 90
+_cell_angle_gamma                90
+_cell_formula_units_Z            4
+_cell_length_a                   5.3126(5)
+_cell_length_b                   8.8958(5)
+_cell_length_c                   6.4284(5)
+_cell_volume                     303.8
+_refine_ls_R_factor_all          0.033
+
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_occupancy
+_atom_site_calc_flag
+Ba Ba2+ 4 c 0.25 0.41631(5) 0.7549(2) 1 d
+C C4+ 4 c 0.25 0.7570(12) -0.0810(26) 1 d
+O1 O2- 4 c 0.25 0.9011(8) -0.0878(19) 1 d
+O2 O2- 8 d 0.4595(10) 0.6839(6) -0.0790(14) 1 d
+
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+Ba 0.00691 0.00730 0.00335 0.00000 0.00000 -0.00029
+C 0.00729 0.00922 0.02596 0.00000 0.00000 0.00464
+O1 0.01530 0.00802 0.02219 0.00000 0.00000 -0.00145
+O2 0.01029 0.01082 0.01696 0.00168 -0.00173 0.00174
+
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Ba2+ 2
+C4+ 4
+O2- -2
+
+##
+# COD entry: 1000033
+# COD URL:   https://www.crystallography.net/cod/1000033.cif
+##
+data_test_008_2
+_publ_section_title
+;
+ Crystal structures of aragonite, strontianite, and witherite
+;
+_journal_coden_ASTM              AMMIAY
+_journal_name_full               'American Mineralogist'
+_journal_page_first              758
+_journal_page_last               767
+_journal_volume                  56
+_journal_year                    1971
+_chemical_compound_source        'from Anglesarke, Lancashire, England'
+_chemical_formula_structural     'Ba C O3'
+_chemical_formula_sum            'C Ba O3'
+_chemical_name_mineral           Witherite
+_chemical_name_systematic        'Barium carbonate'
+_space_group_crystal_system      orthorhombic
+_space_group_IT_number           62
+_space_group_name_Hall           '-P 2n 2a'
+_space_group_name_H-M_alt        'P m c n'
+_cell_angle_alpha                90
+_cell_angle_beta                 90
+_cell_angle_gamma                90
+_cell_formula_units_Z            4
+_cell_length_a                   5.3126(5)
+_cell_length_b                   8.8958(5)
+_cell_length_c                   6.4284(5)
+_cell_volume                     303.8
+_refine_ls_R_factor_all          0.033
+
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_occupancy
+_atom_site_calc_flag
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+Ba Ba2+ 4 c 0.25 0.41631(5) 0.7549(2) 1 d
+    0.00691 0.00730 0.00335 0.00000 0.00000 -0.00029
+C C4+ 4 c 0.25 0.7570(12) -0.0810(26) 1 d
+    0.00729 0.00922 0.02596 0.00000 0.00000 0.00464
+O1 O2- 4 c 0.25 0.9011(8) -0.0878(19) 1 d
+    0.01530 0.00802 0.02219 0.00000 0.00000 -0.00145
+O2 O2- 8 d 0.4595(10) 0.6839(6) -0.0790(14) 1 d
+    0.01029 0.01082 0.01696 0.00168 -0.00173 0.00174
+
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Ba2+ 2
+C4+ 4
+O2- -2

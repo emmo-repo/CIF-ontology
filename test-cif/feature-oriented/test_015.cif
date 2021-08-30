@@ -1,0 +1,26 @@
+##
+# A CIF 1.1 file that showcases the difference between CIF special values
+# and literal characters that are used to represent those special values.
+# AUDIT loop entries in data block 'test_015' should be interpreted in
+# the following way:
+# - 1: a literal question mark symbol.
+# - 2: a literal period symbol.
+# - 3: CIF special value that means that the value is unknown.
+# - 4: CIF special value that means that the value is inapplicable.
+#
+# Value delimiters in entries '1' and '2' could be easily replaced with
+# any of the allowed delimiters without changing the interpretation.
+#
+# Note, that this specific example was constructed to be as simple as
+# possible, therefore it might not make a lot of sense. However, in some
+# situations the distinction between special value and a literal character
+# does matter.
+##
+data_
+loop_
+_audit.block_code
+_audit.update_record
+1 '?'
+2 "."
+3 ?
+4 .

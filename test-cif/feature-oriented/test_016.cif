@@ -1,0 +1,28 @@
+##
+# A CIF 1.1 file that showcases one of the ways some of the Greek letters
+# and special symbols are represented in CIF files. See source [1] for
+# a more detailed description.
+#
+# [1] https://journals.iucr.org/e/services/editguide.html
+##
+
+##
+# Q: Should these special codes be handled in any way while
+#    translating the CIF files?
+##
+data_test_015
+_publ_section.title
+;
+ The uppercase Greek letter alpha can be written as \A, while
+ the lowercase Greek letter omega can be written as \W.
+
+ Some accented letter and other characters can also be expressed,
+ i.e. Ervin Schr\"odinger, Anders Jonas \%Angstr\"om.
+
+ CIF also provides special codes for some symbols that might
+ not have obvious equivalent Unicode symbols, for example,
+ '\\ddb ' which represents a delocalized double bond.
+
+ Superscript and subscript can be represented by using a matching
+ pair of the '^' and '~' symbols respectively, i.e. ^14^C, H~2~O.
+;

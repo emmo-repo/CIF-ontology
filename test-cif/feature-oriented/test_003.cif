@@ -1,0 +1,59 @@
+##
+# A CIF 1.1 file with several data loops that are not relationally linked.
+#
+# Note, that the data name aliases are used instead of the dotted names
+# (i.e. '_cell_angle_alpha' instead of the main name '_cell.angle_alpha')
+# since the dotted names were only relatively recently introduced into
+# the CIF_CORE dictionary and thus are not currently widely used.
+##
+
+##
+# Original COD entry: 1000033
+# COD entry URL: https://www.crystallography.net/cod/1000033.cif
+##
+data_test_003
+_publ_section_title
+;
+ Crystal structures of aragonite, strontianite, and witherite
+;
+_journal_coden_ASTM              AMMIAY
+_journal_name_full               'American Mineralogist'
+_journal_page_first              758
+_journal_page_last               767
+_journal_volume                  56
+_journal_year                    1971
+_chemical_compound_source        'from Anglesarke, Lancashire, England'
+_chemical_formula_structural     'Ba C O3'
+_chemical_formula_sum            'C Ba O3'
+_chemical_name_mineral           Witherite
+_chemical_name_systematic        'Barium carbonate'
+_space_group_crystal_system      orthorhombic
+_space_group_IT_number           62
+_space_group_name_Hall           '-P 2n 2a'
+_space_group_name_H-M_alt        'P m c n'
+_cell_angle_alpha                90
+_cell_angle_beta                 90
+_cell_angle_gamma                90
+_cell_formula_units_Z            4
+_cell_length_a                   5.3126(5)
+_cell_length_b                   8.8958(5)
+_cell_length_c                   6.4284(5)
+_cell_volume                     303.8
+_refine_ls_R_factor_all          0.033
+loop_
+_space_group_symop_id
+_space_group_symop_operation_xyz
+1 x,y,z
+2 -x+1/2,-y+1/2,z+1/2
+3 x+1/2,-y,-z
+4 -x,y+1/2,-z+1/2
+5 -x,-y,-z
+6 x+1/2,y+1/2,-z+1/2
+7 -x+1/2,y,z
+8 x,-y+1/2,z+1/2
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Ba2+ 2
+C4+ 4
+O2- -2

@@ -1,0 +1,143 @@
+##
+# A CIF 1.1 file with several data blocks. In this case each data block
+# should be treated as a self-contained dataset without external references
+# to data items in other data blocks.
+##
+
+##
+# Original COD entry: 1000033
+# COD entry URL: https://www.crystallography.net/cod/1000033.cif
+##
+data_test_007_01
+_publ_section_title
+;
+ Crystal structures of aragonite, strontianite, and witherite
+;
+_journal_coden_ASTM              AMMIAY
+_journal_name_full               'American Mineralogist'
+_journal_page_first              758
+_journal_page_last               767
+_journal_volume                  56
+_journal_year                    1971
+_chemical_compound_source        'from Anglesarke, Lancashire, England'
+_chemical_formula_structural     'Ba C O3'
+_chemical_formula_sum            'C Ba O3'
+_chemical_name_mineral           Witherite
+_chemical_name_systematic        'Barium carbonate'
+_space_group_crystal_system      orthorhombic
+_space_group_IT_number           62
+_space_group_name_Hall           '-P 2n 2a'
+_space_group_name_H-M_alt        'P m c n'
+_cell_angle_alpha                90
+_cell_angle_beta                 90
+_cell_angle_gamma                90
+_cell_formula_units_Z            4
+_cell_length_a                   5.3126(5)
+_cell_length_b                   8.8958(5)
+_cell_length_c                   6.4284(5)
+_cell_volume                     303.8
+_refine_ls_R_factor_all          0.033
+loop_
+_space_group_symop_id
+_space_group_symop_operation_xyz
+1 x,y,z
+2 -x+1/2,-y+1/2,z+1/2
+3 x+1/2,-y,-z
+4 -x,y+1/2,-z+1/2
+5 -x,-y,-z
+6 x+1/2,y+1/2,-z+1/2
+7 -x+1/2,y,z
+8 x,-y+1/2,z+1/2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_occupancy
+_atom_site_calc_flag
+Ba Ba2+ 4 c 0.25 0.41631(5) 0.7549(2) 1 d
+C C4+ 4 c 0.25 0.7570(12) -0.0810(26) 1 d
+O1 O2- 4 c 0.25 0.9011(8) -0.0878(19) 1 d
+O2 O2- 8 d 0.4595(10) 0.6839(6) -0.0790(14) 1 d
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Ba2+ 2
+C4+ 4
+O2- -2
+
+##
+# COD entry: 1000027
+# COD URL:   https://www.crystallography.net/cod/1000027.cif
+# Paper DOI: 10.1107/S0365110X58001857
+##
+data_test_007_02
+_publ_section_title
+;
+The Crystal Structure of the Anhydrous Magnesium Sulfate
+;
+_journal_coden_ASTM              ACCRA9
+_journal_name_full               'Acta Crystallographica (1,1948-23,1967)'
+_journal_page_first              686
+_journal_page_last               688
+_journal_paper_doi               10.1107/S0365110X58001857
+_journal_volume                  11
+_journal_year                    1958
+_chemical_formula_structural     'Mg S O4'
+_chemical_formula_sum            'Mg O4 S'
+_chemical_name_systematic        'Magnesium sulfate'
+_space_group_IT_number           63
+_space_group_crystal_system      orthorhombic
+_space_group_name_Hall           '-C 2c 2'
+_space_group_name_H-M_alt        'C m c m'
+_cell_angle_alpha                90
+_cell_angle_beta                 90
+_cell_angle_gamma                90
+_cell_formula_units_Z            4
+_cell_length_a                   5.182(15)
+_cell_length_b                   7.893(2)
+_cell_length_c                   6.506(16)
+_cell_volume                     266.1
+loop_
+_space_group_symop_id
+_space_group_symop_operation_xyz
+1 x,y,z
+2 x,-y,-z
+3 x,y,1/2-z
+4 x,-y,1/2+z
+5 -x,-y,-z
+6 -x,y,z
+7 -x,-y,1/2+z
+8 -x,y,1/2-z
+9 1/2+x,1/2+y,z
+10 1/2+x,1/2-y,-z
+11 1/2+x,1/2+y,1/2-z
+12 1/2+x,1/2-y,1/2+z
+13 1/2-x,1/2-y,-z
+14 1/2-x,1/2+y,z
+15 1/2-x,1/2-y,1/2+z
+16 1/2-x,1/2+y,1/2-z
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+_atom_site_calc_flag
+Mg1 Mg2+ 4 a 0. 0. 0. 1. 0 d
+S1 S6+ 4 c 0. 0.37 0.25 1. 0 d
+O1 O2- 8 f 0. 0.25 0.06 1. 0 d
+O2 O2- 8 g 0.25 0.47 0.25 1. 0 d
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Mg2+ 2
+S6+ 6
+O2- -2
