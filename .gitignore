@@ -4,6 +4,8 @@ old
 __pycache__
 *.pyc
 
+.mypy*
+
 *.dic
 *.cif
 

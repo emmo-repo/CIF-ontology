@@ -1,2 +1,4 @@
-pre-commit~=2.14
-pylint~=2.9
+bandit~=1.7.0
+mypy==0.910
+pre-commit>=2.14.0,<3
+pylint>=2.10.1,<3

@@ -10,17 +10,13 @@ repos:
   rev: 21.7b0
   hooks:
   - id: black
-    name: Blacken
-
-- repo: https://gitlab.com/pycqa/flake8
-  rev: '3.9.2'
-  hooks:
-  - id: flake8
     args:
-    - --count
-    - --show-source
-    - --statistics
-    # E501: Line to long. Handled by black.
-    # W503: Line break before binary operator. This is preferred formatting for black.
-    # E203: Whitespace before ':'.
-    - --ignore=E501,W503,E203
+      - --config=dic2owl/pyproject.toml
+
+- repo: https://github.com/pycqa/pylint
+  rev: 'v2.10.1'
+  hooks:
+  - id: pylint
+    args:
+      - --rcfile=dic2owl/pyproject.toml
+      - --disable=import-error

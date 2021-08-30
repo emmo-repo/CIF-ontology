@@ -7,15 +7,15 @@
 
 <http://emmo.info/emmo/cif-ddl> a owl:Ontology ;
 	rdfs:comment "Avoid the Block to Loop to Packet to Value parthood by simply declaring a Loop as a singe list of Values (one row)." , "Drop Source and Purpose classes, since they are suggested and not mandatory." .
-# 
-# 
+#
+#
 # #################################################################
 # #
 # #    Annotation properties
 # #
 # #################################################################
-# 
-# 
+#
+#
 # http://emmo.info/emmo/cif-ddl#ALIAS
 
 :ALIAS a owl:AnnotationProperty ;
@@ -31,7 +31,7 @@
 _:genid1 :_category_key.name "_alias.definition_id" .
 
 :ALIAS rdfs:subPropertyOf :ATTRIBUTE .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#ATTRIBUTE
 
 :ATTRIBUTE a owl:AnnotationProperty ;
@@ -43,19 +43,19 @@ _:genid1 :_category_key.name "_alias.definition_id" .
 	:_name.category_id "DDL_DIC" ;
 	:_name.object_id "ATTRIBUTES" ;
 	rdfs:subPropertyOf :DDL_DIC .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#CATEGORY
 
 :CATEGORY a owl:AnnotationProperty ;
 	:_definition.scope "Set" ;
 	rdfs:comment "not defined in ddl.dic" ;
 	rdfs:subPropertyOf :ATTRIBUTE .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#CATEGORY_KEY
 
 :CATEGORY_KEY a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ATTRIBUTE .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#DDL_DIC
 
 :DDL_DIC a owl:AnnotationProperty ;
@@ -67,77 +67,77 @@ _:genid1 :_category_key.name "_alias.definition_id" .
 	:_dictionary.title "DDL_DIC" ;
 	:_dictionary.uri "https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic" ;
 	:_dictionary.version "4.0.1" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#DEFINITION
 
 :DEFINITION a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ATTRIBUTE .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#DEFINITION_REPLACED
 
 :DEFINITION_REPLACED a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DEFINITION .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#DESCRIPTION
 
 :DESCRIPTION a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ATTRIBUTE .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#DESCRIPTION_EXAMPLE
 
 :DESCRIPTION_EXAMPLE a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DESCRIPTION .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#DICTIONARY
 
 :DICTIONARY a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ATTRIBUTE .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#DICTIONARY_AUDIT
 
 :DICTIONARY_AUDIT a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DICTIONARY .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#DICTIONARY_VALID
 
 :DICTIONARY_VALID a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DICTIONARY .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#ENUMERATION
 
 :ENUMERATION a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ATTRIBUTE .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#ENUMERATION_DEFAULT
 
 :ENUMERATION_DEFAULT a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ENUMERATION .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#ENUMERATION_SET
 
 :ENUMERATION_SET a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ENUMERATION .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#IMPORT
 
 :IMPORT a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ATTRIBUTE .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#IMPORT_DETAILS
 
 :IMPORT_DETAILS a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :IMPORT .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#METHOD
 
 :METHOD a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ATTRIBUTE .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#NAME
 
 :NAME a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ATTRIBUTE .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#TYPE
 
 :TYPE a owl:AnnotationProperty ;
@@ -149,12 +149,12 @@ _:genid1 :_category_key.name "_alias.definition_id" .
 	:_name.category_id "ATTRIBUTES" ;
 	:_name.object_id "TYPE" ;
 	rdfs:subPropertyOf :ATTRIBUTE .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#UNITS
 
 :UNITS a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ATTRIBUTE .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_alias.definition_id
 
 :_alias.definition_id a owl:AnnotationProperty ;
@@ -166,280 +166,280 @@ _:genid1 :_category_key.name "_alias.definition_id" .
 	:_name.object_id "definition_id" ;
 	:_type.contents "Tag" ;
 	:_type.source "Assigned" ;
-	:_type:container "Single" ;
-	:_type:purpose "Encode" ;
+	:_type.container "Single" ;
+	:_type.purpose "Encode" ;
 	rdfs:subPropertyOf :ALIAS .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_alias.deprecation_date
 
 :_alias.deprecation_date a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ALIAS .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_alias.dictionary_uri
 
 :_alias.dictionary_uri a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ALIAS .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_category.key_id
 
 :_category.key_id a owl:AnnotationProperty ;
 	:_name.category_id "category" ;
 	rdfs:comment "not defined in ddl.dic" ;
 	rdfs:subPropertyOf :CATEGORY .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_category_key.name
 
 :_category_key.name a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :CATEGORY_KEY .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_definition.class
 
 :_definition.class a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DEFINITION ;
 	rdfs:range xsd:string .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_definition.id
 
 :_definition.id a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DEFINITION ;
 	rdfs:range xsd:string .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_definition.scope
 
 :_definition.scope a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DEFINITION .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_definition.update
 
 :_definition.update a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DEFINITION .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_definition_replaced.by
 
 :_definition_replaced.by a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DEFINITION_REPLACED .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_definition_replaced.id
 
 :_definition_replaced.id a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DEFINITION_REPLACED .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_description.common
 
 :_description.common a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DESCRIPTION .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_description.key_words
 
 :_description.key_words a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DESCRIPTION .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_description.text
 
 :_description.text a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DESCRIPTION .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_description_example.case
 
 :_description_example.case a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DESCRIPTION_EXAMPLE .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_description_example.detail
 
 :_description_example.detail a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DESCRIPTION_EXAMPLE .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_dictionary.class
 
 :_dictionary.class a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DICTIONARY .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_dictionary.date
 
 :_dictionary.date a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DICTIONARY .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_dictionary.ddl_conformance
 
 :_dictionary.ddl_conformance a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DICTIONARY .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_dictionary.formalism
 
 :_dictionary.formalism a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DICTIONARY .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_dictionary.namespace
 
 :_dictionary.namespace a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DICTIONARY .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_dictionary.title
 
 :_dictionary.title a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DICTIONARY .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_dictionary.uri
 
 :_dictionary.uri a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DICTIONARY ;
 	rdfs:range xsd:anyURI .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_dictionary.version
 
 :_dictionary.version a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DICTIONARY .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_dictionary_audit.date
 
 :_dictionary_audit.date a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DICTIONARY_AUDIT .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_dictionary_audit.revision
 
 :_dictionary_audit.revision a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DICTIONARY_AUDIT .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_dictionary_audit.version
 
 :_dictionary_audit.version a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DICTIONARY_AUDIT .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_dictionary_valid.application
 
 :_dictionary_valid.application a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DICTIONARY_VALID .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_dictionary_valid.attributes
 
 :_dictionary_valid.attributes a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DICTIONARY_VALID .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_dictionary_valid.option
 
 :_dictionary_valid.option a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DICTIONARY_VALID .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_dictionary_valid.scope
 
 :_dictionary_valid.scope a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :DICTIONARY_VALID .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_enumeration.def_index_id
 
 :_enumeration.def_index_id a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ENUMERATION .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_enumeration.default
 
 :_enumeration.default a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ENUMERATION .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_enumeration.mandatory
 
 :_enumeration.mandatory a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ENUMERATION .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_enumeration.range
 
 :_enumeration.range a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ENUMERATION .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_enumeration_default.index
 
 :_enumeration_default.index a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ENUMERATION_DEFAULT .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_enumeration_default.value
 
 :_enumeration_default.value a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ENUMERATION_DEFAULT .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_enumeration_set.detail
 
 :_enumeration_set.detail a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ENUMERATION_SET .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_enumeration_set.state
 
 :_enumeration_set.state a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :ENUMERATION_SET .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_import.get
 
 :_import.get a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :IMPORT .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_import_details.file_id
 
 :_import_details.file_id a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :IMPORT_DETAILS .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_import_details.file_version
 
 :_import_details.file_version a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :IMPORT_DETAILS .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_import_details.frame_id
 
 :_import_details.frame_id a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :IMPORT_DETAILS .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_import_details.if_dupl
 
 :_import_details.if_dupl a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :IMPORT_DETAILS .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_import_details.if_miss
 
 :_import_details.if_miss a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :IMPORT_DETAILS .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_import_details.mode
 
 :_import_details.mode a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :IMPORT_DETAILS .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_import_details.order
 
 :_import_details.order a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :IMPORT_DETAILS .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_import_details.single
 
 :_import_details.single a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :IMPORT_DETAILS .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_import_details.single_index
 
 :_import_details.single_index a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :IMPORT_DETAILS .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_method.expression
 
 :_method.expression a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :METHOD .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_method.purpose
 
 :_method.purpose a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :METHOD .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_name.category_id
 
 :_name.category_id a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :NAME .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_name.linked_item_id
 
 :_name.linked_item_id a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :NAME .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_name.object_id
 
 :_name.object_id a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :NAME .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_type.contents
 
 :_type.contents a owl:AnnotationProperty ;
@@ -470,125 +470,125 @@ Note that descriptions of text syntax are relevant only to those formats that en
 _:genid2 :_enumeration_set.detail "case-sensitive sequence of CIF2 characters" ;
 	:_enumeration_set.state "Text" .
 
-:_type.contents :_type:container "Single" ;
-	:_type:purpose "State" ;
+:_type.contents :_type.container "Single" ;
+	:_type.purpose "State" ;
 	rdfs:subPropertyOf :TYPE .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_type.contents_referenced_id
 
 :_type.contents_referenced_id a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :TYPE .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_type.dimension
 
 :_type.dimension a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :TYPE .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_type.indeces
 
 :_type.indeces a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :TYPE .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_type.indices_referenced_id
 
 :_type.indices_referenced_id a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :TYPE .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_type.source
 
 :_type.source a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :TYPE .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#_units.code
 
 :_units.code a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :UNITS .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#loop_
 
 :loop_ a owl:AnnotationProperty .
-# 
-# http://emmo.info/emmo/cif-ddl#_type:container
+#
+# http://emmo.info/emmo/cif-ddl#_type.container
 
-:_type:container a owl:AnnotationProperty ;
+:_type.container a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :TYPE .
-# 
-# http://emmo.info/emmo/cif-ddl#_type:purpose
+#
+# http://emmo.info/emmo/cif-ddl#_type.purpose
 
-:_type:purpose a owl:AnnotationProperty ;
+:_type.purpose a owl:AnnotationProperty ;
 	rdfs:subPropertyOf :TYPE .
-# 
-# 
-# 
+#
+#
+#
 # #################################################################
 # #
 # #    Object Properties
 # #
 # #################################################################
-# 
-# 
+#
+#
 # http://emmo.info/emmo/cif-ddl#hasCIFDirectPart
 
 :hasCIFDirectPart a owl:ObjectProperty ;
 	rdfs:subPropertyOf :hasDirectPart .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#hasDirectPart
 
 :hasDirectPart a owl:ObjectProperty ;
 	rdfs:subPropertyOf :hasProperPart ;
 	a owl:InverseFunctionalProperty , owl:AsymmetricProperty , owl:IrreflexiveProperty .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#hasPart
 
 :hasPart a owl:ObjectProperty ;
 	rdfs:subPropertyOf owl:topObjectProperty ;
 	a owl:TransitiveProperty , owl:ReflexiveProperty .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#hasProperPart
 
 :hasProperPart a owl:ObjectProperty ;
 	rdfs:subPropertyOf :hasPart ;
 	a owl:TransitiveProperty .
-# 
-# 
-# 
+#
+#
+#
 # #################################################################
 # #
 # #    Data properties
 # #
 # #################################################################
-# 
-# 
+#
+#
 # http://emmo.info/emmo/cif-ddl#hasUniqueValue
 
 :hasUniqueValue a owl:DatatypeProperty ;
 	rdfs:subPropertyOf owl:topDataProperty ;
 	a owl:FunctionalProperty .
-# 
-# 
-# 
+#
+#
+#
 # #################################################################
 # #
 # #    Classes
 # #
 # #################################################################
-# 
-# 
+#
+#
 # http://emmo.info/emmo/cif-ddl#Array
 
 :Array a owl:Class ;
 	rdfs:comment "Ordered set of values of the same type. Operations across arrays are equivalent to operations across elements of the Array." .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Assigned
 
 :Assigned a owl:Class ;
 	rdfs:comment "A value (numerical or otherwise) assigned as part of the data collection, analysis or modelling required for a specific domain instance. These assignments often represent a decision made that determines the course of the experiment (and therefore may be deemed PRIMITIVE) or a particular choice in the way the data was analysed (and therefore may be considered NOT PRIMITIVE)." .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#ByReference
 
 :ByReference a owl:Class ;
 	rdfs:comment "The contents have the same form as those of the attribute referenced by _type.contents_referenced_id." .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Code
 
 :Code a owl:Class ;
@@ -599,7 +599,7 @@ _:genid3 a owl:Restriction ;
 	owl:someValuesFrom xsd:string .
 
 :Code rdfs:comment "Case-insensitive sequence of CIF2 characters containing no ASCII whitespace." .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Complex
 
 :Complex a owl:Class ;
@@ -610,12 +610,12 @@ _:genid4 a owl:Restriction ;
 	owl:someValuesFrom xsd:string .
 
 :Complex rdfs:comment "A complex number" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Composite
 
 :Composite a owl:Class ;
 	rdfs:comment "Used to type items with value strings composed of separate parts. These will usually need to be separated and parsed for complete interpretation and application." .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Container
 
 :Container a owl:Class ;
@@ -640,7 +640,7 @@ _:genid6 a rdf:List ;
 _:genid5 a rdf:List ;
 	rdf:first :Table ;
 	rdf:rest rdf:nil .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Contents
 
 :Contents a owl:Class ;
@@ -709,7 +709,7 @@ _:genid11 a rdf:List ;
 _:genid10 a rdf:List ;
 	rdf:first :Version ;
 	rdf:rest rdf:nil .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Data
 
 :Data a owl:Class ;
@@ -732,7 +732,7 @@ Data appear either as key/value pairs, or within loops.""" , """data-block = dat
 data-heading = data-token, container-code ;
 data-token = ( 'D' | 'd' ), ( 'A' | 'a' ), ( 'T' | 't' ), ( 'A' | 'a' ), '_';
 data = ( data-name, wspace-data-value ) | data-loop ;""" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#DataBlock
 
 :DataBlock a owl:Class ;
@@ -769,7 +769,7 @@ _:genid34 a owl:Restriction ;
 :DataBlock rdfs:comment "A datablock consists of a data heading followed by zero or more data items and save frames." , """data-block = data-heading, { block-content } ;
 data-heading = data-token, container-code ;
 data-token = ( 'D' | 'd' ), ( 'A' | 'a' ), ( 'T' | 't' ), ( 'A' | 'a' ), '_';""" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#DataBlockName
 
 :DataBlockName a owl:Class ;
@@ -780,7 +780,7 @@ _:genid35 a owl:Restriction ;
 	owl:allValuesFrom owl:Nothing .
 
 :DataBlockName rdfs:comment "container-code = non-blank-char, { non-blank-char } ;" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Date
 
 :Date a owl:Class ;
@@ -791,7 +791,7 @@ _:genid36 a owl:Restriction ;
 	owl:someValuesFrom xsd:dateTime .
 
 :Date rdfs:comment "ISO standard date format <yyyy>-<mm>-<dd>. Use DateTime for all new dictionaries" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#DateTime
 
 :DateTime a owl:Class ;
@@ -802,21 +802,21 @@ _:genid37 a owl:Restriction ;
 	owl:someValuesFrom xsd:string .
 
 :DateTime rdfs:comment "A timestamp. Text formats must use date-time or full-date productions of RFC 3339 ABNF" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Derived
 
 :Derived a owl:Class ;
 	rdfs:comment "A quantity derived from other data items within the domain instance. This item is NOT PRIMITIVE." .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Describe
 
 :Describe a owl:Class ;
 	rdfs:comment "Used to type items with values that are descriptive text intended for human interpretation." .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#DictionaryDefinedItem
 
 :DictionaryDefinedItem a owl:Class .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Dimension
 
 :Dimension a owl:Class ;
@@ -827,12 +827,12 @@ _:genid38 a owl:Restriction ;
 	owl:someValuesFrom xsd:string .
 
 :Dimension rdfs:comment "Size of an Array/Matrix/List expressed as a text string. The text string itself consists of zero or more non-negative integers separated by commas placed within bounding square brackets. Empty square brackets represent a list of unknown size" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Encode
 
 :Encode a owl:Class ;
 	rdfs:comment "Used to type items with values that are text or codes that are formatted to be machine parsable." .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#File
 
 :File a owl:Class ;
@@ -847,7 +847,7 @@ _:genid39 a owl:Restriction ;
 _:genid40 a owl:Restriction ;
 	owl:onProperty :hasCIFDirectPart ;
 	owl:allValuesFrom :DataBlock .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Imag
 
 :Imag a owl:Class ;
@@ -858,7 +858,7 @@ _:genid41 a owl:Restriction ;
 	owl:someValuesFrom owl:real .
 
 :Imag rdfs:comment "Floating-point imaginary number" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Indices
 
 :Indices a owl:Class ;
@@ -894,7 +894,7 @@ _:genid44 a rdf:List ;
 _:genid43 a rdf:List ;
 	rdf:first :Version ;
 	rdf:rest rdf:nil .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Integer
 
 :Integer a owl:Class ;
@@ -905,27 +905,27 @@ _:genid50 a owl:Restriction ;
 	owl:someValuesFrom xsd:integer .
 
 :Integer rdfs:comment "Positive or negative integer number" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Internal
 
 :Internal a owl:Class ;
 	rdfs:comment "Used to type items that serve only internal purposes of the dictionary  in which they appear. The particular purpose served is not defined by this state." .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Key
 
 :Key a owl:Class ;
 	rdfs:comment "Used to type an item with a value that is unique within the looped list of these items, and does not contain encoded information." .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Link
 
 :Link a owl:Class ;
 	rdfs:comment "Used to type an item that acts as a foreign key between two categories.  The definition of the item must additionally contain the attribute \"_name.linked_item_id\" specifying the data name of the item with unique values in the linked category. The values of the defined item are drawn from the set of values in the referenced item. Cross referencing items from the same category is allowed." .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#List
 
 :List a owl:Class ;
 	rdfs:comment "Ordered set of values. Elements need not be of same contents type." .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Loop
 
 :Loop a owl:Class ;
@@ -942,12 +942,12 @@ _:genid52 a owl:Restriction ;
 	owl:allValuesFrom :Packet .
 
 :Loop rdfs:comment "A data loop consists of a loop header (the case-insensitive word \"loop_\" followed by a sequence of datanames) and then a sequence of one or more whitespace-separated values.  Though it cannot be expressed in EBNF, CIF requires that a loop whose header contains N data names must contain an integral multiple of N data values." , "data-loop = loop-token, wspace, data-name, { wspace, data-name }, wspace-data-value, { wspace-data-value } ;" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Matrix
 
 :Matrix a owl:Class ;
 	rdfs:comment "Ordered set of numerical values for a tensor. Tensor operations such as dot and cross products, are valid cross matrix objects. A matrix with a single dimension is interpreted as a row or column vector as required." .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Measurand
 
 :Measurand a owl:Class ;
@@ -956,7 +956,7 @@ _:genid52 a owl:Restriction ;
   or
   2) as a separate, explicit value for the associated SU item.
 These alternatives are semantically equivalent.""" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Name
 
 :Name a owl:Class ;
@@ -967,12 +967,12 @@ _:genid53 a owl:Restriction ;
 	owl:allValuesFrom xsd:string .
 
 :Name rdfs:comment "Case-insensitive sequence of ASCII alpha-numeric characters or underscore" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Number
 
 :Number a owl:Class ;
 	rdfs:comment "Used to type items that are numerical and exact (i.e. no standard uncertainty value)." .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Packet
 
 :Packet a owl:Class ;
@@ -987,7 +987,7 @@ _:genid54 a owl:Restriction ;
 _:genid55 a owl:Restriction ;
 	owl:onProperty :hasCIFDirectPart ;
 	owl:allValuesFrom :Value .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Purpose
 
 :Purpose a owl:Class ;
@@ -1032,7 +1032,7 @@ _:genid57 a rdf:List ;
 _:genid56 a rdf:List ;
 	rdf:first :State ;
 	rdf:rest rdf:nil .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Range
 
 :Range a owl:Class ;
@@ -1043,7 +1043,7 @@ _:genid66 a owl:Restriction ;
 	owl:someValuesFrom xsd:string .
 
 :Range rdfs:comment "Inclusive range of numerical values min:max" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Real
 
 :Real a owl:Class ;
@@ -1054,27 +1054,27 @@ _:genid67 a owl:Restriction ;
 	owl:someValuesFrom owl:real .
 
 :Real rdfs:comment "Floating-point real number" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Recorded
 
 :Recorded a owl:Class ;
 	rdfs:comment "A value (numerical or otherwise) recorded by observation or measurement during the experimental collection of data. This item is PRIMITIVE." .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Related
 
 :Related a owl:Class ;
 	rdfs:comment "A value or tag used in the construction of looped lists of data. Typically identifying an item whose unique value is the reference key for a loop category and/or an item which has values in common with those of another loop category and is considered a Link between these lists." .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#SU
 
 :SU a owl:Class ;
 	rdfs:comment "Used to type an item with a numerical value that is the standard uncertainty of another dataname. The definition of an SU item must include the attribute \"_name.linked_item_id\" which explicitly identifies the associated measurand item. SU values must be non-negative." .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Single
 
 :Single a owl:Class ;
 	rdfs:comment "Single value" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Source
 
 :Source a owl:Class ;
@@ -1095,12 +1095,12 @@ _:genid69 a rdf:List ;
 _:genid68 a rdf:List ;
 	rdf:first :Related ;
 	rdf:rest rdf:nil .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#State
 
 :State a owl:Class ;
 	rdfs:comment "Used to type items with values that are restricted to codes present in their \"enumeration_set.state\" lists." .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Structure
 
 :Structure a owl:Class ;
@@ -1129,7 +1129,7 @@ _:genid73 a rdf:List ;
 _:genid72 a rdf:List ;
 	rdf:first :Value ;
 	rdf:rest rdf:nil .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Symop
 
 :Symop a owl:Class ;
@@ -1140,12 +1140,12 @@ _:genid78 a owl:Restriction ;
 	owl:someValuesFrom xsd:string .
 
 :Symop rdfs:comment "A string composed of an integer optionally followed by an underscore or space and three or more digits" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Table
 
 :Table a owl:Class ;
 	rdfs:comment "An unordered set of id:value elements" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Tag
 
 :Tag a owl:Class ;
@@ -1156,7 +1156,7 @@ _:genid79 a owl:Restriction ;
 	owl:someValuesFrom xsd:string .
 
 :Tag rdfs:comment "Case-insensitive CIF2 character sequence with leading underscore and no ASCII whitespace" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Text
 
 :Text a owl:Class ;
@@ -1167,7 +1167,7 @@ _:genid80 a owl:Restriction ;
 	owl:someValuesFrom xsd:string .
 
 :Text rdfs:comment "Case-sensitive sequence of CIF2 characters" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Type
 
 :Type a owl:Class ;
@@ -1191,7 +1191,7 @@ _:genid83 a rdf:List ;
 _:genid82 a rdf:List ;
 	rdf:first :Source ;
 	rdf:rest rdf:nil .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Uri
 
 :Uri a owl:Class ;
@@ -1202,7 +1202,7 @@ _:genid86 a owl:Restriction ;
 	owl:someValuesFrom xsd:anyURI .
 
 :Uri rdfs:comment "Uniform Resource Identifier reference as defined in RFC 3986 Section 4.1" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Value
 
 :Value a owl:Class ;
@@ -1225,7 +1225,7 @@ _:genid88 a rdf:List ;
 _:genid87 a owl:Class .
 
 :Value rdfs:comment "A dataname begins with an underscore character, and contains one or more additional, non-blank characters." , "Data from Instance dictionaries." , "data-name = '_' , non-blank-char, { non-blank-char } ;" , "data-name is the class name, and the data is attached to it" .
-# 
+#
 # http://emmo.info/emmo/cif-ddl#Version
 
 :Version a owl:Class ;
@@ -1236,7 +1236,7 @@ _:genid91 a owl:Restriction ;
 	owl:someValuesFrom xsd:string .
 
 :Version rdfs:comment "Version digit string of the form <major>.<version>.<update>" .
-# 
+#
 
 _:genid92 rdfs:comment :_category_key.name .
 # Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
