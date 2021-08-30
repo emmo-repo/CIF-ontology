@@ -10,3 +10,4 @@ __pycache__
 *.cif
 
 !test-cif/**/*.cif
+!tests/**/*.dic
