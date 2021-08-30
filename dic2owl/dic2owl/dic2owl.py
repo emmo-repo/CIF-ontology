@@ -86,15 +86,9 @@ class Generator:
         self.onto = self.world.get_ontology(base_iri)
 
         # Load cif-ddl ontology and append it to imported ontologies
-        # TODO - update the url below when the dic2owl branch is merged into
-        # main...
-        # cif_ddl = (
-        #     "https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main/"
-        #     "ontology/cif-ddl.ttl"
-        # )
         cif_ddl = (
-            "https://raw.githubusercontent.com/emmo-repo/CIF-ontology/dic2owl"
-            "/ontology/cif-ddl.ttl"
+            "https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main/"
+            "ontology/cif-ddl.ttl"
         )
         self.ddl = self.world.get_ontology(str(cif_ddl)).load()
         self.ddl.sync_python_names()
