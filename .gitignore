@@ -5,6 +5,7 @@ __pycache__
 *.pyc
 
 .mypy*
+.coverage
 
 *.dic
 *.cif
