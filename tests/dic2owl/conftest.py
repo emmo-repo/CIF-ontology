@@ -112,12 +112,13 @@ def clirunner() -> "CLIRunner":
                 pytest.fail(
                     "The CLI call failed as expected, but the expected "
                     "error sub-string could not be found in stdout or "
-                    f"stderr. Sub-string: {expected_error}"
+                    f"stderr. Sub-string: {expected_error}\nSTDOUT: "
+                    f"{error.stdout}\nSTDERR: {error.stderr}"
                 )
             else:
                 pytest.fail(
                     "The CLI call failed when it didn't expect to.\n"
-                    f"Information: {error}"
+                    f"STDOUT: {error.stdout}\nSTDERR: {error.stderr}"
                 )
         else:
             return output
