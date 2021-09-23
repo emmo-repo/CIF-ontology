@@ -4,6 +4,8 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
+    from typing import Callable
+
     from .conftest import CLIRunner
 
 
@@ -16,7 +18,10 @@ def test_version(clirunner: "CLIRunner") -> None:
 
 
 def test_local_file(
-    clirunner: "CLIRunner", top_dir: Path, cif_ttl: str
+    clirunner: "CLIRunner",
+    top_dir: Path,
+    cif_ttl: str,
+    create_location_free_ttl: "Callable[[Path], str]",
 ) -> None:
     """Test a normal/default run with minimum input.
 
@@ -35,14 +40,9 @@ def test_local_file(
             "downloading" in output.stdout
         ), f"STDOUT: {output.stdout}\nSTDERR: {output.stderr}"
 
-        generated_ttl = ""
-        with open(Path(tmpdir) / "cif_core_minimized.ttl", "r") as handle:
-            for line in handle.readlines():
-                if "dic2owl" in line:
-                    # Skip comment line concerning the file location
-                    pass
-                else:
-                    generated_ttl += line
+        generated_ttl = create_location_free_ttl(
+            Path(tmpdir) / "cif_core_minimized.ttl"
+        )
 
         assert generated_ttl == cif_ttl
 
@@ -54,7 +54,12 @@ def test_local_file(
         )
 
 
-def test_output(clirunner: "CLIRunner", top_dir: Path, cif_ttl: str) -> None:
+def test_output(
+    clirunner: "CLIRunner",
+    top_dir: Path,
+    cif_ttl: str,
+    create_location_free_ttl: "Callable[[Path], str]",
+) -> None:
     """Test `--output`.
 
     NOTE: The commend conerning the file location has been removed from the
@@ -75,14 +80,7 @@ def test_output(clirunner: "CLIRunner", top_dir: Path, cif_ttl: str) -> None:
             "downloading" in output.stdout
         ), f"STDOUT: {output.stdout}\nSTDERR: {output.stderr}"
 
-        generated_ttl = ""
-        with open(out_ttl, "r") as handle:
-            for line in handle.readlines():
-                if "dic2owl" in line:
-                    # Skip comment line concerning the file location
-                    pass
-                else:
-                    generated_ttl += line
+        generated_ttl = create_location_free_ttl(Path(out_ttl))
 
         assert generated_ttl == cif_ttl
 

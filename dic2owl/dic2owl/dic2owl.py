@@ -9,7 +9,7 @@ from pathlib import Path
 
 # import textwrap
 import types
-from typing import Any, Set, Union, Sequence
+from typing import TYPE_CHECKING
 import urllib.request
 
 from CifFile import CifDic
@@ -19,24 +19,29 @@ from CifFile import CifDic
 with open(DEVNULL, "w") as handle:  # pylint: disable=unspecified-encoding
     with redirect_stderr(handle):
         from emmo import World
-        from emmo.ontology import Ontology
 
         from owlready2 import locstr
 
 
+if TYPE_CHECKING:
+    from _typeshed import StrPath
+    from typing import Any, Sequence, Set, Union
+
+    from emmo.ontology import Ontology
+
 # Workaround for flaw in EMMO-Python
 # To be removed when EMMO-Python doesn't requires ontologies to import SKOS
-import emmo.ontology  # noqa: E402
+import emmo.ontology  # pylint: disable=wrong-import-position
 
 emmo.ontology.DEFAULT_LABEL_ANNOTATIONS = [
     "http://www.w3.org/2000/01/rdf-schema#label",
 ]
 
-"""The absolute, normalized path to the `ontology` directory in this
-repository"""
 ONTOLOGY_DIR = (
     Path(__file__).resolve().parent.parent.parent.joinpath("ontology")
 )
+"""The absolute, normalized path to the `ontology` directory in this
+repository"""
 
 
 def lang_en(string: str) -> locstr:
@@ -67,18 +72,23 @@ class Generator:
 
     """
 
+    CIF_DDL = (
+        "https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main/"
+        "ontology/cif-ddl.ttl"
+    )
+
     # TODO:
     # Should `comments` be replaced with a dict `annotations` for annotating
     # the ontology itself?  If so, we should import Dublin Core.
 
     def __init__(
         self,
-        dicfile: str,
+        dicfile: "StrPath",
         base_iri: str,
-        comments: Sequence[str] = (),
+        comments: "Sequence[str]" = (),
     ) -> None:
         self.dicfile = dicfile
-        self.dic = CifDic(dicfile, do_dREL=False)
+        self.dic = CifDic(str(self.dicfile), do_dREL=False)
         self.comments = comments
 
         # Create new ontology
@@ -86,11 +96,7 @@ class Generator:
         self.onto = self.world.get_ontology(base_iri)
 
         # Load cif-ddl ontology and append it to imported ontologies
-        cif_ddl = (
-            "https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main/"
-            "ontology/cif-ddl.ttl"
-        )
-        self.ddl = self.world.get_ontology(str(cif_ddl)).load()
+        self.ddl = self.world.get_ontology(self.CIF_DDL).load()
         self.ddl.sync_python_names()
         self.onto.imported_ontologies.append(self.ddl)
 
@@ -98,9 +104,9 @@ class Generator:
         # dcterms = self.world.get_ontology('http://purl.org/dc/terms/').load()
         # self.onto.imported_ontologies.append(dcterms)
 
-        self.items: Set[dict] = set()
+        self.items: "Set[dict]" = set()
 
-    def generate(self) -> Ontology:
+    def generate(self) -> "Ontology":
         """Generate ontology for the CIF dictionary.
 
         Returns:
@@ -194,7 +200,7 @@ class Generator:
 
         self._add_annotations(cls, item)
 
-    def _add_annotations(self, cls: Any, item: dict) -> None:
+    def _add_annotations(self, cls: "Any", item: dict) -> None:
         """Add annotations for dic item `item` to generated ontology
         class `cls`.
 
@@ -228,7 +234,9 @@ class Generator:
         )
 
 
-def main(dicfile: Union[str, Path], ttlfile: Union[str, Path]) -> Generator:
+def main(
+    dicfile: "Union[str, Path]", ttlfile: "Union[str, Path]"
+) -> Generator:
     """Main function for ontology generation.
 
     Parameters:

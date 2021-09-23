@@ -3,7 +3,7 @@
 # pylint: disable=redefined-outer-name,inconsistent-return-statements
 from enum import Enum
 from pathlib import Path
-from typing import List, Optional, TYPE_CHECKING, Union
+from typing import TYPE_CHECKING
 
 import pytest
 
@@ -17,7 +17,7 @@ class CLI(Enum):
 
 if TYPE_CHECKING:
     from subprocess import CompletedProcess
-    from typing import Callable
+    from typing import Callable, List, Optional, Union
 
     CLIRunner = Callable[
         [
@@ -32,17 +32,17 @@ if TYPE_CHECKING:
 
 @pytest.fixture(scope="session")
 def clirunner() -> "CLIRunner":
-    """Call `dic2owl` CLI"""
+    """Call a CLI"""
     from subprocess import run, CalledProcessError
     from tempfile import TemporaryDirectory
 
     def _clirunner(
-        options: Optional[List[str]] = None,
-        cli: Optional[Union[CLI, str]] = None,
-        expected_error: Optional[str] = None,
-        run_dir: Optional[Union[Path, str]] = None,
-    ) -> Union["CompletedProcess", CalledProcessError]:
-        """Call `dic2owl` CLI
+        options: "Optional[List[str]]" = None,
+        cli: "Optional[Union[CLI, str]]" = None,
+        expected_error: "Optional[str]" = None,
+        run_dir: "Optional[Union[Path, str]]" = None,
+    ) -> "Union[CompletedProcess, CalledProcessError]":
+        """Call a CLI
 
         Parameters:
             options: Options with which to call `cli`, e.g., `--version`.
@@ -140,11 +140,47 @@ def cif_ttl(top_dir: Path) -> str:
     """Read and return CIF-Core minimized Turtle file (generated from the
     accompanying dictionary).
 
-    NOTE: The commend conerning the file location has been removed manually
+    NOTE: The comment conerning the file location has been removed manually
         from this file.
     """
-    with open(
-        top_dir / "tests/dic2owl/static/cif_core_minimized.ttl", "r"
-    ) as handle:
-        content = handle.read()
-    return content
+    return (
+        top_dir / "tests/dic2owl/static/cif_core_minimized.ttl"
+    ).read_text()
+
+
+@pytest.fixture(scope="session")
+def base_iri() -> str:
+    """Return standard CIF-Core base IRI."""
+    return "http://emmo.info/CIF-ontology/ontology/cif_core#"
+
+
+@pytest.fixture(scope="session")
+def cif_dic_path(top_dir: Path) -> Path:
+    """Return path to minimized CIF-Core dictionary."""
+    return top_dir / "tests" / "dic2owl" / "static" / "cif_core_minimized.dic"
+
+
+@pytest.fixture
+def create_location_free_ttl() -> "Callable[[Path], str]":
+    """Create file location comment-free turtle file."""
+
+    def _create_location_free_ttl(ttlfile: Path) -> str:
+        """Create file location comment-free turtle file.
+
+        Parameters:
+            ttlfile: Path to turtle file.
+
+        Returns:
+            Content of turtle file without the file location line.
+        """
+        generated_ttl = ""
+        with ttlfile.open() as handle:
+            for line in handle.readlines():
+                if "dic2owl" in line:
+                    # Skip comment line concerning the file location
+                    pass
+                else:
+                    generated_ttl += line
+        return generated_ttl
+
+    return _create_location_free_ttl
