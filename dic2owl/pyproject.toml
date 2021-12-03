@@ -2,6 +2,13 @@
 line-length = 79
 target-version = ['py37', 'py38', 'py39']
 
+[tool.mypy]
+ignore_missing_imports = true
+scripts_are_modules = true
+warn_unused_configs = true
+show_error_codes = true
+allow_redefinition = true
+
 [tool.pylint.MASTER]
 
 # A comma-separated list of package or module names from where C extensions may

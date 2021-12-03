@@ -3,23 +3,57 @@ name: CI
 on: [push]
 
 jobs:
-
   pre-commit:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Set up Python 3.9
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -U setuptools wheel
-          pip install pre-commit
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -U setuptools wheel
 
-      - name: Run pre-commit
-        run: pre-commit run --all-files || ( git status --short ; git diff ; exit 1 )
+        while IFS="" read -r line || [ -n "${line}" ]; do
+          if [[ "${line}" =~ ^pre-commit.*$ ]]; then
+            pre_commit="${line}"
+          fi
+        done < dic2owl/requirements_dev.txt
+
+        pip install ${pre_commit}
+
+    - name: Run pre-commit
+      run: SKIP=pylint pre-commit run --all-files
+
+  pylint-safety:
+    name: PyLint and safety
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -U setuptools wheel
+
+        pip install -U -r requirements.txt -r requirements_dev.txt -r requirements_docs.txt
+        pip install safety
+
+    - name: Run PyLint
+      run: pylint --rcfile=pyproject.toml dic2owl
+
+    - name: Run safety
+      run: pip freeze | safety check --stdin

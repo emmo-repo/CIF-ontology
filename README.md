@@ -74,7 +74,7 @@ cif_onto = get_ontology('https://raw.githubusercontent.com/emmo-repo/CIF-ontolog
 - [MarketPlace](https://www.the-marketplace-project.eu/);
   Grant Agreement No: 760173
   <img src="https://www.the-marketplace-project.eu/content/dam/iwm/the-marketplace-project/images/MARKETPLACE_LOGO_300dpi.png" width="120">
-- [OntoTrans](https://ontotrans.eu/); 
+- [OntoTrans](https://ontotrans.eu/);
   Grant Agreement No: 862136
   <img src="https://ontotrans.eu/wp-content/uploads/2020/05/ot_logo_rosa_gro%C3%9F.svg" height="50">
 - [BIG-MAP](https://www.big-map.eu/);
