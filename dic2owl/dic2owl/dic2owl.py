@@ -15,10 +15,10 @@ import urllib.request
 from CifFile import CifDic
 
 # Remove the print statement concerning 'owlready2_optimized'
-# when importing owlready2 (which is imported also in emmo).
+# when importing owlready2 (which is imported also in ontopy).
 with open(DEVNULL, "w") as handle:  # pylint: disable=unspecified-encoding
     with redirect_stderr(handle):
-        from emmo import World
+        from ontopy import World
 
         from owlready2 import locstr
 
@@ -27,13 +27,13 @@ if TYPE_CHECKING:
     from _typeshed import StrPath
     from typing import Any, Sequence, Set, Union
 
-    from emmo.ontology import Ontology
+    from ontopy.ontology import Ontology
 
 # Workaround for flaw in EMMO-Python
 # To be removed when EMMO-Python doesn't requires ontologies to import SKOS
-import emmo.ontology  # pylint: disable=wrong-import-position
+import ontopy.ontology  # pylint: disable=wrong-import-position
 
-emmo.ontology.DEFAULT_LABEL_ANNOTATIONS = [
+ontopy.ontology.DEFAULT_LABEL_ANNOTATIONS = [
     "http://www.w3.org/2000/01/rdf-schema#label",
 ]
 
