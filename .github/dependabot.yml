@@ -9,9 +9,13 @@ updates:
   # Should be bigger than or equal to the total number of dependencies (currently 8)
   open-pull-requests-limit: 15
   target-branch: ci/dependabot-updates
+  labels:
+    - "dependencies"
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
     interval: daily
     time: "05:04"
   target-branch: ci/dependabot-updates
+  labels:
+    - "github_actions"

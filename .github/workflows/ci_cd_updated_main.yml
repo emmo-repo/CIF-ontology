@@ -1,0 +1,58 @@
+name: CI/CD - New updates to 'main'
+
+on:
+  push:
+    branches: [main]
+
+env:
+  DEPENDABOT_BRANCH: ci/dependabot-updates
+  GIT_USER_NAME: CIF-ontology Team
+  GIT_USER_EMAIL: "CIF-ontology@emmo.info"
+  DEFAULT_REPO_BRANCH: main
+
+jobs:
+  update-dependabot-branch:
+    name: Update permanent dependabot branch
+    if: github.repository_owner == 'emmo-repo'
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ env.DEPENDABOT_BRANCH }}
+        fetch-depth: 0
+
+    - name: Set up git config
+      run: |
+        git config --global user.name "${{ env.GIT_USER_NAME }}"
+        git config --global user.email "${{ env.GIT_USER_EMAIL }}"
+
+    - name: Update '${{ env.DEPENDABOT_BRANCH }}'
+      run: |
+        git fetch origin
+
+        LATEST_PR_BODY="$(gh api /repos/${{ github.repository}}/pulls -X GET -f state=closed -f per_page=1 -f sort=updated -f direction=desc --jq '.[].body')"
+        cat .github/static/single_dependency_pr_body.txt | head -8 > .tmp_file.txt
+        if [ -z "$(printf '%s\n' "${LATEST_PR_BODY}" | head -8 | diff - .tmp_file.txt --strip-trailing-cr)" ]; then
+          # The dependency branch has just been merged into `${{ env.DEFAULT_REPO_BRANCH }}`
+          # The dependency branch should be reset to `${{ env.DEFAULT_REPO_BRANCH }}`
+          echo "The dependencies have just been updated! Reset to ${{ env.DEFAULT_REPO_BRANCH }}."
+          git reset --hard origin/${{ env.DEFAULT_REPO_BRANCH }}
+          echo "FORCE_PUSH=yes" >> $GITHUB_ENV
+        else
+          # Normal procedure: Merge `${{ env.DEFAULT_REPO_BRANCH }}` into `${{ env.DEPENDABOT_BRANCH }}`
+          echo "Merge new updates to ${{ env.DEFAULT_REPO_BRANCH }} into ${{ env.DEPENDABOT_BRANCH }}"
+          git merge -m "Keep '${{ env.DEPENDABOT_BRANCH }}' up-to-date with '${{ env.DEFAULT_REPO_BRANCH }}'" origin/${{ env.DEFAULT_REPO_BRANCH }}
+          echo "FORCE_PUSH=no" >> $GITHUB_ENV
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Push to '${{ env.DEPENDABOT_BRANCH }}'
+      uses: CasperWA/push-protected@v2
+      with:
+        token: ${{ secrets.RELEASE_TOKEN_CWA }}
+        branch: ${{ env.DEPENDABOT_BRANCH }}
+        sleep: 15
+        force: ${{ env.FORCE_PUSH }}
