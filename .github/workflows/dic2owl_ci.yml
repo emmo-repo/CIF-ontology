@@ -84,4 +84,4 @@ jobs:
           pip install -e dic2owl[dev]
 
       - name: Run unit tests with PyTest
-        run: pytest --cov dic2owl tests/
+        run: pytest -c dic2owl/pyproject.toml

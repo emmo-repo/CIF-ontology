@@ -9,8 +9,15 @@ warn_unused_configs = true
 show_error_codes = true
 allow_redefinition = true
 
-[tool.pylint.MASTER]
+[tool.pytest.ini_options]
+minversion = "6.0"
+required_plugins = "pytest-cov>=3.0"
+addopts = "-rs --cov=./dic2owl/dic2owl/ --cov-report=term"
+filterwarnings = [
+    "ignore:.*imp module.*:DeprecationWarning",
+]
 
+[tool.pylint.MASTER]
 # A comma-separated list of package or module names from where C extensions may
 # be loaded. Extensions are loading into the active Python interpreter and may
 # run arbitrary code.
