@@ -53,7 +53,7 @@ jobs:
         pip install safety
 
     - name: Run PyLint
-      run: pylint --rcfile=dic2owl/pyproject.toml dic2owl
+      run: pylint --rcfile=dic2owl/pyproject.toml dic2owl/**/*.py
 
     - name: Run safety
       run: pip freeze | safety check --stdin
