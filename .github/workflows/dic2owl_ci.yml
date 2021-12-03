@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - 'dic2owl/**'
+      - 'tests/**'
+      - '.github/**'
 
 jobs:
 
@@ -41,5 +43,5 @@ jobs:
       - name: Lint with MyPy
         run: mypy --ignore-missing-imports --scripts-are-modules dic2owl/dic2owl
 
-      # - name: Run unittests
-      #   run: pytest --cov dic2owl/dic2owl tests/
+      - name: Run unit tests with PyTest
+        run: pytest --cov dic2owl tests/

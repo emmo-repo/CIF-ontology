@@ -5,13 +5,14 @@ The `dic2owl` command line interface (CLI) is an easy way of running the
 ontology-generation tool for CIF `.dic`-files.
 """
 import argparse
-import logging
+
+# import logging
 from pathlib import Path
 
 
-LOGGING_LEVELS = [
-    logging.getLevelName(level).lower() for level in range(0, 51, 10)
-]
+# LOGGING_LEVELS = [
+#     logging.getLevelName(level).lower() for level in range(0, 51, 10)
+# ]
 
 
 def main(argv: list = None) -> None:
@@ -33,18 +34,18 @@ def main(argv: list = None) -> None:
         help="Show the version and exit.",
         version=f"dic2owl version {__version__}",
     )
-    parser.add_argument(
-        "--log-level",
-        type=str,
-        help="Set the stdout log-level (verbosity).",
-        choices=LOGGING_LEVELS,
-        default="info",
-    )
-    parser.add_argument(
-        "--debug",
-        action="store_true",
-        help="Overrule log-level option, setting it to 'debug'.",
-    )
+    # parser.add_argument(
+    #     "--log-level",
+    #     type=str,
+    #     help="Set the stdout log-level (verbosity).",
+    #     choices=LOGGING_LEVELS,
+    #     default="info",
+    # )
+    # parser.add_argument(
+    #     "--debug",
+    #     action="store_true",
+    #     help="Overrule log-level option, setting it to 'debug'.",
+    # )
     parser.add_argument(
         "-o",
         "--output",

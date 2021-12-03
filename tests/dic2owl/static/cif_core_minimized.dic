@@ -1,0 +1,185 @@
+#\#CIF_2.0
+##########################################################################
+#                                                                        #
+#  CIF CORE DICTIONARY                                                   #
+#                                                                        #
+##########################################################################
+
+data_CORE_DIC
+
+    _dictionary.title             CORE_DIC
+    _dictionary.class             Instance
+    _dictionary.version           3.1.0
+    _dictionary.date              2021-08-18
+    _dictionary.uri
+        https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic
+    _dictionary.ddl_conformance   4.0.1
+    _dictionary.namespace         CifCore
+    _description.text
+;
+    The CIF_CORE dictionary records all the CORE data items defined
+    and used with in the Crystallographic Information Framework (CIF).
+;
+
+save_CIF_CORE
+
+    _definition.id                CIF_CORE
+    _definition.scope             Category
+    _definition.class             Head
+    _definition.update            2014-06-18
+    _description.text
+;
+    The CIF_CORE group contains the definitions of data items that
+    are common to all domains of crystallographic studies.
+;
+    _name.category_id             CORE_DIC
+    _name.object_id               CIF_CORE
+
+save_
+
+save_DIFFRACTION
+
+    _definition.id                DIFFRACTION
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2012-11-26
+    _description.text
+;
+    The DICTIONARY group encompassing the CORE DIFFRACTION data items defined
+    and used with in the Crystallographic Information Framework (CIF).
+;
+    _name.category_id             CIF_CORE
+    _name.object_id               DIFFRACTION
+
+save_
+
+save_DIFFRN
+
+    _definition.id                DIFFRN
+    _definition.scope             Category
+    _definition.class             Set
+    _definition.update            2012-12-13
+    _description.text
+;
+    The CATEGORY of data items used to describe the diffraction experiment.
+;
+    _name.category_id             DIFFRACTION
+    _name.object_id               DIFFRN
+
+save_
+
+save_diffrn.ambient_environment
+
+    _definition.id                '_diffrn.ambient_environment'
+    _alias.definition_id          '_diffrn_ambient_environment'
+    _definition.update            2012-11-26
+    _description.text
+;
+    The gas or liquid environment of the crystal sample, if not air.
+;
+    _name.category_id             diffrn
+    _name.object_id               ambient_environment
+    _type.purpose                 Describe
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Text
+
+    loop_
+      _description_example.case
+         'He'
+         'vacuum'
+         'mother liquor'
+
+save_
+
+save_diffrn.ambient_pressure
+
+    _definition.id                '_diffrn.ambient_pressure'
+    _alias.definition_id          '_diffrn_ambient_pressure'
+    _definition.update            2012-11-26
+    _description.text
+;
+    Mean hydrostatic  pressure at which intensities were measured.
+;
+    _name.category_id             diffrn
+    _name.object_id               ambient_pressure
+    _type.purpose                 Measurand
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   kilopascals
+
+save_
+
+save_diffrn.ambient_pressure_su
+
+    _definition.id                '_diffrn.ambient_pressure_su'
+
+    loop_
+      _alias.definition_id
+         '_diffrn_ambient_pressure_su'
+         '_diffrn.ambient_pressure_esd'
+
+    _definition.update            2021-03-03
+    _description.text
+;
+    Standard uncertainty of the mean hydrostatic pressure
+    at which intensities were measured.
+;
+    _name.category_id             diffrn
+    _name.object_id               ambient_pressure_su
+    _name.linked_item_id          '_diffrn.ambient_pressure'
+    _type.purpose                 SU
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _units.code                   kilopascals
+
+save_
+
+save_diffrn.ambient_pressure_gt
+
+    _definition.id                '_diffrn.ambient_pressure_gt'
+    _alias.definition_id          '_diffrn_ambient_pressure_gt'
+    _definition.update            2012-12-13
+    _description.text
+;
+    Mean hydrostatic pressure above which intensities were measured.
+    These items allow for a pressure range to be given.
+    _diffrn.ambient_pressure should be used in preference to this
+    item when possible.
+;
+    _name.category_id             diffrn
+    _name.object_id               ambient_pressure_gt
+    _type.purpose                 Number
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   kilopascals
+
+save_
+
+save_diffrn.ambient_pressure_lt
+
+    _definition.id                '_diffrn.ambient_pressure_lt'
+    _alias.definition_id          '_diffrn_ambient_pressure_lt'
+    _definition.update            2012-12-13
+    _description.text
+;
+    Mean hydrostatic pressure below which intensities were measured.
+    These items allow for a pressure range to be given.
+    _diffrn.ambient_pressure should be used in preference to this
+    item when possible.
+;
+    _name.category_id             diffrn
+    _name.object_id               ambient_pressure_lt
+    _type.purpose                 Number
+    _type.source                  Recorded
+    _type.container               Single
+    _type.contents                Real
+    _enumeration.range            0.0:
+    _units.code                   kilopascals
+
+save_
