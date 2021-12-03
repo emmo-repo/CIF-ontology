@@ -4,11 +4,13 @@ old
 __pycache__
 *.pyc
 
-.mypy*
+# Testing
+.*_cache/
 .coverage
 
 *.dic
 *.cif
 
+# Package test data
 !test-cif/**/*.cif
 !tests/**/*.dic
