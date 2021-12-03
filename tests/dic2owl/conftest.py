@@ -19,7 +19,7 @@ class CLI(Enum):
 
 if TYPE_CHECKING:
     from subprocess import CompletedProcess
-    from typing import Callable, Dict, List, Literal, Optional, Union
+    from typing import Callable, List, Optional, Union
 
     CLIRunner = Callable[
         [
