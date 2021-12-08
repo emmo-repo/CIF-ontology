@@ -1,6 +1,7 @@
 name: CI - Single Dependabot PR
 
 on:
+  pull_request:
   schedule:
     # At 8:30 every Wednesday (6:30 UTC)
     # Dependabot runs once a week (every Monday) (pip)
