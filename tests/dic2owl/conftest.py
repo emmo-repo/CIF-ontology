@@ -253,7 +253,7 @@ def create_location_free_ttl() -> "Callable[[Path], str]":
             for line in handle.readlines():
                 if "dic2owl" in line:
                     # Skip comment line concerning the file location
-                    pass
+                    continue
                 else:
                     generated_ttl += line
         return generated_ttl
