@@ -60,10 +60,13 @@ jobs:
     - name: Run PyLint
       run: pylint --rcfile=dic2owl/pyproject.toml dic2owl/**/*.py
 
-    # Ignore ID 44715 for now.
-    # See this NumPy issue for more information: https://github.com/numpy/numpy/issues/19038
+      # Ignore ID 44715 for now.
+      # See this NumPy issue for more information: https://github.com/numpy/numpy/issues/19038
+      # --ignore 44715 --ignore 44716 --ignore 44717
+      # Remove ignoring 48547 as soon as RDFLib/rdflib#1844 has been fixed and the fix
+      # has been released.
     - name: Run safety
-      run: pip freeze | safety check --stdin --ignore 44715 --ignore 44716 --ignore 44717
+      run: pip freeze | safety check --stdin -i 48547
 
   dic2owl-test:
     runs-on: ubuntu-latest
