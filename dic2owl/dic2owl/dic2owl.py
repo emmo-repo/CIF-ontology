@@ -15,7 +15,7 @@ from CifFile import CifDic
 
 # Remove the print statement concerning 'owlready2_optimized'
 # when importing owlready2 (which is imported also in ontopy).
-with open(DEVNULL, "w", encoding="uft8") as handle:
+with open(DEVNULL, "w", encoding="utf8") as handle:
     with redirect_stderr(handle):
         from ontopy import World
         from owlready2 import locstr
