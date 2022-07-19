@@ -8,70 +8,42 @@ on:
       - '.github/**'
 
 jobs:
-  pre-commit-dic2owl:
-    runs-on: ubuntu-latest
+  dic2owl-basic:
+    name: External
+    uses: SINTEF/ci-cd/.github/workflows/ci_tests.yml@v1
+    with:
+      # general setup
+      python_version: "3.7"
+      install_extras: "./dic2owl[dev]"
+      run_build_package: false
+      run_build_docs: false
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      # pre-commit
+      run_pre-commit: true
+      skip_pre-commit_hooks: pylint
 
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.7
+      # pylint
+      run_pylint: true
+      pylint_targets: "dic2owl/**/*.py"
+      pylint_options: "--rcfile=dic2owl/pyproject.toml"
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -U setuptools wheel
-
-        while IFS="" read -r line || [ -n "${line}" ]; do
-          if [[ "${line}" =~ ^pre-commit.*$ ]]; then
-            pre_commit="${line}"
-          fi
-        done < dic2owl/requirements_dev.txt
-
-        pip install ${pre_commit}
-
-    - name: Run pre-commit
-      run: SKIP=pylint pre-commit run --all-files
-
-  pylint-safety:
-    name: PyLint and safety
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.7
-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -U setuptools wheel
-
-        pip install -U -r dic2owl/requirements.txt -r dic2owl/requirements_dev.txt
-        pip install safety
-
-    - name: Run PyLint
-      run: pylint --rcfile=dic2owl/pyproject.toml dic2owl/**/*.py
-
+      # safety
+      run_safety: true
       # Ignore ID 44715 for now.
       # See this NumPy issue for more information: https://github.com/numpy/numpy/issues/19038
       # Remove ignoring 48547 as soon as RDFLib/rdflib#1844 has been fixed and the fix
       # has been released.
-    - name: Run safety
-      run: pip freeze | safety check --stdin --ignore 44715 --ignore 44716 --ignore 44717 --ignore 48547
+      safety_options: |
+        --ignore=44715
+        --ignore=44716
+        --ignore=44717
+        --ignore=48547
 
   dic2owl-test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.7, 3.8, 3.9]
+        python-version: ["3.7", "3.8", "3.9"]
 
     steps:
       - uses: actions/checkout@v3
@@ -85,7 +57,7 @@ jobs:
         run: |
           python -m pip install -U pip
           pip install -U setuptools wheel
-          pip install -e dic2owl[dev]
+          pip install -e ./dic2owl[dev]
 
       - name: Run unit tests with PyTest
         run: pytest -c dic2owl/pyproject.toml

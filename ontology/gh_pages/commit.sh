@@ -5,13 +5,13 @@
 set -ex
 
 # Commit sha of main branch
-SHA=`git rev-parse --verify HEAD`
+SHA="$(git rev-parse --verify HEAD)"
 TARGET_BRANCH="gh-pages"
 
-if [ "${GITHUB_ACTIONS}" != "true" ]; then
-    echo "Skipping deploy; just doing a build."
-    exit 0
-fi
+# if [ "${CI}" == "true" ]; then
+#     echo "Skipping deploy; just doing a build."
+#     exit 0
+# fi
 
 # Move html to temp dir
 mv "${BUILD_FOLDER}" ../page-build
@@ -29,4 +29,4 @@ if git diff --cached --quiet; then
     exit 0
 fi
 
-git commit -m "Deploy to GitHub Pages: ${SHA}"
+git commit -m "Deploy to GitHub Pages"

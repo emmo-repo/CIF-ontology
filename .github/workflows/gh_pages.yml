@@ -5,7 +5,6 @@ on:
     types: [published]
 
 jobs:
-
   gh-pages_build:
     name: Build GH Pages
     runs-on: ubuntu-latest

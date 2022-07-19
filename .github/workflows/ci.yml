@@ -4,29 +4,15 @@ on: [push]
 
 jobs:
   pre-commit-basic:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.7
-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -U setuptools wheel
-
-        while IFS="" read -r line || [ -n "${line}" ]; do
-          if [[ "${line}" =~ ^pre-commit.*$ ]]; then
-            pre_commit="${line}"
-          fi
-        done < dic2owl/requirements_dev.txt
-
-        pip install ${pre_commit}
-
-    - name: Run pre-commit
-      run: SKIP=pylint,mypy,black,bandit,requirements-txt-fixer pre-commit run --all-files
+    name: External
+    uses: SINTEF/ci-cd/.github/workflows/ci_tests.yml@v1
+    with:
+      run_pre-commit: true
+      python_version: "3.7"
+      install_extras: "/dic2owl[dev]"
+      skip_pre-commit_hooks: "pylint,mypy,black,bandit,requirements-txt-fixer"
+      # Don't run any other basic test
+      run_pylint: false
+      run_safety: false
+      run_build_package: false
+      run_build_docs: false
