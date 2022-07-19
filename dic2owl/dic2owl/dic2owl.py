@@ -3,14 +3,13 @@
 
 Python script for generating an ontology corresponding to a CIF dictionary.
 """
+# pylint: disable=fixme
+import types
+import urllib.request
 from contextlib import redirect_stderr
 from os import devnull as DEVNULL
 from pathlib import Path
-
-# import textwrap
-import types
 from typing import TYPE_CHECKING
-import urllib.request
 
 from CifFile import CifDic
 
@@ -19,14 +18,13 @@ from CifFile import CifDic
 with open(DEVNULL, "w") as handle:  # pylint: disable=unspecified-encoding
     with redirect_stderr(handle):
         from ontopy import World
-
         from owlready2 import locstr
 
 
 if TYPE_CHECKING:
-    from _typeshed import StrPath
     from typing import Any, Sequence, Set, Union
 
+    from _typeshed import StrPath
     from ontopy.ontology import Ontology
 
 # Workaround for flaw in EMMO-Python
@@ -37,9 +35,7 @@ ontopy.ontology.DEFAULT_LABEL_ANNOTATIONS = [
     "http://www.w3.org/2000/01/rdf-schema#label",
 ]
 
-ONTOLOGY_DIR = (
-    Path(__file__).resolve().parent.parent.parent.joinpath("ontology")
-)
+ONTOLOGY_DIR = Path(__file__).resolve().parent.parent.parent.joinpath("ontology")
 """The absolute, normalized path to the `ontology` directory in this
 repository"""
 
@@ -229,14 +225,10 @@ class Generator:
 
         for comment in self.comments:
             self.onto.metadata.comment.append(comment)
-        self.onto.metadata.comment.append(
-            f"Generated with dic2owl from {self.dicfile}"
-        )
+        self.onto.metadata.comment.append(f"Generated with dic2owl from {self.dicfile}")
 
 
-def main(
-    dicfile: "Union[str, Path]", ttlfile: "Union[str, Path]"
-) -> Generator:
+def main(dicfile: "Union[str, Path]", ttlfile: "Union[str, Path]") -> Generator:
     """Main function for ontology generation.
 
     Parameters:

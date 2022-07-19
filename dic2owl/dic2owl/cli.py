@@ -9,7 +9,6 @@ import argparse
 # import logging
 from pathlib import Path
 
-
 # LOGGING_LEVELS = [
 #     logging.getLevelName(level).lower() for level in range(0, 51, 10)
 # ]
@@ -71,9 +70,7 @@ def main(argv: list = None) -> None:
     args = parser.parse_args(argv)
 
     if args.ttlfile is None:
-        args.ttlfile = (
-            args.dicfile.resolve().name[: -len(args.dicfile.suffix)] + ".ttl"
-        )
+        args.ttlfile = args.dicfile.resolve().name[: -len(args.dicfile.suffix)] + ".ttl"
 
     if not args.dicfile.resolve().exists():
         # The dic-file does not exist, use it as a string instead so it can be

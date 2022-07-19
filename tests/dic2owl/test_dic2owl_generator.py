@@ -32,9 +32,7 @@ def sample_generator(
         return Generator(
             dicfile=cif_dic_path,
             base_iri=base_iri,
-            comments=sample_generator_comments
-            if comments is None
-            else comments,
+            comments=sample_generator_comments if comments is None else comments,
         )
 
     return _sample_generator
@@ -46,6 +44,7 @@ def test_initialization(
     """Ensure a newly initialized Generator has intended ontologies and
     properties."""
     from CifFile import CifDic
+
     from dic2owl import Generator
 
     cif_dictionary = CifDic(str(cif_dic_path), do_dREL=False)

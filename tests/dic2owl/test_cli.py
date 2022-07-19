@@ -36,12 +36,8 @@ def test_local_file(
     from tempfile import TemporaryDirectory
 
     with TemporaryDirectory() as tmpdir:
-        options = [
-            str(top_dir / "tests/dic2owl/static/cif_core_minimized.dic")
-        ]
-        output = clirunner(
-            options, run_dir=tmpdir, use_subprocess=use_subprocess
-        )
+        options = [str(top_dir / "tests/dic2owl/static/cif_core_minimized.dic")]
+        output = clirunner(options, run_dir=tmpdir, use_subprocess=use_subprocess)
 
         assert (
             "downloading" in output.stdout
