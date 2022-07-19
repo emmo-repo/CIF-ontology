@@ -81,8 +81,7 @@ cif_onto = get_ontology('https://raw.githubusercontent.com/emmo-repo/CIF-ontolog
   Grant Agreement No: 957189
   <img src="https://avatars1.githubusercontent.com/u/72801303?s=200&v=4" height="50">
 
-License
--------
+## License
 
 The CIF ontology is released under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode) license (CC BY 4.0).
 See also the [LICENSE](LICENSE) file.
