@@ -14,3 +14,6 @@ __pycache__
 # Package test data
 !test-cif/**/*.cif
 !tests/**/*.dic
+
+# Documentation
+site/

@@ -55,6 +55,11 @@ repos:
   - id: docs-api-reference
     args: [--package-dir, dic2owl/dic2owl]
   - id: docs-landing-page
+    args:
+    - --replacement=(LICENSE),(LICENSE.md)
+    - --replacement=(dic2owl/README.md),(dic2owl/index.md)
+    - --replacement=(ontology),(https://github.com/emmo-repo/CIF-ontology/tree/main/ontology)
+    - --replacement=(ontology/catalog-v001.xml),(https://github.com/emmo-repo/CIF-ontology/blob/main/ontology/catalog-v001.xml)
 
 - repo: local
   hooks:

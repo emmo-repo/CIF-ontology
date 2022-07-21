@@ -44,6 +44,8 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.tilde
   - pymdownx.keys
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - toc:
       permalink: true
 
@@ -80,6 +82,8 @@ plugins:
 
 nav:
   - Home: index.md
+  - dic2owl:
+    - Overview: dic2owl/index.md
   - License: LICENSE.md
   - ... | api_reference/**
 

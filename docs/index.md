@@ -25,14 +25,14 @@ See the following table for version compatibilies:
 
 ## Generator tool (`dic2owl`)
 
-This repository contains both ontologies (under [`/ontology`](ontology)) and the `dic2owl` generator tool (under [`/dic2owl`](dic2owl)), written in Python.
+This repository contains both ontologies (under [`/ontology`](https://github.com/emmo-repo/CIF-ontology/tree/main/ontology)) and the `dic2owl` generator tool (under [`/dic2owl`](dic2owl)), written in Python.
 
-Go to the [README](dic2owl/README.md) of `dic2owl` to read more about the generator tool.
+Go to the [README](dic2owl/index.md) of `dic2owl` to read more about the generator tool.
 
 ## Obtaining CIF-ontology
 
 This ontology build on EMMO-1.0.0-beta.
-The correct path to the inferred verion 'emmo-inferred' is specified in the catalog file, [`catalog-v001.xml`](ontology/catalog-v001.xml).
+The correct path to the inferred verion 'emmo-inferred' is specified in the catalog file, [`catalog-v001.xml`](https://github.com/emmo-repo/CIF-ontology/blob/main/ontology/catalog-v001.xml).
 
 The domain ontology is obtained with:
 
@@ -40,7 +40,7 @@ The domain ontology is obtained with:
 git clone https://github.com/emmo-repo/CIF-ontology.git
 ```
 
-When opening [cif.ttl](https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main/ontology/cif.ttl) in Protégé, the correct version of emmo-inferred will be downloaded and imported.
+When opening [cif-core.ttl](https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main/ontology/cif-core.ttl) in Protégé, the correct version of emmo-inferred will be downloaded and imported.
 
 In EMMO-python correct import is obtained with
 
@@ -48,10 +48,10 @@ In EMMO-python correct import is obtained with
 from emmo import get_ontology
 
 # Loading crystallography from local repository
-cif_onto = get_ontology('/path/to/cif.ttl').load(url_from_catalog=True)
+cif_onto = get_ontology('/path/to/cif-core.ttl').load(url_from_catalog=True)
 
 # Loading crystallography from web
-cif_onto = get_ontology('https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main/ontology/cif.ttl').load()
+cif_onto = get_ontology('https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main/ontology/cif-core.ttl').load()
 ```
 
 ## Attributions and credits
@@ -70,16 +70,16 @@ cif_onto = get_ontology('https://raw.githubusercontent.com/emmo-repo/CIF-ontolog
 
 ### Projects
 
-- Demystify ontologies - Internal project at [SINTEF](www.sintef.no)
+- Demystify ontologies - Internal project at [SINTEF](https://www.sintef.no)
 - [MarketPlace](https://www.the-marketplace-project.eu/);
   Grant Agreement No: 760173
   <img src="https://www.the-marketplace-project.eu/content/dam/iwm/the-marketplace-project/images/MARKETPLACE_LOGO_300dpi.png" width="120">
 - [OntoTrans](https://ontotrans.eu/);
   Grant Agreement No: 862136
-  <img src="https://ontotrans.eu/wp-content/uploads/2020/05/ot_logo_rosa_gro%C3%9F.svg" height="50">
+  <img src="https://ontotrans.eu/wp-content/uploads/2020/05/ot_logo_rosa_gro%C3%9F.svg" width="120">
 - [BIG-MAP](https://www.big-map.eu/);
   Grant Agreement No: 957189
-  <img src="https://avatars1.githubusercontent.com/u/72801303?s=200&v=4" height="50">
+  <img src="https://avatars1.githubusercontent.com/u/72801303?s=200&v=4" width="120">
 
 ## License
 
