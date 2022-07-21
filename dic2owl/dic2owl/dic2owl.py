@@ -68,10 +68,13 @@ class Generator:
 
     """
 
+    # CIF_DDL = (
+    #     "https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main/"
+    #     "ontology/cif-ddl.ttl"
+    # )
     CIF_DDL = (
-        "https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main/"
-        "ontology/cif-ddl.ttl"
-    )
+        Path(__file__).resolve().parent.parent.parent / "ontology" / "cif-ddl.ttl"
+    ).as_uri()
 
     # TODO:
     # Should `comments` be replaced with a dict `annotations` for annotating
