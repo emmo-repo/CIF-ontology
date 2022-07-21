@@ -82,6 +82,7 @@ plugins:
 
 nav:
   - Home: index.md
+  - Ontologies: ontology/index.md
   - dic2owl:
     - Overview: dic2owl/index.md
   - License: LICENSE.md
