@@ -68,14 +68,6 @@ class Generator:
 
     """
 
-    # CIF_DDL = (
-    #     "https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main/"
-    #     "ontology/cif-ddl.ttl"
-    # )
-    CIF_DDL = (
-        Path(__file__).resolve().parent.parent.parent / "ontology" / "cif-ddl.ttl"
-    ).as_uri()
-
     # TODO:
     # Should `comments` be replaced with a dict `annotations` for annotating
     # the ontology itself?  If so, we should import Dublin Core.
@@ -95,7 +87,17 @@ class Generator:
         self.onto = self.world.get_ontology(base_iri)
 
         # Load cif-ddl ontology and append it to imported ontologies
-        self.ddl = self.world.get_ontology(self.CIF_DDL).load()
+        cif_ddl_path = (
+            Path(__file__).resolve().parent.parent.parent / "ontology" / "cif-ddl.ttl"
+        )
+        if cif_ddl_path.exists():
+            cif_ddl = cif_ddl_path.as_uri()
+        else:
+            cif_ddl = (
+                "https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main"
+                "/ontology/cif-ddl.ttl"
+            )
+        self.ddl = self.world.get_ontology(cif_ddl).load()
         self.ddl.sync_python_names()
         self.onto.imported_ontologies.append(self.ddl)
 
