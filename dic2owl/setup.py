@@ -15,7 +15,7 @@ from setuptools import find_packages, setup
 
 PACKAGE_DIR = Path(__file__).parent.resolve()
 
-with open(PACKAGE_DIR / "dic2owl/__init__.py", "r", encoding="utf8") as handle:
+with open(PACKAGE_DIR / "dic2owl" / "__init__.py", "r", encoding="utf8") as handle:
     VERSION = AUTHOR = AUTHOR_EMAIL = None
     for line in handle.readlines():
         VERSION_match = re.match(
@@ -42,7 +42,7 @@ with open(PACKAGE_DIR / "dic2owl/__init__.py", "r", encoding="utf8") as handle:
             raise RuntimeError(
                 (
                     f"Could not determine {info} from "
-                    f"{PACKAGE_DIR / 'dic2owl/__init__.py'} !"
+                    f"{PACKAGE_DIR / 'dic2owl' / '__init__.py'} !"
                 )
             )
     VERSION = VERSION.group("version")  # type: ignore

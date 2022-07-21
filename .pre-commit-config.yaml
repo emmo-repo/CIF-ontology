@@ -49,6 +49,13 @@ repos:
     files: ^dic2owl/.*$
     args: [--config-file, dic2owl/pyproject.toml]
 
+- repo: https://github.com/SINTEF/ci-cd
+  rev: e46548040dd6afa0b8204151d7ed988d96252a4b  # frozen: v1
+  hooks:
+  - id: docs-api-reference
+    args: [--package-dir, dic2owl/dic2owl]
+  - id: docs-landing-page
+
 - repo: local
   hooks:
   - id: pylint

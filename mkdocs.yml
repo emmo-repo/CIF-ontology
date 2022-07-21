@@ -1,0 +1,87 @@
+site_name: "CIF Ontology"
+site_description: Documentation for the CIF Ontology
+site_url: https://emmo-repo.github.io/CIF-ontology
+copyright: Copyright &copy; 2022 EMMO Crystallography Task Group
+
+theme:
+  name: material
+  palette:
+    scheme: default
+    primary: green
+    accent: purple
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/library-shelves
+  favicon: assets/images/favicon.png
+  language: en
+  features:
+    - navigation.instant
+    - navigation.top
+
+repo_name: "CIF-ontology"
+repo_url: "https://github.com/emmo-repo/CIF-ontology"
+edit_uri: ""
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/emmo-repo
+      name: "EMMO on GitHub"
+  version:
+    provider: mike
+    default: latest
+
+extra_css:
+  - css/reference.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed
+  - pymdownx.caret
+  - pymdownx.tilde
+  - pymdownx.keys
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang: en
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          options:
+            show_root_heading: false
+            show_root_toc_entry: true
+            show_root_full_path: true
+            show_object_full_path: false
+            show_category_heading: false
+            show_if_no_docstring: false
+            show_source: true
+            show_bases: true
+            group_by_category: true
+            heading_level: 2
+            filters:
+              - "!^_"
+              - "^__init__$"
+              - "!__json_encoder__$"
+              - "!__all__$"
+              - "!__config__$"
+              - "!__str__$"
+              - "!__repr__$"
+            members: null
+            # inherited_members: false
+            docstring_style: google
+  - awesome-pages
+
+nav:
+  - Home: index.md
+  - License: LICENSE.md
+  - ... | api_reference/**
+
+watch:
+  - "dic2owl"

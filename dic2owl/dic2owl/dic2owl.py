@@ -84,7 +84,7 @@ class Generator:
 
         # Create new ontology
         self.world = World()
-        self.onto = self.world.get_ontology(base_iri)
+        self.onto: "Ontology" = self.world.get_ontology(base_iri)
 
         # Load cif-ddl ontology and append it to imported ontologies
         cif_ddl_path = (
