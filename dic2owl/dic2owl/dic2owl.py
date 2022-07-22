@@ -18,8 +18,8 @@ from CifFile import CifDic
 with open(DEVNULL, "w", encoding="utf8") as handle:
     with redirect_stderr(handle):
         from ontopy import World
-        from owlready2 import locstr
 
+from dic2owl._utils import MissingAnnotationError, lang_en
 
 if TYPE_CHECKING:
     from typing import Any, Sequence, Set, Union
@@ -29,32 +29,11 @@ if TYPE_CHECKING:
 
 # Workaround for flaw in EMMO-Python
 # To be removed when EMMO-Python doesn't requires ontologies to import SKOS
-import ontopy.ontology  # pylint: disable=wrong-import-position
+import ontopy.ontology  # pylint: disable=wrong-import-position,wrong-import-order
 
 ontopy.ontology.DEFAULT_LABEL_ANNOTATIONS = [
     "http://www.w3.org/2000/01/rdf-schema#label",
 ]
-
-ONTOLOGY_DIR = Path(__file__).resolve().parent.parent.parent.joinpath("ontology")
-"""The absolute, normalized path to the `ontology` directory in this
-repository"""
-
-
-def lang_en(string: str) -> locstr:
-    """Converted to an English-localized string.
-
-    Parameters:
-        string: The string to be converted.
-
-    Returns:
-        An English-localized string. `locstr` is a `str`-based type.
-
-    """
-    return locstr(string, lang="en")
-
-
-class MissingAnnotationError(Exception):
-    """Raised when using a cif-dictionary annotation not defined in ddl"""
 
 
 # pylint: disable=too-few-public-methods
@@ -97,7 +76,7 @@ class Generator:
                 "https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main"
                 "/ontology/cif-ddl.ttl"
             )
-        self.ddl = self.world.get_ontology(cif_ddl).load()
+        self.ddl: "Ontology" = self.world.get_ontology(cif_ddl).load()
         self.ddl.sync_python_names()
         self.onto.imported_ontologies.append(self.ddl)
 
