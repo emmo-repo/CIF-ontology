@@ -79,6 +79,7 @@ setup(
     extras_require={"dev": DEV},
     entry_points={
         "console_scripts": ["dic2owl = dic2owl.cli:main"],
+        "mkdocs.plugins": ["dic2owl = dic2owl._mkdocs.plugin:OntologyBuildPlugin"],
     },
     keywords="crystallography ontology materials",
     classifiers=[

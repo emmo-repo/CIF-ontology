@@ -57,6 +57,7 @@ repos:
     - --package-dir=dic2owl/dic2owl
     - --unwanted-file=__init__.py
     - --unwanted-file=_utils.py
+    - --unwanted-folder=_mkdocs
   - id: docs-landing-page
     args:
     - --replacement=(LICENSE),(LICENSE.md)

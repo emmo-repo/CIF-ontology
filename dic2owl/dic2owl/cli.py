@@ -66,6 +66,12 @@ def main(argv: list = None) -> None:
             " Turtle file."
         ),
     )
+    parser.add_argument(
+        "--dicversion",
+        type=str,
+        default="0.0.1",
+        help="The generated ontology's version.",
+    )
 
     args = parser.parse_args(argv)
 
@@ -77,4 +83,4 @@ def main(argv: list = None) -> None:
         # downloaded.
         args.dicfile = str(args.dicfile)
 
-    dic2owl_run(dicfile=args.dicfile, ttlfile=args.ttlfile)
+    dic2owl_run(dicfile=args.dicfile, ttlfile=args.ttlfile, version=args.dicversion)

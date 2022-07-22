@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog id="XML Catalog File" prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-    <uri id="Imports Wizard Entry" name="http://emmo.info/emmo/cif-ddl" uri="cif-ddl.ttl"/>
-    <uri id="Imports Wizard Entry" name="http://emmo.info/emmo/cif-core" uri="cif-core.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://emmo.info/CIF-ontology/ddl" uri="ddl.ttl"/>
+    <uri id="Imports Wizard Entry" name="http://emmo.info/CIF-ontology/core" uri="core.ttl"/>
 </catalog>

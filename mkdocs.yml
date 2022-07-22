@@ -79,6 +79,7 @@ plugins:
             # inherited_members: false
             docstring_style: google
   - awesome-pages
+  - dic2owl
 
 nav:
   - Home: index.md
