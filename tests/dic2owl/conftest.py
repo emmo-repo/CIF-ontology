@@ -38,6 +38,7 @@ def clirunner() -> "CLIRunner":
     """Call a CLI"""
     import importlib
     import os
+    import traceback
     from contextlib import redirect_stderr, redirect_stdout
     from subprocess import CalledProcessError, run
     from tempfile import TemporaryDirectory
@@ -130,7 +131,8 @@ def clirunner() -> "CLIRunner":
                 else:
                     pytest.fail(
                         "The CLI call failed when it didn't expect to.\n"
-                        f"STDOUT: {error.stdout}\nSTDERR: {error.stderr}"
+                        f"STDOUT: {error.stdout}\nSTDERR: {error.stderr}\nException: "
+                        f"{traceback.format_exc()}"
                     )
             else:
                 return output
@@ -161,7 +163,8 @@ def clirunner() -> "CLIRunner":
                     if str(exc) != "0":
                         pytest.fail(
                             "The CLI call failed when it didn't expect to.\n"
-                            f"STDOUT: {output.stdout}\nSTDERR: {output.stderr}"
+                            f"STDOUT: {output.stdout}\nSTDERR: {output.stderr}\n"
+                            f"Exception: {traceback.format_exc()}"
                         )
                     return output
                 except Exception:  # pylint: disable=broad-except
@@ -183,7 +186,8 @@ def clirunner() -> "CLIRunner":
                     else:
                         pytest.fail(
                             "The CLI call failed when it didn't expect to.\n"
-                            f"STDOUT: {output.stdout}\nSTDERR: {output.stderr}"
+                            f"STDOUT: {output.stdout}\nSTDERR: {output.stderr}\n"
+                            f"Exception: {traceback.format_exc()}"
                         )
                 else:
                     return output
@@ -215,7 +219,7 @@ def cif_ttl(top_dir: Path) -> str:
 @pytest.fixture(scope="session")
 def base_iri() -> str:
     """Return standard CIF-Core base IRI."""
-    return "http://emmo.info/CIF-ontology/ontology/cif_core#"
+    return "http://emmo.info/CIF-ontology/cif_core_minimized#"
 
 
 @pytest.fixture(scope="session")

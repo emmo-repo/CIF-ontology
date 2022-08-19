@@ -1,122 +1,122 @@
-@prefix : <http://emmo.info/CIF-ontology/ontology/cif_core#> .
-@prefix cif-: <http://emmo.info/emmo/cif-ddl#> .
+@prefix : <http://emmo.info/CIF-ontology/cif_core_minimized#> .
+@prefix ddl: <http://emmo.info/CIF-ontology/ddl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://emmo.info/CIF-ontology/ontology/cif_core> a owl:Ontology ;
-    owl:imports <http://emmo.info/emmo/cif-ddl> .
+<http://emmo.info/CIF-ontology/cif_core_minimized> a owl:Ontology ;
+    owl:imports <http://emmo.info/CIF-ontology/ddl> ;
+    owl:versionIRI <http://emmo.info/CIF-ontology/0.0.1/cif_core_minimized> .
 
 :_diffrn.ambient_environment a owl:Class ;
     :prefLabel "_diffrn.ambient_environment"@en ;
-    cif-:_alias.definition_id "_diffrn_ambient_environment"@en ;
-    cif-:_definition.id "_diffrn.ambient_environment"@en ;
-    cif-:_definition.update "2012-11-26"@en ;
-    cif-:_description.text """
+    ddl:_alias.definition_id "_diffrn_ambient_environment"@en ;
+    ddl:_definition.id "_diffrn.ambient_environment"@en ;
+    ddl:_definition.update "2012-11-26"@en ;
+    ddl:_description.text """
     The gas or liquid environment of the crystal sample, if not air."""@en ;
-    cif-:_description_example.case "['He', 'vacuum', 'mother liquor']"@en ;
-    cif-:_name.category_id "diffrn"@en ;
-    cif-:_name.object_id "ambient_environment"@en ;
-    cif-:_type.container "Single"@en ;
-    cif-:_type.contents "Text"@en ;
-    cif-:_type.purpose "Describe"@en ;
-    cif-:_type.source "Recorded"@en ;
+    ddl:_description_example.case "['He', 'vacuum', 'mother liquor']"@en ;
+    ddl:_name.category_id "diffrn"@en ;
+    ddl:_name.object_id "ambient_environment"@en ;
+    ddl:_type.container "Single"@en ;
+    ddl:_type.contents "Text"@en ;
+    ddl:_type.purpose "Describe"@en ;
+    ddl:_type.source "Recorded"@en ;
     rdfs:subClassOf :DIFFRN,
-        cif-:Describe,
-        cif-:Recorded,
-        cif-:Single,
-        cif-:Text .
+        ddl:Describe,
+        ddl:Recorded,
+        ddl:Single,
+        ddl:Text .
 
 :_diffrn.ambient_pressure a owl:Class ;
     :prefLabel "_diffrn.ambient_pressure"@en ;
-    cif-:_alias.definition_id "_diffrn_ambient_pressure"@en ;
-    cif-:_definition.id "_diffrn.ambient_pressure"@en ;
-    cif-:_definition.update "2012-11-26"@en ;
-    cif-:_description.text """
+    ddl:_alias.definition_id "_diffrn_ambient_pressure"@en ;
+    ddl:_definition.id "_diffrn.ambient_pressure"@en ;
+    ddl:_definition.update "2012-11-26"@en ;
+    ddl:_description.text """
     Mean hydrostatic  pressure at which intensities were measured."""@en ;
-    cif-:_enumeration.range "0.0:"@en ;
-    cif-:_name.category_id "diffrn"@en ;
-    cif-:_name.object_id "ambient_pressure"@en ;
-    cif-:_type.container "Single"@en ;
-    cif-:_type.contents "Real"@en ;
-    cif-:_type.purpose "Measurand"@en ;
-    cif-:_type.source "Recorded"@en ;
-    cif-:_units.code "kilopascals"@en ;
+    ddl:_enumeration.range "0.0:"@en ;
+    ddl:_name.category_id "diffrn"@en ;
+    ddl:_name.object_id "ambient_pressure"@en ;
+    ddl:_type.container "Single"@en ;
+    ddl:_type.contents "Real"@en ;
+    ddl:_type.purpose "Measurand"@en ;
+    ddl:_type.source "Recorded"@en ;
+    ddl:_units.code "kilopascals"@en ;
     rdfs:subClassOf :DIFFRN,
-        cif-:Measurand,
-        cif-:Real,
-        cif-:Recorded,
-        cif-:Single .
+        ddl:Measurand,
+        ddl:Real,
+        ddl:Recorded,
+        ddl:Single .
 
 :_diffrn.ambient_pressure_gt a owl:Class ;
     :prefLabel "_diffrn.ambient_pressure_gt"@en ;
-    cif-:_alias.definition_id "_diffrn_ambient_pressure_gt"@en ;
-    cif-:_definition.id "_diffrn.ambient_pressure_gt"@en ;
-    cif-:_definition.update "2012-12-13"@en ;
-    cif-:_description.text """
+    ddl:_alias.definition_id "_diffrn_ambient_pressure_gt"@en ;
+    ddl:_definition.id "_diffrn.ambient_pressure_gt"@en ;
+    ddl:_definition.update "2012-12-13"@en ;
+    ddl:_description.text """
     Mean hydrostatic pressure above which intensities were measured.
     These items allow for a pressure range to be given.
     _diffrn.ambient_pressure should be used in preference to this
     item when possible."""@en ;
-    cif-:_enumeration.range "0.0:"@en ;
-    cif-:_name.category_id "diffrn"@en ;
-    cif-:_name.object_id "ambient_pressure_gt"@en ;
-    cif-:_type.container "Single"@en ;
-    cif-:_type.contents "Real"@en ;
-    cif-:_type.purpose "Number"@en ;
-    cif-:_type.source "Recorded"@en ;
-    cif-:_units.code "kilopascals"@en ;
+    ddl:_enumeration.range "0.0:"@en ;
+    ddl:_name.category_id "diffrn"@en ;
+    ddl:_name.object_id "ambient_pressure_gt"@en ;
+    ddl:_type.container "Single"@en ;
+    ddl:_type.contents "Real"@en ;
+    ddl:_type.purpose "Number"@en ;
+    ddl:_type.source "Recorded"@en ;
+    ddl:_units.code "kilopascals"@en ;
     rdfs:subClassOf :DIFFRN,
-        cif-:Number,
-        cif-:Real,
-        cif-:Recorded,
-        cif-:Single .
+        ddl:Number,
+        ddl:Real,
+        ddl:Recorded,
+        ddl:Single .
 
 :_diffrn.ambient_pressure_lt a owl:Class ;
     :prefLabel "_diffrn.ambient_pressure_lt"@en ;
-    cif-:_alias.definition_id "_diffrn_ambient_pressure_lt"@en ;
-    cif-:_definition.id "_diffrn.ambient_pressure_lt"@en ;
-    cif-:_definition.update "2012-12-13"@en ;
-    cif-:_description.text """
+    ddl:_alias.definition_id "_diffrn_ambient_pressure_lt"@en ;
+    ddl:_definition.id "_diffrn.ambient_pressure_lt"@en ;
+    ddl:_definition.update "2012-12-13"@en ;
+    ddl:_description.text """
     Mean hydrostatic pressure below which intensities were measured.
     These items allow for a pressure range to be given.
     _diffrn.ambient_pressure should be used in preference to this
     item when possible."""@en ;
-    cif-:_enumeration.range "0.0:"@en ;
-    cif-:_name.category_id "diffrn"@en ;
-    cif-:_name.object_id "ambient_pressure_lt"@en ;
-    cif-:_type.container "Single"@en ;
-    cif-:_type.contents "Real"@en ;
-    cif-:_type.purpose "Number"@en ;
-    cif-:_type.source "Recorded"@en ;
-    cif-:_units.code "kilopascals"@en ;
+    ddl:_enumeration.range "0.0:"@en ;
+    ddl:_name.category_id "diffrn"@en ;
+    ddl:_name.object_id "ambient_pressure_lt"@en ;
+    ddl:_type.container "Single"@en ;
+    ddl:_type.contents "Real"@en ;
+    ddl:_type.purpose "Number"@en ;
+    ddl:_type.source "Recorded"@en ;
+    ddl:_units.code "kilopascals"@en ;
     rdfs:subClassOf :DIFFRN,
-        cif-:Number,
-        cif-:Real,
-        cif-:Recorded,
-        cif-:Single .
+        ddl:Number,
+        ddl:Real,
+        ddl:Recorded,
+        ddl:Single .
 
 :_diffrn.ambient_pressure_su a owl:Class ;
     :prefLabel "_diffrn.ambient_pressure_su"@en ;
-    cif-:_alias.definition_id "['_diffrn_ambient_pressure_su', '_diffrn.ambient_pressure_esd']"@en ;
-    cif-:_definition.id "_diffrn.ambient_pressure_su"@en ;
-    cif-:_definition.update "2021-03-03"@en ;
-    cif-:_description.text """
+    ddl:_alias.definition_id "['_diffrn_ambient_pressure_su', '_diffrn.ambient_pressure_esd']"@en ;
+    ddl:_definition.id "_diffrn.ambient_pressure_su"@en ;
+    ddl:_definition.update "2021-03-03"@en ;
+    ddl:_description.text """
     Standard uncertainty of the mean hydrostatic pressure
     at which intensities were measured."""@en ;
-    cif-:_name.category_id "diffrn"@en ;
-    cif-:_name.linked_item_id "_diffrn.ambient_pressure"@en ;
-    cif-:_name.object_id "ambient_pressure_su"@en ;
-    cif-:_type.container "Single"@en ;
-    cif-:_type.contents "Real"@en ;
-    cif-:_type.purpose "SU"@en ;
-    cif-:_type.source "Recorded"@en ;
-    cif-:_units.code "kilopascals"@en ;
+    ddl:_name.category_id "diffrn"@en ;
+    ddl:_name.linked_item_id "_diffrn.ambient_pressure"@en ;
+    ddl:_name.object_id "ambient_pressure_su"@en ;
+    ddl:_type.container "Single"@en ;
+    ddl:_type.contents "Real"@en ;
+    ddl:_type.purpose "SU"@en ;
+    ddl:_type.source "Recorded"@en ;
+    ddl:_units.code "kilopascals"@en ;
     rdfs:subClassOf :DIFFRN,
-        cif-:Real,
-        cif-:Recorded,
-        cif-:SU,
-        cif-:Single .
+        ddl:Real,
+        ddl:Recorded,
+        ddl:SU,
+        ddl:Single .
 
 :prefLabel a owl:AnnotationProperty ;
     :prefLabel "prefLabel"@en ;
@@ -124,53 +124,53 @@
 
 :CIF_CORE a owl:Class ;
     :prefLabel "CIF_CORE"@en ;
-    cif-:_definition.class "Head"@en ;
-    cif-:_definition.id "CIF_CORE"@en ;
-    cif-:_definition.scope "Category"@en ;
-    cif-:_definition.update "2014-06-18"@en ;
-    cif-:_description.text """
+    ddl:_definition.class "Head"@en ;
+    ddl:_definition.id "CIF_CORE"@en ;
+    ddl:_definition.scope "Category"@en ;
+    ddl:_definition.update "2014-06-18"@en ;
+    ddl:_description.text """
     The CIF_CORE group contains the definitions of data items that
     are common to all domains of crystallographic studies."""@en ;
-    cif-:_name.category_id "CORE_DIC"@en ;
-    cif-:_name.object_id "CIF_CORE"@en ;
+    ddl:_name.category_id "CORE_DIC"@en ;
+    ddl:_name.object_id "CIF_CORE"@en ;
     rdfs:subClassOf :CORE_DIC .
 
 :CORE_DIC a owl:Class ;
     :prefLabel "CORE_DIC"@en ;
-    cif-:_description.text """
+    ddl:_description.text """
     The CIF_CORE dictionary records all the CORE data items defined
     and used with in the Crystallographic Information Framework (CIF)."""@en ;
-    cif-:_dictionary.class "Instance"@en ;
-    cif-:_dictionary.date "2021-08-18"@en ;
-    cif-:_dictionary.ddl_conformance "4.0.1"@en ;
-    cif-:_dictionary.namespace "CifCore"@en ;
-    cif-:_dictionary.title "CORE_DIC"@en ;
-    cif-:_dictionary.uri "https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic"@en ;
-    cif-:_dictionary.version "3.1.0"@en ;
-    rdfs:subClassOf cif-:DictionaryDefinedItem .
+    ddl:_dictionary.class "Instance"@en ;
+    ddl:_dictionary.date "2021-08-18"@en ;
+    ddl:_dictionary.ddl_conformance "4.0.1"@en ;
+    ddl:_dictionary.namespace "CifCore"@en ;
+    ddl:_dictionary.title "CORE_DIC"@en ;
+    ddl:_dictionary.uri "https://raw.githubusercontent.com/COMCIFS/cif_core/master/cif_core.dic"@en ;
+    ddl:_dictionary.version "3.1.0"@en ;
+    rdfs:subClassOf ddl:DictionaryDefinedItem .
 
 :DIFFRACTION a owl:Class ;
     :prefLabel "DIFFRACTION"@en ;
-    cif-:_definition.class "Set"@en ;
-    cif-:_definition.id "DIFFRACTION"@en ;
-    cif-:_definition.scope "Category"@en ;
-    cif-:_definition.update "2012-11-26"@en ;
-    cif-:_description.text """
+    ddl:_definition.class "Set"@en ;
+    ddl:_definition.id "DIFFRACTION"@en ;
+    ddl:_definition.scope "Category"@en ;
+    ddl:_definition.update "2012-11-26"@en ;
+    ddl:_description.text """
     The DICTIONARY group encompassing the CORE DIFFRACTION data items defined
     and used with in the Crystallographic Information Framework (CIF)."""@en ;
-    cif-:_name.category_id "CIF_CORE"@en ;
-    cif-:_name.object_id "DIFFRACTION"@en ;
+    ddl:_name.category_id "CIF_CORE"@en ;
+    ddl:_name.object_id "DIFFRACTION"@en ;
     rdfs:subClassOf :CIF_CORE .
 
 :DIFFRN a owl:Class ;
     :prefLabel "DIFFRN"@en ;
-    cif-:_definition.class "Set"@en ;
-    cif-:_definition.id "DIFFRN"@en ;
-    cif-:_definition.scope "Category"@en ;
-    cif-:_definition.update "2012-12-13"@en ;
-    cif-:_description.text """
+    ddl:_definition.class "Set"@en ;
+    ddl:_definition.id "DIFFRN"@en ;
+    ddl:_definition.scope "Category"@en ;
+    ddl:_definition.update "2012-12-13"@en ;
+    ddl:_description.text """
     The CATEGORY of data items used to describe the diffraction experiment."""@en ;
-    cif-:_name.category_id "DIFFRACTION"@en ;
-    cif-:_name.object_id "DIFFRN"@en ;
+    ddl:_name.category_id "DIFFRACTION"@en ;
+    ddl:_name.object_id "DIFFRN"@en ;
     rdfs:subClassOf :DIFFRACTION .
 

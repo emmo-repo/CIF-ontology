@@ -8,7 +8,7 @@ import pytest
 if TYPE_CHECKING:
     from typing import Callable
 
-    from .conftest import CLIRunner
+    from .conftest import CLIRunner, CompletedProcess
 
 
 @pytest.mark.parametrize("use_subprocess", [True, False])
@@ -35,9 +35,15 @@ def test_local_file(
     """
     from tempfile import TemporaryDirectory
 
+    from rdflib.graph import Graph
+
     with TemporaryDirectory() as tmpdir:
-        options = [str(top_dir / "tests/dic2owl/static/cif_core_minimized.dic")]
-        output = clirunner(options, run_dir=tmpdir, use_subprocess=use_subprocess)
+        options = [
+            str(top_dir / "tests" / "dic2owl" / "static" / "cif_core_minimized.dic")
+        ]
+        output: "CompletedProcess" = clirunner(
+            options, run_dir=tmpdir, use_subprocess=use_subprocess
+        )
 
         assert (
             "downloading" in output.stdout
@@ -47,7 +53,14 @@ def test_local_file(
             Path(tmpdir) / "cif_core_minimized.ttl"
         )
 
-        assert generated_ttl == cif_ttl
+        generated = Graph()
+        generated.parse(data=generated_ttl)
+
+        cif = Graph()
+        cif.parse(data=cif_ttl)
+
+        for triple in generated:
+            assert triple in cif, triple
 
         content = [_ for _ in Path(tmpdir).iterdir() if _.is_file()]
         assert len(content) == 4, (
@@ -72,22 +85,31 @@ def test_output(
     """
     from tempfile import TemporaryDirectory
 
+    from rdflib.graph import Graph
+
     with TemporaryDirectory() as tmpdir:
-        out_ttl = f"{tmpdir}/test.ttl"
+        out_ttl = Path(tmpdir) / "cif_core_minimized.ttl"
         options = [
             "--output",
-            out_ttl,
-            str(top_dir / "tests/dic2owl/static/cif_core_minimized.dic"),
+            str(out_ttl),
+            str(top_dir / "tests" / "dic2owl" / "static" / "cif_core_minimized.dic"),
         ]
-        output = clirunner(options, use_subprocess=use_subprocess)
+        output: "CompletedProcess" = clirunner(options, use_subprocess=use_subprocess)
 
         assert (
             "downloading" in output.stdout
         ), f"STDOUT: {output.stdout}\nSTDERR: {output.stderr}"
 
-        generated_ttl = create_location_free_ttl(Path(out_ttl))
+        generated_ttl = create_location_free_ttl(out_ttl)
 
-        assert generated_ttl == cif_ttl
+        generated = Graph()
+        generated.parse(data=generated_ttl)
+
+        cif = Graph()
+        cif.parse(data=cif_ttl)
+
+        for triple in generated:
+            assert triple in cif, triple
 
         content = [_ for _ in Path(tmpdir).iterdir() if _.is_file()]
         assert len(content) == 1, (

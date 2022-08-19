@@ -33,6 +33,7 @@ def sample_generator(
             dicfile=cif_dic_path,
             base_iri=base_iri,
             comments=sample_generator_comments if comments is None else comments,
+            version="0.0.1",
         )
 
     return _sample_generator
@@ -53,6 +54,7 @@ def test_initialization(
         dicfile=cif_dic_path,
         base_iri=base_iri,
         comments=sample_generator_comments,
+        version="0.0.1",
     )
 
     assert generator
@@ -71,6 +73,8 @@ def test_generate(
     """Test the `generate()` method."""
     from tempfile import NamedTemporaryFile
 
+    from rdflib.graph import Graph
+
     generator = sample_generator(None)
     generated_ontology = generator.generate()
 
@@ -88,4 +92,11 @@ def test_generate(
 
         generated_ttl = create_location_free_ttl(Path(output_turtle.name))
 
-        assert generated_ttl == cif_ttl
+        generated = Graph()
+        generated.parse(data=generated_ttl)
+
+        cif = Graph()
+        cif.parse(data=cif_ttl)
+
+        for triple in generated:
+            assert triple in cif, triple

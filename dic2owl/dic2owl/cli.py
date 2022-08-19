@@ -5,6 +5,7 @@ The `dic2owl` command line interface (CLI) is an easy way of running the
 ontology-generation tool for CIF `.dic`-files.
 """
 import argparse
+import sys
 
 # import logging
 from pathlib import Path
@@ -73,7 +74,11 @@ def main(argv: list = None) -> None:
         help="The generated ontology's version.",
     )
 
-    args = parser.parse_args(argv)
+    try:
+        args = parser.parse_args(argv)
+    except Exception as exc:
+        print(argv, file=sys.stderr)
+        raise exc
 
     if args.ttlfile is None:
         args.ttlfile = args.dicfile.resolve().name[: -len(args.dicfile.suffix)] + ".ttl"
