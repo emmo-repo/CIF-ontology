@@ -88,6 +88,3 @@ nav:
     - Overview: dic2owl/index.md
   - License: LICENSE.md
   - ... | api_reference/**
-
-watch:
-  - "dic2owl"

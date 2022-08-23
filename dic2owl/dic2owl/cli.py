@@ -1,5 +1,5 @@
 """
-# `dic2owl` CLI
+# dic2owl CLI
 
 The `dic2owl` command line interface (CLI) is an easy way of running the
 ontology-generation tool for CIF `.dic`-files.
