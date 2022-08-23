@@ -81,6 +81,8 @@ plugins:
   - awesome-pages
   - dic2owl:
       create_dirs: true
+      ontology_dir: ontology
+      publish_dir: docs/ontology/versions
 
 nav:
   - Home: index.md

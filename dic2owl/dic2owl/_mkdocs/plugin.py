@@ -55,18 +55,24 @@ class OntologyBuildPlugin(BasePlugin):
         ontology_dir: Path = root_dir / self.config["ontology_dir"]
         publish_dir: Path = root_dir / self.config["publish_dir"]
 
-        if not ontology_dir.exists() or not publish_dir.exists():
-            if self.config["create_dirs"]:
-                ontology_dir.mkdir(parents=True, exist_ok=True)
-                publish_dir.mkdir(parents=True, exist_ok=True)
-            else:
-                raise PluginError(
-                    "The given 'ontology_dir' and 'publish_dir' must exist. "
-                    "Otherwise, 'create_dirs' should be 'True'."
-                )
+        if not ontology_dir.exists():
+            raise PluginError("The given 'ontology_dir' must exist.")
+
+        if not publish_dir.exists() and self.config["create_dirs"]:
+            publish_dir.mkdir(parents=True, exist_ok=True)
+        else:
+            raise PluginError(
+                "The given 'publish_dir' must exist. "
+                "Otherwise, 'create_dirs' should be 'True'."
+            )
 
         ontology_files = list(ontology_dir.glob("*.ttl"))
-        catalog_file = sorted(ontology_dir.glob("catalog-*.xml"), reverse=True)[0]
+        try:
+            catalog_file = sorted(ontology_dir.glob("catalog-*.xml"), reverse=True)[0]
+        except IndexError as exc:
+            raise PluginError(
+                "Could not find a catalog file in the 'ontology_dir'."
+            ) from exc
 
         LOGGER.debug("Building ontologies:")
         for ontology_file in ontology_files:
