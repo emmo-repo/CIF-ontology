@@ -3,6 +3,7 @@ old
 *.egg*
 __pycache__
 *.pyc
+dist/
 
 # Testing
 .*_cache/

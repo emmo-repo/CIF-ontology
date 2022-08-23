@@ -7,12 +7,28 @@ jobs:
     name: External
     uses: SINTEF/ci-cd/.github/workflows/ci_tests.yml@v1
     with:
-      run_pre-commit: true
+      # general setup
       python_version: "3.7"
       install_extras: "/dic2owl[dev]"
-      skip_pre-commit_hooks: "pylint,mypy,black,bandit,requirements-txt-fixer"
-      # Don't run any other basic test
       run_pylint: false
       run_safety: false
       run_build_package: false
-      run_build_docs: false
+
+      # pre-commit
+      run_pre-commit: true
+      skip_pre-commit_hooks: "pylint,mypy,black,bandit,requirements-txt-fixer"
+
+      # build docs
+      run_build_docs: true
+      package_dir: "dic2owl/dic2owl"
+      exclude_dirs: |
+        __pycache__
+        _mkdocs
+      exclude_files: |
+        __init__.py
+        _utils.py
+      landing_page_replacements: |
+        (LICENSE),(LICENSE.md)
+        (dic2owl/README.md),(dic2owl/index.md)
+        (ontology),(https://github.com/emmo-repo/CIF-ontology/tree/main/ontology)
+        (ontology/catalog-v001.xml),(https://github.com/emmo-repo/CIF-ontology/blob/main/ontology/catalog-v001.xml)

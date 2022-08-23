@@ -15,7 +15,6 @@ jobs:
       # general setup
       python_version: "3.7"
       install_extras: "/dic2owl[dev]"
-      run_build_package: false
       run_build_docs: false
 
       # pre-commit
@@ -38,6 +37,10 @@ jobs:
         --ignore=44716
         --ignore=44717
         --ignore=48547
+
+      # build dist
+      run_build_package: true
+      build_cmd: python -m build -o dist dic2owl
 
   dic2owl-test:
     runs-on: ubuntu-latest
