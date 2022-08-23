@@ -9,7 +9,7 @@ jobs:
     with:
       # general setup
       python_version: "3.7"
-      install_extras: "/dic2owl[dev]"
+      install_extras: "/dic2owl[dev] && -r requirements_docs.txt"
       run_pylint: false
       run_safety: false
       run_build_package: false
