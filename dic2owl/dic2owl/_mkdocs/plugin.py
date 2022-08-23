@@ -40,7 +40,7 @@ class OntologyBuildPlugin(BasePlugin):
         ("create_dirs", Type(bool, default=False)),
     )
 
-    def on_pre_build(  # pylint: disable=too-many-locals
+    def on_pre_build(  # pylint: disable=too-many-locals,too-many-branches
         self, config: "Config"  # pylint: disable=unused-argument
     ) -> None:
         """Build versioned ontologies.
@@ -52,19 +52,26 @@ class OntologyBuildPlugin(BasePlugin):
 
         """
         # root_dir = Path(__file__).resolve().parent.parent.parent.parent
-        ontology_dir = Path(self.config["ontology_dir"])
-        publish_dir = Path(self.config["publish_dir"])
+        ontology_dir = Path(self.config["ontology_dir"]).resolve()
+        publish_dir = Path(self.config["publish_dir"]).resolve()
+
+        LOGGER.debug(
+            "Resolved config values:\n  ontology_dir=%s\n  publish_dir=%s",
+            ontology_dir,
+            publish_dir,
+        )
 
         if not ontology_dir.exists():
             raise PluginError("The given 'ontology_dir' must exist.")
 
-        if not publish_dir.exists() and self.config["create_dirs"]:
-            publish_dir.mkdir(parents=True, exist_ok=True)
-        else:
-            raise PluginError(
-                "The given 'publish_dir' must exist. "
-                "Otherwise, 'create_dirs' should be 'True'."
-            )
+        if not publish_dir.exists():
+            if self.config["create_dirs"]:
+                publish_dir.mkdir(parents=True, exist_ok=True)
+            else:
+                raise PluginError(
+                    "The given 'publish_dir' must exist. "
+                    "Otherwise, 'create_dirs' should be 'True'."
+                )
 
         ontology_files = list(ontology_dir.glob("*.ttl"))
         try:
