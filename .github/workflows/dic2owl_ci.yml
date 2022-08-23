@@ -40,6 +40,7 @@ jobs:
 
       # build dist
       run_build_package: true
+      build_libs: build
       build_cmd: python -m build -o dist dic2owl
 
   dic2owl-test:
