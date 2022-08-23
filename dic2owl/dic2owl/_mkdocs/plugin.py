@@ -51,9 +51,9 @@ class OntologyBuildPlugin(BasePlugin):
             config: The MkDocs Config object.
 
         """
-        root_dir = Path(__file__).resolve().parent.parent.parent.parent
-        ontology_dir: Path = root_dir / self.config["ontology_dir"]
-        publish_dir: Path = root_dir / self.config["publish_dir"]
+        # root_dir = Path(__file__).resolve().parent.parent.parent.parent
+        ontology_dir = Path(self.config["ontology_dir"])
+        publish_dir = Path(self.config["publish_dir"])
 
         if not ontology_dir.exists():
             raise PluginError("The given 'ontology_dir' must exist.")
