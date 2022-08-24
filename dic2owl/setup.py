@@ -70,7 +70,7 @@ setup(
     author_email=AUTHOR_EMAIL,
     url="https://github.com/emmo-repo/CIF-ontology",
     description="Ontologize CIF dictionaries (`.dic`) using OWL.",
-    long_description=(PACKAGE_DIR / "README.md").read_text(),
+    long_description=(PACKAGE_DIR / "README.md").read_text(encoding="utf8"),
     long_description_content_type="text/markdown",
     packages=find_packages(),
     include_package_data=True,

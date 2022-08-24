@@ -1,3 +1,3 @@
 # cli
 
-::: dic2owl.cli
+::: dic2owl.dic2owl.cli
