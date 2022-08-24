@@ -50,7 +50,7 @@ repos:
     args: [--config-file, dic2owl/pyproject.toml]
 
 - repo: https://github.com/SINTEF/ci-cd
-  rev: ee61761e58ffe011b8161a9b5de670fa6999a976  # frozen: v1
+  rev: 62fa434c2dec3acdc53c0ed336ab2827f7381e52  # frozen: v1
   hooks:
   - id: docs-api-reference
     args:
@@ -59,6 +59,7 @@ repos:
     - --unwanted-file=_utils.py
     - --unwanted-folder=_mkdocs
     - --unwanted-folder=__pycache__
+    - --relative
   - id: docs-landing-page
     args:
     - --replacement=(LICENSE),(LICENSE.md)

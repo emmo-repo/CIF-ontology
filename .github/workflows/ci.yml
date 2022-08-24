@@ -32,4 +32,4 @@ jobs:
         (dic2owl/README.md),(dic2owl/index.md)
         (ontology),(https://github.com/emmo-repo/CIF-ontology/tree/main/ontology)
         (ontology/catalog-v001.xml),(https://github.com/emmo-repo/CIF-ontology/blob/main/ontology/catalog-v001.xml)
-      debug: true
+      relative: true

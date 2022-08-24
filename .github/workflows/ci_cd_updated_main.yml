@@ -14,5 +14,6 @@ jobs:
       git_email: "TEAM4.0@SINTEF.no"
       permanent_dependencies_branch: ci/dependabot-updates
       default_repo_branch: main
+      relative: true
     secrets:
       PAT: ${{ secrets.RELEASE_PAT }}
