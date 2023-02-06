@@ -10,7 +10,7 @@ on:
 jobs:
   dic2owl-basic:
     name: External
-    uses: SINTEF/ci-cd/.github/workflows/ci_tests.yml@v1
+    uses: SINTEF/ci-cd/.github/workflows/ci_tests.yml@v2.0.0
     with:
       # general setup
       python_version: "3.7"

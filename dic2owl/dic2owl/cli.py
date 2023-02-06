@@ -9,13 +9,18 @@ import sys
 
 # import logging
 from pathlib import Path
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:  # pragma: no cover
+    from typing import List, Optional
+
 
 # LOGGING_LEVELS = [
 #     logging.getLevelName(level).lower() for level in range(0, 51, 10)
 # ]
 
 
-def main(argv: list = None) -> None:
+def main(argv: "Optional[List[str]]" = None) -> None:
     """Ontologize CIF dictionaries (`.dic`) using OWL.
 
     Produce an OWL Turtle (`.ttl`) file from a CIF dictionary (`.dic`) file.
