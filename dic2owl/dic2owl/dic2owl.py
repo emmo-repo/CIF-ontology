@@ -211,7 +211,6 @@ class Generator:
 
         """
         for annotation_name, value in item.items():
-
             # Add new annotation to generated ontology
             if annotation_name not in self.ddl:
                 raise MissingAnnotationError(annotation_name)
