@@ -36,10 +36,11 @@ if TYPE_CHECKING:
 @pytest.fixture(scope="session")
 def clirunner() -> "CLIRunner":
     """Call a CLI"""
-    from contextlib import redirect_stderr, redirect_stdout
     import importlib
     import os
-    from subprocess import run, CalledProcessError
+    import traceback
+    from contextlib import redirect_stderr, redirect_stdout
+    from subprocess import CalledProcessError, run
     from tempfile import TemporaryDirectory
 
     CLIOutput = namedtuple("CLIOutput", ["stdout", "stderr"])
@@ -117,10 +118,7 @@ def clirunner() -> "CLIRunner":
                     )
             except CalledProcessError as error:
                 if expected_error:
-                    if (
-                        expected_error in error.stdout
-                        or expected_error in error.stderr
-                    ):
+                    if expected_error in error.stdout or expected_error in error.stderr:
                         # Expected error, found expected sub-string as well.
                         return error
 
@@ -133,7 +131,8 @@ def clirunner() -> "CLIRunner":
                 else:
                     pytest.fail(
                         "The CLI call failed when it didn't expect to.\n"
-                        f"STDOUT: {error.stdout}\nSTDERR: {error.stderr}"
+                        f"STDOUT: {error.stdout}\nSTDERR: {error.stderr}\nException: "
+                        f"{traceback.format_exc()}"
                     )
             else:
                 return output
@@ -158,23 +157,18 @@ def clirunner() -> "CLIRunner":
                     ) as stderr:
                         with redirect_stdout(stdout), redirect_stderr(stderr):
                             cli_name.main(options if options else None)
-                    output = CLIOutput(
-                        stdout_path.read_text(), stderr_path.read_text()
-                    )
+                    output = CLIOutput(stdout_path.read_text(), stderr_path.read_text())
                 except SystemExit as exc:
-                    output = CLIOutput(
-                        stdout_path.read_text(), stderr_path.read_text()
-                    )
+                    output = CLIOutput(stdout_path.read_text(), stderr_path.read_text())
                     if str(exc) != "0":
                         pytest.fail(
                             "The CLI call failed when it didn't expect to.\n"
-                            f"STDOUT: {output.stdout}\nSTDERR: {output.stderr}"
+                            f"STDOUT: {output.stdout}\nSTDERR: {output.stderr}\n"
+                            f"Exception: {traceback.format_exc()}"
                         )
                     return output
                 except Exception:  # pylint: disable=broad-except
-                    output = CLIOutput(
-                        stdout_path.read_text(), stderr_path.read_text()
-                    )
+                    output = CLIOutput(stdout_path.read_text(), stderr_path.read_text())
                     if expected_error:
                         if (
                             expected_error in output.stdout
@@ -192,7 +186,8 @@ def clirunner() -> "CLIRunner":
                     else:
                         pytest.fail(
                             "The CLI call failed when it didn't expect to.\n"
-                            f"STDOUT: {output.stdout}\nSTDERR: {output.stderr}"
+                            f"STDOUT: {output.stdout}\nSTDERR: {output.stderr}\n"
+                            f"Exception: {traceback.format_exc()}"
                         )
                 else:
                     return output
@@ -218,15 +213,13 @@ def cif_ttl(top_dir: Path) -> str:
     NOTE: The comment conerning the file location has been removed manually
         from this file.
     """
-    return (
-        top_dir / "tests/dic2owl/static/cif_core_minimized.ttl"
-    ).read_text()
+    return (top_dir / "tests/dic2owl/static/cif_core_minimized.ttl").read_text()
 
 
 @pytest.fixture(scope="session")
 def base_iri() -> str:
     """Return standard CIF-Core base IRI."""
-    return "http://emmo.info/CIF-ontology/ontology/cif_core#"
+    return "http://emmo.info/CIF-ontology/cif_core_minimized#"
 
 
 @pytest.fixture(scope="session")

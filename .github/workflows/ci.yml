@@ -4,22 +4,32 @@ on: [push]
 
 jobs:
   pre-commit-basic:
-    runs-on: ubuntu-latest
+    name: External
+    uses: SINTEF/ci-cd/.github/workflows/ci_tests.yml@v2.0.0
+    with:
+      # general setup
+      python_version: "3.7"
+      install_extras: "/dic2owl[dev] && pip install -U --upgrade-strategy=eager -r requirements_docs.txt"
+      run_pylint: false
+      run_safety: false
+      run_build_package: false
 
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      # pre-commit
+      run_pre-commit: true
+      skip_pre-commit_hooks: "pylint,mypy,black,bandit,requirements-txt-fixer"
 
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.7
-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -U setuptools wheel
-        pip install pre-commit
-
-    - name: Run pre-commit
-      run: SKIP=pylint,mypy,black,bandit,requirements-txt-fixer pre-commit run --all-files
+      # build docs
+      run_build_docs: true
+      package_dir: "dic2owl/dic2owl"
+      exclude_dirs: |
+        __pycache__
+        _mkdocs
+      exclude_files: |
+        __init__.py
+        _utils.py
+      landing_page_replacements: |
+        (LICENSE),(LICENSE.md)
+        (dic2owl/README.md),(dic2owl/index.md)
+        (ontology),(https://github.com/emmo-repo/CIF-ontology/tree/main/ontology)
+        (ontology/catalog-v001.xml),(https://github.com/emmo-repo/CIF-ontology/blob/main/ontology/catalog-v001.xml)
+      relative: true

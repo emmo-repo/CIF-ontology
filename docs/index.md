@@ -25,14 +25,14 @@ See the following table for version compatibilies:
 
 ## Generator tool (`dic2owl`)
 
-This repository contains both ontologies (under [`/ontology`](ontology)) and the `dic2owl` generator tool (under [`/dic2owl`](dic2owl)), written in Python.
+This repository contains both ontologies (under [`/ontology`](https://github.com/emmo-repo/CIF-ontology/tree/main/ontology)) and the `dic2owl` generator tool (under [`/dic2owl`](dic2owl)), written in Python.
 
-Go to the [README](dic2owl/README.md) of `dic2owl` to read more about the generator tool.
+Go to the [README](dic2owl/index.md) of `dic2owl` to read more about the generator tool.
 
 ## Obtaining CIF-ontology
 
 This ontology build on EMMO-1.0.0-beta.
-The correct path to the inferred verion 'emmo-inferred' is specified in the catalog file, [`catalog-v001.xml`](ontology/catalog-v001.xml).
+The correct path to the inferred verion 'emmo-inferred' is specified in the catalog file, [`catalog-v001.xml`](https://github.com/emmo-repo/CIF-ontology/blob/main/ontology/catalog-v001.xml).
 
 The domain ontology is obtained with:
 
@@ -84,7 +84,7 @@ cif_onto = get_ontology('https://raw.githubusercontent.com/emmo-repo/CIF-ontolog
 ## License
 
 The CIF ontology is released under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode) license (CC BY 4.0).
-See also the [LICENSE](LICENSE) file.
+See also the [LICENSE](LICENSE.md) file.
 
 [1]: https://github.com/emmo-repo/EMMO
 [2]: https://www.iucr.org/__data/iucr/cifdic_html/1/cif_core.dic/index.html

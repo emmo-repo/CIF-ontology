@@ -8,15 +8,14 @@ Together with the `dic2owl` package, the CLI tool with the same name will be
 installed.
 To find out more, run `dic2owl --help` after a successful installation.
 """
-from pathlib import Path
 import re
+from pathlib import Path
 
-from setuptools import setup, find_packages
-
+from setuptools import find_packages, setup
 
 PACKAGE_DIR = Path(__file__).parent.resolve()
 
-with open(PACKAGE_DIR / "dic2owl/__init__.py", "r") as handle:
+with open(PACKAGE_DIR / "dic2owl" / "__init__.py", "r", encoding="utf8") as handle:
     VERSION = AUTHOR = AUTHOR_EMAIL = None
     for line in handle.readlines():
         VERSION_match = re.match(
@@ -43,21 +42,21 @@ with open(PACKAGE_DIR / "dic2owl/__init__.py", "r") as handle:
             raise RuntimeError(
                 (
                     f"Could not determine {info} from "
-                    f"{PACKAGE_DIR / 'dic2owl/__init__.py'} !"
+                    f"{PACKAGE_DIR / 'dic2owl' / '__init__.py'} !"
                 )
             )
     VERSION = VERSION.group("version")  # type: ignore
     AUTHOR = AUTHOR.group("author")  # type: ignore
     AUTHOR_EMAIL = AUTHOR_EMAIL.group("email")  # type: ignore
 
-with open(PACKAGE_DIR / "requirements.txt", "r") as handle:
+with open(PACKAGE_DIR / "requirements.txt", "r", encoding="utf8") as handle:
     BASE = [
         f"{_.strip()}"
         for _ in handle.readlines()
         if not _.startswith("#") and "git+" not in _
     ]
 
-with open(PACKAGE_DIR / "requirements_dev.txt", "r") as handle:
+with open(PACKAGE_DIR / "requirements_dev.txt", "r", encoding="utf8") as handle:
     DEV = [
         f"{_.strip()}"
         for _ in handle.readlines()
@@ -71,7 +70,7 @@ setup(
     author_email=AUTHOR_EMAIL,
     url="https://github.com/emmo-repo/CIF-ontology",
     description="Ontologize CIF dictionaries (`.dic`) using OWL.",
-    long_description=(PACKAGE_DIR / "README.md").read_text(),
+    long_description=(PACKAGE_DIR / "README.md").read_text(encoding="utf8"),
     long_description_content_type="text/markdown",
     packages=find_packages(),
     include_package_data=True,
@@ -80,6 +79,7 @@ setup(
     extras_require={"dev": DEV},
     entry_points={
         "console_scripts": ["dic2owl = dic2owl.cli:main"],
+        "mkdocs.plugins": ["dic2owl = dic2owl._mkdocs.plugin:OntologyBuildPlugin"],
     },
     keywords="crystallography ontology materials",
     classifiers=[

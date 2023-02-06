@@ -3,12 +3,19 @@ old
 *.egg*
 __pycache__
 *.pyc
+dist/
 
-.mypy*
+# Testing
+.*_cache/
 .coverage
 
 *.dic
 *.cif
 
+# Package test data
 !test-cif/**/*.cif
 !tests/**/*.dic
+
+# Documentation
+site/
+docs/ontology/versions/

@@ -1,0 +1,1011 @@
+@prefix : <http://emmo.info/CIF-ontology/ddl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://emmo.info/CIF-ontology/ddl> .
+
+<http://emmo.info/CIF-ontology/ddl> rdf:type owl:Ontology ;
+                                 rdfs:comment "Avoid the Block to Loop to Packet to Value parthood by simply declaring a Loop as a singe list of Values (one row)." ,
+                                              "Drop Source and Purpose classes, since they are suggested and not mandatory."@en ;
+                                 owl:versionIRI <http://emmo.info/CIF-ontology/0.1.0/ddl> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://emmo.info/CIF-ontology/ddl#ALIAS
+:ALIAS rdf:type owl:AnnotationProperty ;
+       :_definition.class "Loop"@en ;
+       :_definition.id "ALIAS"@en ;
+       :_definition.scope "Category"@en ;
+       :_definition.update "2013-09-08"@en ;
+       :_description.text "The attributes used to specify the aliased names of definitions."@en ;
+       :_name.category_id "ATTRIBUTES"@en ;
+       :_name.object_id "ALIAS"@en ;
+       :loop_ [ :_category_key.name "_alias.definition_id"@en
+              ] ;
+       rdfs:subPropertyOf :ATTRIBUTE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#ATTRIBUTE
+:ATTRIBUTE rdf:type owl:AnnotationProperty ;
+           :_definition.class "Head"@en ;
+           :_definition.id "ATTRIBUTES"@en ;
+           :_definition.scope "Category"@en ;
+           :_definition.update "2011-07-27"@en ;
+           :_description.text "This category is parent of all other categories in the DDLm dictionary."@en ;
+           :_name.category_id "DDL_DIC"@en ;
+           :_name.object_id "ATTRIBUTES"@en ;
+           rdfs:subPropertyOf :DDL_DIC .
+
+
+###  http://emmo.info/CIF-ontology/ddl#CATEGORY
+:CATEGORY rdf:type owl:AnnotationProperty ;
+          :_definition.scope "Set"@en ;
+          rdfs:comment "not defined in ddl.dic"@en ;
+          rdfs:subPropertyOf :ATTRIBUTE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#CATEGORY_KEY
+:CATEGORY_KEY rdf:type owl:AnnotationProperty ;
+              rdfs:subPropertyOf :ATTRIBUTE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#DDL_DIC
+:DDL_DIC rdf:type owl:AnnotationProperty ;
+         :_description.text "This dictionary contains the definitions of attributes that make up the DDLm dictionary definition language. It provides the meta meta data for all CIF dictionaries."@en ;
+         :_dictionary.class "Reference"@en ;
+         :_dictionary.date "2021-03-01"@en ;
+         :_dictionary.ddl_conformance "4.0.1"@en ;
+         :_dictionary.namespace "DdlDic"@en ;
+         :_dictionary.title "DDL_DIC"@en ;
+         :_dictionary.uri "https://raw.githubusercontent.com/COMCIFS/cif_core/master/ddl.dic"@en ;
+         :_dictionary.version "4.0.1"@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#DEFINITION
+:DEFINITION rdf:type owl:AnnotationProperty ;
+            rdfs:subPropertyOf :ATTRIBUTE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#DEFINITION_REPLACED
+:DEFINITION_REPLACED rdf:type owl:AnnotationProperty ;
+                     rdfs:subPropertyOf :DEFINITION .
+
+
+###  http://emmo.info/CIF-ontology/ddl#DESCRIPTION
+:DESCRIPTION rdf:type owl:AnnotationProperty ;
+             rdfs:subPropertyOf :ATTRIBUTE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#DESCRIPTION_EXAMPLE
+:DESCRIPTION_EXAMPLE rdf:type owl:AnnotationProperty ;
+                     rdfs:subPropertyOf :DESCRIPTION .
+
+
+###  http://emmo.info/CIF-ontology/ddl#DICTIONARY
+:DICTIONARY rdf:type owl:AnnotationProperty ;
+            rdfs:subPropertyOf :ATTRIBUTE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#DICTIONARY_AUDIT
+:DICTIONARY_AUDIT rdf:type owl:AnnotationProperty ;
+                  rdfs:subPropertyOf :DICTIONARY .
+
+
+###  http://emmo.info/CIF-ontology/ddl#DICTIONARY_VALID
+:DICTIONARY_VALID rdf:type owl:AnnotationProperty ;
+                  rdfs:subPropertyOf :DICTIONARY .
+
+
+###  http://emmo.info/CIF-ontology/ddl#ENUMERATION
+:ENUMERATION rdf:type owl:AnnotationProperty ;
+             rdfs:subPropertyOf :ATTRIBUTE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#ENUMERATION_DEFAULT
+:ENUMERATION_DEFAULT rdf:type owl:AnnotationProperty ;
+                     rdfs:subPropertyOf :ENUMERATION .
+
+
+###  http://emmo.info/CIF-ontology/ddl#ENUMERATION_SET
+:ENUMERATION_SET rdf:type owl:AnnotationProperty ;
+                 rdfs:subPropertyOf :ENUMERATION .
+
+
+###  http://emmo.info/CIF-ontology/ddl#IMPORT
+:IMPORT rdf:type owl:AnnotationProperty ;
+        rdfs:subPropertyOf :ATTRIBUTE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#IMPORT_DETAILS
+:IMPORT_DETAILS rdf:type owl:AnnotationProperty ;
+                rdfs:subPropertyOf :IMPORT .
+
+
+###  http://emmo.info/CIF-ontology/ddl#METHOD
+:METHOD rdf:type owl:AnnotationProperty ;
+        rdfs:subPropertyOf :ATTRIBUTE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#NAME
+:NAME rdf:type owl:AnnotationProperty ;
+      rdfs:subPropertyOf :ATTRIBUTE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#TYPE
+:TYPE rdf:type owl:AnnotationProperty ;
+      :_definition.class "Set"@en ;
+      :_definition.id "TYPE"@en ;
+      :_definition.scope "Category"@en ;
+      :_definition.update "2011-06-26"@en ;
+      :_description.text "Attributes which specify the 'typing' of data items."@en ;
+      :_name.category_id "ATTRIBUTES"@en ;
+      :_name.object_id "TYPE"@en ;
+      rdfs:subPropertyOf :ATTRIBUTE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#UNITS
+:UNITS rdf:type owl:AnnotationProperty ;
+       rdfs:subPropertyOf :ATTRIBUTE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_alias.definition_id
+:_alias.definition_id rdf:type owl:AnnotationProperty ;
+                      :_definition.class "Attribute"@en ;
+                      :_definition.id "_alias.definition_id"@en ;
+                      :_definition.update "2019-04-02"@en ;
+                      :_description.text "Identifier tag of an aliased definition."@en ;
+                      :_name.category_id "alias"@en ;
+                      :_name.object_id "definition_id"@en ;
+                      :_type.container "Single"@en ;
+                      :_type.contents "Tag"@en ;
+                      :_type.purpose "Encode"@en ;
+                      :_type.source "Assigned"@en ;
+                      rdfs:subPropertyOf :ALIAS .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_alias.deprecation_date
+:_alias.deprecation_date rdf:type owl:AnnotationProperty ;
+                         rdfs:subPropertyOf :ALIAS .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_alias.dictionary_uri
+:_alias.dictionary_uri rdf:type owl:AnnotationProperty ;
+                       rdfs:subPropertyOf :ALIAS .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_category.key_id
+:_category.key_id rdf:type owl:AnnotationProperty ;
+                  :_name.category_id "category"@en ;
+                  rdfs:comment "not defined in ddl.dic"@en ;
+                  rdfs:subPropertyOf :CATEGORY .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_category_key.name
+:_category_key.name rdf:type owl:AnnotationProperty ;
+                    rdfs:subPropertyOf :CATEGORY_KEY .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_definition.class
+:_definition.class rdf:type owl:AnnotationProperty ;
+                   rdfs:subPropertyOf :DEFINITION ;
+                   rdfs:range xsd:string .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_definition.id
+:_definition.id rdf:type owl:AnnotationProperty ;
+                rdfs:subPropertyOf :DEFINITION ;
+                rdfs:range xsd:string .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_definition.scope
+:_definition.scope rdf:type owl:AnnotationProperty ;
+                   rdfs:subPropertyOf :DEFINITION .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_definition.update
+:_definition.update rdf:type owl:AnnotationProperty ;
+                    rdfs:subPropertyOf :DEFINITION .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_definition_replaced.by
+:_definition_replaced.by rdf:type owl:AnnotationProperty ;
+                         rdfs:subPropertyOf :DEFINITION_REPLACED .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_definition_replaced.id
+:_definition_replaced.id rdf:type owl:AnnotationProperty ;
+                         rdfs:subPropertyOf :DEFINITION_REPLACED .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_description.common
+:_description.common rdf:type owl:AnnotationProperty ;
+                     rdfs:subPropertyOf :DESCRIPTION .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_description.key_words
+:_description.key_words rdf:type owl:AnnotationProperty ;
+                        rdfs:subPropertyOf :DESCRIPTION .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_description.text
+:_description.text rdf:type owl:AnnotationProperty ;
+                   rdfs:subPropertyOf :DESCRIPTION .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_description_example.case
+:_description_example.case rdf:type owl:AnnotationProperty ;
+                           rdfs:subPropertyOf :DESCRIPTION_EXAMPLE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_description_example.detail
+:_description_example.detail rdf:type owl:AnnotationProperty ;
+                             rdfs:subPropertyOf :DESCRIPTION_EXAMPLE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_dictionary.class
+:_dictionary.class rdf:type owl:AnnotationProperty ;
+                   rdfs:subPropertyOf :DICTIONARY .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_dictionary.date
+:_dictionary.date rdf:type owl:AnnotationProperty ;
+                  rdfs:subPropertyOf :DICTIONARY .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_dictionary.ddl_conformance
+:_dictionary.ddl_conformance rdf:type owl:AnnotationProperty ;
+                             rdfs:subPropertyOf :DICTIONARY .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_dictionary.formalism
+:_dictionary.formalism rdf:type owl:AnnotationProperty ;
+                       rdfs:subPropertyOf :DICTIONARY .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_dictionary.namespace
+:_dictionary.namespace rdf:type owl:AnnotationProperty ;
+                       rdfs:subPropertyOf :DICTIONARY .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_dictionary.title
+:_dictionary.title rdf:type owl:AnnotationProperty ;
+                   rdfs:subPropertyOf :DICTIONARY .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_dictionary.uri
+:_dictionary.uri rdf:type owl:AnnotationProperty ;
+                 rdfs:subPropertyOf :DICTIONARY ;
+                 rdfs:range xsd:anyURI .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_dictionary.version
+:_dictionary.version rdf:type owl:AnnotationProperty ;
+                     rdfs:subPropertyOf :DICTIONARY .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_dictionary_audit.date
+:_dictionary_audit.date rdf:type owl:AnnotationProperty ;
+                        rdfs:subPropertyOf :DICTIONARY_AUDIT .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_dictionary_audit.revision
+:_dictionary_audit.revision rdf:type owl:AnnotationProperty ;
+                            rdfs:subPropertyOf :DICTIONARY_AUDIT .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_dictionary_audit.version
+:_dictionary_audit.version rdf:type owl:AnnotationProperty ;
+                           rdfs:subPropertyOf :DICTIONARY_AUDIT .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_dictionary_valid.application
+:_dictionary_valid.application rdf:type owl:AnnotationProperty ;
+                               rdfs:subPropertyOf :DICTIONARY_VALID .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_dictionary_valid.attributes
+:_dictionary_valid.attributes rdf:type owl:AnnotationProperty ;
+                              rdfs:subPropertyOf :DICTIONARY_VALID .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_dictionary_valid.option
+:_dictionary_valid.option rdf:type owl:AnnotationProperty ;
+                          rdfs:subPropertyOf :DICTIONARY_VALID .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_dictionary_valid.scope
+:_dictionary_valid.scope rdf:type owl:AnnotationProperty ;
+                         rdfs:subPropertyOf :DICTIONARY_VALID .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_enumeration.def_index_id
+:_enumeration.def_index_id rdf:type owl:AnnotationProperty ;
+                           rdfs:subPropertyOf :ENUMERATION .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_enumeration.default
+:_enumeration.default rdf:type owl:AnnotationProperty ;
+                      rdfs:subPropertyOf :ENUMERATION .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_enumeration.mandatory
+:_enumeration.mandatory rdf:type owl:AnnotationProperty ;
+                        rdfs:subPropertyOf :ENUMERATION .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_enumeration.range
+:_enumeration.range rdf:type owl:AnnotationProperty ;
+                    rdfs:subPropertyOf :ENUMERATION .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_enumeration_default.index
+:_enumeration_default.index rdf:type owl:AnnotationProperty ;
+                            rdfs:subPropertyOf :ENUMERATION_DEFAULT .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_enumeration_default.value
+:_enumeration_default.value rdf:type owl:AnnotationProperty ;
+                            rdfs:subPropertyOf :ENUMERATION_DEFAULT .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_enumeration_set.detail
+:_enumeration_set.detail rdf:type owl:AnnotationProperty ;
+                         rdfs:subPropertyOf :ENUMERATION_SET .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_enumeration_set.state
+:_enumeration_set.state rdf:type owl:AnnotationProperty ;
+                        rdfs:subPropertyOf :ENUMERATION_SET .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_import.get
+:_import.get rdf:type owl:AnnotationProperty ;
+             rdfs:subPropertyOf :IMPORT .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_import_details.file_id
+:_import_details.file_id rdf:type owl:AnnotationProperty ;
+                         rdfs:subPropertyOf :IMPORT_DETAILS .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_import_details.file_version
+:_import_details.file_version rdf:type owl:AnnotationProperty ;
+                              rdfs:subPropertyOf :IMPORT_DETAILS .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_import_details.frame_id
+:_import_details.frame_id rdf:type owl:AnnotationProperty ;
+                          rdfs:subPropertyOf :IMPORT_DETAILS .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_import_details.if_dupl
+:_import_details.if_dupl rdf:type owl:AnnotationProperty ;
+                         rdfs:subPropertyOf :IMPORT_DETAILS .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_import_details.if_miss
+:_import_details.if_miss rdf:type owl:AnnotationProperty ;
+                         rdfs:subPropertyOf :IMPORT_DETAILS .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_import_details.mode
+:_import_details.mode rdf:type owl:AnnotationProperty ;
+                      rdfs:subPropertyOf :IMPORT_DETAILS .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_import_details.order
+:_import_details.order rdf:type owl:AnnotationProperty ;
+                       rdfs:subPropertyOf :IMPORT_DETAILS .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_import_details.single
+:_import_details.single rdf:type owl:AnnotationProperty ;
+                        rdfs:subPropertyOf :IMPORT_DETAILS .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_import_details.single_index
+:_import_details.single_index rdf:type owl:AnnotationProperty ;
+                              rdfs:subPropertyOf :IMPORT_DETAILS .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_method.expression
+:_method.expression rdf:type owl:AnnotationProperty ;
+                    rdfs:subPropertyOf :METHOD .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_method.purpose
+:_method.purpose rdf:type owl:AnnotationProperty ;
+                 rdfs:subPropertyOf :METHOD .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_name.category_id
+:_name.category_id rdf:type owl:AnnotationProperty ;
+                   rdfs:subPropertyOf :NAME .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_name.linked_item_id
+:_name.linked_item_id rdf:type owl:AnnotationProperty ;
+                      rdfs:subPropertyOf :NAME .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_name.object_id
+:_name.object_id rdf:type owl:AnnotationProperty ;
+                 rdfs:subPropertyOf :NAME .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_type.container
+:_type.container rdf:type owl:AnnotationProperty ;
+                 rdfs:subPropertyOf :TYPE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_type.contents
+:_type.contents rdf:type owl:AnnotationProperty ;
+                :_definition.class "Attribute"@en ;
+                :_definition.id "_type.contents"@en ;
+                :_definition.update "2021-02-27"@en ;
+                :_description.text """Syntax of the value elements within the container type. Where the definition is of a 'List' or 'Array' type, this attribute describes the contents of each element. Where the definition is of a 'Table' container this attribute describes the construction of the value elements within those (Table) values.  The CIF2 characterset referenced below consists of the following Unicode code points:
+
+[U+0009], [U+000A], [U+000D], [U+0020-U+007E], [U+00A0-U+D7FF],
+[U+E000-U+FDCF], [U+FDF0-U+FFFD], [U+10000-U+1FFFD],
+[U+20000-U+2FFFD], [U+30000-U+3FFFD], [U+40000-U+4FFFD],
+[U+50000-U+5FFFD], [U+60000-U+6FFFD], [U+70000-U+7FFFD],
+[U+80000-U+8FFFD], [U+90000-U+9FFFD], [U+A0000-U+AFFFD],
+[U+B0000-U+BFFFD], [U+C0000-U+CFFFD], [U+D0000-U+DFFFD],
+[U+E0000-U+EFFFD], [U+F0000-U+FFFFD], [U+100000-U+10FFFD]
+
+Two \"case insensitive\" strings are considered identical when they match under the Unicode canonical caseless matching algorithm.
+
+In all cases, \"whitespace\" refers to ASCII whitespace only, that is [U+0009],[U+000A],[U+000D] and [U+0020].
+
+Note that descriptions of text syntax are relevant only to those formats that encode data values as text."""@en ;
+                :_name.category_id "type"@en ;
+                :_name.object_id "contents"@en ;
+                :_type.container "Single"@en ;
+                :_type.contents "Code"@en ;
+                :_type.purpose "State"@en ;
+                :_type.source "Assigned"@en ;
+                :loop_ [ :_enumeration_set.detail "case-sensitive sequence of CIF2 characters"@en ;
+                         :_enumeration_set.state "Text"@en
+                       ] ;
+                rdfs:subPropertyOf :TYPE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_type.contents_referenced_id
+:_type.contents_referenced_id rdf:type owl:AnnotationProperty ;
+                              rdfs:subPropertyOf :TYPE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_type.dimension
+:_type.dimension rdf:type owl:AnnotationProperty ;
+                 rdfs:subPropertyOf :TYPE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_type.indeces
+:_type.indeces rdf:type owl:AnnotationProperty ;
+               rdfs:subPropertyOf :TYPE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_type.indices_referenced_id
+:_type.indices_referenced_id rdf:type owl:AnnotationProperty ;
+                             rdfs:subPropertyOf :TYPE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_type.purpose
+:_type.purpose rdf:type owl:AnnotationProperty ;
+               rdfs:subPropertyOf :TYPE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_type.source
+:_type.source rdf:type owl:AnnotationProperty ;
+              rdfs:subPropertyOf :TYPE .
+
+
+###  http://emmo.info/CIF-ontology/ddl#_units.code
+:_units.code rdf:type owl:AnnotationProperty ;
+             rdfs:subPropertyOf :UNITS .
+
+
+###  http://emmo.info/CIF-ontology/ddl#loop_
+:loop_ rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://emmo.info/CIF-ontology/ddl#hasCIFDirectPart
+:hasCIFDirectPart rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :hasDirectPart .
+
+
+###  http://emmo.info/CIF-ontology/ddl#hasDirectPart
+:hasDirectPart rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :hasProperPart ;
+               rdf:type owl:InverseFunctionalProperty ,
+                        owl:AsymmetricProperty ,
+                        owl:IrreflexiveProperty .
+
+
+###  http://emmo.info/CIF-ontology/ddl#hasPart
+:hasPart rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:TransitiveProperty ,
+                  owl:ReflexiveProperty .
+
+
+###  http://emmo.info/CIF-ontology/ddl#hasProperPart
+:hasProperPart rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :hasPart ;
+               rdf:type owl:TransitiveProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://emmo.info/CIF-ontology/ddl#hasUniqueValue
+:hasUniqueValue rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdf:type owl:FunctionalProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://emmo.info/CIF-ontology/ddl#Array
+:Array rdf:type owl:Class ;
+       rdfs:comment "Ordered set of values of the same type. Operations across arrays are equivalent to operations across elements of the Array."@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Assigned
+:Assigned rdf:type owl:Class ;
+          rdfs:comment "A value (numerical or otherwise) assigned as part of the data collection, analysis or modelling required for a specific domain instance. These assignments often represent a decision made that determines the course of the experiment (and therefore may be deemed PRIMITIVE) or a particular choice in the way the data was analysed (and therefore may be considered NOT PRIMITIVE)."@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#ByReference
+:ByReference rdf:type owl:Class ;
+             rdfs:comment "The contents have the same form as those of the attribute referenced by _type.contents_referenced_id."@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Code
+:Code rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasUniqueValue ;
+                        owl:someValuesFrom xsd:string
+                      ] ;
+      rdfs:comment "Case-insensitive sequence of CIF2 characters containing no ASCII whitespace."@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Complex
+:Complex rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasUniqueValue ;
+                           owl:someValuesFrom xsd:string
+                         ] ;
+         rdfs:comment "A complex number"@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Composite
+:Composite rdf:type owl:Class ;
+           rdfs:comment "Used to type items with value strings composed of separate parts. These will usually need to be separated and parsed for complete interpretation and application."@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Container
+:Container rdf:type owl:Class ;
+           owl:disjointUnionOf ( :Array
+                                 :List
+                                 :Matrix
+                                 :Single
+                                 :Table
+                               ) .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Contents
+:Contents rdf:type owl:Class ;
+          owl:disjointUnionOf ( :ByReference
+                                :Code
+                                :Complex
+                                :Date
+                                :DateTime
+                                :Dimension
+                                :Imag
+                                :Integer
+                                :Name
+                                :Range
+                                :Real
+                                :Symop
+                                :Tag
+                                :Text
+                                :Uri
+                                :Version
+                                :Word
+                              ) .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Data
+:Data rdf:type owl:Class ;
+      owl:equivalentClass [ rdf:type owl:Class ;
+                            owl:unionOf ( :Loop
+                                          :Value
+                                        )
+                          ] ;
+      rdfs:comment "A data-name is a DictionaryObject" ,
+                   """A datablock consists of a data heading followed by zero or more data items and save frames.
+
+Data appear either as key/value pairs, or within loops.""" ,
+                   """data-block = data-heading, { block-content } ;
+data-heading = data-token, container-code ;
+data-token = ( 'D' | 'd' ), ( 'A' | 'a' ), ( 'T' | 't' ), ( 'A' | 'a' ), '_';
+data = ( data-name, wspace-data-value ) | data-loop ;"""@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#DataBlock
+:DataBlock rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasCIFDirectPart ;
+                             owl:someValuesFrom :Data
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasCIFDirectPart ;
+                             owl:allValuesFrom [ rdf:type owl:Class ;
+                                                 owl:unionOf ( :Data
+                                                               :DataBlockName
+                                                             )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasCIFDirectPart ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :DataBlockName
+                           ] ;
+           rdfs:comment "A datablock consists of a data heading followed by zero or more data items and save frames." ,
+                        """data-block = data-heading, { block-content } ;
+data-heading = data-token, container-code ;
+data-token = ( 'D' | 'd' ), ( 'A' | 'a' ), ( 'T' | 't' ), ( 'A' | 'a' ), '_';"""@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#DataBlockName
+:DataBlockName rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasCIFDirectPart ;
+                                 owl:allValuesFrom owl:Nothing
+                               ] ;
+               rdfs:comment "container-code = non-blank-char, { non-blank-char } ;"@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Date
+:Date rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasUniqueValue ;
+                        owl:someValuesFrom xsd:dateTime
+                      ] ;
+      rdfs:comment "ISO standard date format <yyyy>-<mm>-<dd>. Use DateTime for all new dictionaries"@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#DateTime
+:DateTime rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasUniqueValue ;
+                            owl:someValuesFrom xsd:string
+                          ] ;
+          rdfs:comment "A timestamp. Text formats must use date-time or full-date productions of RFC 3339 ABNF"@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Derived
+:Derived rdf:type owl:Class ;
+         rdfs:comment "A quantity derived from other data items within the domain instance. This item is NOT PRIMITIVE."@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Describe
+:Describe rdf:type owl:Class ;
+          rdfs:comment "Used to type items with values that are descriptive text intended for human interpretation."@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#DictionaryDefinedItem
+:DictionaryDefinedItem rdf:type owl:Class .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Dimension
+:Dimension rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasUniqueValue ;
+                             owl:someValuesFrom xsd:string
+                           ] ;
+           rdfs:comment "Size of an Array/Matrix/List expressed as a text string. The text string itself consists of zero or more non-negative integers separated by commas placed within bounding square brackets. Empty square brackets represent a list of unknown size"@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Encode
+:Encode rdf:type owl:Class ;
+        rdfs:comment "Used to type items with values that are text or codes that are formatted to be machine parsable."@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#File
+:File rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasCIFDirectPart ;
+                        owl:someValuesFrom :DataBlock
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasCIFDirectPart ;
+                        owl:allValuesFrom :DataBlock
+                      ] .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Imag
+:Imag rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasUniqueValue ;
+                        owl:someValuesFrom owl:real
+                      ] ;
+      rdfs:comment "Floating-point imaginary number"@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Indices
+:Indices rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Class ;
+                               owl:unionOf ( :ByReference
+                                             :Code
+                                             :Date
+                                             :Tag
+                                             :Text
+                                             :Uri
+                                             :Version
+                                             :Word
+                                           )
+                             ] .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Integer
+:Integer rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasUniqueValue ;
+                           owl:someValuesFrom xsd:integer
+                         ] ;
+         rdfs:comment "Positive or negative integer number"@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Internal
+:Internal rdf:type owl:Class ;
+          rdfs:comment "Used to type items that serve only internal purposes of the dictionary  in which they appear. The particular purpose served is not defined by this state."@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Key
+:Key rdf:type owl:Class ;
+     rdfs:comment "Used to type an item with a value that is unique within the looped list of these items, and does not contain encoded information."@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Link
+:Link rdf:type owl:Class ;
+      rdfs:comment "Used to type an item that acts as a foreign key between two categories.  The definition of the item must additionally contain the attribute \"_name.linked_item_id\" specifying the data name of the item with unique values in the linked category. The values of the defined item are drawn from the set of values in the referenced item. Cross referencing items from the same category is allowed."@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#List
+:List rdf:type owl:Class ;
+      rdfs:comment "Ordered set of values. Elements need not be of same contents type."@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Loop
+:Loop rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasCIFDirectPart ;
+                        owl:someValuesFrom :Packet
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasCIFDirectPart ;
+                        owl:allValuesFrom :Packet
+                      ] ;
+      rdfs:comment "A data loop consists of a loop header (the case-insensitive word \"loop_\" followed by a sequence of datanames) and then a sequence of one or more whitespace-separated values.  Though it cannot be expressed in EBNF, CIF requires that a loop whose header contains N data names must contain an integral multiple of N data values." ,
+                   "data-loop = loop-token, wspace, data-name, { wspace, data-name }, wspace-data-value, { wspace-data-value } ;"@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Matrix
+:Matrix rdf:type owl:Class ;
+        rdfs:comment "Ordered set of numerical values for a tensor. Tensor operations such as dot and cross products, are valid cross matrix objects. A matrix with a single dimension is interpreted as a row or column vector as required."@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Measurand
+:Measurand rdf:type owl:Class ;
+           rdfs:comment """Used to type an item with a numerically estimated value that has been recorded by measurement or derivation. A data name definition for the standard uncertainty (SU) of this item must be provided in a separate definition with _type.purpose of 'SU'. The value of a measurand item should be accompanied by a value of its associated SU item, either:
+  1) integrated with the measurand value in a manner characteristic of the data format;
+  or
+  2) as a separate, explicit value for the associated SU item.
+These alternatives are semantically equivalent."""@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Name
+:Name rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasUniqueValue ;
+                        owl:allValuesFrom xsd:string
+                      ] ;
+      rdfs:comment "Case-insensitive sequence of ASCII alpha-numeric characters or underscore"@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Number
+:Number rdf:type owl:Class ;
+        rdfs:comment "Used to type items that are numerical and exact (i.e. no standard uncertainty value)."@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Packet
+:Packet rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasCIFDirectPart ;
+                          owl:someValuesFrom :Value
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasCIFDirectPart ;
+                          owl:allValuesFrom :Value
+                        ] .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Purpose
+:Purpose rdf:type owl:Class ;
+         owl:disjointUnionOf ( :Composite
+                               :Describe
+                               :Encode
+                               :Internal
+                               :Key
+                               :Link
+                               :Measurand
+                               :Number
+                               :SU
+                               :State
+                             ) .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Range
+:Range rdf:type owl:Class ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasUniqueValue ;
+                         owl:someValuesFrom xsd:string
+                       ] ;
+       rdfs:comment "Inclusive range of numerical values min:max"@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Real
+:Real rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasUniqueValue ;
+                        owl:someValuesFrom owl:real
+                      ] ;
+      rdfs:comment "Floating-point real number"@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Recorded
+:Recorded rdf:type owl:Class ;
+          rdfs:comment "A value (numerical or otherwise) recorded by observation or measurement during the experimental collection of data. This item is PRIMITIVE."@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Related
+:Related rdf:type owl:Class ;
+         rdfs:comment "A value or tag used in the construction of looped lists of data. Typically identifying an item whose unique value is the reference key for a loop category and/or an item which has values in common with those of another loop category and is considered a Link between these lists."@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#SU
+:SU rdf:type owl:Class ;
+    rdfs:comment "Used to type an item with a numerical value that is the standard uncertainty of another dataname. The definition of an SU item must include the attribute \"_name.linked_item_id\" which explicitly identifies the associated measurand item. SU values must be non-negative."@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Single
+:Single rdf:type owl:Class ;
+        rdfs:comment "Single value"@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Source
+:Source rdf:type owl:Class ;
+        owl:disjointUnionOf ( :Assigned
+                              :Derived
+                              :Recorded
+                              :Related
+                            ) .
+
+
+###  http://emmo.info/CIF-ontology/ddl#State
+:State rdf:type owl:Class ;
+       rdfs:comment "Used to type items with values that are restricted to codes present in their \"enumeration_set.state\" lists."@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Structure
+:Structure rdf:type owl:Class ;
+           owl:disjointUnionOf ( :DataBlock
+                                 :DataBlockName
+                                 :File
+                                 :Loop
+                                 :Packet
+                                 :Value
+                               ) .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Symop
+:Symop rdf:type owl:Class ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasUniqueValue ;
+                         owl:someValuesFrom xsd:string
+                       ] ;
+       rdfs:comment "A string composed of an integer optionally followed by an underscore or space and three or more digits"@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Table
+:Table rdf:type owl:Class ;
+       rdfs:comment "An unordered set of id:value elements"@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Tag
+:Tag rdf:type owl:Class ;
+     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasUniqueValue ;
+                       owl:someValuesFrom xsd:string
+                     ] ;
+     rdfs:comment "Case-insensitive CIF2 character sequence with leading underscore and no ASCII whitespace"@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Text
+:Text rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasUniqueValue ;
+                        owl:someValuesFrom xsd:string
+                      ] ;
+      rdfs:comment "Case-sensitive sequence of CIF2 characters"@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Type
+:Type rdf:type owl:Class ;
+      owl:equivalentClass [ rdf:type owl:Class ;
+                            owl:unionOf ( :Container
+                                          :Contents
+                                          :Purpose
+                                          :Source
+                                        )
+                          ] .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Uri
+:Uri rdf:type owl:Class ;
+     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasUniqueValue ;
+                       owl:someValuesFrom xsd:anyURI
+                     ] ;
+     rdfs:comment "Uniform Resource Identifier reference as defined in RFC 3986 Section 4.1"@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Value
+:Value rdf:type owl:Class ;
+       rdfs:subClassOf [ owl:intersectionOf ( :Container
+                                              :Contents
+                                              :DictionaryDefinedItem
+                                            ) ;
+                         rdf:type owl:Class
+                       ] ;
+       rdfs:comment "A dataname begins with an underscore character, and contains one or more additional, non-blank characters." ,
+                    "Data from Instance dictionaries." ,
+                    "data-name = '_' , non-blank-char, { non-blank-char } ;" ,
+                    "data-name is the class name, and the data is attached to it"@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Version
+:Version rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasUniqueValue ;
+                           owl:someValuesFrom xsd:string
+                         ] ;
+         rdfs:comment "Version digit string of the form <major>.<version>.<update>"@en .
+
+
+###  http://emmo.info/CIF-ontology/ddl#Word
+:Word rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasUniqueValue ;
+                        owl:someValuesFrom xsd:string
+                      ] ;
+      rdfs:comment "Case-sensitive sequence of CIF2 characters containing no ASCII whitespace."@en .
+
+
+[ rdfs:comment :_category_key.name
+] .
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

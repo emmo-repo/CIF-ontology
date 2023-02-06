@@ -3,65 +3,40 @@
 
 Python script for generating an ontology corresponding to a CIF dictionary.
 """
+# pylint: disable=fixme
+import types
+import urllib.request
 from contextlib import redirect_stderr
 from os import devnull as DEVNULL
 from pathlib import Path
-
-# import textwrap
-import types
 from typing import TYPE_CHECKING
-import urllib.request
 
 from CifFile import CifDic
 
 # Remove the print statement concerning 'owlready2_optimized'
 # when importing owlready2 (which is imported also in ontopy).
-with open(DEVNULL, "w") as handle:  # pylint: disable=unspecified-encoding
+with open(DEVNULL, "w", encoding="utf8") as handle:
     with redirect_stderr(handle):
         from ontopy import World
+        from ontopy.ontology import Ontology
 
-        from owlready2 import locstr
-
+from dic2owl._utils import MissingAnnotationError, lang_en
 
 if TYPE_CHECKING:
-    from _typeshed import StrPath
-    from typing import Any, Sequence, Set, Union
+    from typing import Any, Optional, Sequence, Set, Union
 
-    from ontopy.ontology import Ontology
+    from _typeshed import StrPath
 
 # Workaround for flaw in EMMO-Python
 # To be removed when EMMO-Python doesn't requires ontologies to import SKOS
-import ontopy.ontology  # pylint: disable=wrong-import-position
+import ontopy.ontology  # pylint: disable=wrong-import-position,wrong-import-order
 
 ontopy.ontology.DEFAULT_LABEL_ANNOTATIONS = [
     "http://www.w3.org/2000/01/rdf-schema#label",
 ]
 
-ONTOLOGY_DIR = (
-    Path(__file__).resolve().parent.parent.parent.joinpath("ontology")
-)
-"""The absolute, normalized path to the `ontology` directory in this
-repository"""
 
-
-def lang_en(string: str) -> locstr:
-    """Converted to an English-localized string.
-
-    Parameters:
-        string: The string to be converted.
-
-    Returns:
-        An English-localized string. `locstr` is a `str`-based type.
-
-    """
-    return locstr(string, lang="en")
-
-
-class MissingAnnotationError(Exception):
-    """Raised when using a cif-dictionary annotation not defined in ddl"""
-
-
-# pylint: disable=too-few-public-methods
+# pylint: disable=too-few-public-methods,too-many-instance-attributes
 class Generator:
     """Class for generating CIF ontology from a CIF dictionary.
 
@@ -72,11 +47,6 @@ class Generator:
 
     """
 
-    CIF_DDL = (
-        "https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main/"
-        "ontology/cif-ddl.ttl"
-    )
-
     # TODO:
     # Should `comments` be replaced with a dict `annotations` for annotating
     # the ontology itself?  If so, we should import Dublin Core.
@@ -85,19 +55,30 @@ class Generator:
         self,
         dicfile: "StrPath",
         base_iri: str,
+        version: str,
         comments: "Sequence[str]" = (),
     ) -> None:
         self.dicfile = dicfile
         self.dic = CifDic(str(self.dicfile), do_dREL=False)
+        self.version = version
         self.comments = comments
 
         # Create new ontology
         self.world = World()
-        self.onto = self.world.get_ontology(base_iri)
+        self.onto: Ontology = self.world.get_ontology(base_iri)
 
         # Load cif-ddl ontology and append it to imported ontologies
-        self.ddl = self.world.get_ontology(self.CIF_DDL).load()
-        self.ddl.sync_python_names()
+        cif_ddl_path = (
+            Path(__file__).resolve().parent.parent.parent / "ontology" / "ddl.ttl"
+        )
+        if cif_ddl_path.exists():
+            cif_ddl = cif_ddl_path.as_uri()
+        else:
+            cif_ddl = (
+                "https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main"
+                "/ontology/ddl.ttl"
+            )
+        self.ddl = self.world.get_ontology(cif_ddl).load()
         self.onto.imported_ontologies.append(self.ddl)
 
         # Load Dublin core for metadata and append it to imported ontologies
@@ -118,6 +99,8 @@ class Generator:
 
         self._add_metadata()
         self.onto.sync_attributes()
+
+        # self.onto.world.as_rdflib_graph().namespace_manager.bind("cif_ddl", self.ddl.base_iri)
         return self.onto
 
     def _add_item(self, item) -> None:
@@ -224,17 +207,19 @@ class Generator:
         # TODO:
         # Is there a way to extract metadata from the dic object like
         # _dictionary_audit.version?
-        # onto.set_version(version="XXX")
+        self.onto.set_version(version=self.version)
 
         for comment in self.comments:
             self.onto.metadata.comment.append(comment)
         self.onto.metadata.comment.append(
-            f"Generated with dic2owl from {self.dicfile}"
+            lang_en(f"Generated with dic2owl from {self.dicfile}")
         )
 
 
 def main(
-    dicfile: "Union[str, Path]", ttlfile: "Union[str, Path]"
+    dicfile: "Union[str, Path]",
+    ttlfile: "Union[str, Path]",
+    version: "Optional[str]" = None,
 ) -> Generator:
     """Main function for ontology generation.
 
@@ -255,9 +240,10 @@ def main(
         debugging reasons.
 
     """
-    base_iri = "http://emmo.info/CIF-ontology/ontology/cif_core#"
-
     dicfile = dicfile if isinstance(dicfile, str) else str(dicfile.resolve())
+    ttlfile = ttlfile if isinstance(ttlfile, str) else str(ttlfile.resolve())
+
+    base_iri = f"http://emmo.info/CIF-ontology/{Path(ttlfile).stem}#"
 
     # Download the CIF dictionaries to current directory
     baseurl = "https://raw.githubusercontent.com/COMCIFS/cif_core/master/"
@@ -268,11 +254,8 @@ def main(
             # `file://` or similar.
             urllib.request.urlretrieve(baseurl + dic, dic)  # nosec
 
-    gen = Generator(dicfile=dicfile, base_iri=base_iri)
+    gen = Generator(dicfile=dicfile, base_iri=base_iri, version=version or "0.0.1")
     onto = gen.generate()
-    onto.save(
-        ttlfile if isinstance(ttlfile, str) else str(ttlfile.resolve()),
-        overwrite=True,
-    )
+    onto.save(ttlfile, overwrite=True)
 
     return gen  # XXX - just for debugging

@@ -1,14 +1,15 @@
 """
-# `dic2owl` CLI
+# dic2owl CLI
 
 The `dic2owl` command line interface (CLI) is an easy way of running the
 ontology-generation tool for CIF `.dic`-files.
 """
 import argparse
-from typing import TYPE_CHECKING
+import sys
 
 # import logging
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:  # pragma: no cover
     from typing import List, Optional
@@ -71,17 +72,25 @@ def main(argv: "Optional[List[str]]" = None) -> None:
             " Turtle file."
         ),
     )
+    parser.add_argument(
+        "--dicversion",
+        type=str,
+        default="0.0.1",
+        help="The generated ontology's version.",
+    )
 
-    args = parser.parse_args(argv)
+    try:
+        args = parser.parse_args(argv)
+    except Exception as exc:
+        print(argv, file=sys.stderr)
+        raise exc
 
     if args.ttlfile is None:
-        args.ttlfile = (
-            args.dicfile.resolve().name[: -len(args.dicfile.suffix)] + ".ttl"
-        )
+        args.ttlfile = args.dicfile.resolve().name[: -len(args.dicfile.suffix)] + ".ttl"
 
     if not args.dicfile.resolve().exists():
         # The dic-file does not exist, use it as a string instead so it can be
         # downloaded.
         args.dicfile = str(args.dicfile)
 
-    dic2owl_run(dicfile=args.dicfile, ttlfile=args.ttlfile)
+    dic2owl_run(dicfile=args.dicfile, ttlfile=args.ttlfile, version=args.dicversion)
