@@ -5,9 +5,13 @@ The `dic2owl` command line interface (CLI) is an easy way of running the
 ontology-generation tool for CIF `.dic`-files.
 """
 import argparse
+from typing import TYPE_CHECKING
 
 # import logging
 from pathlib import Path
+
+if TYPE_CHECKING:  # pragma: no cover
+    from typing import List, Optional
 
 
 # LOGGING_LEVELS = [
@@ -15,7 +19,7 @@ from pathlib import Path
 # ]
 
 
-def main(argv: list = None) -> None:
+def main(argv: "Optional[List[str]]" = None) -> None:
     """Ontologize CIF dictionaries (`.dic`) using OWL.
 
     Produce an OWL Turtle (`.ttl`) file from a CIF dictionary (`.dic`) file.
