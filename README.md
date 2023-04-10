@@ -73,11 +73,10 @@ See also the [LICENSE](LICENSE) file.
 
 
 
-
 [DDLm]: https://www.iucr.org/resources/cif/ddl/ddlm
 [CIF core dictionary]: https://www.iucr.org/resources/cif/dictionaries/cif_core
 [COMCIFS/cif_core]: https://github.com/COMCIFS/cif_core
 [Crystallography Domain Ontology]: https://github.com/emmo-repo/domain-crystallography
 [EMMO]: https://github.com/emmo-repo/EMMO
-[cif_core.ttl]: https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main/ontology/cif-core.ttl
-[dic2owl/README.md]: https://github.com/emmo-repo/CIF-ontology/blob/main/dic2owl/README.md
+[cif_core.ttl]: ontology/cif-core.ttl
+[dic2owl/README.md]: dic2owl/README.md
