@@ -12,3 +12,5 @@ __pycache__
 
 !test-cif/**/*.cif
 !tests/**/*.dic
+
+dic2owl/build/
