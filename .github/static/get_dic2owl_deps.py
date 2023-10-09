@@ -31,7 +31,7 @@ def main(argv_input: list = None) -> Set[str]:
     for file in args.requirements_files:
         if not file.exists():
             raise FileNotFoundError(f"Could not find {file} !")
-        with open(file.resolve(), "r") as handle:
+        with open(file.resolve(), "r", encoding="utf8") as handle:
             for line in handle.readlines():
                 match = requirements_regex.fullmatch(line)
                 if match is None:

@@ -3,6 +3,8 @@
 
 Python script for generating an ontology corresponding to a CIF dictionary.
 """
+from __future__ import annotations
+
 from contextlib import redirect_stderr
 from os import devnull as DEVNULL
 from pathlib import Path
@@ -76,10 +78,6 @@ class Generator:
         "https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main/"
         "ontology/cif-ddl.ttl"
     )
-
-    # TODO:
-    # Should `comments` be replaced with a dict `annotations` for annotating
-    # the ontology itself?  If so, we should import Dublin Core.
 
     def __init__(
         self,
@@ -187,10 +185,8 @@ class Generator:
         for ddl_name, value in item.items():
             if ddl_name.startswith("_type."):
                 if ddl_name == "_type.dimension":
-                    # TODO - fix special case
                     pass
                 elif value == "Implied":
-                    # TODO - fix special case
                     pass
                 else:
                     parents.append(self.ddl[value])
@@ -221,11 +217,6 @@ class Generator:
 
     def _add_metadata(self) -> None:
         """Adds metadata to the generated ontology."""
-        # TODO:
-        # Is there a way to extract metadata from the dic object like
-        # _dictionary_audit.version?
-        # onto.set_version(version="XXX")
-
         for comment in self.comments:
             self.onto.metadata.comment.append(comment)
         self.onto.metadata.comment.append(
@@ -275,4 +266,4 @@ def main(
         overwrite=True,
     )
 
-    return gen  # XXX - just for debugging
+    return gen
