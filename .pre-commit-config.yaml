@@ -3,7 +3,7 @@ default_language_version:
 
 repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.5.0
+  rev: v4.4.0
   hooks:
   - id: check-symlinks
   - id: check-xml
@@ -22,7 +22,7 @@ repos:
     exclude: ^.*(\.ttl|\.cif)$
 
 - repo: https://github.com/ambv/black
-  rev: 23.9.1
+  rev: 23.3.0
   hooks:
   - id: black
     args:
