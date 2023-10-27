@@ -4,7 +4,7 @@ default_language_version:
 repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
   # Keep at v4.4.0 to support Python 3.7
-  rev: v4.4.0
+  rev: v4.5.0
   hooks:
   - id: check-symlinks
   - id: check-xml
@@ -24,7 +24,7 @@ repos:
 
 - repo: https://github.com/ambv/black
   # Keep at 23.3.0 to support Python 3.7
-  rev: 23.3.0
+  rev: 23.10.1
   hooks:
   - id: black
     args:
@@ -40,7 +40,7 @@ repos:
 
 - repo: https://github.com/pre-commit/mirrors-mypy
   # Keep at v1.4.1 to support Python 3.7
-  rev: v1.4.1
+  rev: v1.6.1
   hooks:
   - id: mypy
     exclude: ^tests/.*$
