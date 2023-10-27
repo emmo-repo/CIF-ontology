@@ -53,8 +53,13 @@ jobs:
     - name: Run PyLint
       run: pylint --rcfile=dic2owl/pyproject.toml dic2owl/**/*.py
 
+      # Ignore ID 44715, 44716, and 44717 for now.
+      # See this NumPy issue for more information:
+      # https://github.com/numpy/numpy/issues/19038
+      # When dropping Python 3.7 support, these vulnerabilities are fixed and can be
+      # removed from the ignore list.
     - name: Run safety
-      run: pip freeze | safety check --stdin
+      run: pip freeze | safety check --stdin --ignore 44715 --ignore 44716 --ignore 44717
 
   dic2owl-test:
     runs-on: ubuntu-latest
