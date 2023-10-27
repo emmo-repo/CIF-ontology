@@ -3,6 +3,7 @@ default_language_version:
 
 repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
+  # Keep at v4.4.0 to support Python 3.7
   rev: v4.4.0
   hooks:
   - id: check-symlinks
@@ -22,6 +23,7 @@ repos:
     exclude: ^.*(\.ttl|\.cif)$
 
 - repo: https://github.com/ambv/black
+  # Keep at 23.3.0 to support Python 3.7
   rev: 23.3.0
   hooks:
   - id: black
