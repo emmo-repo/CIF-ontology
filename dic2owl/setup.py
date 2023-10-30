@@ -16,7 +16,7 @@ from setuptools import setup, find_packages
 
 PACKAGE_DIR = Path(__file__).parent.resolve()
 
-with open(PACKAGE_DIR / "dic2owl/__init__.py", "r") as handle:
+with open(PACKAGE_DIR / "dic2owl/__init__.py", "r", encoding="utf8") as handle:
     VERSION = AUTHOR = AUTHOR_EMAIL = None
     for line in handle.readlines():
         VERSION_match = re.match(
@@ -50,14 +50,16 @@ with open(PACKAGE_DIR / "dic2owl/__init__.py", "r") as handle:
     AUTHOR = AUTHOR.group("author")  # type: ignore
     AUTHOR_EMAIL = AUTHOR_EMAIL.group("email")  # type: ignore
 
-with open(PACKAGE_DIR / "requirements.txt", "r") as handle:
+with open(PACKAGE_DIR / "requirements.txt", "r", encoding="utf8") as handle:
     BASE = [
         f"{_.strip()}"
         for _ in handle.readlines()
         if not _.startswith("#") and "git+" not in _
     ]
 
-with open(PACKAGE_DIR / "requirements_dev.txt", "r") as handle:
+with open(
+    PACKAGE_DIR / "requirements_dev.txt", "r", encoding="utf8"
+) as handle:
     DEV = [
         f"{_.strip()}"
         for _ in handle.readlines()
@@ -71,7 +73,7 @@ setup(
     author_email=AUTHOR_EMAIL,
     url="https://github.com/emmo-repo/CIF-ontology",
     description="Ontologize CIF dictionaries (`.dic`) using OWL.",
-    long_description=(PACKAGE_DIR / "README.md").read_text(),
+    long_description=(PACKAGE_DIR / "README.md").read_text(encoding="utf8"),
     long_description_content_type="text/markdown",
     packages=find_packages(),
     include_package_data=True,

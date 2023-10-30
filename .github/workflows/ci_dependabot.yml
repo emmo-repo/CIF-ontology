@@ -20,14 +20,14 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         ref: ${{ env.DEFAULT_REPO_BRANCH }}
 
     - name: Set up Python 3.7
       uses: actions/setup-python@v4
       with:
-        python-version: 3.7
+        python-version: '3.7'
 
     - name: Install `pre-commit` and dependencies
       run: |
@@ -69,7 +69,7 @@ jobs:
 
     - name: Fetch PR body
       id: pr_body
-      uses: chuhlomin/render-template@v1.6
+      uses: chuhlomin/render-template@v1.8
       with:
         template: .github/static/single_dependency_pr_body.txt
 

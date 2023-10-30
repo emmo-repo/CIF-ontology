@@ -1,4 +1,6 @@
 [![CI tests](https://github.com/emmo-repo/CIF-ontology/workflows/CI/badge.svg)](https://github.com/emmo-repo/CIF-ontology/actions/)
+[![DOI](https://zenodo.org/badge/272473769.svg)](https://zenodo.org/badge/latestdoi/272473769)
+
 
 CIF Ontology
 ============

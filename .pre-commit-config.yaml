@@ -1,5 +1,9 @@
+default_language_version:
+  python: python3.7
+
 repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
+  # Keep at v4.4.0 to support Python 3.7
   rev: v4.4.0
   hooks:
   - id: check-symlinks
@@ -19,6 +23,7 @@ repos:
     exclude: ^.*(\.ttl|\.cif)$
 
 - repo: https://github.com/ambv/black
+  # Keep at 23.3.0 to support Python 3.7
   rev: 23.3.0
   hooks:
   - id: black
@@ -34,7 +39,8 @@ repos:
     files: ^dic2owl/.*$
 
 - repo: https://github.com/pre-commit/mirrors-mypy
-  rev: v1.1.1
+  # Keep at v1.4.1 to support Python 3.7
+  rev: v1.4.1
   hooks:
   - id: mypy
     exclude: ^tests/.*$
