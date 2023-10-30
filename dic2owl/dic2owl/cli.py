@@ -63,6 +63,14 @@ def main(argv: "Optional[List[str]]" = None) -> None:
         ),
     )
     parser.add_argument(
+        "--local-ontologies",
+        action="store_true",
+        help=(
+            "Use local ontologies instead of the latest commit on GitHub. "
+            "This is mainly for debugging purposes."
+        ),
+    )
+    parser.add_argument(
         "dicfile",
         metavar="CIF_DIC",
         type=Path,
@@ -84,4 +92,8 @@ def main(argv: "Optional[List[str]]" = None) -> None:
         # downloaded.
         args.dicfile = str(args.dicfile)
 
-    dic2owl_run(dicfile=args.dicfile, ttlfile=args.ttlfile)
+    dic2owl_run(
+        dicfile=args.dicfile,
+        ttlfile=args.ttlfile,
+        local_ontologies=args.local_ontologies,
+    )
