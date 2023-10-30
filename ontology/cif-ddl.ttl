@@ -622,6 +622,7 @@ Note that descriptions of text syntax are relevant only to those formats that en
                                 :Text
                                 :Uri
                                 :Version
+                                :Word
                               ) .
 
 
@@ -753,6 +754,7 @@ data-token = ( 'D' | 'd' ), ( 'A' | 'a' ), ( 'T' | 't' ), ( 'A' | 'a' ), '_';"""
                                              :Text
                                              :Uri
                                              :Version
+                                             :Word
                                            )
                              ] .
 
@@ -991,6 +993,15 @@ These alternatives are semantically equivalent.""" .
                            owl:someValuesFrom xsd:string
                          ] ;
          rdfs:comment "Version digit string of the form <major>.<version>.<update>" .
+
+
+###  http://emmo.info/emmo/cif-ddl#Word
+:Word rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasUniqueValue ;
+                        owl:someValuesFrom xsd:string
+                      ] ;
+      rdfs:comment "Case-sensitive sequence of CIF2 characters containing no ASCII whitespace." .
 
 
 [ rdfs:comment :_category_key.name
