@@ -6,8 +6,6 @@ Python script for generating an ontology corresponding to a CIF dictionary.
 from contextlib import redirect_stderr
 from os import devnull as DEVNULL
 from pathlib import Path
-
-# import textwrap
 import types
 from typing import TYPE_CHECKING
 import urllib.request
