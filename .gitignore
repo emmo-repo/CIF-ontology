@@ -17,3 +17,5 @@ site/
 
 !test-cif/**/*.cif
 !tests/**/*.dic
+
+dic2owl/build/

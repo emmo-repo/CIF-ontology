@@ -20,7 +20,7 @@ repos:
     files: ^.*requirements.*\.txt$
   - id: trailing-whitespace
     args: [--markdown-linebreak-ext=md]
-    exclude: ^.*(\.ttl|\.cif)$
+    exclude: ^(.*(\.ttl|\.cif|\.pm)|scripts/.*)$
 
 - repo: https://github.com/ambv/black
   # Keep at 23.3.0 to support Python 3.7
