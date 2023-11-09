@@ -10,6 +10,11 @@ __pycache__
 *.dic
 *.cif
 
+dist/
+site/
+
+*.properties
+
 !test-cif/**/*.cif
 !tests/**/*.dic
 

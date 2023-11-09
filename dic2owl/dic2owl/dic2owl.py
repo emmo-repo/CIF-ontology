@@ -6,8 +6,6 @@ Python script for generating an ontology corresponding to a CIF dictionary.
 from contextlib import redirect_stderr
 from os import devnull as DEVNULL
 from pathlib import Path
-
-# import textwrap
 import types
 from typing import TYPE_CHECKING
 import urllib.request
@@ -61,7 +59,7 @@ class MissingAnnotationError(Exception):
     """Raised when using a cif-dictionary annotation not defined in ddl"""
 
 
-# pylint: disable=too-few-public-methods
+# pylint: disable=too-few-public-methods,too-many-instance-attributes
 class Generator:
     """Class for generating CIF ontology from a CIF dictionary.
 
@@ -69,20 +67,27 @@ class Generator:
         dicfile: File name of CIF dictionary to generate an ontology for.
         base_iri: Base IRI of the generated ontology.
         comments: Sequence of comments to add to the ontology itself.
+        local_ddl: If `True`, the CIF DDL ontology will be loaded from the
+            local repository.
 
     """
 
-    CIF_DDL = (
-        "https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main/"
-        "ontology/cif-ddl.ttl"
-    )
+    cif_ddl: str
 
     def __init__(
         self,
         dicfile: "StrPath",
         base_iri: str,
         comments: "Sequence[str]" = (),
+        local_ddl: bool = False,
     ) -> None:
+        self.cif_ddl = (
+            (ONTOLOGY_DIR / "cif-ddl.ttl").as_uri()
+            if local_ddl
+            else "https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main/"
+            "ontology/cif-ddl.ttl"
+        )
+
         self.dicfile = dicfile
         self.dic = CifDic(str(self.dicfile), do_dREL=False)
         self.comments = comments
@@ -92,7 +97,7 @@ class Generator:
         self.onto = self.world.get_ontology(base_iri)
 
         # Load cif-ddl ontology and append it to imported ontologies
-        self.ddl = self.world.get_ontology(self.CIF_DDL).load()
+        self.ddl = self.world.get_ontology(self.cif_ddl).load()
         self.ddl.sync_python_names()
         self.onto.imported_ontologies.append(self.ddl)
 
@@ -223,7 +228,9 @@ class Generator:
 
 
 def main(
-    dicfile: "Union[str, Path]", ttlfile: "Union[str, Path]"
+    dicfile: "Union[str, Path]",
+    ttlfile: "Union[str, Path]",
+    local_ontologies: bool = False,
 ) -> Generator:
     """Main function for ontology generation.
 
@@ -238,6 +245,10 @@ def main(
 
             !!! important
                 The file will be overwritten if it already exists.
+        local_ontologies: If `True`, the ontologies used to generate the
+            ontology will be loaded from the local repository.
+            If `False`, the ontologies will be loaded from the latest commit in
+            the `main` branch on GitHub.
 
     Returns:
         The setup ontology generator class. This is mainly returned for
@@ -257,7 +268,9 @@ def main(
             # `file://` or similar.
             urllib.request.urlretrieve(baseurl + dic, dic)  # nosec
 
-    gen = Generator(dicfile=dicfile, base_iri=base_iri)
+    gen = Generator(
+        dicfile=dicfile, base_iri=base_iri, local_ddl=local_ontologies
+    )
     onto = gen.generate()
     onto.save(
         ttlfile if isinstance(ttlfile, str) else str(ttlfile.resolve()),
